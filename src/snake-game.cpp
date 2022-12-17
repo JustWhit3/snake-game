@@ -18,10 +18,15 @@
 //====================================================
 //     main
 //====================================================
-int main()
- {
-  // Creating a window with the same pixel depth as the desktop
-  sf::Window window;
-  sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-  window.create( sf::VideoMode( 1024, 768, desktop.bitsPerPixel ), "SFML window" );
- }
+int main(){
+
+    // Creating a window with the same pixel depth as the desktop
+    sf::Window main_window;
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
+    main_window.create( sf::VideoMode( 1024, 768, desktop.bitsPerPixel ), "Snake Game" );
+
+    // Running the main window
+    while( main_window.isOpen() ){
+        continue;
+    }
+}

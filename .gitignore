@@ -1,1 +1,5 @@
+# Build files
 **/build
+
+# Personal files
+.vscode
