@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build with gcc 8
-        run: docker-compose run --rm build_gcc_8
+        run: sudo docker-compose run --rm build_gcc_8
       - name: Build with gcc 9
         run: docker-compose run --rm build_gcc_9
       - name: Build with gcc 10
