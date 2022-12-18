@@ -5,6 +5,20 @@ services:
     #      GCC
     ##########################################
 
+    # gcc 8
+    build_gcc_8:
+        image: ghcr.io/rikorose/gcc-cmake:gcc-8
+        network_mode: bridge
+        volumes:
+            - .:/proj
+        container_name: build
+        command: >
+            bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
+            && rm -rf build
+            && cmake -B build
+            && cmake --build build"
+
     # gcc 9
     build_gcc_9:
         image: ghcr.io/rikorose/gcc-cmake:gcc-9
@@ -14,6 +28,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
             && cmake -B build
             && cmake --build build"
@@ -27,11 +42,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build
             && cmake --build build"
 
     # gcc 11
@@ -43,11 +56,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build
             && cmake --build build"
 
     # gcc 12
@@ -59,11 +70,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build
             && cmake --build build"
 
     ##########################################
@@ -79,6 +88,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
             && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
@@ -92,6 +102,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
             && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
@@ -105,6 +116,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
             && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
@@ -118,11 +130,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
 
     # clang 10
@@ -134,11 +144,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
 
     # clang 11
@@ -150,11 +158,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
 
     # clang 12
@@ -166,11 +172,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
 
     # clang 13
@@ -182,11 +186,9 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
 
     # clang 14
@@ -198,9 +200,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
+            && apt update && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
-            && cmake --build build
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=20 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
+            && cmake -B build -D CMAKE_CXX_compiler=clang++
             && cmake --build build"
