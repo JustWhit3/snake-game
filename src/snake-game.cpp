@@ -20,13 +20,33 @@
 //====================================================
 int main(){
 
-    // Creating a window with the same pixel depth as the desktop
+    // Creating the main window with the same pixel depth as the desktop
     sf::Window main_window;
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-    main_window.create( sf::VideoMode( 1024, 768, desktop.bitsPerPixel ), "Snake Game" );
+    main_window.create(
+        sf::VideoMode( 1024, 1024, desktop.bitsPerPixel ), 
+        "Snake Game"
+    );
 
-    // Running the main window
+    // Centering the main window in the screen
+    main_window.setPosition(
+        sf::Vector2i(
+            sf::VideoMode::getDesktopMode().width * 0.5 - main_window.getSize().x * 0.5, 
+            sf::VideoMode::getDesktopMode().height * 0.5 - main_window.getSize().y * 0.5
+        ) 
+    );
+
+    // Running the main loop
     while( main_window.isOpen() ){
-        continue;
+
+        // Check events of the main window
+        sf::Event event;
+        while( main_window.pollEvent( event ) ){
+
+            // Close the window if required
+            if( event.type == sf::Event::Closed ){
+                main_window.close();
+            }
+        }
     }
 }
