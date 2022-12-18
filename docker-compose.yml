@@ -14,11 +14,7 @@ services:
         container_name: build
         command: >
             bash -c "cd /proj
-            && apt update
-            && apt install libx11-dev 
-            && apt install xorg-dev 
-            && apt install freeglut3-dev
-            && apt install libudev-dev
+            && apt install libx11-dev xorg-dev freeglut3-dev libudev-dev -y whatever
             && rm -rf build
             && cmake -B build
             && cmake --build build"
