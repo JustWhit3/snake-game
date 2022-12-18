@@ -35,7 +35,8 @@ jobs:
     - name: Installing extra dependencies and compiling (Ubuntu)
       if: matrix.os == 'ubuntu-latest'
       run: |
-       sudo apt install libx11-dev xorg-dev freeglut3-dev libudev-dev
+       sudo apt update
+       sudo apt install --fix-missing libx11-dev xorg-dev freeglut3-dev libudev-dev
        cmake -B build
        cmake --build build
 
