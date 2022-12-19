@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cmake_5fminimum_5frequired_7',['cmake_minimum_required',['../CMakeLists_8txt.html#a1167911fa26c3bb48e274860d35ca47e',1,'CMakeLists.txt']]]
+  ['add_5flibrary_22',['add_library',['../CMakeLists_8txt.html#a882705352d434dd7f26aaf2cd8a886db',1,'CMakeLists.txt']]]
 ];

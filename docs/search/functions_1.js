@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['if_8',['if',['../CMakeLists_8txt.html#a536a008d1d0647e4da63d68e25aca786',1,'if(EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) set(APP &quot;snake-game&quot;) add_executable($:&#160;CMakeLists.txt'],['../CMakeLists_8txt.html#ad7176970ec4ad25043811d164a126881',1,'if(CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$:&#160;CMakeLists.txt']]]
+  ['cmake_5fminimum_5frequired_23',['cmake_minimum_required',['../CMakeLists_8txt.html#a1167911fa26c3bb48e274860d35ca47e',1,'CMakeLists.txt']]],
+  ['confirmwindow_24',['ConfirmWindow',['../classConfirmWindow.html#a9377a429d5ca96661b711a912a365a80',1,'ConfirmWindow']]],
+  ['createobjects_25',['createObjects',['../classGameWindow.html#a365c42b553629d4a5630984780151f5f',1,'GameWindow']]]
 ];
