@@ -20,6 +20,15 @@ set( CMAKE_CXX_STANDARD 20 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
 
+# Include directories
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../include )
+
+# Creating the static library
+add_library( snakegame STATIC
+    windows/game_window.cpp
+    windows/confirm_window.cpp
+)
+
 # Creating the main executable
 set( APP "snake-game" )
 add_executable( ${APP} snake-game.cpp )
@@ -32,6 +41,10 @@ else()
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
+# Link to my graphics
+target_link_libraries( ${APP} PRIVATE snakegame )
+
 # Link to SFML
 target_link_libraries( ${APP} PUBLIC sfml-window )
 target_link_libraries( ${APP} PUBLIC sfml-system )
+target_link_libraries( ${APP} PUBLIC sfml-graphics )

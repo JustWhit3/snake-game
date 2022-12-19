@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file snake-game.cpp
+ * @file confirm_window.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-16
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -12,18 +12,24 @@
 //     Headers
 //====================================================
 
-// My headers
-#include <windows/game_window.hpp>
-
-// Graphics
+// Graphics headers
 #include <SFML/Window.hpp>
 
 //====================================================
-//     main
+//     ConfirmWindow
 //====================================================
-int main(){
+/**
+ * @brief Class used to create the confirm window.
+ * 
+ */
+class ConfirmWindow: public sf::Window{
 
-    // Running the app
-    auto game_window{ GameWindow() };
-    
-}
+    // Public part
+    public:
+        ConfirmWindow();
+        void runWindow();
+
+    // Private part
+    private:
+        const sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
+};
