@@ -16,4 +16,4 @@ if( EXISTS "${LOC_PATH}" )
 endif()
 
 # Fetch deps
-add_subdirectory( sfml )
+add_subdirectory( SFML )
