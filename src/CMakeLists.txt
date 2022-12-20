@@ -22,7 +22,6 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 
 # Include directories
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../include )
-include_directories( ${CMAKE_CURRENT_BINARY_DIR}/_deps/SFML-src/include )
 
 # Creating the static library
 add_library( snakegame STATIC
