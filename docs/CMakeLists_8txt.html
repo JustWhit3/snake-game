@@ -74,14 +74,32 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a1167911fa26c3bb48e274860d35ca47e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a1167911fa26c3bb48e274860d35ca47e">cmake_minimum_required</a> (VERSION 3.15) project(snake-game-build-src VERSION 1.0 DESCRIPTION &quot;Build system for snake-game source code.&quot; LANGUAGES CXX) file(TO_CMAKE_PATH &quot;$</td></tr>
 <tr class="separator:a1167911fa26c3bb48e274860d35ca47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memItemLeft" align="right" valign="top">CMakeLists txt LOC_PATH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b">if</a> (EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) <a class="el" href="CMakeLists_8txt.html#a757bf5bd04e92b121d81bae2158738a3">include_directories</a>($</td></tr>
+<tr class="memitem:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memItemLeft" align="right" valign="top">CMakeLists txt LOC_PATH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b">if</a> (EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($</td></tr>
 <tr class="separator:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a757bf5bd04e92b121d81bae2158738a3"><td class="memItemLeft" align="right" valign="top">include&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a757bf5bd04e92b121d81bae2158738a3">include_directories</a> (${CMAKE_CURRENT_BINARY_DIR}/_deps/SFML-src/include) add_library(snakegame STATIC windows/game_window.cpp windows/confirm_window.cpp) set(APP &quot;snake-game&quot;) add_executable($</td></tr>
-<tr class="separator:a757bf5bd04e92b121d81bae2158738a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882705352d434dd7f26aaf2cd8a886db"><td class="memItemLeft" align="right" valign="top">include&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a882705352d434dd7f26aaf2cd8a886db">add_library</a> (snakegame STATIC windows/game_window.cpp windows/confirm_window.cpp) set(APP &quot;snake-game&quot;) add_executable($</td></tr>
+<tr class="separator:a882705352d434dd7f26aaf2cd8a886db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7176970ec4ad25043811d164a126881"><td class="memItemLeft" align="right" valign="top">snake game cpp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#ad7176970ec4ad25043811d164a126881">if</a> (CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$</td></tr>
 <tr class="separator:ad7176970ec4ad25043811d164a126881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a882705352d434dd7f26aaf2cd8a886db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882705352d434dd7f26aaf2cd8a886db">&#9670;&nbsp;</a></span>add_library()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">include add_library </td>
+          <td>(</td>
+          <td class="paramtype">snakegame STATIC windows/game_window.cpp windows/confirm_window.&#160;</td>
+          <td class="paramname"><em>cpp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1167911fa26c3bb48e274860d35ca47e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1167911fa26c3bb48e274860d35ca47e">&#9670;&nbsp;</a></span>cmake_minimum_required()</h2>
 
@@ -129,24 +147,6 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">EXISTS &quot;${LOC_PATH}&quot;&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a757bf5bd04e92b121d81bae2158738a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a757bf5bd04e92b121d81bae2158738a3">&#9670;&nbsp;</a></span>include_directories()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">include include_directories </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>${CMAKE_CURRENT_BINARY_DIR}/_deps/SFML-src/</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
