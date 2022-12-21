@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['runwindow_12',['runWindow',['../classConfirmWindow.html#af8a73652f828f05dee98cb233a4375c7',1,'ConfirmWindow::runWindow()'],['../classGameWindow.html#a1b6c6eeecb4e2f91530540c4bfd72040',1,'GameWindow::runWindow()']]]
+  ['ptc_5fdisable_5fstd_5ftypes_5fprinting_11',['PTC_DISABLE_STD_TYPES_PRINTING',['../game__window_8cpp.html#a408ba0718f2358bec51ead6a5c39580f',1,'game_window.cpp']]],
+  ['ptc_5fenable_5fperformance_5fimprovements_12',['PTC_ENABLE_PERFORMANCE_IMPROVEMENTS',['../game__window_8cpp.html#a894d6f81f69fb080412cc9fd785f4bb9',1,'game_window.cpp']]]
 ];

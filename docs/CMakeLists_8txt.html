@@ -76,30 +76,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1167911fa26c3bb48e274860d35ca47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memItemLeft" align="right" valign="top">CMakeLists txt LOC_PATH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b">if</a> (EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($</td></tr>
 <tr class="separator:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a882705352d434dd7f26aaf2cd8a886db"><td class="memItemLeft" align="right" valign="top">include&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a882705352d434dd7f26aaf2cd8a886db">add_library</a> (snakegame STATIC windows/game_window.cpp windows/confirm_window.cpp) set(APP &quot;snake-game&quot;) add_executable($</td></tr>
-<tr class="separator:a882705352d434dd7f26aaf2cd8a886db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7176970ec4ad25043811d164a126881"><td class="memItemLeft" align="right" valign="top">snake game cpp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#ad7176970ec4ad25043811d164a126881">if</a> (CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$</td></tr>
-<tr class="separator:ad7176970ec4ad25043811d164a126881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a882705352d434dd7f26aaf2cd8a886db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a882705352d434dd7f26aaf2cd8a886db">&#9670;&nbsp;</a></span>add_library()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">include add_library </td>
-          <td>(</td>
-          <td class="paramtype">snakegame STATIC windows/game_window.cpp windows/confirm_window.&#160;</td>
-          <td class="paramname"><em>cpp</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a1167911fa26c3bb48e274860d35ca47e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1167911fa26c3bb48e274860d35ca47e">&#9670;&nbsp;</a></span>cmake_minimum_required()</h2>
 
@@ -118,26 +96,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7176970ec4ad25043811d164a126881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7176970ec4ad25043811d164a126881">&#9670;&nbsp;</a></span>if() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">snake game cpp if </td>
-          <td>(</td>
-          <td class="paramtype">CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2b055f5e6d50d5bc83056fcaf941651b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b055f5e6d50d5bc83056fcaf941651b">&#9670;&nbsp;</a></span>if() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b055f5e6d50d5bc83056fcaf941651b">&#9670;&nbsp;</a></span>if()</h2>
 
 <div class="memitem">
 <div class="memproto">
