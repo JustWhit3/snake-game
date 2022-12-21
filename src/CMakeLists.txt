@@ -28,6 +28,7 @@ add_library( snakegame STATIC
     windows/game_window.cpp
     windows/confirm_window.cpp
 )
+add_library( snakegame::snakegame ALIAS snakegame )
 
 # Creating the main executable
 set( APP "snake-game" )
@@ -41,10 +42,14 @@ else()
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
-# Link to my graphics
-target_link_libraries( ${APP} PRIVATE snakegame )
+# Link game libs
+target_link_libraries( ${APP} PRIVATE snakegame::snakegame )
 
 # Link to SFML
 target_link_libraries( ${APP} PUBLIC sfml-window )
 target_link_libraries( ${APP} PUBLIC sfml-system )
 target_link_libraries( ${APP} PUBLIC sfml-graphics )
+
+# Link to other libraries
+find_package( ptcprint )
+target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )

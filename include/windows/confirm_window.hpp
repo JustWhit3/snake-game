@@ -9,27 +9,39 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+#pragma once
+#ifndef SNAKE_GAME_CONFIRM_WINDOW
+#define SNAKE_GAME_CONFIRM_WINDOW
+
+//====================================================
 //     Headers
 //====================================================
 
 // Graphics headers
 #include <SFML/Window.hpp>
 
-//====================================================
-//     ConfirmWindow
-//====================================================
-/**
- * @brief Class used to create the confirm window.
- * 
- */
-class ConfirmWindow: public sf::Window{
+namespace snake::window{
 
-    // Public part
-    public:
-        ConfirmWindow();
-        void runWindow();
+    //====================================================
+    //     ConfirmWindow
+    //====================================================
+    /**
+     * @brief Class used to create the confirm window.
+     * 
+     */
+    class ConfirmWindow: public sf::Window{
 
-    // Private part
-    private:
-        const sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-};
+        // Public part
+        public:
+            ConfirmWindow();
+            void runWindow();
+
+        // Private part
+        private:
+            const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
+    };
+}
+
+#endif

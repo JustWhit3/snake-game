@@ -17,3 +17,4 @@ endif()
 
 # Fetch deps
 add_subdirectory( SFML )
+add_subdirectory( ptcprint )

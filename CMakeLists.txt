@@ -17,6 +17,7 @@ endif()
 
 # Include directories
 include_directories( ${CMAKE_CURRENT_BINARY_DIR}/_deps/sfml-src/include )
+include_directories( ${CMAKE_CURRENT_BINARY_DIR}/_deps/ptcprint-src/include )
 
 # Fetching deps
 add_subdirectory( deps )

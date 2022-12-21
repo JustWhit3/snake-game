@@ -15,15 +15,12 @@
 // My headers
 #include <windows/game_window.hpp>
 
-// Graphics
-#include <SFML/Window.hpp>
-
 //====================================================
 //     main
 //====================================================
 int main(){
 
     // Running the app
-    auto game_window{ GameWindow() };
+    auto game_window{ snake::window::GameWindow() };
     
 }
