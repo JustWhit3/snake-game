@@ -28,7 +28,8 @@
 #include <ptc/print.hpp>
 
 // Graphics
-#include <SFML/Window.hpp>
+//#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 namespace snake::window{
 

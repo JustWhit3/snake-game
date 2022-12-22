@@ -79,34 +79,6 @@ services:
     #      CLANG
     ##########################################
 
-    # clang 6
-    build_clang_6:
-        image: silkeh/clang:6
-        network_mode: bridge
-        volumes:
-            - .:/proj
-        container_name: build
-        command: >
-            bash -c "cd /proj
-            && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
-            && cmake --build build"
-
-    # clang 7
-    build_clang_7:
-        image: silkeh/clang:7
-        network_mode: bridge
-        volumes:
-            - .:/proj
-        container_name: build
-        command: >
-            bash -c "cd /proj
-            && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
-            && cmake --build build"
-
     # clang 8
     build_clang_8:
         image: silkeh/clang:8
@@ -118,7 +90,7 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"
 
     # clang 9
@@ -132,7 +104,7 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"
 
     # clang 10
@@ -146,7 +118,7 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"
 
     # clang 11
@@ -160,7 +132,7 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"
 
     # clang 12
@@ -174,7 +146,7 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"
 
     # clang 13
@@ -188,19 +160,5 @@ services:
             bash -c "cd /proj
             && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
             && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
-            && cmake --build build"
-
-    # clang 14
-    build_clang_14:
-        image: silkeh/clang:14
-        network_mode: bridge
-        volumes:
-            - .:/proj
-        container_name: build
-        command: >
-            bash -c "cd /proj
-            && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
-            && rm -rf build
-            && cmake -B build -D CMAKE_CXX_compiler=clang++
+            && cmake -B build
             && cmake --build build"

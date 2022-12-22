@@ -27,6 +27,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../include )
 add_library( snakegame STATIC
     windows/game_window.cpp
     windows/confirm_window.cpp
+    #frames/menu.cpp
 )
 add_library( snakegame::snakegame ALIAS snakegame )
 
@@ -46,9 +47,8 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 target_link_libraries( ${APP} PRIVATE snakegame::snakegame )
 
 # Link to SFML
-target_link_libraries( ${APP} PUBLIC sfml-window )
-target_link_libraries( ${APP} PUBLIC sfml-system )
-target_link_libraries( ${APP} PUBLIC sfml-graphics )
+find_package( SFML 2.5.1 COMPONENTS system window graphics )
+target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system )
 
 # Link to other libraries
 find_package( ptcprint )
