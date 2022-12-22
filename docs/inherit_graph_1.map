@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node2" href="$classsnake_1_1window_1_1GameWindow.html" title="Class used to create the game window." alt="" coords="180,5,375,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node2" href="$classsnake_1_1window_1_1ConfirmWindow.html" title="Class used to create the confirm window." alt="" coords="139,5,341,32"/>
 </map>
