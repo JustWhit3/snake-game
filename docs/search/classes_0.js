@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['confirmwindow_24',['ConfirmWindow',['../classsnake_1_1window_1_1ConfirmWindow.html',1,'snake::window']]]
+  ['button_39',['Button',['../classsnake_1_1widget_1_1Button.html',1,'snake::widget']]]
 ];

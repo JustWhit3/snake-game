@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['frame_27',['frame',['../namespacesnake_1_1frame.html',1,'snake']]],
-  ['snake_28',['snake',['../namespacesnake.html',1,'']]],
-  ['window_29',['window',['../namespacesnake_1_1window.html',1,'snake']]]
+  ['snake_43',['snake',['../namespacesnake.html',1,'']]],
+  ['state_44',['state',['../namespacesnake_1_1state.html',1,'snake']]],
+  ['widget_45',['widget',['../namespacesnake_1_1widget.html',1,'snake']]],
+  ['window_46',['window',['../namespacesnake_1_1window.html',1,'snake']]]
 ];

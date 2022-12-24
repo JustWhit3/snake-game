@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['menu_26',['Menu',['../classsnake_1_1frame_1_1Menu.html',1,'snake::frame']]]
+  ['gamewindow_41',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html',1,'snake::window']]]
 ];

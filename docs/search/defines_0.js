@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ptc_5fdisable_5fstd_5ftypes_5fprinting_45',['PTC_DISABLE_STD_TYPES_PRINTING',['../game__window_8cpp.html#a408ba0718f2358bec51ead6a5c39580f',1,'game_window.cpp']]],
-  ['ptc_5fenable_5fperformance_5fimprovements_46',['PTC_ENABLE_PERFORMANCE_IMPROVEMENTS',['../game__window_8cpp.html#a894d6f81f69fb080412cc9fd785f4bb9',1,'game_window.cpp']]]
+  ['snake_5fgame_5fbutton_5fwidget_78',['SNAKE_GAME_BUTTON_WIDGET',['../button_8hpp.html#a2cd8cee2b19c9c2d25e71464e456eb8d',1,'button.hpp']]],
+  ['snake_5fgame_5fconfirm_5fwindow_79',['SNAKE_GAME_CONFIRM_WINDOW',['../confirm_8hpp.html#a553221cfe49ec14161ccd9f3622d4bd9',1,'confirm.hpp']]],
+  ['snake_5fgame_5fgame_5fwindow_80',['SNAKE_GAME_GAME_WINDOW',['../game_8hpp.html#a731fb438d86e4f08081fb6b04800f867',1,'game.hpp']]],
+  ['snake_5fgame_5fmenu_5fstate_81',['SNAKE_GAME_MENU_STATE',['../menu_8hpp.html#a56cdb1d7af4de1ac5013faba703b6cc8',1,'menu.hpp']]]
 ];

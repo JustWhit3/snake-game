@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['game_5fwindow_2ecpp_6',['game_window.cpp',['../game__window_8cpp.html',1,'']]],
-  ['game_5fwindow_2ehpp_7',['game_window.hpp',['../game__window_8hpp.html',1,'']]],
-  ['gamewindow_8',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow::GameWindow()'],['../classsnake_1_1window_1_1GameWindow.html',1,'snake::window::GameWindow']]]
+  ['drawlogo_14',['drawLogo',['../classsnake_1_1state_1_1Menu.html#ab38b5beeb51af5b9a0951a699af98ff5',1,'snake::state::Menu']]],
+  ['drawwidgets_15',['drawWidgets',['../classsnake_1_1state_1_1Menu.html#acafff55e41746b892ae1f7909f745f2c',1,'snake::state::Menu']]]
 ];

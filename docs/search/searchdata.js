@@ -1,11 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "cdgimprs",
-  1: "cgm",
+  0: "bcdgimprsu",
+  1: "bcgm",
   2: "s",
-  3: "cgms",
-  4: "cdgimr",
-  5: "ps"
+  3: "bcgms",
+  4: "bcdgimprsu",
+  5: "b",
+  6: "b",
+  7: "b",
+  8: "s"
 };
 
 var indexSectionNames =
@@ -15,7 +18,10 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "defines"
+  5: "variables",
+  6: "enums",
+  7: "enumvalues",
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -25,6 +31,9 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Macros"
+  5: "Variables",
+  6: "Enumerations",
+  7: "Enumerator",
+  8: "Macros"
 };
 
