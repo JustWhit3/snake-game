@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file confirm_window.hpp
+ * @file game.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-16
+ * @date 2022-12-19
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,34 +12,47 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_CONFIRM_WINDOW
-#define SNAKE_GAME_CONFIRM_WINDOW
+#ifndef SNAKE_GAME_GAME_WINDOW
+#define SNAKE_GAME_GAME_WINDOW
 
 //====================================================
 //     Headers
 //====================================================
 
-// Graphics headers
-#include <SFML/Window.hpp>
+// SFML
+#include <SFML/Graphics.hpp>
 
 namespace snake::window{
 
     //====================================================
-    //     ConfirmWindow
+    //     GameWindow
     //====================================================
     /**
-     * @brief Class used to create the confirm window.
+     * @brief Class used to create the game window. 
      * 
      */
-    class ConfirmWindow: public sf::Window{
+    class GameWindow: public sf::RenderWindow{
 
-        // Public part
+        //====================================================
+        //     Public
+        //====================================================
         public:
-            ConfirmWindow();
+
+            // Constructors
+            GameWindow();
+
+            // Methods
             void runWindow();
 
-        // Private part
+            // Variables
+            sf::Color background_color{ sf::Color::White };
+
+        //====================================================
+        //     Private
+        //====================================================
         private:
+
+            // Constants
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
     };
 }

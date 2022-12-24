@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file confirm_window.cpp
+ * @file confirm.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-16
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -12,10 +12,10 @@
 //     Headers
 //====================================================
 
-// My headers
-#include <windows/confirm_window.hpp>
+// Windows
+#include <windows/confirm.hpp>
 
-// Graphics
+// SFML
 #include <SFML/Window.hpp>
 
 namespace snake::window{

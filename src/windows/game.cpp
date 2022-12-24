@@ -2,33 +2,25 @@
 //     File data
 //====================================================
 /**
- * @file game_window.cpp
+ * @file game.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-19
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
 //====================================================
-//     Preprocessor directives
-//====================================================
-
-// ptc-print
-#define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
-#define PTC_DISABLE_STD_TYPES_PRINTING
-
-//====================================================
 //     Headers
 //====================================================
 
-// My headers
-#include <windows/game_window.hpp>
-#include <windows/confirm_window.hpp>
+// Windows
+#include <windows/game.hpp>
+#include <windows/confirm.hpp>
 
-// Other headers
-#include <ptc/print.hpp>
+// States
+#include <states/menu.hpp>
 
-// Graphics
-//#include <SFML/Window.hpp>
+// SFML
+#include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
 namespace snake::window{
@@ -47,26 +39,24 @@ namespace snake::window{
             sf::VideoMode( desktop.height, desktop.height, desktop.bitsPerPixel ), 
             "Snake Game"
         );
-    
-        // Center the window in the screen
-        this -> setPosition(
-            sf::Vector2i(
-                desktop.width * 0.5 - this -> getSize().x * 0.5, 
-                desktop.height * 0.5 - this -> getSize().y * 0.5
-            ) 
-        );
-    
+
         // Setting the icon
         auto icon = sf::Image{};
         icon.loadFromFile( "img/logo_icon.png" );
         this -> setIcon( icon.getSize().x, icon.getSize().y, icon.getPixelsPtr() );
     
         // Other settings
+        this -> setPosition( sf::Vector2i( 
+                desktop.width * 0.5 - this -> getSize().x * 0.5, 
+                desktop.height * 0.5 - this -> getSize().y * 0.5 
+            ) 
+        );
         this -> setKeyRepeatEnabled( false );
     
         // Run the main loop
         while( this -> isOpen() ){
-            displayMenuFrame();
+
+            // Display window
             runWindow();
     
             // Move the snake
@@ -119,33 +109,10 @@ namespace snake::window{
                 // Default cases
                 default:
                     break;
-                }
             }
-    }
-    
-    //====================================================
-    //     createObjects
-    //====================================================
-    void GameWindow::displayMenuFrame(){
-    
-            // Clear the window
-            this -> clear( background_color );
-    
-            // Drawing the title
-            sf::Texture logo_texture;
-            logo_texture.loadFromFile( "img/logo.png" );
-            sf::Sprite logo_sprite;
-            logo_sprite.setTexture( logo_texture, true );
-            const sf::Vector2f logo_targetSize( 500, 400 ); 
-            logo_sprite.setScale(
-                logo_targetSize.x / logo_sprite.getLocalBounds().width,
-                logo_targetSize.y / logo_sprite.getLocalBounds().height
-            );
-            this -> draw( logo_sprite );
 
-            // Drawing widgets
-    
-            // End the current frame
-            this -> display();
+            // Draw the menu
+            auto menu{ state::Menu( this ) };
+        }
     }
 }

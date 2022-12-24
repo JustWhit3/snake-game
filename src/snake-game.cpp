@@ -12,8 +12,8 @@
 //     Headers
 //====================================================
 
-// My headers
-#include <windows/game_window.hpp>
+// Windows
+#include <windows/game.hpp>
 
 //====================================================
 //     main

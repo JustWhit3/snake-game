@@ -15,6 +15,6 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Fetch deps
+# Fetching other deps
 add_subdirectory( SFML )
 add_subdirectory( ptcprint )
