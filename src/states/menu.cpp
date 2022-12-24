@@ -21,6 +21,9 @@
 // Widgets
 #include <widgets/button.hpp>
 
+// STD
+#include <cstdlib>
+
 namespace snake::state{
 
     //====================================================
@@ -62,7 +65,9 @@ namespace snake::state{
     void Menu::drawLogo( window::GameWindow* game_window ) const {
 
         // Creating the texture
-        menu_texture.loadFromFile( "img/logo.png" );
+        if( ! menu_texture.loadFromFile( "img/logo.png" ) ){
+            std::exit( 0 );
+        }
 
         // Creating the sprite
         sf::Sprite logo_sprite;
@@ -78,19 +83,51 @@ namespace snake::state{
     //====================================================
     void Menu::drawWidgets( window::GameWindow* game_window ) const {
 
+        // Common button settings
+        constexpr int32_t x_pos{ 460 };
+        constexpr int32_t width{ 170 };
+        constexpr int32_t height{ 50 };
+        constexpr int32_t text_size{ 20 };
+        const sf::Font font{ this -> font };
+        const sf::Color idleColor{ sf::Color::Green };
+        const sf::Color hoverColor{ sf::Color::Red };
+        const sf::Color activeColor{ sf::Color::Blue };
+
         // Start game button
         auto game_button{ 
             widget::Button( 
-                460, 540, 170, 50, this -> font, "Start Game", 
-                sf::Color::Green, sf::Color::Red, sf::Color::Blue ) 
+                x_pos, 540, width, height, font, "Start Game", 
+                idleColor, hoverColor, activeColor ) 
         };
-        game_button.setTextSize( 20 );
+        game_button.setTextSize( text_size );
         game_button.pack( game_window );
 
         // Scores button
+        auto scores_button{ 
+            widget::Button( 
+                x_pos, 620, width, height, font, "Scores", 
+                idleColor, hoverColor, activeColor ) 
+        };
+        scores_button.setTextSize( text_size );
+        scores_button.pack( game_window );
 
-        // Options button
+        // Settings button
+        auto settings_button{ 
+            widget::Button( 
+                x_pos, 700, width, height, font, "Settings", 
+                idleColor, hoverColor, activeColor ) 
+        };
+        settings_button.setTextSize( text_size );
+        settings_button.pack( game_window );
 
-        // Exit button
+        // Quit button
+        auto quit_button{ 
+            widget::Button( 
+                x_pos, 780, width, height, font, "Quit", 
+                idleColor, hoverColor, activeColor ) 
+        };
+        quit_button.setTextSize( text_size );
+        quit_button.setAction( [ game_window ]{ game_window -> close(); } );
+        quit_button.pack( game_window );
     }
 }

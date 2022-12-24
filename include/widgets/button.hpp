@@ -27,6 +27,7 @@
 
 // STL
 #include <string>
+#include <functional>
 
 namespace snake::widget{
 
@@ -67,6 +68,7 @@ namespace snake::widget{
             void pack( window::GameWindow* target );
             constexpr bool isPressed() const;
             void centering();
+            void setAction( std::function<void()> action );
             
             // Setters
             void setTextSize( int32_t size );
@@ -82,6 +84,7 @@ namespace snake::widget{
             sf::Color idleColor;
             sf::Color hoverColor;
             sf::Color activeColor;
+            std::function<void()> action;
     };
 }
 

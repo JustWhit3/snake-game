@@ -22,6 +22,9 @@
 // SFML
 #include <SFML/Graphics.hpp>
 
+// STD
+#include <cstdlib>
+
 namespace snake::state{
 
     //====================================================
@@ -38,12 +41,22 @@ namespace snake::state{
         // Protected part
         protected:
 
-            // Constructors
+            //====================================================
+            //     State (constructor)
+            //====================================================
+            /**
+             * @brief Constructor of the State class.
+             * 
+             */
             State(){
-                font.loadFromFile( "fonts/source-sans-pro/SourceSansPro-Semibold.otf" );
+
+                // Load the state font
+                if( ! font.loadFromFile( "fonts/source-sans-pro/SourceSansPro-Semibold.otf" ) ){
+                    std::exit( 0 );
+                };
             }
 
-            // Methods
+            // Virtual methods
             virtual void drawWidgets( T* target ) const = 0;
 
             // Variables

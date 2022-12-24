@@ -18,6 +18,9 @@
 // Widgets
 #include <widgets/button.hpp>
 
+// STD
+#include <functional>
+
 namespace snake::widget{
 
     //====================================================
@@ -65,6 +68,9 @@ namespace snake::widget{
 
         // Coloring button
         this -> shape.setFillColor( this -> idleColor );
+
+        // Action settings
+        this -> action = []{};
     }
 
     //====================================================
@@ -115,6 +121,7 @@ namespace snake::widget{
 
             case BTN_ACTIVE:
                 this -> shape.setFillColor( this -> activeColor );
+                this -> action();
                 break;
 
             default:
@@ -177,6 +184,18 @@ namespace snake::widget{
     void Button::setTextSize( int32_t size ){
         this -> text.setCharacterSize( size );
         this -> centering();
+    }
+
+    //====================================================
+    //     setAction
+    //====================================================
+    /**
+     * @brief Function used to set an action which is performed by the button when pressed.
+     * 
+     * @param action The function which should be ran by the button when pressed.
+     */
+    void Button::setAction( std::function<void()> action ){
+        this -> action = action;
     }
 
 }
