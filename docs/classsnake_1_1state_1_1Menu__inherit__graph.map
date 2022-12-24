@@ -1,4 +1,4 @@
 <map id="snake::state::Menu" name="snake::state::Menu">
-<area shape="rect" id="node1" title="Class used to create the main menu." alt="" coords="43,80,174,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,212,32"/>
+<area shape="rect" id="node1" title="Class used to create the main menu." alt="" coords="27,95,158,121"/>
+<area shape="rect" id="node2" href="$classsnake_1_1state_1_1State.html" title=" " alt="" coords="5,5,180,47"/>
 </map>

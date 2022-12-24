@@ -1,7 +1,7 @@
 <map id="include/states/menu.hpp" name="include/states/menu.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="141,5,304,32"/>
-<area shape="rect" id="node2" href="$game_8hpp.html" title=" " alt="" coords="8,80,141,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="165,80,280,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="305,80,437,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="139,5,301,32"/>
+<area shape="rect" id="node2" href="$game_8hpp.html" title=" " alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="163,80,277,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="302,80,434,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="76,155,215,181"/>
 </map>
