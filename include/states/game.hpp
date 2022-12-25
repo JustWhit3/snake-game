@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file menu.hpp
+ * @file game.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-22
+ * @date 2022-12-25
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,8 +12,8 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_MENU_STATE
-#define SNAKE_GAME_MENU_STATE
+#ifndef SNAKE_GAME_GAME_STATE
+#define SNAKE_GAME_GAME_STATE
 
 //====================================================
 //     Headers
@@ -25,19 +25,16 @@
 // States
 #include <states/state.hpp>
 
-// SFML
-#include <SFML/Window.hpp>
-
 namespace snake::state{
 
     //====================================================
-    //     Menu
+    //     Game
     //====================================================
     /**
-     * @brief Class used to create the main menu.
+     * @brief Class used to create the game state.
      * 
      */
-    class Menu: public State<window::GameWindow>{
+    class Game: public State<window::GameWindow>{
 
         //====================================================
         //     Public
@@ -45,19 +42,7 @@ namespace snake::state{
         public:
 
             // Constructors
-            Menu( window::GameWindow* game_window );
-
-        //====================================================
-        //     Private
-        //====================================================
-        private:
-
-            // Methods
-            void drawLogo( window::GameWindow* game_window ) const;
-            void drawWidgets( window::GameWindow* game_window ) const override;
-            
-            // Static variables
-            static sf::Texture menu_texture;
+            Game( window::GameWindow* game_window );
     };
 }
 

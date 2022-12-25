@@ -23,6 +23,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+#include <unordered_map>
+#include <states/state.hpp>
+
 namespace snake::window{
 
     //====================================================
@@ -53,17 +56,9 @@ namespace snake::window{
         );
         this -> setKeyRepeatEnabled( false );
     
-        // Run the main loop
+        // Display the window
         while( this -> isOpen() ){
-
-            // Display window
             runWindow();
-    
-            // Move the snake
-            //if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) ) return;
-            //else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) ) return;
-            //else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) ) return;
-            //else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) ) return;
         }
     }
     
@@ -84,11 +79,10 @@ namespace snake::window{
             switch( game_event.type ){
             
                 // Window closing
-                case sf::Event::Closed:{
+                case sf::Event::Closed:
                     //auto confirm_window{ ConfirmWindow() };
                     this -> close();
                     break;
-                }
                         
                 // Key pressed in window
                 case sf::Event::KeyPressed:
@@ -112,7 +106,7 @@ namespace snake::window{
             }
 
             // Draw the menu
-            auto menu{ state::Menu( this ) };
+            auto menu_state{ state::Menu( this ) };
         }
     }
 }

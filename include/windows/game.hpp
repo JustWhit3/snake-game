@@ -22,6 +22,10 @@
 // SFML
 #include <SFML/Graphics.hpp>
 
+// STD
+#include <string>
+#include <unordered_map>
+
 namespace snake::window{
 
     //====================================================

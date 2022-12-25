@@ -37,7 +37,7 @@ namespace snake::state{
      */
     template <class T>
     class State{
-
+        
         //====================================================
         //     Protected
         //====================================================
@@ -58,8 +58,10 @@ namespace snake::state{
                 };
             }
 
-            // Virtual methods
-            virtual void drawWidgets( T* target ) const = 0;
+            // drawWidgets
+            virtual void drawWidgets( T* target ) const {
+                ( void ) target;
+            };
 
             // Variables
             sf::Font font;

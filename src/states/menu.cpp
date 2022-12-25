@@ -17,12 +17,10 @@
 
 // States
 #include <states/menu.hpp>
+#include <states/game.hpp>
 
 // Widgets
 #include <widgets/button.hpp>
-
-// STD
-#include <cstdlib>
 
 namespace snake::state{
 
@@ -35,23 +33,23 @@ namespace snake::state{
     //     Menu (constructor)
     //====================================================
     /**
-     * @brief Main constructor of the Menu class. It constructs the main menu.
+     * @brief Constructor of the Menu class.
      * 
-     * @param game_window The window to which the frame is drawn.
+     * @param game_window The window to which the state stuff is constructed.
      */
     Menu::Menu( window::GameWindow* game_window ){
-        
-            // Clear the window
-            game_window -> clear( this -> background_color );
 
-            // Drawing images
-            drawLogo( game_window );
+        // Clear the window
+        game_window -> clear( this -> background_color );
 
-            // Drawing widgets
-            drawWidgets( game_window );
-    
-            // End the current frame
-            game_window -> display();
+        // Drawing images
+        drawLogo( game_window );
+
+        // Drawing widgets
+        drawWidgets( game_window );
+
+        // Displaying the window
+        game_window -> display();
     }
 
     //====================================================
@@ -100,6 +98,7 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
         };
         game_button.setTextSize( text_size );
+        game_button.setAction( [ game_window ]{ auto game_state{ state::Game( game_window ) }; } );
         game_button.pack( game_window );
 
         // Scores button
