@@ -1,7 +1,8 @@
 <map id="include/widgets/button.hpp" name="include/widgets/button.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="120,5,296,32"/>
-<area shape="rect" id="node2" href="$game_8hpp.html" title=" " alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="55,155,193,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="214,80,269,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="293,80,371,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="188,5,364,32"/>
+<area shape="rect" id="node2" href="$windows_2game_8hpp.html" title=" " alt="" coords="157,80,291,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="303,155,358,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="366,80,445,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="169,155,279,181"/>
 </map>
