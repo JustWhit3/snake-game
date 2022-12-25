@@ -38,7 +38,9 @@ namespace snake::state{
     template <class T>
     class State{
 
-        // Protected part
+        //====================================================
+        //     Protected
+        //====================================================
         protected:
 
             //====================================================
@@ -61,6 +63,7 @@ namespace snake::state{
 
             // Variables
             sf::Font font;
+            sf::Color background_color{ sf::Color::White };
     };
 }
 

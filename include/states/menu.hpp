@@ -47,14 +47,14 @@ namespace snake::state{
             // Constructors
             Menu( window::GameWindow* game_window );
 
-            // Methods
-            void drawLogo( window::GameWindow* game_window ) const;
-            void drawWidgets( window::GameWindow* game_window ) const override;
-
         //====================================================
         //     Private
         //====================================================
         private:
+
+            // Methods
+            void drawLogo( window::GameWindow* game_window ) const;
+            void drawWidgets( window::GameWindow* game_window ) const override;
 
             // Static variables
             static sf::Texture menu_texture;

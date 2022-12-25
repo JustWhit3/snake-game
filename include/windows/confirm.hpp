@@ -41,13 +41,13 @@ namespace snake::window{
             // Constructors
             ConfirmWindow();
 
-            // Methods
-            void runWindow();
-
         //====================================================
         //     Private
         //====================================================
         private:
+
+            // Methods
+            void runWindow();
 
             // Constants
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };

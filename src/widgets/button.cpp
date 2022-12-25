@@ -20,6 +20,7 @@
 
 // STD
 #include <functional>
+#include <iostream>
 
 namespace snake::widget{
 
@@ -169,7 +170,7 @@ namespace snake::widget{
     void Button::centering(){
         this -> text.setPosition(
             this -> shape.getPosition().x + ( this -> shape.getGlobalBounds().width / 2.f ) - ( this -> text.getGlobalBounds().width / 2.f ),
-            this -> shape.getPosition().y + ( this -> shape.getGlobalBounds().height / 2.f ) - ( this -> text.getGlobalBounds().height / 2.f )
+            this -> shape.getPosition().y + ( this -> shape.getGlobalBounds().height / 2.f ) - ( this -> text.getGlobalBounds().height / 2.f ) - this -> text.getCharacterSize() / 4
         );
     }
 

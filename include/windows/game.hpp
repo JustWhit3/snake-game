@@ -41,16 +41,13 @@ namespace snake::window{
             // Constructors
             GameWindow();
 
-            // Methods
-            void runWindow();
-
-            // Variables
-            sf::Color background_color{ sf::Color::White };
-
         //====================================================
         //     Private
         //====================================================
         private:
+
+            // Methods
+            void runWindow();
 
             // Constants
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };

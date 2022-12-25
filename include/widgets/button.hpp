@@ -53,7 +53,9 @@ namespace snake::widget{
      */
     class Button{
 
-        // Public part
+        //====================================================
+        //     Public
+        //====================================================
         public:
 
             // Constructors
@@ -62,19 +64,23 @@ namespace snake::widget{
                 sf::Font font, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor
             );
 
-            // Functions
-            void render( window::GameWindow* target ) const;
-            void update( const sf::Vector2f mousePos );
+            // Methods
             void pack( window::GameWindow* target );
-            constexpr bool isPressed() const;
-            void centering();
             void setAction( std::function<void()> action );
             
             // Setters
             void setTextSize( int32_t size );
         
-        // Private part
+        //====================================================
+        //     Private
+        //====================================================
         private:
+
+            // Methods
+            void render( window::GameWindow* target ) const;
+            void update( const sf::Vector2f mousePos );
+            constexpr bool isPressed() const;
+            void centering();
 
             // Variables
             uint16_t buttonState;

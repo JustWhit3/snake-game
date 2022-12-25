@@ -42,7 +42,7 @@ namespace snake::state{
     Menu::Menu( window::GameWindow* game_window ){
         
             // Clear the window
-            game_window -> clear( game_window -> background_color );
+            game_window -> clear( this -> background_color );
 
             // Drawing images
             drawLogo( game_window );
@@ -66,7 +66,7 @@ namespace snake::state{
 
         // Creating the texture
         if( ! menu_texture.loadFromFile( "img/logo.png" ) ){
-            std::exit( 0 );
+            game_window -> close();
         }
 
         // Creating the sprite
@@ -84,10 +84,10 @@ namespace snake::state{
     void Menu::drawWidgets( window::GameWindow* game_window ) const {
 
         // Common button settings
-        constexpr int32_t x_pos{ 460 };
-        constexpr int32_t width{ 170 };
+        constexpr int32_t x_pos{ 440 };
+        constexpr int32_t width{ 200 };
         constexpr int32_t height{ 50 };
-        constexpr int32_t text_size{ 20 };
+        constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::Green };
         const sf::Color hoverColor{ sf::Color::Red };
