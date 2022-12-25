@@ -109,14 +109,14 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// Constructors</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classsnake_1_1state_1_1Menu.html#a1f3cb63eda5c4ff0e6ec91a3d875ea8f">Menu</a>( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1state_1_1Menu.html#ab38b5beeb51af5b9a0951a699af98ff5">drawLogo</a>( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1state_1_1Menu.html#acafff55e41746b892ae1f7909f745f2c">drawWidgets</a>( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window ) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//     Private</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">//     Private</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">void</span> drawLogo( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">void</span> drawWidgets( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Static variables</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">static</span> sf::Texture menu_texture;</div>
@@ -126,8 +126,6 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1Menu_html"><div class="ttname"><a href="classsnake_1_1state_1_1Menu.html">snake::state::Menu</a></div><div class="ttdoc">Class used to create the main menu.</div><div class="ttdef"><b>Definition:</b> menu.hpp:40</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1Menu_html_a1f3cb63eda5c4ff0e6ec91a3d875ea8f"><div class="ttname"><a href="classsnake_1_1state_1_1Menu.html#a1f3cb63eda5c4ff0e6ec91a3d875ea8f">snake::state::Menu::Menu</a></div><div class="ttdeci">Menu(window::GameWindow *game_window)</div><div class="ttdoc">Main constructor of the Menu class. It constructs the main menu.</div><div class="ttdef"><b>Definition:</b> menu.cpp:42</div></div>
-<div class="ttc" id="aclasssnake_1_1state_1_1Menu_html_ab38b5beeb51af5b9a0951a699af98ff5"><div class="ttname"><a href="classsnake_1_1state_1_1Menu.html#ab38b5beeb51af5b9a0951a699af98ff5">snake::state::Menu::drawLogo</a></div><div class="ttdeci">void drawLogo(window::GameWindow *game_window) const</div><div class="ttdoc">Method used to draw the image logo.</div><div class="ttdef"><b>Definition:</b> menu.cpp:65</div></div>
-<div class="ttc" id="aclasssnake_1_1state_1_1Menu_html_acafff55e41746b892ae1f7909f745f2c"><div class="ttname"><a href="classsnake_1_1state_1_1Menu.html#acafff55e41746b892ae1f7909f745f2c">snake::state::Menu::drawWidgets</a></div><div class="ttdeci">void drawWidgets(window::GameWindow *game_window) const override</div><div class="ttdef"><b>Definition:</b> menu.cpp:84</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1State_html"><div class="ttname"><a href="classsnake_1_1state_1_1State.html">snake::state::State</a></div><div class="ttdoc">Class used to define base state for the other states.</div><div class="ttdef"><b>Definition:</b> state.hpp:39</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game.hpp:34</div></div>
 <div class="ttc" id="agame_8hpp_html"><div class="ttname"><a href="game_8hpp.html">game.hpp</a></div></div>
