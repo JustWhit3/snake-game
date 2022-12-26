@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classsnake_1_1state_1_1State.html" title="Class used to define base state for the other states." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node1" href="$classsnake_1_1state_1_1State.html" title="Class used to define base state for the other states." alt="" coords="5,31,135,57"/>
+<area shape="rect" id="node2" href="$classsnake_1_1state_1_1Game.html" title="Class used to create the game state." alt="" coords="183,5,316,32"/>
+<area shape="rect" id="node3" href="$classsnake_1_1state_1_1Menu.html" title="Class used to create the main menu." alt="" coords="184,56,315,83"/>
 </map>

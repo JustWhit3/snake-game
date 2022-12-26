@@ -1,0 +1,4 @@
+<map id="snake::window::BaseWindow" name="snake::window::BaseWindow">
+<area shape="rect" id="node1" title="Base window class, with all the things in common with the others." alt="" coords="5,80,195,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="37,5,163,32"/>
+</map>

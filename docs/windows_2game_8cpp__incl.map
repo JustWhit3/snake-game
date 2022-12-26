@@ -1,12 +1,13 @@
 <map id="src/windows/game.cpp" name="src/windows/game.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="275,5,429,32"/>
-<area shape="rect" id="node2" href="$windows_2game_8hpp.html" title=" " alt="" coords="231,155,364,181"/>
-<area shape="rect" id="node3" title=" " alt="" coords="95,229,233,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="454,229,565,256"/>
-<area shape="rect" id="node6" href="$confirm_8hpp.html" title=" " alt="" coords="390,80,533,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="395,155,527,181"/>
-<area shape="rect" id="node8" href="$menu_8hpp.html" title=" " alt="" coords="195,80,314,107"/>
-<area shape="rect" id="node9" href="$state_8hpp.html" title=" " alt="" coords="5,155,120,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="270,229,325,256"/>
-<area shape="rect" id="node10" title=" " alt="" coords="10,229,70,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="309,5,463,32"/>
+<area shape="rect" id="node2" href="$windows_2game_8hpp.html" title=" " alt="" coords="250,155,383,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="89,379,227,405"/>
+<area shape="rect" id="node7" title=" " alt="" coords="487,304,555,331"/>
+<area shape="rect" id="node8" href="$confirm_8hpp.html" title=" " alt="" coords="408,155,551,181"/>
+<area shape="rect" id="node9" href="$menu_8hpp.html" title=" " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node10" href="$states_2game_8hpp.html" title=" " alt="" coords="229,80,348,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="627,80,759,107"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="284,229,413,256"/>
+<area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="149,304,263,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="288,304,343,331"/>
 </map>

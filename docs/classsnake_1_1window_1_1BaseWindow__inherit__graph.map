@@ -1,0 +1,6 @@
+<map id="snake::window::BaseWindow" name="snake::window::BaseWindow">
+<area shape="rect" id="node1" title="Base window class, with all the things in common with the others." alt="" coords="123,80,312,107"/>
+<area shape="rect" id="node3" href="$classsnake_1_1window_1_1ConfirmWindow.html" title="Class used to create the confirm window." alt="" coords="5,155,208,181"/>
+<area shape="rect" id="node4" href="$classsnake_1_1window_1_1GameWindow.html" title="Class used to create the game window." alt="" coords="232,155,427,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="154,5,281,32"/>
+</map>

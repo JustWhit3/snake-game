@@ -1,4 +1,5 @@
 <map id="snake::window::ConfirmWindow" name="snake::window::ConfirmWindow">
-<area shape="rect" id="node1" title="Class used to create the confirm window." alt="" coords="5,80,208,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="64,5,149,32"/>
+<area shape="rect" id="node1" title="Class used to create the confirm window." alt="" coords="5,155,208,181"/>
+<area shape="rect" id="node2" href="$classsnake_1_1window_1_1BaseWindow.html" title="Base window class, with all the things in common with the others." alt="" coords="12,80,201,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="43,5,170,32"/>
 </map>
