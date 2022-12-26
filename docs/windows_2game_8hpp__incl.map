@@ -1,8 +1,9 @@
 <map id="include/windows/game.hpp" name="include/windows/game.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="100,5,279,32"/>
-<area shape="rect" id="node2" href="$base_8hpp.html" title=" " alt="" coords="125,80,254,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="140,5,319,32"/>
+<area shape="rect" id="node2" href="$base_8hpp.html" title=" " alt="" coords="165,80,294,107"/>
 <area shape="rect" id="node3" href="$state_8hpp.html" title=" " alt="" coords="5,155,120,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="40,229,179,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="195,155,250,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="274,155,342,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="195,155,263,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="287,155,334,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="359,155,447,181"/>
 </map>

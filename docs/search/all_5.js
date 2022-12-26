@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['if_23',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'CMakeLists.txt']]]
+  ['if_23',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'if(EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($:&#160;CMakeLists.txt'],['../CMakeLists_8txt.html#abac9bc8ba4e15da0f40cc4e51bbab09e',1,'if(CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$:&#160;CMakeLists.txt']]]
 ];

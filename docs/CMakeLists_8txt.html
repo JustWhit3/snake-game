@@ -74,8 +74,12 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a1167911fa26c3bb48e274860d35ca47e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a1167911fa26c3bb48e274860d35ca47e">cmake_minimum_required</a> (VERSION 3.15) project(snake-game-build-src VERSION 1.0 DESCRIPTION &quot;Build system for snake-game source code.&quot; LANGUAGES CXX) file(TO_CMAKE_PATH &quot;$</td></tr>
 <tr class="separator:a1167911fa26c3bb48e274860d35ca47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memItemLeft" align="right" valign="top">CMakeLists txt LOC_PATH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b">if</a> (EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($</td></tr>
+<tr class="memitem:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memItemLeft" align="right" valign="top">CMakeLists txt LOC_PATH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b">if</a> (EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() <a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a>(CMAKE_CXX_STANDARD 20) <a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a>(CMAKE_CXX_STANDARD_REQUIRED ON) <a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a>(CMAKE_CXX_EXTENSIONS OFF) include_directories($</td></tr>
 <tr class="separator:a2b055f5e6d50d5bc83056fcaf941651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870d1122ac765fcd18f84a6956ca475a"><td class="memItemLeft" align="right" valign="top">include&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a> (APP &quot;snake-game&quot;) add_executable($</td></tr>
+<tr class="separator:a870d1122ac765fcd18f84a6956ca475a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac9bc8ba4e15da0f40cc4e51bbab09e"><td class="memItemLeft" align="right" valign="top">snake game cpp windows game cpp windows confirm cpp states state cpp states menu cpp states game cpp widgets button cpp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CMakeLists_8txt.html#abac9bc8ba4e15da0f40cc4e51bbab09e">if</a> (CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() <a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a>(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() <a class="el" href="CMakeLists_8txt.html#a870d1122ac765fcd18f84a6956ca475a">set</a>(CMAKE_CXX_FLAGS &quot;$</td></tr>
+<tr class="separator:abac9bc8ba4e15da0f40cc4e51bbab09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1167911fa26c3bb48e274860d35ca47e"></a>
@@ -96,8 +100,26 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abac9bc8ba4e15da0f40cc4e51bbab09e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac9bc8ba4e15da0f40cc4e51bbab09e">&#9670;&nbsp;</a></span>if() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">snake game cpp windows game cpp windows confirm cpp states state cpp states menu cpp states game cpp widgets button cpp if </td>
+          <td>(</td>
+          <td class="paramtype">CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b055f5e6d50d5bc83056fcaf941651b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b055f5e6d50d5bc83056fcaf941651b">&#9670;&nbsp;</a></span>if()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b055f5e6d50d5bc83056fcaf941651b">&#9670;&nbsp;</a></span>if() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,6 +128,24 @@ Functions</h2></td></tr>
           <td class="memname">CMakeLists txt LOC_PATH if </td>
           <td>(</td>
           <td class="paramtype">EXISTS &quot;${LOC_PATH}&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a870d1122ac765fcd18f84a6956ca475a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870d1122ac765fcd18f84a6956ca475a">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">include set </td>
+          <td>(</td>
+          <td class="paramtype">APP &quot;snake-game&quot;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>

@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classsnake_1_1window_1_1BaseWindow-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">snake::window::BaseWindow Class Reference</div>  </div>
+<div class="title">snake::window::BaseWindow Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,8 +104,8 @@ Collaboration diagram for snake::window::BaseWindow:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a710da72c23ba9ec45d42a2cf6defa21a"><td class="memItemLeft" align="right" valign="top">const sf::VideoMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">desktop</a> { sf::VideoMode::getDesktopMode() }</td></tr>
 <tr class="separator:a710da72c23ba9ec45d42a2cf6defa21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37dd02536a0cb53357085ad95ca2ac1e"><td class="memItemLeft" align="right" valign="top">std::stack&lt; std::unique_ptr&lt; <a class="el" href="classsnake_1_1state_1_1State.html">state::State</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#a37dd02536a0cb53357085ad95ca2ac1e">states</a></td></tr>
-<tr class="separator:a37dd02536a0cb53357085ad95ca2ac1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d36990771762964fcc117dc84bcd8c"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string_view, std::unique_ptr&lt; <a class="el" href="classsnake_1_1state_1_1State.html">state::State</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#ac3d36990771762964fcc117dc84bcd8c">states</a></td></tr>
+<tr class="separator:ac3d36990771762964fcc117dc84bcd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base window class, with all the things in common with the others. </p>
@@ -124,14 +124,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a37dd02536a0cb53357085ad95ca2ac1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37dd02536a0cb53357085ad95ca2ac1e">&#9670;&nbsp;</a></span>states</h2>
+<a id="ac3d36990771762964fcc117dc84bcd8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d36990771762964fcc117dc84bcd8c">&#9670;&nbsp;</a></span>states</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::stack&lt;std::unique_ptr&lt;<a class="el" href="classsnake_1_1state_1_1State.html">state::State</a>&gt; &gt; snake::window::BaseWindow::states</td>
+          <td class="memname">std::map&lt;std::string_view, std::unique_ptr&lt;<a class="el" href="classsnake_1_1state_1_1State.html">state::State</a>&gt; &gt; snake::window::BaseWindow::states</td>
         </tr>
       </table>
 </div><div class="memdoc">
