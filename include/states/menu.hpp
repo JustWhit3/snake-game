@@ -26,7 +26,7 @@
 #include <states/state.hpp>
 
 // SFML
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 namespace snake::state{
 
@@ -37,7 +37,7 @@ namespace snake::state{
      * @brief Class used to create the main menu.
      * 
      */
-    class Menu: public State<window::GameWindow>{
+    class Menu: public State{
 
         //====================================================
         //     Public
@@ -47,17 +47,20 @@ namespace snake::state{
             // Constructors
             Menu( window::GameWindow* game_window );
 
+            // Methods
+            void drawState() const override;
+
         //====================================================
         //     Private
         //====================================================
         private:
 
             // Methods
-            void drawLogo( window::GameWindow* game_window ) const;
-            void drawWidgets( window::GameWindow* game_window ) const override;
-            
-            // Static variables
-            static sf::Texture menu_texture;
+            void drawLogo() const;
+            void drawWidgets() const override;
+
+            // Variables
+            window::GameWindow* game_window;
     };
 }
 

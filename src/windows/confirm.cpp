@@ -31,15 +31,15 @@ namespace snake::window{
     
         // Initialize window parameters
         this -> create(
-            sf::VideoMode( desktop.height - 500, desktop.height - 500, desktop.bitsPerPixel ), 
+            sf::VideoMode( this -> desktop.height - 500, this -> desktop.height - 500, this -> desktop.bitsPerPixel ), 
             "Quit the game"
         );
     
         // Center thw window in the screen
         this -> setPosition(
             sf::Vector2i(
-                desktop.width * 0.5 - this -> getSize().x * 0.5 + 500, 
-                desktop.height * 0.5 - this -> getSize().y * 0.5 + 700
+                this -> desktop.width * 0.5 - this -> getSize().x * 0.5 + 500, 
+                this -> desktop.height * 0.5 - this -> getSize().y * 0.5 + 700
             ) 
         );
     

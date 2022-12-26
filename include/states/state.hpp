@@ -22,9 +22,6 @@
 // SFML
 #include <SFML/Graphics.hpp>
 
-// STD
-#include <cstdlib>
-
 namespace snake::state{
 
     //====================================================
@@ -35,37 +32,33 @@ namespace snake::state{
      * 
      * @tparam T Type of the target to which the state is drawn into.
      */
-    template <class T>
     class State{
+
+        //====================================================
+        //     Public
+        //====================================================
+        public:
+
+            // Methods
+            virtual void drawState() const = 0;
         
         //====================================================
         //     Protected
         //====================================================
         protected:
 
-            //====================================================
-            //     State (constructor)
-            //====================================================
-            /**
-             * @brief Constructor of the State class.
-             * 
-             */
-            State(){
+            // Constructors
+            State();
 
-                // Load the state font
-                if( ! font.loadFromFile( "fonts/source-sans-pro/SourceSansPro-Semibold.otf" ) ){
-                    std::exit( 0 );
-                };
-            }
-
-            // drawWidgets
-            virtual void drawWidgets( T* target ) const {
-                ( void ) target;
-            };
+            // Methods
+            virtual void drawWidgets() const;
 
             // Variables
             sf::Font font;
             sf::Color background_color{ sf::Color::White };
+
+            // Static variables
+            static sf::Texture menu_texture;
     };
 }
 

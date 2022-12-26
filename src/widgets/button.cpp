@@ -20,7 +20,6 @@
 
 // STD
 #include <functional>
-#include <iostream>
 
 namespace snake::widget{
 
@@ -40,20 +39,20 @@ namespace snake::widget{
      * @param hoverColor Button color when passing with mouse.
      * @param activeColor Button color when clicking
      */
-    Button::Button( 
-                float x, float y, float width, float height, 
-                sf::Font font, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor
-            ){
-            
-        // Setting button state
-        this -> buttonState = BTN_IDLE;
+    Button::Button( float x, float y, float width, float height, sf::Font font, 
+                    std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor ):
+        buttonState( BTN_IDLE ),
+        font( font ),
+        idleColor( idleColor ),
+        hoverColor( hoverColor ),
+        activeColor( activeColor ),
+        action( []{} ){
 
         // Setting button shape
         this -> shape.setPosition( sf::Vector2f( x, y ) );
         this -> shape.setSize( sf::Vector2f( width, height ) );
 
         // Setting button text properties
-        this -> font = font;
         this -> text.setFont( this -> font );
         this -> text.setString( text );
         this -> text.setFillColor( sf::Color::Black );
@@ -62,16 +61,8 @@ namespace snake::widget{
         // Centering the button
         this -> centering();
 
-        // Defining button states
-        this -> idleColor = idleColor;
-        this -> hoverColor = hoverColor;
-        this -> activeColor = activeColor;
-
         // Coloring button
         this -> shape.setFillColor( this -> idleColor );
-
-        // Action settings
-        this -> action = []{};
     }
 
     //====================================================

@@ -19,12 +19,8 @@
 //     Headers
 //====================================================
 
-// SFML
-#include <SFML/Graphics.hpp>
-
-// STD
-#include <string>
-#include <unordered_map>
+// Windows
+#include <windows/base.hpp>
 
 namespace snake::window{
 
@@ -35,7 +31,7 @@ namespace snake::window{
      * @brief Class used to create the game window. 
      * 
      */
-    class GameWindow: public sf::RenderWindow{
+    class GameWindow: public BaseWindow{
 
         //====================================================
         //     Public
@@ -52,9 +48,6 @@ namespace snake::window{
 
             // Methods
             void runWindow();
-
-            // Constants
-            const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
     };
 }
 

@@ -18,13 +18,14 @@
 
 // States
 #include <states/menu.hpp>
+#include <states/game.hpp>
 
 // SFML
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
-#include <unordered_map>
-#include <states/state.hpp>
+// STD
+#include <memory>
 
 namespace snake::window{
 
@@ -39,7 +40,7 @@ namespace snake::window{
     
         // Initialize window parameters
         this -> create(
-            sf::VideoMode( desktop.height, desktop.height, desktop.bitsPerPixel ), 
+            sf::VideoMode( this -> desktop.height, this -> desktop.height, this -> desktop.bitsPerPixel ), 
             "Snake Game"
         );
 
@@ -50,11 +51,14 @@ namespace snake::window{
     
         // Other settings
         this -> setPosition( sf::Vector2i( 
-                desktop.width * 0.5 - this -> getSize().x * 0.5, 
-                desktop.height * 0.5 - this -> getSize().y * 0.5 
+                this -> desktop.width * 0.5 - this -> getSize().x * 0.5, 
+                this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
         this -> setKeyRepeatEnabled( false );
+
+        // Push the Menu state
+        this -> states.push( std::make_unique<state::Menu>( state::Menu( this ) ) );
     
         // Display the window
         while( this -> isOpen() ){
@@ -106,7 +110,7 @@ namespace snake::window{
             }
 
             // Draw the menu
-            auto menu_state{ state::Menu( this ) };
+            states.top() -> drawState();
         }
     }
 }

@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file game.cpp
+ * @file state.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-25
+ * @date 2022-12-26
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,41 +12,41 @@
 //     Headers
 //====================================================
 
-// Windows
-#include <windows/game.hpp>
-
 // States
-#include <states/game.hpp>
+#include <states/state.hpp>
+
+// STD
+#include <cstdlib>
 
 namespace snake::state{
 
     //====================================================
-    //     Game (constructor)
+    //     Static variables
+    //====================================================
+    sf::Texture State::menu_texture;
+
+    //====================================================
+    //     State (constructor)
     //====================================================
     /**
-     * @brief Main constructor of the Game class.
+     * @brief Main constructor of the State class.
      * 
-     * @param game_window The window to which the state is drawn.
      */
-    Game::Game( window::GameWindow* game_window ): 
-        game_window( game_window ){
+    State::State(){
+        if( ! this -> font.loadFromFile( "fonts/source-sans-pro/SourceSansPro-Semibold.otf" ) ){
+            std::exit( 0 );
+        };
     }
 
     //====================================================
-    //     drawState
+    //     drawWidgets
     //====================================================
     /**
-     * @brief Method used to draw the current state.
+     * @brief Method used to draw widgets in the current state.
      * 
      */
-    void Game::drawState() const {
+    void State::drawWidgets() const {
 
-        // Clear the window
-        this -> game_window -> clear( this -> background_color );
-
-        // Do stuff ...
-
-        // Display the state
-        this -> game_window -> display();
     }
+
 }

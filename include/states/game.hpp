@@ -34,7 +34,7 @@ namespace snake::state{
      * @brief Class used to create the game state.
      * 
      */
-    class Game: public State<window::GameWindow>{
+    class Game: public State{
 
         //====================================================
         //     Public
@@ -43,6 +43,17 @@ namespace snake::state{
 
             // Constructors
             Game( window::GameWindow* game_window );
+
+            // Methods
+            void drawState() const override;
+
+        //====================================================
+        //     Private
+        //====================================================
+        private:
+
+            // Variables
+            window::GameWindow* game_window;
     };
 }
 

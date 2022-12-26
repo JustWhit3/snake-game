@@ -22,12 +22,10 @@
 // Widgets
 #include <widgets/button.hpp>
 
-namespace snake::state{
+// STD
+#include <memory>
 
-    //====================================================
-    //     Static variables
-    //====================================================
-    sf::Texture Menu::menu_texture;
+namespace snake::state{
 
     //====================================================
     //     Menu (constructor)
@@ -37,19 +35,30 @@ namespace snake::state{
      * 
      * @param game_window The window to which the state stuff is constructed.
      */
-    Menu::Menu( window::GameWindow* game_window ){
+    Menu::Menu( window::GameWindow* game_window ): 
+        game_window( game_window ){
+    }
+
+    //====================================================
+    //     drawState
+    //====================================================
+    /**
+     * @brief Method used to draw the current state.
+     * 
+     */
+    void Menu::drawState() const {
 
         // Clear the window
-        game_window -> clear( this -> background_color );
+        this -> game_window -> clear( this -> background_color );
 
         // Drawing images
-        drawLogo( game_window );
+        drawLogo();
 
         // Drawing widgets
-        drawWidgets( game_window );
+        drawWidgets();
 
-        // Displaying the window
-        game_window -> display();
+        // Display the state
+        this -> game_window -> display();
     }
 
     //====================================================
@@ -58,13 +67,12 @@ namespace snake::state{
     /**
      * @brief Method used to draw the image logo.
      * 
-     * @param game_window The window to which the frame is drawn.
      */
-    void Menu::drawLogo( window::GameWindow* game_window ) const {
+    void Menu::drawLogo() const {
 
         // Creating the texture
         if( ! menu_texture.loadFromFile( "img/logo.png" ) ){
-            game_window -> close();
+            this -> game_window -> close();
         }
 
         // Creating the sprite
@@ -73,13 +81,17 @@ namespace snake::state{
         logo_sprite.setPosition( sf::Vector2f( 280, 120 ) );
 
         // Drawing the image
-        game_window -> draw( logo_sprite );
+        this -> game_window -> draw( logo_sprite );
     }
 
     //====================================================
     //     drawWidgets
     //====================================================
-    void Menu::drawWidgets( window::GameWindow* game_window ) const {
+    /**
+     * @brief Method used to draw widgets.
+     * 
+     */
+    void Menu::drawWidgets() const {
 
         // Common button settings
         constexpr int32_t x_pos{ 440 };
@@ -98,7 +110,10 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
         };
         game_button.setTextSize( text_size );
-        game_button.setAction( [ game_window ]{ auto game_state{ state::Game( game_window ) }; } );
+        auto game_action = [ this ]{
+            this -> game_window -> states.push( std::make_unique<state::Game>( state::Game( game_window ) ) );
+        };
+        game_button.setAction( game_action );
         game_button.pack( game_window );
 
         // Scores button
@@ -108,7 +123,7 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
         };
         scores_button.setTextSize( text_size );
-        scores_button.pack( game_window );
+        scores_button.pack( this -> game_window );
 
         // Settings button
         auto settings_button{ 
@@ -117,7 +132,7 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
         };
         settings_button.setTextSize( text_size );
-        settings_button.pack( game_window );
+        settings_button.pack( this -> game_window );
 
         // Quit button
         auto quit_button{ 
@@ -126,7 +141,7 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
         };
         quit_button.setTextSize( text_size );
-        quit_button.setAction( [ game_window ]{ game_window -> close(); } );
+        quit_button.setAction( [ this ]{ this -> game_window -> close(); } );
         quit_button.pack( game_window );
     }
 }
