@@ -82,15 +82,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aed3e6b362aa22a893b58476fa85d761b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#aed3e6b362aa22a893b58476fa85d761b">Button</a> (float x, float y, float width, float height, sf::Font font, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor)</td></tr>
-<tr class="memdesc:aed3e6b362aa22a893b58476fa85d761b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main constructor of the button class.  <a href="classsnake_1_1widget_1_1Button.html#aed3e6b362aa22a893b58476fa85d761b">More...</a><br /></td></tr>
-<tr class="separator:aed3e6b362aa22a893b58476fa85d761b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776da0a626a7da9eb56e109e8d3ece4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a776da0a626a7da9eb56e109e8d3ece4a">Button</a> (float x, float y, float width, float height, const sf::Font &amp;font, const std::string &amp;text, const sf::Color &amp;idleColor, const sf::Color &amp;hoverColor, const sf::Color &amp;activeColor)</td></tr>
+<tr class="memdesc:a776da0a626a7da9eb56e109e8d3ece4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main constructor of the button class.  <a href="classsnake_1_1widget_1_1Button.html#a776da0a626a7da9eb56e109e8d3ece4a">More...</a><br /></td></tr>
+<tr class="separator:a776da0a626a7da9eb56e109e8d3ece4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90fe66a25c03769f8d741b47772b9a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a90fe66a25c03769f8d741b47772b9a6c">pack</a> (<a class="el" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a> *target)</td></tr>
 <tr class="memdesc:a90fe66a25c03769f8d741b47772b9a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to draw the button in the target.  <a href="classsnake_1_1widget_1_1Button.html#a90fe66a25c03769f8d741b47772b9a6c">More...</a><br /></td></tr>
 <tr class="separator:a90fe66a25c03769f8d741b47772b9a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8dbc0488f55d410e699a8fb247d7c0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#ac8dbc0488f55d410e699a8fb247d7c0d">setAction</a> (std::function&lt; void()&gt; action)</td></tr>
-<tr class="memdesc:ac8dbc0488f55d410e699a8fb247d7c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to set an action which is performed by the button when pressed.  <a href="classsnake_1_1widget_1_1Button.html#ac8dbc0488f55d410e699a8fb247d7c0d">More...</a><br /></td></tr>
-<tr class="separator:ac8dbc0488f55d410e699a8fb247d7c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637406797aef6ef93bc50897a7d53d65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a637406797aef6ef93bc50897a7d53d65">setAction</a> (const std::function&lt; void()&gt; &amp;action)</td></tr>
+<tr class="memdesc:a637406797aef6ef93bc50897a7d53d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to set an action which is performed by the button when pressed.  <a href="classsnake_1_1widget_1_1Button.html#a637406797aef6ef93bc50897a7d53d65">More...</a><br /></td></tr>
+<tr class="separator:a637406797aef6ef93bc50897a7d53d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a1d7d000a18dcba3d16642e2fbb75f47c">setTextSize</a> (int32_t size)</td></tr>
 <tr class="memdesc:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to set the button text size.  <a href="classsnake_1_1widget_1_1Button.html#a1d7d000a18dcba3d16642e2fbb75f47c">More...</a><br /></td></tr>
 <tr class="separator:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,8 +98,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to create the button widget. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aed3e6b362aa22a893b58476fa85d761b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed3e6b362aa22a893b58476fa85d761b">&#9670;&nbsp;</a></span>Button()</h2>
+<a id="a776da0a626a7da9eb56e109e8d3ece4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776da0a626a7da9eb56e109e8d3ece4a">&#9670;&nbsp;</a></span>Button()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,31 +131,31 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sf::Font&#160;</td>
+          <td class="paramtype">const sf::Font &amp;&#160;</td>
           <td class="paramname"><em>font</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>text</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sf::Color&#160;</td>
+          <td class="paramtype">const sf::Color &amp;&#160;</td>
           <td class="paramname"><em>idleColor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sf::Color&#160;</td>
+          <td class="paramtype">const sf::Color &amp;&#160;</td>
           <td class="paramname"><em>hoverColor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">sf::Color&#160;</td>
+          <td class="paramtype">const sf::Color &amp;&#160;</td>
           <td class="paramname"><em>activeColor</em>&#160;</td>
         </tr>
         <tr>
@@ -211,8 +211,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac8dbc0488f55d410e699a8fb247d7c0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8dbc0488f55d410e699a8fb247d7c0d">&#9670;&nbsp;</a></span>setAction()</h2>
+<a id="a637406797aef6ef93bc50897a7d53d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637406797aef6ef93bc50897a7d53d65">&#9670;&nbsp;</a></span>setAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void snake::widget::Button::setAction </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
