@@ -58,7 +58,9 @@ namespace snake::window{
         this -> setKeyRepeatEnabled( false );
 
         // Push the Menu state
-        this -> states.push( std::make_unique<state::Menu>( state::Menu( this ) ) );
+        //this -> states.push( std::make_unique<state::Menu>( state::Menu( this ) ) );
+
+        this -> states.insert( { "Menu", std::make_unique<state::Menu>( state::Menu( this ) ) } );
     
         // Display the window
         while( this -> isOpen() ){
@@ -84,12 +86,12 @@ namespace snake::window{
             
                 // Window closing
                 case sf::Event::Closed:
-                    //auto confirm_window{ ConfirmWindow() };
-                    this -> close();
+                    eventClosed();
                     break;
                         
                 // Key pressed in window
                 case sf::Event::KeyPressed:
+                    eventKeyPressed( game_event );
                     break;
                     
                 // Window resizing
@@ -109,8 +111,49 @@ namespace snake::window{
                     break;
             }
 
-            // Draw the menu
-            states.top() -> drawState();
+            // Draw the first element of the states map
+            this -> states.begin() -> second -> drawState();
+        }
+    }
+
+    //====================================================
+    //     eventClosed
+    //====================================================
+    /**
+     * @brief Method used to deal with the the event closed case.
+     * 
+     */
+    void GameWindow::eventClosed(){
+
+        // Menu state
+        if( states.begin() -> first == "Menu" ){
+            this -> close();
+        }
+
+        // Game state
+        else if( states.begin() -> first == "Game" ){
+            auto confirm_window{ ConfirmWindow() };
+        }
+    }
+
+    //====================================================
+    //     eventKeyPressed
+    //====================================================
+    /**
+     * @brief Method used to deal with the the event key pressed case.
+     * 
+     */
+    void GameWindow::eventKeyPressed( const sf::Event& event ){
+
+        // Menu state
+        if( states.begin() -> first == "Menu" ){
+            switch( event.key.code ){
+                case sf::Keyboard::Escape: // Esc
+                    this -> close();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

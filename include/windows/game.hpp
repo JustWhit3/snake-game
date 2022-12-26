@@ -48,6 +48,8 @@ namespace snake::window{
 
             // Methods
             void runWindow();
+            void eventClosed() override;
+            void eventKeyPressed( const sf::Event& event ) override;
     };
 }
 

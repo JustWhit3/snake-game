@@ -79,4 +79,26 @@ namespace snake::window{
             }
         }
     }
+
+    //====================================================
+    //     eventClosed
+    //====================================================
+    /**
+     * @brief Method used to deal with the the event closed case.
+     * 
+     */
+    void ConfirmWindow::eventClosed(){
+
+    }
+
+    //====================================================
+    //     eventKeyPressed
+    //====================================================
+    /**
+     * @brief Method used to deal with the the event key pressed case.
+     * 
+     */
+    void ConfirmWindow::eventKeyPressed( const sf::Event& event ){
+        ( void ) event;
+    }
 }

@@ -111,7 +111,7 @@ namespace snake::state{
         };
         game_button.setTextSize( text_size );
         auto game_action = [ this ]{
-            this -> game_window -> states.push( std::make_unique<state::Game>( state::Game( game_window ) ) );
+            this -> game_window -> states.insert( { "Game", std::make_unique<state::Game>( state::Game( game_window ) ) } );
         };
         game_button.setAction( game_action );
         game_button.pack( game_window );

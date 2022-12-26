@@ -26,8 +26,9 @@
 #include <SFML/Graphics.hpp>
 
 // STD
-#include <stack>
 #include <memory>
+#include <map>
+#include <string_view>
 
 namespace snake::window{
 
@@ -49,7 +50,16 @@ namespace snake::window{
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
 
             // Variables
-            std::stack<std::unique_ptr<state::State>> states;
+            std::map<std::string_view, std::unique_ptr<state::State>> states;
+        
+        //====================================================
+        //     Private
+        //====================================================
+        private:
+
+            // Methods
+            virtual void eventClosed() = 0;
+            virtual void eventKeyPressed( const sf::Event& event ) = 0;
     };
 }
 

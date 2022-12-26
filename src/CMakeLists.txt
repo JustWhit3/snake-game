@@ -23,20 +23,16 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 # Include directories
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../include )
 
-# Creating the static library
-add_library( snakegame STATIC
+# Creating the main executable
+set( APP "snake-game" )
+add_executable( ${APP} 
+    snake-game.cpp 
     windows/game.cpp
     windows/confirm.cpp
     states/state.cpp
     states/menu.cpp
     states/game.cpp
-    widgets/button.cpp
-)
-add_library( snakegame::snakegame ALIAS snakegame )
-
-# Creating the main executable
-set( APP "snake-game" )
-add_executable( ${APP} snake-game.cpp )
+    widgets/button.cpp)
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
@@ -45,9 +41,6 @@ else()
     set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder" )
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
-
-# Link game libs
-target_link_libraries( ${APP} PRIVATE snakegame::snakegame )
 
 # Link to SFML
 find_package( SFML 2.5.1 COMPONENTS system window graphics )
