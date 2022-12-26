@@ -39,6 +39,8 @@ namespace snake::state{
         //====================================================
         public:
 
+            virtual ~State();
+
             // Methods
             virtual void drawState() const = 0;
         
@@ -49,6 +51,7 @@ namespace snake::state{
 
             // Constructors
             State();
+
 
             // Methods
             virtual void drawWidgets() const;

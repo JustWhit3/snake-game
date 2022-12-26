@@ -79,20 +79,6 @@ services:
     #      CLANG
     ##########################################
 
-    # clang 8
-    build_clang_8:
-        image: silkeh/clang:8
-        network_mode: bridge
-        volumes:
-            - .:/proj
-        container_name: build
-        command: >
-            bash -c "cd /proj
-            && apt update && apt install -y libx11-dev xorg-dev freeglut3-dev libudev-dev
-            && rm -rf build
-            && cmake -B build
-            && cmake --build build"
-
     # clang 9
     build_clang_9:
         image: silkeh/clang:9

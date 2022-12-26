@@ -59,14 +59,13 @@ namespace snake::widget{
         public:
 
             // Constructors
-            Button( 
-                float x, float y, float width, float height, 
-                sf::Font font, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor
-            );
+            Button( float x, float y, float width, float height, 
+                    const sf::Font& font, const std::string& text, 
+                    const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor );
 
             // Methods
             void pack( window::GameWindow* target );
-            void setAction( std::function<void()> action );
+            void setAction( const std::function<void()>& action );
             
             // Setters
             void setTextSize( int32_t size );

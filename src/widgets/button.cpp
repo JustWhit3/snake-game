@@ -20,6 +20,7 @@
 
 // STD
 #include <functional>
+#include <string>
 
 namespace snake::widget{
 
@@ -39,8 +40,9 @@ namespace snake::widget{
      * @param hoverColor Button color when passing with mouse.
      * @param activeColor Button color when clicking
      */
-    Button::Button( float x, float y, float width, float height, sf::Font font, 
-                    std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor ):
+    Button::Button( float x, float y, float width, float height, 
+                    const sf::Font& font, const std::string& text, 
+                    const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor ):
         buttonState( BTN_IDLE ),
         font( font ),
         idleColor( idleColor ),
@@ -186,7 +188,7 @@ namespace snake::widget{
      * 
      * @param action The function which should be ran by the button when pressed.
      */
-    void Button::setAction( std::function<void()> action ){
+    void Button::setAction( const std::function<void()>& action ){
         this -> action = action;
     }
 
