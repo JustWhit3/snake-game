@@ -55,15 +55,19 @@ namespace snake::window{
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
-        this -> setKeyRepeatEnabled( false );
+        this -> setFramerateLimit( 120 );
+        this -> setVerticalSyncEnabled( false );
 
         // Push the Menu state
-        //this -> states.push( std::make_unique<state::Menu>( state::Menu( this ) ) );
-
         this -> states.insert( { "Menu", std::make_unique<state::Menu>( state::Menu( this ) ) } );
     
         // Display the window
         while( this -> isOpen() ){
+
+            // Update the current delta time
+            this -> dt = this -> dtClock.getElapsedTime().asSeconds();
+
+            // Run the window
             runWindow();
         }
     }

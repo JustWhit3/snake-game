@@ -31,14 +31,19 @@ namespace snake::entity{
      * @brief Class used to construct the base entity.
      * 
      */
-    class Entity: public sf::RectangleShape{
+    class Entity{
 
         //====================================================
-        //     Public
+        //     Protected
         //====================================================
-        public:
+        protected:
 
             // Methods
+            virtual void moveSmoothly( const float dt, const float dir_x, const float dir_y );
+            virtual void update( const float dt );
+
+            // Variables
+            int32_t speed = 0;
     };
 }
 

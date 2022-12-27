@@ -34,7 +34,7 @@ namespace snake::entity{
      * @brief Class used to construct the snake entity.
      * 
      */
-    class Body: public Entity{
+    class Body: public Entity, public sf::RectangleShape{
 
         //====================================================
         //     Public
@@ -43,6 +43,17 @@ namespace snake::entity{
 
             // Constructors
             Body();
+
+            // Methods
+            void update( const float dt ) override;
+
+        //====================================================
+        //     Protected
+        //====================================================
+        protected:
+
+            // Methods
+            void moveSmoothly( const float dt, const float dir_x, const float dir_y ) override;
     };
 }
 

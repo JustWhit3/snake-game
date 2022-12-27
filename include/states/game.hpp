@@ -25,6 +25,9 @@
 // States
 #include <states/state.hpp>
 
+// Entities
+#include <entities/body.hpp>
+
 namespace snake::state{
 
     //====================================================
@@ -45,7 +48,7 @@ namespace snake::state{
             Game( window::GameWindow* game_window );
 
             // Methods
-            void drawState() const override;
+            void drawState() override;
 
         //====================================================
         //     Private
@@ -53,10 +56,11 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawEntities() const;
+            void drawEntities();
 
             // Variables
             window::GameWindow* game_window;
+            entity::Body body;
     };
 }
 

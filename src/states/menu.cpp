@@ -46,7 +46,7 @@ namespace snake::state{
      * @brief Method used to draw the current state.
      * 
      */
-    void Menu::drawState() const {
+    void Menu::drawState() {
 
         // Clear the window
         this -> game_window -> clear( this -> background_color );

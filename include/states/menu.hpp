@@ -48,7 +48,7 @@ namespace snake::state{
             Menu( window::GameWindow* game_window );
 
             // Methods
-            void drawState() const override;
+            void drawState() override;
 
         //====================================================
         //     Private

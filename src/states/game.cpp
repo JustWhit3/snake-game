@@ -42,7 +42,7 @@ namespace snake::state{
      * @brief Method used to draw the current state.
      * 
      */
-    void Game::drawState() const {
+    void Game::drawState() {
 
         // Clear the window
         this -> game_window -> clear( this -> background_color );
@@ -61,10 +61,11 @@ namespace snake::state{
      * @brief Method used to draw the state entities.
      * 
      */
-    void Game::drawEntities() const {
+    void Game::drawEntities() {
         
         // Drawing the snake entity
-        auto snake{ entity::Body() };
-        game_window -> draw( snake );
+        this -> body.update( game_window -> dt );
+        game_window -> draw( this -> body );
+        
     }
 }

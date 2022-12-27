@@ -41,6 +41,9 @@ namespace snake::window{
             // Constructors
             GameWindow();
 
+            // Variables
+            float dt;
+
         //====================================================
         //     Private
         //====================================================
@@ -50,6 +53,9 @@ namespace snake::window{
             void runWindow();
             void eventClosed() override;
             void eventKeyPressed( const sf::Event& event ) override;
+
+            // Variables
+            sf::Clock dtClock;
     };
 }
 

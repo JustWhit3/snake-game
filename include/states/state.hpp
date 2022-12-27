@@ -42,7 +42,7 @@ namespace snake::state{
             virtual ~State();
 
             // Methods
-            virtual void drawState() const = 0;
+            virtual void drawState() = 0;
         
         //====================================================
         //     Protected
