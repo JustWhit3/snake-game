@@ -85,34 +85,41 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     Headers</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Graphics</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Windows</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__window_8hpp.html">windows/base_window.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1window.html">snake::window</a>{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//     GameWindow</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1GameWindow.html">   34</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1window_1_1GameWindow.html">GameWindow</a>: <span class="keyword">public</span> sf::RenderWindow{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1GameWindow.html">   34</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1window_1_1GameWindow.html">GameWindow</a>: <span class="keyword">public</span> <a class="code" href="classsnake_1_1window_1_1BaseWindow.html">BaseWindow</a>{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Public part</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758">GameWindow</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1window_1_1GameWindow.html#aade9d966dfc347443120d61a628cada2">runWindow</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1window_1_1GameWindow.html#aac3397f2a1caecc50fab55333a83f0b4">displayMenuFrame</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Private part</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">const</span> sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            sf::Color background_color{ sf::Color::White };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//     Public</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// Constructors</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758">GameWindow</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">//     Private</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">void</span> runWindow();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">void</span> eventClosed() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> eventKeyPressed( <span class="keyword">const</span> sf::Event&amp; event ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="abase__window_8hpp_html"><div class="ttname"><a href="base__window_8hpp.html">base_window.hpp</a></div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html">snake::window::BaseWindow</a></div><div class="ttdoc">Base window class, with all the things in common with the others.</div><div class="ttdef"><b>Definition:</b> base_window.hpp:42</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:34</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html_a6280d0b57d519bb0fef31faf10f7f758"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758">snake::window::GameWindow::GameWindow</a></div><div class="ttdeci">GameWindow()</div><div class="ttdoc">Default constructor of the class. It creates the game window.</div><div class="ttdef"><b>Definition:</b> game_window.cpp:43</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html_aac3397f2a1caecc50fab55333a83f0b4"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html#aac3397f2a1caecc50fab55333a83f0b4">snake::window::GameWindow::displayMenuFrame</a></div><div class="ttdeci">void displayMenuFrame()</div><div class="ttdef"><b>Definition:</b> game_window.cpp:129</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html_aade9d966dfc347443120d61a628cada2"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html#aade9d966dfc347443120d61a628cada2">snake::window::GameWindow::runWindow</a></div><div class="ttdeci">void runWindow()</div><div class="ttdoc">Method used to run the main window.</div><div class="ttdef"><b>Definition:</b> game_window.cpp:87</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html_a6280d0b57d519bb0fef31faf10f7f758"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758">snake::window::GameWindow::GameWindow</a></div><div class="ttdeci">GameWindow()</div><div class="ttdoc">Default constructor of the class. It creates the game window.</div><div class="ttdef"><b>Definition:</b> game_window.cpp:39</div></div>
 <div class="ttc" id="anamespacesnake_1_1window_html"><div class="ttname"><a href="namespacesnake_1_1window.html">snake::window</a></div><div class="ttdef"><b>Definition:</b> confirm_window.cpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

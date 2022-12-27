@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['game_101',['Game',['../classsnake_1_1state_1_1Game.html#aeaf79aada9481c7ea00a382e87c3591c',1,'snake::state::Game']]],
-  ['gamewindow_102',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow']]]
+  ['gamestate_105',['GameState',['../classsnake_1_1state_1_1GameState.html#a703b87c15f93ee2cd1f0fbed29d6cd98',1,'snake::state::GameState']]],
+  ['gamewindow_106',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow']]]
 ];

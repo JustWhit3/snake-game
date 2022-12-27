@@ -1,4 +1,9 @@
 <map id="include/windows/confirm_window.hpp" name="include/windows/confirm_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="21,95,153,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="147,5,311,47"/>
+<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="139,95,319,121"/>
+<area shape="rect" id="node3" href="$state_8hpp.html" title=" " alt="" coords="5,169,120,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="40,244,179,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="195,169,263,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="287,169,334,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="359,169,447,196"/>
 </map>
