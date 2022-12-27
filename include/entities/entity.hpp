@@ -34,16 +34,26 @@ namespace snake::entity{
     class Entity{
 
         //====================================================
+        //     Public
+        //====================================================
+        public:
+
+            // Variables
+            float speedV = 0.1f;
+
+        //====================================================
         //     Protected
         //====================================================
         protected:
 
             // Methods
-            virtual void moveSmoothly( const float dt, const float dir_x, const float dir_y );
-            virtual void update( const float dt );
+            virtual void moveSmoothly( const float dir_x, const float dir_y ) = 0;
+            virtual void update() = 0;
+
 
             // Variables
-            int32_t speed = 0;
+            float direction_x;
+            float direction_y;
     };
 }
 

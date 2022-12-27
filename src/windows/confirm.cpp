@@ -44,7 +44,13 @@ namespace snake::window{
         );
     
         // Running the window
-        runWindow();
+        while( this -> isOpen() ){
+
+            // Run the window
+            runWindow();
+
+            // Do something...
+        }
     }
     
     //====================================================
@@ -56,26 +62,22 @@ namespace snake::window{
      */
     void ConfirmWindow::runWindow(){
     
-        // Running the main loop
-        while( this -> isOpen() ){
+        // Check events of the main window
+        sf::Event confirm_event;
+        while( this -> pollEvent( confirm_event ) ){
         
-            // Check events of the main window
-            sf::Event confirm_event;
-            while( this -> pollEvent( confirm_event ) ){
+            // Handling different events
+            switch( confirm_event.type ){
             
-                // Handling different events
-                switch( confirm_event.type ){
-                
-                    // Window closing
-                    case sf::Event::Closed:{
-                        this -> close();
-                        break;
-                    }
-    
-                    // Default cases
-                    default:
-                        break;
+                // Window closing
+                case sf::Event::Closed:{
+                    this -> close();
+                    break;
                 }
+
+                // Default cases
+                default:
+                    break;
             }
         }
     }

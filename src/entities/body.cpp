@@ -31,13 +31,10 @@ namespace snake::entity{
 
         // Shape settings
         this -> setSize( sf::Vector2f( 25.0f, 25.0f ) );
-        this -> setFillColor( sf::Color::Green );
+        this -> setFillColor( sf::Color( 0, 204, 102 ) );
         this -> setOutlineColor( sf::Color::Black );
         this -> setOutlineThickness( 2 );
-        this -> setPosition( 530.f, 100.f );
-
-        // Other settings
-        this -> speed = 100;
+        this -> setPosition( 530.f, 900.f );
     }
 
     //====================================================
@@ -50,8 +47,14 @@ namespace snake::entity{
      * @param dir_x X position.
      * @param dir_y Y position.
      */
-    void Body::moveSmoothly( const float dt, const float dir_x, const float dir_y ){
-        this -> move( dir_x * this -> speed * dt, dir_y * this -> speed * dt );
+    void Body::moveSmoothly( const float dir_x, const float dir_y ){
+
+        // Save directions
+        this -> direction_x = dir_x;
+        this -> direction_y = dir_y;
+
+        // Move
+        this -> move( dir_x, dir_y );
     }
 
     //====================================================
@@ -62,21 +65,36 @@ namespace snake::entity{
      * 
      * @param dt The delta time.
      */
-    void Body::update( const float dt ){
+    void Body::update(){
 
-        constexpr float ds = 0.01f;
+        // Default movement
+        if( this -> direction_y < 0 ){
+            this -> moveSmoothly( 0.f, - this -> speedV );
+        }
+        else if( this -> direction_y > 0 ){
+            this -> moveSmoothly( 0.f, this -> speedV );
+        }
+        else if( this -> direction_x < 0 ){
+            this -> moveSmoothly( 0.f, 0.f );
+            this -> moveSmoothly( - this -> speedV, 0.f );
+        }
+        else if( this -> direction_x > 0 ){
+            this -> moveSmoothly( 0.f, 0.f );
+            this -> moveSmoothly( this -> speedV, 0.f );
+        }
 
+        // Key pressed changing direction
         if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) ){
-            this -> moveSmoothly( dt, 0.f, -ds );
+            this -> moveSmoothly( 0.f, - this -> speedV );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) ){
-            this -> moveSmoothly( dt, 0.f, ds );
+            this -> moveSmoothly( 0.f, this -> speedV );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) ){
-            this -> moveSmoothly( dt, ds, 0.f );
+            this -> moveSmoothly( this -> speedV, 0.f );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) ){
-            this -> moveSmoothly( dt, -ds, 0.f );
+            this -> moveSmoothly( - this -> speedV, 0.f );
         }
     }
 }

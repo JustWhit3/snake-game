@@ -45,15 +45,8 @@ namespace snake::entity{
             Body();
 
             // Methods
-            void update( const float dt ) override;
-
-        //====================================================
-        //     Protected
-        //====================================================
-        protected:
-
-            // Methods
-            void moveSmoothly( const float dt, const float dir_x, const float dir_y ) override;
+            void update() override;
+            void moveSmoothly( const float dir_x, const float dir_y ) override;
     };
 }
 

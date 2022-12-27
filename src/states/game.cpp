@@ -33,6 +33,9 @@ namespace snake::state{
      */
     Game::Game( window::GameWindow* game_window ): 
         game_window( game_window ){
+            
+        // Default move up
+        this -> body.moveSmoothly( 0.f, - this -> body.speedV );
     }
 
     //====================================================
@@ -62,10 +65,9 @@ namespace snake::state{
      * 
      */
     void Game::drawEntities() {
-        
-        // Drawing the snake entity
-        this -> body.update( game_window -> dt );
-        game_window -> draw( this -> body );
-        
+
+        // Drawing the snake body entity
+        this -> body.update();
+        game_window -> draw( this -> body );   
     }
 }

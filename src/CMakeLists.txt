@@ -33,7 +33,6 @@ add_executable( ${APP}
     states/menu.cpp
     states/game.cpp
     widgets/button.cpp
-    entities/entity.cpp
     entities/body.cpp
 )
 

@@ -55,20 +55,20 @@ namespace snake::window{
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
-        this -> setFramerateLimit( 120 );
+        //this -> setFramerateLimit( 120 );
         this -> setVerticalSyncEnabled( false );
 
         // Push the Menu state
         this -> states.insert( { "Menu", std::make_unique<state::Menu>( state::Menu( this ) ) } );
-    
+
         // Display the window
         while( this -> isOpen() ){
 
-            // Update the current delta time
-            this -> dt = this -> dtClock.getElapsedTime().asSeconds();
-
-            // Run the window
+            // Run the window event
             runWindow();
+
+            // Draw the first element of the states map
+            this -> states.begin() -> second -> drawState();
         }
     }
     
@@ -114,9 +114,6 @@ namespace snake::window{
                 default:
                     break;
             }
-
-            // Draw the first element of the states map
-            this -> states.begin() -> second -> drawState();
         }
     }
 
