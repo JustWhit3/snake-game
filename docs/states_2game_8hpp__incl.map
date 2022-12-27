@@ -1,10 +1,12 @@
 <map id="include/states/game.hpp" name="include/states/game.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="49,5,212,32"/>
-<area shape="rect" id="node2" href="$windows_2game_8hpp.html" title=" " alt="" coords="147,80,280,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="148,5,311,32"/>
+<area shape="rect" id="node2" href="$windows_2game_8hpp.html" title=" " alt="" coords="163,80,296,107"/>
 <area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="5,229,120,256"/>
-<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="157,155,286,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="40,304,179,331"/>
+<area shape="rect" id="node9" href="$body_8hpp.html" title=" " alt="" coords="425,155,543,181"/>
+<area shape="rect" id="node3" href="$base_8hpp.html" title=" " alt="" coords="165,155,294,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="251,304,389,331"/>
 <area shape="rect" id="node6" title=" " alt="" coords="195,229,263,256"/>
 <area shape="rect" id="node7" title=" " alt="" coords="287,229,334,256"/>
 <area shape="rect" id="node8" title=" " alt="" coords="359,229,447,256"/>
+<area shape="rect" id="node10" href="$entity_8hpp.html" title=" " alt="" coords="521,229,644,256"/>
 </map>

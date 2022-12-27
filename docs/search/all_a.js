@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7estate_60',['~State',['../classsnake_1_1state_1_1State.html#a5feab766bcec6b9a5b26a77dfde92211',1,'snake::state::State']]]
+  ['update_63',['update',['../classsnake_1_1entity_1_1Body.html#a2443ce4dd675cedce37763dd1722fcb8',1,'snake::entity::Body::update()'],['../classsnake_1_1entity_1_1Entity.html#a6a430849459d8a72b18d783baeb31445',1,'snake::entity::Entity::update()']]]
 ];
