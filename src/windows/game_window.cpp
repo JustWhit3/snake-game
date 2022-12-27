@@ -18,14 +18,22 @@
 
 // States
 #include <states/menu_state.hpp>
-#include <states/game_state.hpp>
+#include <states/state.hpp>
 
 // SFML
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Image.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/VideoMode.hpp>
+#include <SFML/Window/WindowStyle.hpp>
 
 // STD
 #include <memory>
+#include <map>
+#include <string>
+#include <string_view> 
+#include <utility>
 
 namespace snake::window{
 

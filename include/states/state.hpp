@@ -20,7 +20,13 @@
 //====================================================
 
 // SFML
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp> 
+#include <SFML/Graphics/Font.hpp>
+
+// Required by IWYU
+namespace sf { 
+    class Texture; 
+}
 
 namespace snake::state{
 

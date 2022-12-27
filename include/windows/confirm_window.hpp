@@ -22,6 +22,11 @@
 // Windows
 #include <windows/base_window.hpp>
 
+// Required by IWYU
+namespace sf { 
+    class Event;
+}
+
 namespace snake::window{
 
     //====================================================

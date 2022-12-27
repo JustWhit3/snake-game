@@ -15,10 +15,12 @@
 // States
 #include <states/state.hpp>
 
+// SFML
+#include <SFML/Graphics/Texture.hpp>
+
 // STD
 #include <cstdlib>
-
-#include <vector>
+#include <memory> 
 
 namespace snake::state{
 

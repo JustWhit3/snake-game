@@ -16,14 +16,25 @@
 #include <windows/game_window.hpp>
 
 // States
+#include "states/state.hpp"
 #include <states/menu_state.hpp>
 #include <states/game_state.hpp>
 
 // Widgets
 #include <widgets/button.hpp>
 
+// SFML
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
+
 // STD
 #include <memory>
+#include <cstdint>
+#include <map>
+#include <string_view>
 
 namespace snake::state{
 
