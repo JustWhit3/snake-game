@@ -25,16 +25,8 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../include )
 
 # Creating the main executable
 set( APP "snake-game" )
-add_executable( ${APP} 
-    snake-game.cpp 
-    windows/game.cpp
-    windows/confirm.cpp
-    states/state.cpp
-    states/menu.cpp
-    states/game.cpp
-    widgets/button.cpp
-    entities/body.cpp
-)
+file( GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/../src/*.cpp )
+add_executable( ${APP} ${SRC_FILES} )
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )

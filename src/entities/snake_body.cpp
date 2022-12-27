@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file body.cpp
+ * @file snake_body.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-27
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,10 +13,12 @@
 //====================================================
 
 // Entities
-#include <entities/body.hpp>
+#include <entities/snake_body.hpp>
 
 // SFML
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp> 
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Keyboard.hpp> 
 
 namespace snake::entity{
 

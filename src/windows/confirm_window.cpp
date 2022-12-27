@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file confirm.cpp
+ * @file confirm_window.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-16
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,7 +13,7 @@
 //====================================================
 
 // Windows
-#include <windows/confirm.hpp>
+#include <windows/confirm_window.hpp>
 
 // SFML
 #include <SFML/Window.hpp>
@@ -31,15 +31,15 @@ namespace snake::window{
     
         // Initialize window parameters
         this -> create(
-            sf::VideoMode( this -> desktop.height - 500, this -> desktop.height - 500, this -> desktop.bitsPerPixel ), 
+            sf::VideoMode( this -> desktop.height - 500.f, this -> desktop.height - 500.f, this -> desktop.bitsPerPixel ), 
             "Quit the game", sf::Style::Titlebar | sf::Style::Close
         );
     
         // Center thw window in the screen
         this -> setPosition(
             sf::Vector2i(
-                this -> desktop.width * 0.5 - this -> getSize().x * 0.5 + 500, 
-                this -> desktop.height * 0.5 - this -> getSize().y * 0.5 + 700
+                this -> desktop.width * 0.5 - this -> getSize().x * 0.5 + 500.f, 
+                this -> desktop.height * 0.5 - this -> getSize().y * 0.5 + 700.f
             ) 
         );
     

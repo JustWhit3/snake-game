@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file menu.hpp
+ * @file menu_state.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-22
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -20,7 +20,7 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
+#include <windows/game_window.hpp>
 
 // States
 #include <states/state.hpp>
@@ -37,7 +37,7 @@ namespace snake::state{
      * @brief Class used to create the main menu.
      * 
      */
-    class Menu: public State{
+    class MenuState: public State{
 
         //====================================================
         //     Public
@@ -45,7 +45,7 @@ namespace snake::state{
         public:
 
             // Constructors
-            Menu( window::GameWindow* game_window );
+            MenuState( window::GameWindow* game_window );
 
             // Methods
             void drawState() override;

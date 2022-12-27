@@ -50,7 +50,6 @@ namespace snake::entity{
             virtual void moveSmoothly( const float dir_x, const float dir_y ) = 0;
             virtual void update() = 0;
 
-
             // Variables
             float direction_x;
             float direction_y;

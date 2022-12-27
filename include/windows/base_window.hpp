@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file base.hpp
+ * @file base_window.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-26
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.

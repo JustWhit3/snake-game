@@ -18,6 +18,8 @@
 // STD
 #include <cstdlib>
 
+#include <vector>
+
 namespace snake::state{
 
     //====================================================

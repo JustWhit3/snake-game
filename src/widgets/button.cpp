@@ -13,7 +13,7 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
+#include <windows/game_window.hpp>
 
 // Widgets
 #include <widgets/button.hpp>

@@ -20,7 +20,7 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
+#include <windows/game_window.hpp>
 
 // SFML
 #include <SFML/Graphics.hpp>

@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file game.cpp
+ * @file game_window.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-19
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,12 +13,12 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
-#include <windows/confirm.hpp>
+#include <windows/game_window.hpp>
+#include <windows/confirm_window.hpp>
 
 // States
-#include <states/menu.hpp>
-#include <states/game.hpp>
+#include <states/menu_state.hpp>
+#include <states/game_state.hpp>
 
 // SFML
 #include <SFML/Window.hpp>
@@ -59,7 +59,7 @@ namespace snake::window{
         this -> setVerticalSyncEnabled( false );
 
         // Push the Menu state
-        this -> states.insert( { "Menu", std::make_unique<state::Menu>( state::Menu( this ) ) } );
+        this -> states.insert( { "Menu", std::make_unique<state::MenuState>( state::MenuState( this ) ) } );
 
         // Display the window
         while( this -> isOpen() ){

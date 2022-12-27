@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file game.cpp
+ * @file game_state.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-25
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,13 +13,13 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
+#include <windows/game_window.hpp>
 
 // States
-#include <states/game.hpp>
+#include <states/game_state.hpp>
 
 // Entities
-#include <entities/body.hpp>
+#include <entities/snake_body.hpp>
 
 namespace snake::state{
 
@@ -31,7 +31,7 @@ namespace snake::state{
      * 
      * @param game_window The window to which the state is drawn.
      */
-    Game::Game( window::GameWindow* game_window ): 
+    GameState::GameState( window::GameWindow* game_window ): 
         game_window( game_window ){
             
         // Default move up
@@ -45,7 +45,7 @@ namespace snake::state{
      * @brief Method used to draw the current state.
      * 
      */
-    void Game::drawState() {
+    void GameState::drawState() {
 
         // Clear the window
         this -> game_window -> clear( this -> background_color );
@@ -64,7 +64,7 @@ namespace snake::state{
      * @brief Method used to draw the state entities.
      * 
      */
-    void Game::drawEntities() {
+    void GameState::drawEntities() {
 
         // Drawing the snake body entity
         this -> body.update();

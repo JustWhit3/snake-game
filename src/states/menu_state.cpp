@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file menu.cpp
+ * @file menu_state.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-22
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,11 +13,11 @@
 //====================================================
 
 // Windows
-#include <windows/game.hpp>
+#include <windows/game_window.hpp>
 
 // States
-#include <states/menu.hpp>
-#include <states/game.hpp>
+#include <states/menu_state.hpp>
+#include <states/game_state.hpp>
 
 // Widgets
 #include <widgets/button.hpp>
@@ -35,7 +35,7 @@ namespace snake::state{
      * 
      * @param game_window The window to which the state stuff is constructed.
      */
-    Menu::Menu( window::GameWindow* game_window ): 
+    MenuState::MenuState( window::GameWindow* game_window ): 
         game_window( game_window ){
     }
 
@@ -46,7 +46,7 @@ namespace snake::state{
      * @brief Method used to draw the current state.
      * 
      */
-    void Menu::drawState() {
+    void MenuState::drawState() {
 
         // Clear the window
         this -> game_window -> clear( this -> background_color );
@@ -68,7 +68,7 @@ namespace snake::state{
      * @brief Method used to draw the image logo.
      * 
      */
-    void Menu::drawLogo() const {
+    void MenuState::drawLogo() const {
 
         // Creating the texture
         if( ! menu_texture.loadFromFile( "img/logo.png" ) ){
@@ -78,7 +78,7 @@ namespace snake::state{
         // Creating the sprite
         sf::Sprite logo_sprite;
         logo_sprite.setTexture( menu_texture, true );
-        logo_sprite.setPosition( sf::Vector2f( 290, 120 ) );
+        logo_sprite.setPosition( sf::Vector2f( 290.f, 120.f ) );
 
         // Drawing the image
         this -> game_window -> draw( logo_sprite );
@@ -91,12 +91,12 @@ namespace snake::state{
      * @brief Method used to draw widgets.
      * 
      */
-    void Menu::drawWidgets() const {
+    void MenuState::drawWidgets() const {
 
         // Common button settings
-        constexpr int32_t x_pos{ 440 };
-        constexpr int32_t width{ 200 };
-        constexpr int32_t height{ 70 };
+        constexpr float x_pos{ 440.f };
+        constexpr float width{ 200.f };
+        constexpr float height{ 70.f };
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::Green };
@@ -106,12 +106,12 @@ namespace snake::state{
         // Start game button
         auto game_button{ 
             widget::Button( 
-                x_pos, 540, width, height, font, "Start Game", 
+                x_pos, 540.f, width, height, font, "Start Game", 
                 idleColor, hoverColor, activeColor ) 
         };
         game_button.setTextSize( text_size );
         auto game_action = [ this ]{
-            this -> game_window -> states.insert( { "Game", std::make_unique<state::Game>( state::Game( game_window ) ) } );
+            this -> game_window -> states.insert( { "Game", std::make_unique<state::GameState>( state::GameState( game_window ) ) } );
         };
         game_button.setAction( game_action );
         game_button.pack( game_window );
@@ -119,7 +119,7 @@ namespace snake::state{
         // Scores button
         auto scores_button{ 
             widget::Button( 
-                x_pos, 620, width, height, font, "Scores", 
+                x_pos, 620.f, width, height, font, "Scores", 
                 idleColor, hoverColor, activeColor ) 
         };
         scores_button.setTextSize( text_size );
@@ -128,7 +128,7 @@ namespace snake::state{
         // Settings button
         auto settings_button{ 
             widget::Button( 
-                x_pos, 700, width, height, font, "Settings", 
+                x_pos, 700.f, width, height, font, "Settings", 
                 idleColor, hoverColor, activeColor ) 
         };
         settings_button.setTextSize( text_size );
@@ -137,7 +137,7 @@ namespace snake::state{
         // Quit button
         auto quit_button{ 
             widget::Button( 
-                x_pos, 780, width, height, font, "Quit", 
+                x_pos, 780.f, width, height, font, "Quit", 
                 idleColor, hoverColor, activeColor ) 
         };
         quit_button.setTextSize( text_size );
