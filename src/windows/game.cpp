@@ -41,7 +41,7 @@ namespace snake::window{
         // Initialize window parameters
         this -> create(
             sf::VideoMode( this -> desktop.height, this -> desktop.height, this -> desktop.bitsPerPixel ), 
-            "Snake Game"
+            "Snake Game", sf::Style::Titlebar | sf::Style::Close
         );
 
         // Setting the icon

@@ -53,15 +53,14 @@ namespace snake::widget{
         // Setting button shape
         this -> shape.setPosition( sf::Vector2f( x, y ) );
         this -> shape.setSize( sf::Vector2f( width, height ) );
+        this -> shape.setOutlineThickness( -5.f );
+        this -> shape.setOutlineColor( sf::Color::Black );
 
         // Setting button text properties
         this -> text.setFont( this -> font );
         this -> text.setString( text );
         this -> text.setFillColor( sf::Color::Black );
         this -> text.setCharacterSize( 12 );
-
-        // Centering the button
-        this -> centering();
 
         // Coloring button
         this -> shape.setFillColor( this -> idleColor );
@@ -149,6 +148,7 @@ namespace snake::widget{
      * @param target The target to which the button is drawn in.
      */
     void Button::pack( window::GameWindow* target ){
+        this -> centering();
         this -> update( target -> mapPixelToCoords( sf::Mouse::getPosition( *target ) ) );
         this -> render( target );
     }
@@ -177,7 +177,6 @@ namespace snake::widget{
      */
     void Button::setTextSize( int32_t size ){
         this -> text.setCharacterSize( size );
-        this -> centering();
     }
 
     //====================================================
@@ -190,6 +189,30 @@ namespace snake::widget{
      */
     void Button::setAction( const std::function<void()>& action ){
         this -> action = action;
+    }
+
+    //====================================================
+    //     setOutlineColor
+    //====================================================
+    /**
+     * @brief Method used to set the outline color of the button.
+     * 
+     * @param color The color to be set.
+     */
+    void Button::setOutlineColor( const sf::Color& color ){
+        this -> shape.setOutlineColor( color );
+    }
+
+    //====================================================
+    //     setOutlineThickness
+    //====================================================
+    /**
+     * @brief Method used to set the outline thickness of the button.
+     * 
+     * @param thickness The outline thickness to be set.
+     */
+    void Button::setOutlineThickness( float thickness ){
+        this -> shape.setOutlineThickness( - thickness );
     }
 
 }

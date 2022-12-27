@@ -18,6 +18,9 @@
 // States
 #include <states/game.hpp>
 
+// Entities
+#include <entities/body.hpp>
+
 namespace snake::state{
 
     //====================================================
@@ -44,9 +47,24 @@ namespace snake::state{
         // Clear the window
         this -> game_window -> clear( this -> background_color );
 
-        // Do stuff ...
+        // Drawing entities
+        drawEntities();
 
         // Display the state
         this -> game_window -> display();
+    }
+
+    //====================================================
+    //     drawEntities
+    //====================================================
+    /**
+     * @brief Method used to draw the state entities.
+     * 
+     */
+    void Game::drawEntities() const {
+        
+        // Drawing the snake entity
+        auto snake{ entity::Body() };
+        game_window -> draw( snake );
     }
 }

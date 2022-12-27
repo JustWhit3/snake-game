@@ -32,7 +32,9 @@ add_executable( ${APP}
     states/state.cpp
     states/menu.cpp
     states/game.cpp
-    widgets/button.cpp)
+    widgets/button.cpp
+    entities/body.cpp
+)
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )

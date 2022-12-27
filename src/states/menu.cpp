@@ -78,7 +78,7 @@ namespace snake::state{
         // Creating the sprite
         sf::Sprite logo_sprite;
         logo_sprite.setTexture( menu_texture, true );
-        logo_sprite.setPosition( sf::Vector2f( 280, 120 ) );
+        logo_sprite.setPosition( sf::Vector2f( 290, 120 ) );
 
         // Drawing the image
         this -> game_window -> draw( logo_sprite );
@@ -96,7 +96,7 @@ namespace snake::state{
         // Common button settings
         constexpr int32_t x_pos{ 440 };
         constexpr int32_t width{ 200 };
-        constexpr int32_t height{ 50 };
+        constexpr int32_t height{ 70 };
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::Green };

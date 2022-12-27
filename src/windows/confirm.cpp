@@ -32,7 +32,7 @@ namespace snake::window{
         // Initialize window parameters
         this -> create(
             sf::VideoMode( this -> desktop.height - 500, this -> desktop.height - 500, this -> desktop.bitsPerPixel ), 
-            "Quit the game"
+            "Quit the game", sf::Style::Titlebar | sf::Style::Close
         );
     
         // Center thw window in the screen

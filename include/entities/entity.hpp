@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file game.hpp
+ * @file entity.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-25
+ * @date 2022-12-27
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,51 +12,33 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_GAME_STATE
-#define SNAKE_GAME_GAME_STATE
+#ifndef SNAKE_GAME_BASE_ENTITY
+#define SNAKE_GAME_BASE_ENTITY
 
 //====================================================
 //     Headers
 //====================================================
 
-// Windows
-#include <windows/game.hpp>
+// SFML
+#include <SFML/Graphics.hpp>
 
-// States
-#include <states/state.hpp>
-
-namespace snake::state{
+namespace snake::entity{
 
     //====================================================
-    //     Game
+    //     Snake
     //====================================================
     /**
-     * @brief Class used to create the game state.
+     * @brief Class used to construct the base entity.
      * 
      */
-    class Game: public State{
+    class Entity: public sf::RectangleShape{
 
         //====================================================
         //     Public
         //====================================================
         public:
 
-            // Constructors
-            Game( window::GameWindow* game_window );
-
             // Methods
-            void drawState() const override;
-
-        //====================================================
-        //     Private
-        //====================================================
-        private:
-
-            // Methods
-            void drawEntities() const;
-
-            // Variables
-            window::GameWindow* game_window;
     };
 }
 
