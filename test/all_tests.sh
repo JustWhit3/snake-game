@@ -8,32 +8,17 @@
 # Empty for the moment...
 
 # Memory tests
-#echo ""
-#echo "======================================================"
-#echo "     MEMORY TESTS"
-#echo "======================================================"
-#echo ""
-#./test/profiling.sh memcheck ./build/examples/osmanip_graphics
+echo ""
+echo "======================================================"
+echo "     MEMORY TESTS"
+echo "======================================================"
+echo ""
+./test/profiling.sh memcheck ./build/src/snake-game
 
 # Threading tests
-#echo ""
-#echo "======================================================"
-#echo "     THREADING TESTS"
-#echo "======================================================"
-#echo ""
-#./test/profiling.sh helgrind ./build/examples/osmanip_graphics
-
-# IWYU tests
-#echo ""
-#echo "======================================================"
-#echo "     IWYU TESTS"
-#echo "======================================================"
-#echo ""
-
-# Cppcheck
 echo ""
 echo "======================================================"
-echo "     CPPCHECK TESTS"
+echo "     THREADING TESTS"
 echo "======================================================"
 echo ""
-cppcheck include/entities/* include/states/* include/widgets/* include/windows/* src/entities/* src/states/* src/widgets/* src/windows/* src/snake-game.cpp
+./test/profiling.sh helgrind ./build/src/snake-game

@@ -34,7 +34,11 @@ if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
 else()
     set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder" )
 endif()
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}" )
+
+# Adding cppcheck properties
+set( cppcheck cppcheck "--enable=warning" "--inconclusive" "--force" "--inline-suppr" )
+set_target_properties( ${APP} PROPERTIES CXX_CPPCHECK ${cppcheck})
 
 # Link to SFML
 find_package( SFML 2.5.1 COMPONENTS system window graphics )
@@ -43,3 +47,4 @@ target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system )
 # Link to ptc-print
 find_package( ptcprint )
 target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )
+
