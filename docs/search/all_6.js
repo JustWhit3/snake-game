@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['main_24',['main',['../snake-game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'snake-game.cpp']]],
-  ['menu_25',['Menu',['../classsnake_1_1state_1_1Menu.html#a1f3cb63eda5c4ff0e6ec91a3d875ea8f',1,'snake::state::Menu::Menu()'],['../classsnake_1_1state_1_1Menu.html',1,'snake::state::Menu']]],
-  ['menu_2ecpp_26',['menu.cpp',['../menu_8cpp.html',1,'']]],
-  ['menu_2ehpp_27',['menu.hpp',['../menu_8hpp.html',1,'']]],
-  ['menu_5ftexture_28',['menu_texture',['../classsnake_1_1state_1_1State.html#afc1e9378f58b7108104907885baaf1ba',1,'snake::state::State']]]
+  ['if_29',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'if(EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($:&#160;CMakeLists.txt'],['../CMakeLists_8txt.html#a2ea79ae993f4749a5c87358a40b95493',1,'if(CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$:&#160;CMakeLists.txt']]]
 ];

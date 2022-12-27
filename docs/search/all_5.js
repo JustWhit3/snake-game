@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['if_23',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'if(EXISTS &quot;${LOC_PATH}&quot;) message(FATAL_ERROR &quot;You cannot build in a source directory (or any directory with &quot; &quot;CMakeLists.txt file). Please make a build subdirectory. Feel free to &quot; &quot;remove CMakeCache.txt and CMakeFiles.&quot;) endif() set(CMAKE_CXX_STANDARD 20) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_CXX_EXTENSIONS OFF) include_directories($:&#160;CMakeLists.txt'],['../CMakeLists_8txt.html#abac9bc8ba4e15da0f40cc4e51bbab09e',1,'if(CMAKE_CXX_COMPILER_ID STREQUAL &quot;MSVC&quot;) set(COMPILE_FLAGS &quot;/Wall /Yd&quot;) else() set(COMPILE_FLAGS &quot;-Wall -Wextra -pedantic -Wno-reorder&quot;) endif() set(CMAKE_CXX_FLAGS &quot;$:&#160;CMakeLists.txt']]]
+  ['game_25',['Game',['../classsnake_1_1state_1_1Game.html#aeaf79aada9481c7ea00a382e87c3591c',1,'snake::state::Game::Game()'],['../classsnake_1_1state_1_1Game.html',1,'snake::state::Game']]],
+  ['game_2ecpp_26',['game.cpp',['../states_2game_8cpp.html',1,'(Global Namespace)'],['../windows_2game_8cpp.html',1,'(Global Namespace)']]],
+  ['game_2ehpp_27',['game.hpp',['../states_2game_8hpp.html',1,'(Global Namespace)'],['../windows_2game_8hpp.html',1,'(Global Namespace)']]],
+  ['gamewindow_28',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow::GameWindow()'],['../classsnake_1_1window_1_1GameWindow.html',1,'snake::window::GameWindow']]]
 ];

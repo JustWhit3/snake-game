@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_44',['update',['../classsnake_1_1widget_1_1Button.html#a420b4a5abaf26f9af1deade1cfb3c3a6',1,'snake::widget::Button']]]
+  ['_7estate_60',['~State',['../classsnake_1_1state_1_1State.html#a5feab766bcec6b9a5b26a77dfde92211',1,'snake::state::State']]]
 ];
