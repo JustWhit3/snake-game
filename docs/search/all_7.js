@@ -5,5 +5,5 @@ var searchData=
   ['menu_2ecpp_33',['menu.cpp',['../menu_8cpp.html',1,'']]],
   ['menu_2ehpp_34',['menu.hpp',['../menu_8hpp.html',1,'']]],
   ['menu_5ftexture_35',['menu_texture',['../classsnake_1_1state_1_1State.html#afc1e9378f58b7108104907885baaf1ba',1,'snake::state::State']]],
-  ['movesmoothly_36',['moveSmoothly',['../classsnake_1_1entity_1_1Body.html#a538812a4193e08bd4d4584e9120d62ae',1,'snake::entity::Body::moveSmoothly()'],['../classsnake_1_1entity_1_1Entity.html#aa038a31c09eb249a5d3a61fe4955d8f2',1,'snake::entity::Entity::moveSmoothly()']]]
+  ['movesmoothly_36',['moveSmoothly',['../classsnake_1_1entity_1_1Body.html#a46f9f84d72e0da335569fd76f5680598',1,'snake::entity::Body::moveSmoothly()'],['../classsnake_1_1entity_1_1Entity.html#ae8937a1bd64c64839bf0d3121bc45478',1,'snake::entity::Entity::moveSmoothly()']]]
 ];

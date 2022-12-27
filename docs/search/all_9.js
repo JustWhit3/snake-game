@@ -17,7 +17,7 @@ var searchData=
   ['snake_5fgame_5fgame_5fstate_52',['SNAKE_GAME_GAME_STATE',['../states_2game_8hpp.html#a1aef41b85c5f01bed25bb80c92500cb1',1,'game.hpp']]],
   ['snake_5fgame_5fgame_5fwindow_53',['SNAKE_GAME_GAME_WINDOW',['../windows_2game_8hpp.html#a731fb438d86e4f08081fb6b04800f867',1,'game.hpp']]],
   ['snake_5fgame_5fmenu_5fstate_54',['SNAKE_GAME_MENU_STATE',['../menu_8hpp.html#a56cdb1d7af4de1ac5013faba703b6cc8',1,'menu.hpp']]],
-  ['speed_55',['speed',['../classsnake_1_1entity_1_1Entity.html#a2ecb95111c891aa4695280a3ac4a2ac6',1,'snake::entity::Entity']]],
+  ['speedv_55',['speedV',['../classsnake_1_1entity_1_1Entity.html#a899add5c3d10eee509e6b667a7abef0b',1,'snake::entity::Entity']]],
   ['state_56',['state',['../namespacesnake_1_1state.html',1,'snake']]],
   ['state_57',['State',['../classsnake_1_1state_1_1State.html',1,'snake::state::State'],['../classsnake_1_1state_1_1State.html#a2501023d18bec3920200b91a963a3552',1,'snake::state::State::State()']]],
   ['state_2ecpp_58',['state.cpp',['../state_8cpp.html',1,'']]],
