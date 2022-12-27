@@ -1,9 +1,11 @@
 <map id="include/windows/confirm_window.hpp" name="include/windows/confirm_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="147,5,311,47"/>
-<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="139,95,319,121"/>
-<area shape="rect" id="node3" href="$state_8hpp.html" title=" " alt="" coords="5,169,120,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="40,244,179,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="195,169,263,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="287,169,334,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="359,169,447,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="385,5,549,47"/>
+<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="377,95,557,121"/>
+<area shape="rect" id="node3" href="$state_8hpp.html" title=" " alt="" coords="131,169,246,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="270,169,409,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="433,169,501,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="525,169,572,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="597,169,685,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,244,177,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="202,244,370,271"/>
 </map>

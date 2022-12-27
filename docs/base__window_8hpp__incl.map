@@ -1,8 +1,10 @@
 <map id="include/windows/base_window.hpp" name="include/windows/base_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="154,5,305,47"/>
-<area shape="rect" id="node2" href="$state_8hpp.html" title=" " alt="" coords="5,95,120,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="40,169,179,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="195,95,263,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="287,95,334,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="359,95,447,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="392,5,543,47"/>
+<area shape="rect" id="node2" href="$state_8hpp.html" title=" " alt="" coords="131,95,246,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="270,95,409,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="433,95,501,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="525,95,572,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="597,95,685,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,177,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="202,169,370,196"/>
 </map>

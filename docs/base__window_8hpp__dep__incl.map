@@ -1,14 +1,14 @@
 <map id="include/windows/base_window.hpp" name="include/windows/base_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="294,5,445,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="322,5,473,47"/>
 <area shape="rect" id="node2" href="$confirm__window_8hpp.html" title=" " alt="" coords="102,95,266,136"/>
-<area shape="rect" id="node5" href="$game__window_8hpp.html" title=" " alt="" coords="477,95,632,136"/>
+<area shape="rect" id="node5" href="$game__window_8hpp.html" title=" " alt="" coords="533,95,688,136"/>
 <area shape="rect" id="node3" href="$confirm__window_8cpp.html" title=" " alt="" coords="5,184,147,225"/>
-<area shape="rect" id="node4" href="$game__window_8cpp.html" title=" " alt="" coords="302,273,509,300"/>
-<area shape="rect" id="node6" href="$snake-game_8cpp.html" title=" " alt="" coords="899,191,1037,218"/>
-<area shape="rect" id="node7" href="$game__state_8cpp.html" title=" " alt="" coords="101,273,277,300"/>
-<area shape="rect" id="node8" href="$menu__state_8cpp.html" title=" " alt="" coords="560,273,736,300"/>
-<area shape="rect" id="node9" href="$button_8cpp.html" title=" " alt="" coords="873,273,1026,300"/>
-<area shape="rect" id="node10" href="$game__state_8hpp.html" title=" " alt="" coords="323,184,461,225"/>
-<area shape="rect" id="node11" href="$menu__state_8hpp.html" title=" " alt="" coords="485,184,624,225"/>
-<area shape="rect" id="node12" href="$button_8hpp.html" title=" " alt="" coords="699,191,875,218"/>
+<area shape="rect" id="node4" href="$game__window_8cpp.html" title=" " alt="" coords="294,273,501,300"/>
+<area shape="rect" id="node6" href="$snake-game_8cpp.html" title=" " alt="" coords="221,191,360,218"/>
+<area shape="rect" id="node7" href="$game__state_8cpp.html" title=" " alt="" coords="967,273,1143,300"/>
+<area shape="rect" id="node8" href="$menu__state_8cpp.html" title=" " alt="" coords="555,273,731,300"/>
+<area shape="rect" id="node9" href="$button_8cpp.html" title=" " alt="" coords="770,273,923,300"/>
+<area shape="rect" id="node10" href="$game__state_8hpp.html" title=" " alt="" coords="899,184,1037,225"/>
+<area shape="rect" id="node11" href="$menu__state_8hpp.html" title=" " alt="" coords="435,184,573,225"/>
+<area shape="rect" id="node12" href="$button_8hpp.html" title=" " alt="" coords="648,191,824,218"/>
 </map>
