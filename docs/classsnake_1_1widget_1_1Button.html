@@ -100,6 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a70f238c7e2777b79e4c8c70e3ce16e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a70f238c7e2777b79e4c8c70e3ce16e62">setOutlineThickness</a> (float thickness)</td></tr>
 <tr class="memdesc:a70f238c7e2777b79e4c8c70e3ce16e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to set the outline thickness of the button.  <a href="classsnake_1_1widget_1_1Button.html#a70f238c7e2777b79e4c8c70e3ce16e62">More...</a><br /></td></tr>
 <tr class="separator:a70f238c7e2777b79e4c8c70e3ce16e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e334cac37d4334a6e3fd60bf97a4d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a7e334cac37d4334a6e3fd60bf97a4d3b">setFocus</a> (const bool focus)</td></tr>
+<tr class="memdesc:a7e334cac37d4334a6e3fd60bf97a4d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to move focus on the button.  <a href="classsnake_1_1widget_1_1Button.html#a7e334cac37d4334a6e3fd60bf97a4d3b">More...</a><br /></td></tr>
+<tr class="separator:a7e334cac37d4334a6e3fd60bf97a4d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316f381970963a54c05907ef8cde4c20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a316f381970963a54c05907ef8cde4c20">map</a> (std::shared_ptr&lt; <a class="el" href="classsnake_1_1widget_1_1Button.html">Button</a> &gt; &amp;btn, const sf::Keyboard::Key &amp;key)</td></tr>
+<tr class="memdesc:a316f381970963a54c05907ef8cde4c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to map two buttons.  <a href="classsnake_1_1widget_1_1Button.html#a316f381970963a54c05907ef8cde4c20">More...</a><br /></td></tr>
+<tr class="separator:a316f381970963a54c05907ef8cde4c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to create the button widget. </p>
@@ -191,6 +197,42 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a316f381970963a54c05907ef8cde4c20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316f381970963a54c05907ef8cde4c20">&#9670;&nbsp;</a></span>map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void snake::widget::Button::map </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsnake_1_1widget_1_1Button.html">Button</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>btn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Keyboard::Key &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function used to map two buttons. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>The button to map with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a90fe66a25c03769f8d741b47772b9a6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90fe66a25c03769f8d741b47772b9a6c">&#9670;&nbsp;</a></span>pack()</h2>
 
@@ -237,6 +279,32 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The function which should be ran by the button when pressed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e334cac37d4334a6e3fd60bf97a4d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e334cac37d4334a6e3fd60bf97a4d3b">&#9670;&nbsp;</a></span>setFocus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void snake::widget::Button::setFocus </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>focus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method used to move focus on the button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">focus</td><td>The focus condition. </td></tr>
   </table>
   </dd>
 </dl>
