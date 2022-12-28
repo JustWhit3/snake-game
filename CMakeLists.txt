@@ -1,6 +1,13 @@
 # Project settings
 cmake_minimum_required( VERSION 3.15 )
 
+# Info about the build type
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+    message( STATUS "Build type: DEBUG" )
+else()
+    message( STATUS "Build type: RELEASE" )
+endif()
+
 project( snake-game-build
     VERSION 1.0
     DESCRIPTION "Build system for snake-game."

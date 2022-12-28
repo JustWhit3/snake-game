@@ -37,8 +37,10 @@ endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}" )
 
 # Adding cppcheck properties
-set( cppcheck cppcheck "--enable=warning" "--inconclusive" "--force" "--inline-suppr" )
-set_target_properties( ${APP} PROPERTIES CXX_CPPCHECK ${cppcheck})
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+    set( cppcheck cppcheck "--enable=warning" "--inconclusive" "--force" "--inline-suppr" )
+    set_target_properties( ${APP} PROPERTIES CXX_CPPCHECK ${cppcheck})
+endif()
 
 # Link to SFML
 find_package( SFML 2.5.1 COMPONENTS system window graphics )
