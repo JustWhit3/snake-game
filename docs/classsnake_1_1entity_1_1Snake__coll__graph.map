@@ -1,0 +1,4 @@
+<map id="snake::entity::Snake" name="snake::entity::Snake">
+<area shape="rect" id="node1" title="Class used to construct the snake entity." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node2" href="$classsnake_1_1entity_1_1Entity.html" title="Class used to construct the base entity." alt="" coords="8,5,140,32"/>
+</map>
