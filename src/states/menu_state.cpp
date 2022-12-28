@@ -9,6 +9,16 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+
+// ptc-print
+#ifdef DEBUG_SNAKE_GAME
+    #define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
+    #define PTC_DISABLE_STD_TYPES_PRINTING
+#endif
+
+//====================================================
 //     Headers
 //====================================================
 
@@ -29,6 +39,11 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Vector2.hpp>
+
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
 
 // STD
 #include <memory>
@@ -116,43 +131,51 @@ namespace snake::state{
 
         // Start game button
         auto game_button{ 
-            widget::Button( 
+            std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 540.f, width, height, font, "Start Game", 
                 idleColor, hoverColor, activeColor ) 
+            )
         };
-        game_button.setTextSize( text_size );
+        game_button -> setTextSize( text_size );
         auto game_action = [ this ]{
-            this -> game_window -> states.insert( { "Game", std::make_unique<state::GameState>( state::GameState( game_window ) ) } );
+            this -> game_window -> states.insert( { "Game", std::make_shared<state::GameState>( state::GameState( game_window ) ) } );
         };
-        game_button.setAction( game_action );
-        game_button.pack( game_window );
+        game_button -> setAction( game_action );
+        game_button -> setFocus( true );
 
         // Scores button
         auto scores_button{ 
-            widget::Button( 
+            std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 620.f, width, height, font, "Scores", 
                 idleColor, hoverColor, activeColor ) 
+            )
         };
-        scores_button.setTextSize( text_size );
-        scores_button.pack( this -> game_window );
+        scores_button -> setTextSize( text_size );      
+        game_button -> map( scores_button, sf::Keyboard::Down );
 
         // Settings button
         auto settings_button{ 
-            widget::Button( 
+            std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 700.f, width, height, font, "Settings", 
                 idleColor, hoverColor, activeColor ) 
+            )
         };
-        settings_button.setTextSize( text_size );
-        settings_button.pack( this -> game_window );
+        settings_button -> setTextSize( text_size );
 
         // Quit button
         auto quit_button{ 
-            widget::Button( 
+            std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 780.f, width, height, font, "Quit", 
                 idleColor, hoverColor, activeColor ) 
+            )
         };
-        quit_button.setTextSize( text_size );
-        quit_button.setAction( [ this ]{ this -> game_window -> close(); } );
-        quit_button.pack( game_window );
+        quit_button -> setTextSize( text_size );
+        quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
+
+        // Pack widgets
+        game_button -> pack( this -> game_window );
+        scores_button -> pack( this -> game_window );
+        settings_button -> pack( this -> game_window );
+        quit_button -> pack( this -> game_window );
     }
 }

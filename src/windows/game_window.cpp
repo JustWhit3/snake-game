@@ -67,7 +67,7 @@ namespace snake::window{
         this -> setVerticalSyncEnabled( false );
 
         // Push the Menu state
-        this -> states.insert( { "Menu", std::make_unique<state::MenuState>( state::MenuState( this ) ) } );
+        this -> states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
 
         // Display the window
         while( this -> isOpen() ){

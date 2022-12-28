@@ -4,6 +4,7 @@ cmake_minimum_required( VERSION 3.15 )
 # Info about the build type
 if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
     message( STATUS "Build type: DEBUG" )
+    add_compile_definitions( DEBUG_SNAKE_GAME )
 else()
     message( STATUS "Build type: RELEASE" )
 endif()

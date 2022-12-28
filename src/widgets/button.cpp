@@ -9,6 +9,16 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+
+// ptc-print
+#ifdef DEBUG_SNAKE_GAME
+    #define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
+    #define PTC_DISABLE_STD_TYPES_PRINTING
+#endif
+
+//====================================================
 //     Headers
 //====================================================
 
@@ -25,6 +35,11 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp> 
+
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
 
 // STD
 #include <functional>
@@ -62,7 +77,9 @@ namespace snake::widget{
         idleColor( idleColor ),
         hoverColor( hoverColor ),
         activeColor( activeColor ),
-        action( []{} ){
+        action( []{} ),
+        command_action( []{} ),
+        focus( false ){
 
         // Setting button shape
         this -> shape.setPosition( sf::Vector2f( x, y ) );
@@ -107,11 +124,11 @@ namespace snake::widget{
         this -> buttonState = BTN_IDLE;
 
         // Hover
-        if( this -> shape.getGlobalBounds().contains( mousePos ) ){
+        if( this -> shape.getGlobalBounds().contains( mousePos ) || this -> focus == true ){
             this -> buttonState = BTN_HOVER;
 
             // Pressed
-            if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
+            if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) || sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
                 this -> buttonState = BTN_ACTIVE;
             }
         }
@@ -229,4 +246,30 @@ namespace snake::widget{
         this -> shape.setOutlineThickness( - thickness );
     }
 
+    //====================================================
+    //     setFocus
+    //====================================================
+    /**
+     * @brief Method used to move focus on the button.
+     * 
+     * @param focus The focus condition.
+     */
+    void Button::setFocus( const bool focus ){
+        this -> focus = focus;
+    }
+
+    //====================================================
+    //     map_btn
+    //====================================================
+    /**
+     * @brief Function used to map two buttons.
+     * 
+     * @param btn The button to map with
+     */
+    void Button::map( std::shared_ptr<Button>& btn, const sf::Keyboard::Key& key ){
+        if( sf::Keyboard::isKeyPressed( key ) && this -> focus ){
+            btn -> focus = true;
+            this -> focus = false;
+        }
+    }
 }

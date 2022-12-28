@@ -71,7 +71,9 @@ namespace snake::widget{
             void setTextSize( int32_t size );
             void setOutlineColor( const sf::Color& color );
             void setOutlineThickness( float thickness );
-        
+            void setFocus( const bool focus );
+            void map( std::shared_ptr<Button>& btn, const sf::Keyboard::Key& key );
+
         //====================================================
         //     Private
         //====================================================
@@ -84,7 +86,6 @@ namespace snake::widget{
             void centering();
 
             // Variables
-            uint16_t buttonState;
             sf::RectangleShape shape;
             sf::Font font;
             sf::Text text;
@@ -92,7 +93,10 @@ namespace snake::widget{
             sf::Color hoverColor;
             sf::Color activeColor;
             std::function<void()> action;
-    };
+            std::function<void()> command_action;
+            bool focus;
+            uint16_t buttonState;
+    };       
 }
 
 #endif

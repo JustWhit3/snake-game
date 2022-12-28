@@ -32,7 +32,11 @@ add_executable( ${APP} ${SRC_FILES} )
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
     set( COMPILE_FLAGS "/Wall /Yd" )
 else()
-    set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder" )
+    if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+        set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder -g" )
+    else()
+        set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder" )
+    endif()
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}" )
 
@@ -49,4 +53,3 @@ target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system )
 # Link to ptc-print
 find_package( ptcprint )
 target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )
-

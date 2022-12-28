@@ -15,6 +15,10 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Fetching other deps
+# Mandatory deps
 add_subdirectory( SFML )
-add_subdirectory( ptcprint )
+
+# Debug deps
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+    add_subdirectory( ptcprint )
+endif()
