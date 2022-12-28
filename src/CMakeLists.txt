@@ -51,5 +51,7 @@ find_package( SFML 2.5.1 COMPONENTS system window graphics )
 target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system )
 
 # Link to ptc-print
-find_package( ptcprint )
-target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+    find_package( ptcprint )
+    target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )
+endif()
