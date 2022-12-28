@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file confirm_window.hpp
+ * @file pause_window.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-16
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -12,8 +12,8 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_CONFIRM_WINDOW
-#define SNAKE_GAME_CONFIRM_WINDOW
+#ifndef SNAKE_GAME_PAUSE_WINDOW
+#define SNAKE_GAME_PAUSE_WINDOW
 
 //====================================================
 //     Headers
@@ -36,7 +36,7 @@ namespace snake::window{
      * @brief Class used to create the confirm window.
      * 
      */
-    class ConfirmWindow: public BaseWindow{
+    class PauseWindow: public BaseWindow{
 
         //====================================================
         //     Public
@@ -44,7 +44,7 @@ namespace snake::window{
         public:
 
             // Constructors
-            ConfirmWindow();
+            PauseWindow();
 
         //====================================================
         //     Private

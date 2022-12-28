@@ -14,7 +14,7 @@
 
 // Windows
 #include <windows/game_window.hpp>
-#include <windows/confirm_window.hpp>
+#include <windows/pause_window.hpp>
 
 // States
 #include <states/menu_state.hpp>
@@ -141,7 +141,7 @@ namespace snake::window{
 
         // Game state
         else if( states.begin() -> first == "Game" ){
-            auto confirm_window{ ConfirmWindow() };
+            auto pause_window{ PauseWindow() };
         }
     }
 

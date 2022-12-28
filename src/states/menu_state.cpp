@@ -63,6 +63,10 @@ namespace snake::state{
      */
     MenuState::MenuState( window::GameWindow* game_window ): 
         game_window( game_window ){
+
+        // Draw widgets
+        this -> drawWidgets();
+
     }
 
     //====================================================
@@ -78,10 +82,11 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Drawing images
-        drawLogo();
+        this -> drawLogo();
 
         // Drawing widgets
-        drawWidgets();
+        this -> setWidgetsKeys();
+        this -> packWidgets();
 
         // Display the state
         this -> game_window -> display();
@@ -114,12 +119,12 @@ namespace snake::state{
     //     drawWidgets
     //====================================================
     /**
-     * @brief Method used to draw widgets.
+     * @brief Method used to draw widgets in the current state.
      * 
      */
-    void MenuState::drawWidgets() const {
-
-        // Common button settings
+    void MenuState::drawWidgets() {
+        
+        // Constants
         constexpr float x_pos{ 440.f };
         constexpr float width{ 200.f };
         constexpr float height{ 70.f };
@@ -129,53 +134,108 @@ namespace snake::state{
         const sf::Color hoverColor{ sf::Color::Red };
         const sf::Color activeColor{ sf::Color::Blue };
 
-        // Start game button
-        auto game_button{ 
+        // Game button
+        this -> game_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 540.f, width, height, font, "Start Game", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
-        game_button -> setTextSize( text_size );
         auto game_action = [ this ]{
-            this -> game_window -> states.insert( { "Game", std::make_shared<state::GameState>( state::GameState( game_window ) ) } );
+            this -> game_window -> states.insert( 
+                { "Game", std::make_shared<state::GameState>( state::GameState( game_window ) ) } 
+            );
         };
-        game_button -> setAction( game_action );
-        game_button -> setFocus( true );
+        this -> game_button -> setAction( game_action );
+        this -> game_button -> setTextSize( text_size );
+        this -> game_button -> setFocus( true );
 
         // Scores button
-        auto scores_button{ 
+        this -> scores_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 620.f, width, height, font, "Scores", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
-        scores_button -> setTextSize( text_size );      
-        game_button -> map( scores_button, sf::Keyboard::Down );
-
+        this -> scores_button -> setTextSize( text_size ); 
+        
         // Settings button
-        auto settings_button{ 
+        this -> settings_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 700.f, width, height, font, "Settings", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
-        settings_button -> setTextSize( text_size );
+        this -> settings_button -> setTextSize( text_size );
 
         // Quit button
-        auto quit_button{ 
+        this -> quit_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
                 x_pos, 780.f, width, height, font, "Quit", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
-        quit_button -> setTextSize( text_size );
-        quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
+        this -> quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
+        this -> quit_button -> setTextSize( text_size );
+    }
 
-        // Pack widgets
-        game_button -> pack( this -> game_window );
-        scores_button -> pack( this -> game_window );
-        settings_button -> pack( this -> game_window );
-        quit_button -> pack( this -> game_window );
+    //====================================================
+    //     setWidgets
+    //====================================================
+    /**
+     * @brief Method used to set widgets in the current state.
+     * 
+     */
+    void MenuState::setWidgetsKeys() const {
+
+        // Map game button to scores button
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && game_button -> focus ){
+            game_button -> setFocus( false );
+            scores_button -> setFocus( true );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && scores_button -> focus ){
+            game_button -> setFocus( true );
+            scores_button -> setFocus( false );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+
+        // Map scores button to settings button
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && scores_button -> focus ){
+            scores_button -> setFocus( false );
+            settings_button -> setFocus( true );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && settings_button -> focus ){
+            scores_button -> setFocus( true );
+            settings_button -> setFocus( false );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+
+        // Map settings button to quit button
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && settings_button -> focus ){
+            settings_button -> setFocus( false );
+            quit_button -> setFocus( true );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && quit_button -> focus ){
+            settings_button -> setFocus( true );
+            quit_button -> setFocus( false );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+    }
+
+    //====================================================
+    //     packWidgets
+    //====================================================
+    /**
+     * @brief Method used to pack widgets in the current state.
+     * 
+     */
+    void MenuState::packWidgets() const {
+        this -> game_button -> pack( this -> game_window );
+        this -> scores_button -> pack( this -> game_window );
+        this -> settings_button -> pack( this -> game_window );
+        this -> quit_button -> pack( this -> game_window );
     }
 }

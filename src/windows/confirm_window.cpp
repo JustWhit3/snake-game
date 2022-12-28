@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file confirm_window.cpp
+ * @file pause_window.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-16
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,7 +13,7 @@
 //====================================================
 
 // Windows
-#include <windows/confirm_window.hpp>
+#include <windows/pause_window.hpp>
 
 // SFML
 #include <SFML/System/Vector2.hpp>
@@ -30,7 +30,7 @@ namespace snake::window{
      * @brief Default constructor of the class. It creates the confirm window.
      * 
      */
-    ConfirmWindow::ConfirmWindow(){
+    PauseWindow::PauseWindow(){
     
         // Initialize window parameters
         this -> create(
@@ -63,7 +63,7 @@ namespace snake::window{
      * @brief Method used to run the main window.
      * 
      */
-    void ConfirmWindow::runWindow(){
+    void PauseWindow::runWindow(){
     
         // Check events of the main window
         sf::Event confirm_event;
@@ -92,7 +92,7 @@ namespace snake::window{
      * @brief Method used to deal with the the event closed case.
      * 
      */
-    void ConfirmWindow::eventClosed(){
+    void PauseWindow::eventClosed(){
 
     }
 
@@ -103,7 +103,7 @@ namespace snake::window{
      * @brief Method used to deal with the the event key pressed case.
      * 
      */
-    void ConfirmWindow::eventKeyPressed( const sf::Event& event ){
+    void PauseWindow::eventKeyPressed( const sf::Event& event ){
         ( void ) event;
     }
 }

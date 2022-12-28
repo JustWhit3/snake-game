@@ -257,19 +257,4 @@ namespace snake::widget{
     void Button::setFocus( const bool focus ){
         this -> focus = focus;
     }
-
-    //====================================================
-    //     map_btn
-    //====================================================
-    /**
-     * @brief Function used to map two buttons.
-     * 
-     * @param btn The button to map with
-     */
-    void Button::map( std::shared_ptr<Button>& btn, const sf::Keyboard::Key& key ){
-        if( sf::Keyboard::isKeyPressed( key ) && this -> focus ){
-            btn -> focus = true;
-            this -> focus = false;
-        }
-    }
 }

@@ -23,6 +23,9 @@
 #include <SFML/Graphics/Color.hpp> 
 #include <SFML/Graphics/Font.hpp>
 
+// STD
+#include <cstdint>
+
 // Required by IWYU
 namespace sf { 
     class Texture; 
@@ -60,14 +63,19 @@ namespace snake::state{
 
 
             // Methods
-            virtual void drawWidgets() const;
+            virtual void drawWidgets();
+            virtual void setWidgetsKeys() const;
+            virtual void packWidgets() const;
 
             // Variables
             sf::Font font;
-            sf::Color background_color{ sf::Color::White };
 
             // Static variables
             static sf::Texture menu_texture;
+
+            // Constants
+            sf::Color background_color{ sf::Color::White };
+            static constexpr uint16_t waiting_time = 230;
     };
 }
 

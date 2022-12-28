@@ -25,6 +25,9 @@
 // States
 #include <states/state.hpp>
 
+// Widgets
+#include <widgets/button.hpp>
+
 // SFML
 #include <SFML/Graphics.hpp>
 
@@ -57,10 +60,16 @@ namespace snake::state{
 
             // Methods
             void drawLogo() const;
-            void drawWidgets() const override;
+            void drawWidgets() override;
+            void setWidgetsKeys() const override;
+            void packWidgets() const override;
 
             // Variables
             window::GameWindow* game_window;
+            std::shared_ptr<widget::Button> quit_button;
+            std::shared_ptr<widget::Button> game_button;
+            std::shared_ptr<widget::Button> scores_button;
+            std::shared_ptr<widget::Button> settings_button;
     };
 }
 

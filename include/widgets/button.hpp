@@ -72,7 +72,9 @@ namespace snake::widget{
             void setOutlineColor( const sf::Color& color );
             void setOutlineThickness( float thickness );
             void setFocus( const bool focus );
-            void map( std::shared_ptr<Button>& btn, const sf::Keyboard::Key& key );
+
+            // Variables
+            bool focus;
 
         //====================================================
         //     Private
@@ -94,7 +96,6 @@ namespace snake::widget{
             sf::Color activeColor;
             std::function<void()> action;
             std::function<void()> command_action;
-            bool focus;
             uint16_t buttonState;
     };       
 }
