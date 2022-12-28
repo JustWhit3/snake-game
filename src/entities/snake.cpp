@@ -2,7 +2,7 @@
 //     File data
 //====================================================
 /**
- * @file snake_body.cpp
+ * @file snake.cpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
  * @date 2022-12-27
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
@@ -13,7 +13,7 @@
 //====================================================
 
 // Entities
-#include <entities/snake_body.hpp>
+#include <entities/snake.hpp>
 
 // SFML
 #include <SFML/Graphics/Color.hpp> 
@@ -29,14 +29,14 @@ namespace snake::entity{
      * @brief Constructor of the body class.
      * 
      */
-    Body::Body(){
+    Snake::Snake(  ){
 
         // Shape settings
-        this -> setSize( sf::Vector2f( 25.0f, 25.0f ) );
-        this -> setFillColor( sf::Color( 0, 204, 102 ) );
-        this -> setOutlineColor( sf::Color::Black );
-        this -> setOutlineThickness( 2 );
-        this -> setPosition( 530.f, 900.f );
+        this -> body.setSize( sf::Vector2f( 25.0f, 25.0f ) );
+        this -> body.setFillColor( sf::Color( 0, 204, 102 ) );
+        this -> body.setOutlineColor( sf::Color::Black );
+        this -> body.setOutlineThickness( 2 );
+        this -> body.setPosition( 530.f, 900.f );
     }
 
     //====================================================
@@ -49,14 +49,14 @@ namespace snake::entity{
      * @param dir_x X position.
      * @param dir_y Y position.
      */
-    void Body::moveSmoothly( const float dir_x, const float dir_y ){
+    void Snake::moveSmoothly( const float dir_x, const float dir_y ){
 
         // Save directions
         this -> direction_x = dir_x;
         this -> direction_y = dir_y;
 
         // Move
-        this -> move( dir_x, dir_y );
+        this -> body.move( dir_x, dir_y );
     }
 
     //====================================================
@@ -67,7 +67,7 @@ namespace snake::entity{
      * 
      * @param dt The delta time.
      */
-    void Body::update(){
+    void Snake::update(){
 
         // Default movement
         if( this -> direction_y < 0 ){
@@ -98,5 +98,16 @@ namespace snake::entity{
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) ){
             this -> moveSmoothly( - this -> speedV, 0.f );
         }
+    }
+
+    //====================================================
+    //     draw
+    //====================================================
+    /**
+     * @brief Method used to draw the entity.
+     * 
+     */
+    void Snake::draw( window::GameWindow* game_window ) const {
+        game_window -> draw( body );
     }
 }

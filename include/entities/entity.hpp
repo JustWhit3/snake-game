@@ -19,8 +19,8 @@
 //     Headers
 //====================================================
 
-// SFML
-#include <SFML/Graphics.hpp>
+// Windows
+#include <windows/game_window.hpp>
 
 namespace snake::entity{
 
@@ -38,21 +38,9 @@ namespace snake::entity{
         //====================================================
         public:
 
-            // Variables
-            float speedV = 0.1f;
-
-        //====================================================
-        //     Protected
-        //====================================================
-        protected:
-
             // Methods
-            virtual void moveSmoothly( const float dir_x, const float dir_y ) = 0;
             virtual void update() = 0;
-
-            // Variables
-            float direction_x;
-            float direction_y;
+            virtual void draw( window::GameWindow* game_window ) const = 0;
     };
 }
 

@@ -22,5 +22,4 @@ int main(){
 
     // Running the app
     auto game_window{ snake::window::GameWindow() };
-    
 }

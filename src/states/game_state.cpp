@@ -19,7 +19,7 @@
 #include <states/game_state.hpp>
 
 // Entities
-#include <entities/snake_body.hpp>
+#include <entities/snake.hpp>
 
 namespace snake::state{
 
@@ -35,7 +35,7 @@ namespace snake::state{
         game_window( game_window ){
             
         // Default move up
-        this -> body.moveSmoothly( 0.f, - this -> body.speedV );
+        this -> snake.moveSmoothly( 0.f, - this -> snake.speedV );
     }
 
     //====================================================
@@ -67,7 +67,7 @@ namespace snake::state{
     void GameState::drawEntities() {
 
         // Drawing the snake body entity
-        this -> body.update();
-        game_window -> draw( this -> body );   
+        this -> snake.update();   
+        snake.draw( this -> game_window );
     }
 }

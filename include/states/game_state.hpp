@@ -26,7 +26,7 @@
 #include <states/state.hpp>
 
 // Entities
-#include <entities/snake_body.hpp>
+#include <entities/snake.hpp>
 
 namespace snake::state{
 
@@ -60,7 +60,7 @@ namespace snake::state{
 
             // Variables
             window::GameWindow* game_window;
-            entity::Body body;
+            entity::Snake snake;
     };
 }
 
