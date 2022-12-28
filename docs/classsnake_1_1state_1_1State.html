@@ -106,9 +106,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2501023d18bec3920200b91a963a3552"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a2501023d18bec3920200b91a963a3552">State</a> ()</td></tr>
 <tr class="memdesc:a2501023d18bec3920200b91a963a3552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main constructor of the <a class="el" href="classsnake_1_1state_1_1State.html" title="Class used to define base state for the other states.">State</a> class.  <a href="classsnake_1_1state_1_1State.html#a2501023d18bec3920200b91a963a3552">More...</a><br /></td></tr>
 <tr class="separator:a2501023d18bec3920200b91a963a3552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b0d664b84e18509316a88c3285b1d8d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a4b0d664b84e18509316a88c3285b1d8d">drawWidgets</a> () const</td></tr>
-<tr class="memdesc:a4b0d664b84e18509316a88c3285b1d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to draw widgets in the current state.  <a href="classsnake_1_1state_1_1State.html#a4b0d664b84e18509316a88c3285b1d8d">More...</a><br /></td></tr>
-<tr class="separator:a4b0d664b84e18509316a88c3285b1d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7941fe75ecdf2b0ebae38bcad37f20"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a0e7941fe75ecdf2b0ebae38bcad37f20">drawWidgets</a> ()</td></tr>
+<tr class="memdesc:a0e7941fe75ecdf2b0ebae38bcad37f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to draw widgets in the current state.  <a href="classsnake_1_1state_1_1State.html#a0e7941fe75ecdf2b0ebae38bcad37f20">More...</a><br /></td></tr>
+<tr class="separator:a0e7941fe75ecdf2b0ebae38bcad37f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0067af0e1512f8415e4f9e8570e37813"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a0067af0e1512f8415e4f9e8570e37813">setWidgetsKeys</a> () const</td></tr>
+<tr class="memdesc:a0067af0e1512f8415e4f9e8570e37813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to set widgets keyboard properties in the current state.  <a href="classsnake_1_1state_1_1State.html#a0067af0e1512f8415e4f9e8570e37813">More...</a><br /></td></tr>
+<tr class="separator:a0067af0e1512f8415e4f9e8570e37813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1790066f9b012b3a8211f4ca4831fc63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a1790066f9b012b3a8211f4ca4831fc63">packWidgets</a> () const</td></tr>
+<tr class="memdesc:a1790066f9b012b3a8211f4ca4831fc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to pack widgets in the current state.  <a href="classsnake_1_1state_1_1State.html#a1790066f9b012b3a8211f4ca4831fc63">More...</a><br /></td></tr>
+<tr class="separator:a1790066f9b012b3a8211f4ca4831fc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -121,6 +127,8 @@ Protected Attributes</h2></td></tr>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:afc1e9378f58b7108104907885baaf1ba"><td class="memItemLeft" align="right" valign="top">static sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#afc1e9378f58b7108104907885baaf1ba">menu_texture</a></td></tr>
 <tr class="separator:afc1e9378f58b7108104907885baaf1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d61890e1075c0a0e0709f9cf141aec"><td class="memItemLeft" align="right" valign="top">static constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a95d61890e1075c0a0e0709f9cf141aec">waiting_time</a> = 230</td></tr>
+<tr class="separator:a95d61890e1075c0a0e0709f9cf141aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to define base state for the other states. </p>
@@ -213,8 +221,8 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b0d664b84e18509316a88c3285b1d8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b0d664b84e18509316a88c3285b1d8d">&#9670;&nbsp;</a></span>drawWidgets()</h2>
+<a id="a0e7941fe75ecdf2b0ebae38bcad37f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7941fe75ecdf2b0ebae38bcad37f20">&#9670;&nbsp;</a></span>drawWidgets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,6 +232,33 @@ Static Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void snake::state::State::drawWidgets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method used to draw widgets in the current state. </p>
+
+</div>
+</div>
+<a id="a1790066f9b012b3a8211f4ca4831fc63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1790066f9b012b3a8211f4ca4831fc63">&#9670;&nbsp;</a></span>packWidgets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void snake::state::State::packWidgets </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -236,7 +271,34 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method used to draw widgets in the current state. </p>
+<p>Method used to pack widgets in the current state. </p>
+
+</div>
+</div>
+<a id="a0067af0e1512f8415e4f9e8570e37813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0067af0e1512f8415e4f9e8570e37813">&#9670;&nbsp;</a></span>setWidgetsKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void snake::state::State::setWidgetsKeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method used to set widgets keyboard properties in the current state. </p>
 
 </div>
 </div>
@@ -301,6 +363,28 @@ Static Protected Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95d61890e1075c0a0e0709f9cf141aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d61890e1075c0a0e0709f9cf141aec">&#9670;&nbsp;</a></span>waiting_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t snake::state::State::waiting_time = 230</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
