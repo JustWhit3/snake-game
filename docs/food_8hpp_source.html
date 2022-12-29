@@ -108,28 +108,31 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// Methods</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Food.html#ae2cbd55e74901cfa107ed7f680cd1809">draw</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">//     private</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            sf::CircleShape food;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">const</span> sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">const</span> sf::VideoMode mode{ sf::VideoMode( </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keyword">this</span> -&gt; desktop.height, this -&gt; desktop.height, this -&gt; desktop.bitsPerPixel )</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> bound{ <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( mode.height - mode.height / 10 ) };</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Food.html#a095133afdb459230565653df57db0327">respawn</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classsnake_1_1entity_1_1Food.html#a0ed77f260b4def38545785ee1250da2e">   52</a></span>&#160;            sf::CircleShape <a class="code" href="classsnake_1_1entity_1_1Food.html#a0ed77f260b4def38545785ee1250da2e">food</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//     private</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">const</span> sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">const</span> sf::VideoMode mode{ sf::VideoMode( </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keyword">this</span> -&gt; desktop.height, this -&gt; desktop.height, this -&gt; desktop.bitsPerPixel )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">int</span> bound{ <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( mode.height - mode.height / 10 ) };</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html">snake::entity::Entity</a></div><div class="ttdoc">Class used to construct the base entity.</div><div class="ttdef"><b>Definition:</b> entity.hpp:34</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_ae70cad19cd624c9548856808a2667bb4"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4">snake::entity::Entity::game_window</a></div><div class="ttdeci">window::GameWindow * game_window</div><div class="ttdef"><b>Definition:</b> entity.hpp:54</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html">snake::entity::Food</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> food.hpp:37</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Food_html_a095133afdb459230565653df57db0327"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html#a095133afdb459230565653df57db0327">snake::entity::Food::respawn</a></div><div class="ttdeci">void respawn()</div><div class="ttdoc">Method used to respawn food when there is collision between snake and itself.</div><div class="ttdef"><b>Definition:</b> food.cpp:80</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Food_html_a0ed77f260b4def38545785ee1250da2e"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html#a0ed77f260b4def38545785ee1250da2e">snake::entity::Food::food</a></div><div class="ttdeci">sf::CircleShape food</div><div class="ttdef"><b>Definition:</b> food.hpp:52</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html_a4ec897d8df22349be8ff080d9278d205"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html#a4ec897d8df22349be8ff080d9278d205">snake::entity::Food::Food</a></div><div class="ttdeci">Food(window::GameWindow *game_window)</div><div class="ttdoc">Constructor of the food class.</div><div class="ttdef"><b>Definition:</b> food.cpp:48</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html_ae2cbd55e74901cfa107ed7f680cd1809"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html#ae2cbd55e74901cfa107ed7f680cd1809">snake::entity::Food::draw</a></div><div class="ttdeci">void draw() const override</div><div class="ttdoc">Method used to draw the entity.</div><div class="ttdef"><b>Definition:</b> food.cpp:69</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:39</div></div>

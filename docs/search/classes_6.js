@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['snake_93',['Snake',['../classsnake_1_1entity_1_1Snake.html',1,'snake::entity']]],
-  ['state_94',['State',['../classsnake_1_1state_1_1State.html',1,'snake::state']]]
+  ['snake_97',['Snake',['../classsnake_1_1entity_1_1Snake.html',1,'snake::entity']]],
+  ['state_98',['State',['../classsnake_1_1state_1_1State.html',1,'snake::state']]]
 ];
