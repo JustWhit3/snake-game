@@ -66,34 +66,27 @@ namespace snake::window{
     void PauseWindow::runWindow(){
     
         // Check events of the main window
-        sf::Event confirm_event;
-        while( this -> pollEvent( confirm_event ) ){
+        sf::Event pause_event;
+        while( this -> pollEvent( pause_event ) ){
         
             // Handling different events
-            switch( confirm_event.type ){
+            switch( pause_event.type ){
             
                 // Window closing
-                case sf::Event::Closed:{
+                case sf::Event::Closed:
                     this -> close();
                     break;
-                }
+
+                // Key pressed in window
+                case sf::Event::KeyPressed:
+                    eventKeyPressed( pause_event );
+                    break;
 
                 // Default cases
                 default:
                     break;
             }
         }
-    }
-
-    //====================================================
-    //     eventClosed
-    //====================================================
-    /**
-     * @brief Method used to deal with the the event closed case.
-     * 
-     */
-    void PauseWindow::eventClosed(){
-
     }
 
     //====================================================
@@ -104,6 +97,12 @@ namespace snake::window{
      * 
      */
     void PauseWindow::eventKeyPressed( const sf::Event& event ){
-        ( void ) event;
+        switch( event.key.code ){
+            case sf::Keyboard::Escape: // Esc
+                this -> close();
+                break;
+            default:
+                break;
+        }
     }
 }

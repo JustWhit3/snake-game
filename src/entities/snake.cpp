@@ -12,6 +12,9 @@
 //     Headers
 //====================================================
 
+// Windows
+#include <windows/game_window.hpp>
+
 // Entities
 #include <entities/snake.hpp>
 
@@ -23,13 +26,13 @@
 namespace snake::entity{
 
     //====================================================
-    //     Body (constructor)
+    //     Snake (constructor)
     //====================================================
     /**
-     * @brief Constructor of the body class.
+     * @brief Constructor of the snake class.
      * 
      */
-    Snake::Snake(  ){
+    Snake::Snake( ){
 
         // Shape settings
         this -> body.setSize( sf::Vector2f( 25.0f, 25.0f ) );
@@ -65,7 +68,6 @@ namespace snake::entity{
     /**
      * @brief Method used to update the entity movement.
      * 
-     * @param dt The delta time.
      */
     void Snake::update(){
 
@@ -108,6 +110,6 @@ namespace snake::entity{
      * 
      */
     void Snake::draw( window::GameWindow* game_window ) const {
-        game_window -> draw( body );
+        game_window -> draw( this -> body );
     }
 }

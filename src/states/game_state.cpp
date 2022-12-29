@@ -20,6 +20,7 @@
 
 // Entities
 #include <entities/snake.hpp>
+#include <entities/food.hpp>
 
 namespace snake::state{
 
@@ -69,5 +70,6 @@ namespace snake::state{
         // Drawing the snake body entity
         this -> snake.update();   
         snake.draw( this -> game_window );
+        food.draw( this -> game_window );
     }
 }

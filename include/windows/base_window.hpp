@@ -58,7 +58,6 @@ namespace snake::window{
         private:
 
             // Methods
-            virtual void eventClosed() = 0;
             virtual void eventKeyPressed( const sf::Event& event ) = 0;
     };
 }

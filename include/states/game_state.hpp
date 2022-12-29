@@ -27,6 +27,7 @@
 
 // Entities
 #include <entities/snake.hpp>
+#include <entities/food.hpp>
 
 namespace snake::state{
 
@@ -61,6 +62,7 @@ namespace snake::state{
             // Variables
             window::GameWindow* game_window;
             entity::Snake snake;
+            entity::Food food;
     };
 }
 
