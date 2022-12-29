@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['speedv_150',['speedV',['../classsnake_1_1entity_1_1Snake.html#a7891330a146d12cbf07b746db3ee247b',1,'snake::entity::Snake']]],
-  ['states_151',['states',['../classsnake_1_1window_1_1BaseWindow.html#a169e4286ff9895a41d3a1d8fc1ee15a4',1,'snake::window::BaseWindow']]]
+  ['head_158',['head',['../classsnake_1_1entity_1_1Snake.html#a17b8d1a912028d8a01f5b0ed7fcc298d',1,'snake::entity::Snake']]],
+  ['head_5ftexture_159',['head_texture',['../classsnake_1_1entity_1_1Snake.html#a8ed98eb3b0f56fad2085213109333185',1,'snake::entity::Snake']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['entity_16',['Entity',['../classsnake_1_1entity_1_1Entity.html',1,'snake::entity']]],
-  ['entity_2ehpp_17',['entity.hpp',['../entity_8hpp.html',1,'']]]
+  ['entity_17',['Entity',['../classsnake_1_1entity_1_1Entity.html#a6ef2618d198ab260fef93909187592cb',1,'snake::entity::Entity::Entity()'],['../classsnake_1_1entity_1_1Entity.html',1,'snake::entity::Entity']]],
+  ['entity_2ecpp_18',['entity.cpp',['../entity_8cpp.html',1,'']]],
+  ['entity_2ehpp_19',['entity.hpp',['../entity_8hpp.html',1,'']]]
 ];

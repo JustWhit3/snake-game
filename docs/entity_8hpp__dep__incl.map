@@ -1,10 +1,11 @@
 <map id="include/entities/entity.hpp" name="include/entities/entity.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="145,5,313,32"/>
-<area shape="rect" id="node2" href="$food_8hpp.html" title=" " alt="" coords="52,80,215,107"/>
-<area shape="rect" id="node7" href="$snake_8hpp.html" title=" " alt="" coords="258,80,430,107"/>
-<area shape="rect" id="node3" href="$food_8cpp.html" title=" " alt="" coords="25,162,164,189"/>
-<area shape="rect" id="node4" href="$game__state_8cpp.html" title=" " alt="" coords="223,244,399,271"/>
-<area shape="rect" id="node5" href="$game__state_8hpp.html" title=" " alt="" coords="188,155,327,196"/>
-<area shape="rect" id="node6" href="$menu__state_8cpp.html" title=" " alt="" coords="23,244,199,271"/>
-<area shape="rect" id="node8" href="$snake_8cpp.html" title=" " alt="" coords="401,162,551,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="173,5,341,32"/>
+<area shape="rect" id="node2" href="$entity_8cpp.html" title=" " alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node3" href="$food_8hpp.html" title=" " alt="" coords="175,80,338,107"/>
+<area shape="rect" id="node8" href="$snake_8hpp.html" title=" " alt="" coords="401,80,573,107"/>
+<area shape="rect" id="node4" href="$food_8cpp.html" title=" " alt="" coords="169,162,307,189"/>
+<area shape="rect" id="node5" href="$game__state_8cpp.html" title=" " alt="" coords="366,244,542,271"/>
+<area shape="rect" id="node6" href="$game__state_8hpp.html" title=" " alt="" coords="331,155,470,196"/>
+<area shape="rect" id="node7" href="$menu__state_8cpp.html" title=" " alt="" coords="166,244,342,271"/>
+<area shape="rect" id="node9" href="$snake_8cpp.html" title=" " alt="" coords="545,162,694,189"/>
 </map>

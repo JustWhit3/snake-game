@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['food_123',['Food',['../classsnake_1_1entity_1_1Food.html#af282ad8d16557bfeea1a87601a2363bd',1,'snake::entity::Food']]]
+  ['entity_129',['Entity',['../classsnake_1_1entity_1_1Entity.html#a6ef2618d198ab260fef93909187592cb',1,'snake::entity::Entity']]]
 ];

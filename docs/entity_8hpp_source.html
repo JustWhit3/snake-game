@@ -101,18 +101,31 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classsnake_1_1entity_1_1Entity.html#a28d2dbe9c93f01baa4751c3472c6ddf3">   42</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Entity.html#a28d2dbe9c93f01baa4751c3472c6ddf3">update</a>() = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classsnake_1_1entity_1_1Entity.html#a80398d76eb902d84ef23c9f83ff660d7">   43</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Entity.html#a80398d76eb902d84ef23c9f83ff660d7">draw</a>( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Entity.html#a388a0bb9b4fc96cd7232bf102411ce8f">update</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classsnake_1_1entity_1_1Entity.html#ac6ec75db4d46286be924c3e61618b5e8">   43</a></span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1entity_1_1Entity.html#ac6ec75db4d46286be924c3e61618b5e8">draw</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//     Protected</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// Constructors</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classsnake_1_1entity_1_1Entity.html#a6ef2618d198ab260fef93909187592cb">Entity</a>( <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* <a class="code" href="classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4">game_window</a> );        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4">   54</a></span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* <a class="code" href="classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4">game_window</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html">snake::entity::Entity</a></div><div class="ttdoc">Class used to construct the base entity.</div><div class="ttdef"><b>Definition:</b> entity.hpp:34</div></div>
-<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_a28d2dbe9c93f01baa4751c3472c6ddf3"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#a28d2dbe9c93f01baa4751c3472c6ddf3">snake::entity::Entity::update</a></div><div class="ttdeci">virtual void update()=0</div></div>
-<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_a80398d76eb902d84ef23c9f83ff660d7"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#a80398d76eb902d84ef23c9f83ff660d7">snake::entity::Entity::draw</a></div><div class="ttdeci">virtual void draw(window::GameWindow *game_window) const =0</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_a388a0bb9b4fc96cd7232bf102411ce8f"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#a388a0bb9b4fc96cd7232bf102411ce8f">snake::entity::Entity::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdoc">Method used to update an entity in each loop iteration.</div><div class="ttdef"><b>Definition:</b> entity.cpp:42</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_a6ef2618d198ab260fef93909187592cb"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#a6ef2618d198ab260fef93909187592cb">snake::entity::Entity::Entity</a></div><div class="ttdeci">Entity(window::GameWindow *game_window)</div><div class="ttdoc">Main constructor of the entity class.</div><div class="ttdef"><b>Definition:</b> entity.cpp:31</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_ac6ec75db4d46286be924c3e61618b5e8"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#ac6ec75db4d46286be924c3e61618b5e8">snake::entity::Entity::draw</a></div><div class="ttdeci">virtual void draw() const =0</div></div>
+<div class="ttc" id="aclasssnake_1_1entity_1_1Entity_html_ae70cad19cd624c9548856808a2667bb4"><div class="ttname"><a href="classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4">snake::entity::Entity::game_window</a></div><div class="ttdeci">window::GameWindow * game_window</div><div class="ttdef"><b>Definition:</b> entity.hpp:54</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:39</div></div>
 <div class="ttc" id="agame__window_8hpp_html"><div class="ttname"><a href="game__window_8hpp.html">game_window.hpp</a></div></div>
-<div class="ttc" id="anamespacesnake_1_1entity_html"><div class="ttname"><a href="namespacesnake_1_1entity.html">snake::entity</a></div><div class="ttdef"><b>Definition:</b> food.cpp:39</div></div>
+<div class="ttc" id="anamespacesnake_1_1entity_html"><div class="ttname"><a href="namespacesnake_1_1entity.html">snake::entity</a></div><div class="ttdef"><b>Definition:</b> entity.cpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
