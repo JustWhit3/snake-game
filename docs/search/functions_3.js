@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gamestate_110',['GameState',['../classsnake_1_1state_1_1GameState.html#a703b87c15f93ee2cd1f0fbed29d6cd98',1,'snake::state::GameState']]],
-  ['gamewindow_111',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow']]]
+  ['food_123',['Food',['../classsnake_1_1entity_1_1Food.html#af282ad8d16557bfeea1a87601a2363bd',1,'snake::entity::Food']]]
 ];

@@ -102,11 +102,11 @@ Collaboration diagram for snake::entity::Snake:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae52eeaad5a76ca126a50f96f56c3b60f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1entity_1_1Snake.html#ae52eeaad5a76ca126a50f96f56c3b60f">Snake</a> ()</td></tr>
-<tr class="memdesc:ae52eeaad5a76ca126a50f96f56c3b60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the body class.  <a href="classsnake_1_1entity_1_1Snake.html#ae52eeaad5a76ca126a50f96f56c3b60f">More...</a><br /></td></tr>
+<tr class="memdesc:ae52eeaad5a76ca126a50f96f56c3b60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the snake class.  <a href="classsnake_1_1entity_1_1Snake.html#ae52eeaad5a76ca126a50f96f56c3b60f">More...</a><br /></td></tr>
 <tr class="separator:ae52eeaad5a76ca126a50f96f56c3b60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53f6766ddd5ab6ade154412215f62164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1entity_1_1Snake.html#a53f6766ddd5ab6ade154412215f62164">update</a> ()</td></tr>
-<tr class="memdesc:a53f6766ddd5ab6ade154412215f62164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to update the entity movement.  <a href="classsnake_1_1entity_1_1Snake.html#a53f6766ddd5ab6ade154412215f62164">More...</a><br /></td></tr>
-<tr class="separator:a53f6766ddd5ab6ade154412215f62164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541fc7994949d3e4ee82da3ddcf1cb75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1entity_1_1Snake.html#a541fc7994949d3e4ee82da3ddcf1cb75">update</a> () override</td></tr>
+<tr class="memdesc:a541fc7994949d3e4ee82da3ddcf1cb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to update the entity movement.  <a href="classsnake_1_1entity_1_1Snake.html#a541fc7994949d3e4ee82da3ddcf1cb75">More...</a><br /></td></tr>
+<tr class="separator:a541fc7994949d3e4ee82da3ddcf1cb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3471c815cd6fb9fbc3269ac0607c16b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1entity_1_1Snake.html#af3471c815cd6fb9fbc3269ac0607c16b">moveSmoothly</a> (const float dir_x, const float dir_y)</td></tr>
 <tr class="memdesc:af3471c815cd6fb9fbc3269ac0607c16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to smoothly move an entity.  <a href="classsnake_1_1entity_1_1Snake.html#af3471c815cd6fb9fbc3269ac0607c16b">More...</a><br /></td></tr>
 <tr class="separator:af3471c815cd6fb9fbc3269ac0607c16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,7 +137,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor of the body class. </p>
+<p>Constructor of the snake class. </p>
 
 </div>
 </div>
@@ -210,8 +210,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a53f6766ddd5ab6ade154412215f62164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53f6766ddd5ab6ade154412215f62164">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a541fc7994949d3e4ee82da3ddcf1cb75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541fc7994949d3e4ee82da3ddcf1cb75">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,18 +228,12 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Method used to update the entity movement. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dt</td><td>The delta time. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p>Implements <a class="el" href="classsnake_1_1entity_1_1Entity.html#a28d2dbe9c93f01baa4751c3472c6ddf3">snake::entity::Entity</a>.</p>
 

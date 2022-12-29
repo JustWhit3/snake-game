@@ -1,4 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classsnake_1_1entity_1_1Entity.html" title="Class used to construct the base entity." alt="" coords="5,5,137,32"/>
-<area shape="rect" id="node2" href="$classsnake_1_1entity_1_1Snake.html" title="Class used to construct the snake entity." alt="" coords="185,5,323,32"/>
+<area shape="rect" id="node1" href="$classsnake_1_1entity_1_1Entity.html" title="Class used to construct the base entity." alt="" coords="5,31,137,57"/>
+<area shape="rect" id="node2" href="$classsnake_1_1entity_1_1Food.html" title="Class used to construct the snake entity." alt="" coords="189,5,319,32"/>
+<area shape="rect" id="node3" href="$classsnake_1_1entity_1_1Snake.html" title="Class used to construct the snake entity." alt="" coords="185,56,323,83"/>
 </map>

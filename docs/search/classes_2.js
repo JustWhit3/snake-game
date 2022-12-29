@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gamestate_75',['GameState',['../classsnake_1_1state_1_1GameState.html',1,'snake::state']]],
-  ['gamewindow_76',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html',1,'snake::window']]]
+  ['food_83',['Food',['../classsnake_1_1entity_1_1Food.html',1,'snake::entity']]]
 ];
