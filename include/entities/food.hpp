@@ -46,14 +46,15 @@ namespace snake::entity{
 
             // Methods
             void draw() const override;
+            void respawn();
+
+            // Variables
+            sf::CircleShape food;
 
         //====================================================
         //     private
         //====================================================
         private:
-
-            // Variables
-            sf::CircleShape food;
 
             // Constants
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };

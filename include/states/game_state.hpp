@@ -29,6 +29,9 @@
 #include <entities/snake.hpp>
 #include <entities/food.hpp>
 
+// STD
+#include <cstdint>
+
 namespace snake::state{
 
     //====================================================
@@ -59,11 +62,15 @@ namespace snake::state{
             // Methods
             constexpr void drawEntities() const;
             constexpr void updateEntities() const;
+            void gameRules();
+            void drawWidgets() override;
 
             // Variables
             window::GameWindow* game_window;
             entity::Snake* snake = new entity::Snake( game_window );
             entity::Food* food = new entity::Food( game_window );
+            uint64_t score = 0;
+            sf::Text score_update;
     };
 }
 

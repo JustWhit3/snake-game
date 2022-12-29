@@ -51,6 +51,7 @@ namespace snake::entity{
             void update() override;
             void moveSmoothly( const float dir_x, const float dir_y );
             void draw() const override;
+            void bodyGrow();
 
             // Variables
             float speedV = 0.1f;

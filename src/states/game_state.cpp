@@ -9,6 +9,16 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+
+// ptc-print
+#ifdef DEBUG_SNAKE_GAME
+    #define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
+    #define PTC_DISABLE_STD_TYPES_PRINTING
+#endif
+
+//====================================================
 //     Headers
 //====================================================
 
@@ -17,10 +27,16 @@
 
 // States
 #include <states/game_state.hpp>
+#include <states/state.hpp>
 
 // Entities
 #include <entities/snake.hpp>
 #include <entities/food.hpp>
+
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
 
 namespace snake::state{
 
@@ -43,6 +59,11 @@ namespace snake::state{
 
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
+
+        // Set text properties
+        //this -> score_update.setFont( this -> font );
+        this -> score_update.setString( std::to_string( this -> score ) );
+        this -> score_update.setCharacterSize( 20 );
     }
 
     //====================================================
@@ -58,8 +79,10 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Drawing entities
+        this -> drawWidgets();
         this -> drawEntities();
         this -> updateEntities();
+        this -> gameRules();
         
         // Display the state
         this -> game_window -> display();
@@ -86,5 +109,35 @@ namespace snake::state{
      */
     constexpr void GameState::updateEntities() const {
         this -> snake -> update(); 
+    }
+
+    //====================================================
+    //     gameRules
+    //====================================================
+    /**
+     * @brief Method used to set the game rules.
+     * 
+     */
+    void GameState::gameRules(){
+
+        // Check for collisions among snake head and food
+        sf::FloatRect head_bounding = this -> snake -> head.getGlobalBounds();
+        sf::FloatRect body_bounding = this -> food -> food.getGlobalBounds();
+        if( head_bounding.intersects( body_bounding ) ){
+            this -> food -> respawn();
+            this -> snake -> bodyGrow();
+            this -> score += 1;
+        }
+    }
+
+    //====================================================
+    //     drawWidgets
+    //====================================================
+    /**
+     * @brief Method used to draw widgets on the current state.
+     * 
+     */
+    void GameState::drawWidgets(){
+        this -> game_window -> draw( this -> score_update );
     }
 }

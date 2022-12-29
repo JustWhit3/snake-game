@@ -114,4 +114,15 @@ namespace snake::entity{
         this -> game_window -> draw( this -> body );
         this -> game_window -> draw( this -> head );
     }
+
+    //====================================================
+    //     bodyGrow
+    //====================================================
+    /**
+     * @brief Method used to grow the snake body when food is ate.
+     * 
+     */
+    void Snake::bodyGrow(){
+        this -> body.setSize( sf::Vector2f( 25.0f, this -> body.getSize().y + 25.f ) );
+    }
 }

@@ -48,6 +48,9 @@ namespace snake::state{
         //====================================================
         public:
 
+            // Constructors
+            State();
+
             virtual ~State();
 
             // Methods
@@ -58,8 +61,7 @@ namespace snake::state{
         //====================================================
         protected:
 
-            // Constructors
-            State();
+
 
 
             // Methods

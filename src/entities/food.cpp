@@ -69,4 +69,17 @@ namespace snake::entity{
     void Food::draw() const {
         this -> game_window -> draw( this -> food );
     }
+
+    //====================================================
+    //     respawn
+    //====================================================
+    /**
+     * @brief Method used to respawn food when there is collision between snake and itself.
+     * 
+     */
+    void Food::respawn(){
+        float x_random = utility::random( 0, this -> bound );
+        float y_random = utility::random( 0, this -> bound );
+        this -> food.setPosition( x_random, y_random );
+    }
 }
