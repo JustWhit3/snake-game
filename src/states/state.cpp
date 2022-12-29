@@ -27,7 +27,7 @@ namespace snake::state{
     //====================================================
     //     Static variables
     //====================================================
-    sf::Texture State::menu_texture;
+    sf::Texture State::state_texture;
 
     //====================================================
     //     State (constructor)

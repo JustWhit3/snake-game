@@ -45,7 +45,7 @@ namespace snake::entity{
      * @brief Constructor of the food class.
      * 
      */
-    Food::Food( ){
+    Food::Food( window::GameWindow* game_window  ): Entity( game_window ){
 
         // Shape settings
         this -> food.setRadius( 12.5f );
@@ -60,24 +60,13 @@ namespace snake::entity{
     }
 
     //====================================================
-    //     update
-    //====================================================
-    /**
-     * @brief Method used to update the entity movement.
-     * 
-     */
-    void Food::update(){
-
-    }
-
-    //====================================================
     //     draw
     //====================================================
     /**
      * @brief Method used to draw the entity.
      * 
      */
-    void Food::draw( window::GameWindow* game_window ) const {
-        game_window -> draw( this -> food );
+    void Food::draw() const {
+        this -> game_window -> draw( this -> food );
     }
 }

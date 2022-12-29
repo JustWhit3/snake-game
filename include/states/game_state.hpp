@@ -57,12 +57,13 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawEntities();
+            constexpr void drawEntities() const;
+            constexpr void updateEntities() const;
 
             // Variables
             window::GameWindow* game_window;
-            entity::Snake snake;
-            entity::Food food;
+            entity::Snake* snake = new entity::Snake( game_window );
+            entity::Food* food = new entity::Food( game_window );
     };
 }
 

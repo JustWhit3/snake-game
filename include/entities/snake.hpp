@@ -45,15 +45,18 @@ namespace snake::entity{
         public:
 
             // Constructors
-            Snake();
+            Snake( window::GameWindow* game_window );
 
             // Methods
             void update() override;
             void moveSmoothly( const float dir_x, const float dir_y );
-            void draw( window::GameWindow* game_window ) const override;
+            void draw() const override;
 
             // Variables
             float speedV = 0.1f;
+            sf::Texture head_texture;
+            sf::Sprite head;
+            sf::RectangleShape body;
 
         //====================================================
         //     private
@@ -61,7 +64,6 @@ namespace snake::entity{
         private:
 
             // Variables
-            sf::RectangleShape body;
             float direction_x;
             float direction_y;
     };

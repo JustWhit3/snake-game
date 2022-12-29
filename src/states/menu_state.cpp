@@ -102,13 +102,13 @@ namespace snake::state{
     void MenuState::drawLogo() const {
 
         // Creating the texture
-        if( ! menu_texture.loadFromFile( "img/logo.png" ) ){
+        if( ! state_texture.loadFromFile( "img/logo.png" ) ){
             this -> game_window -> close();
         }
 
         // Creating the sprite
         sf::Sprite logo_sprite;
-        logo_sprite.setTexture( menu_texture, true );
+        logo_sprite.setTexture( state_texture, true );
         logo_sprite.setPosition( sf::Vector2f( 290.f, 120.f ) );
 
         // Drawing the image

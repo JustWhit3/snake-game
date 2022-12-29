@@ -39,8 +39,19 @@ namespace snake::entity{
         public:
 
             // Methods
-            virtual void update() = 0;
-            virtual void draw( window::GameWindow* game_window ) const = 0;
+            virtual void update();
+            virtual void draw() const = 0;
+        
+        //====================================================
+        //     Protected
+        //====================================================
+        protected:
+
+            // Constructors
+            Entity( window::GameWindow* game_window );        
+            
+            // Variables
+            window::GameWindow* game_window;
     };
 }
 

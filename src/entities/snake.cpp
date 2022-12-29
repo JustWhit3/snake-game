@@ -32,11 +32,11 @@ namespace snake::entity{
      * @brief Constructor of the snake class.
      * 
      */
-    Snake::Snake( ){
+    Snake::Snake( window::GameWindow* game_window ): Entity( game_window ){
 
-        // Shape settings
+        // Snake body shape settings
         this -> body.setSize( sf::Vector2f( 25.0f, 25.0f ) );
-        this -> body.setFillColor( sf::Color( 0, 204, 102 ) );
+        this -> body.setFillColor( sf::Color( 76, 153, 0 ) );
         this -> body.setOutlineColor( sf::Color::Black );
         this -> body.setOutlineThickness( 2 );
         this -> body.setPosition( 530.f, 900.f );
@@ -60,6 +60,7 @@ namespace snake::entity{
 
         // Move
         this -> body.move( dir_x, dir_y );
+        this -> head.move( dir_x, dir_y );
     }
 
     //====================================================
@@ -109,7 +110,8 @@ namespace snake::entity{
      * @brief Method used to draw the entity.
      * 
      */
-    void Snake::draw( window::GameWindow* game_window ) const {
-        game_window -> draw( this -> body );
+    void Snake::draw() const {
+        this -> game_window -> draw( this -> body );
+        this -> game_window -> draw( this -> head );
     }
 }

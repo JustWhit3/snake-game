@@ -71,7 +71,7 @@ namespace snake::state{
             sf::Font font;
 
             // Static variables
-            static sf::Texture menu_texture;
+            static sf::Texture state_texture;
 
             // Constants
             sf::Color background_color{ sf::Color::White };

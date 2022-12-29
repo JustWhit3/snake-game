@@ -42,11 +42,10 @@ namespace snake::entity{
         public:
 
             // Constructors
-            Food();
+            Food( window::GameWindow* game_window  );
 
             // Methods
-            void update() override;
-            void draw( window::GameWindow* game_window ) const override;
+            void draw() const override;
 
         //====================================================
         //     private

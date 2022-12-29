@@ -25,7 +25,7 @@
 namespace snake::state{
 
     //====================================================
-    //     Game (constructor)
+    //     GameState (constructor)
     //====================================================
     /**
      * @brief Main constructor of the Game class.
@@ -34,9 +34,15 @@ namespace snake::state{
      */
     GameState::GameState( window::GameWindow* game_window ): 
         game_window( game_window ){
-            
+
+        // Set snake head and texture properties
+        this -> snake -> head_texture.loadFromFile( "img/snake_head.png" );
+        this -> snake -> head.setTexture( this -> snake -> head_texture );
+        this -> snake -> head.rotate( 180 );
+        this -> snake -> head.setPosition( 567.5f, 907.f );
+
         // Default move up
-        this -> snake.moveSmoothly( 0.f, - this -> snake.speedV );
+        this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
     }
 
     //====================================================
@@ -52,8 +58,9 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Drawing entities
-        drawEntities();
-
+        this -> drawEntities();
+        this -> updateEntities();
+        
         // Display the state
         this -> game_window -> display();
     }
@@ -65,11 +72,19 @@ namespace snake::state{
      * @brief Method used to draw the state entities.
      * 
      */
-    void GameState::drawEntities() {
+    constexpr void GameState::drawEntities() const {
+        this -> snake -> draw();
+        this -> food -> draw();
+    }
 
-        // Drawing the snake body entity
-        this -> snake.update();   
-        snake.draw( this -> game_window );
-        food.draw( this -> game_window );
+    //====================================================
+    //     updateEntities
+    //====================================================
+    /**
+     * @brief Method used to update the state entities.
+     * 
+     */
+    constexpr void GameState::updateEntities() const {
+        this -> snake -> update(); 
     }
 }
