@@ -55,3 +55,6 @@ if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
     find_package( ptcprint )
     target_link_libraries( ${APP} PUBLIC ptcprint::ptcprint )
 endif()
+
+# Install
+install ( TARGETS ${APP} RUNTIME )
