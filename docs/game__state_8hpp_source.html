@@ -122,25 +122,26 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            constexpr <span class="keywordtype">void</span> drawEntities() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            constexpr <span class="keywordtype">void</span> updateEntities() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">void</span> drawEntities() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">void</span> updateEntities() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> gameRules();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> drawWidgets() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>* <a class="code" href="namespacesnake.html">snake</a> = <span class="keyword">new</span> <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>( game_window );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>* food = <span class="keyword">new</span> <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>( game_window );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            uint64_t score = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            sf::Text score_update;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">void</span> packWidgets() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>* <a class="code" href="namespacesnake.html">snake</a> = <span class="keyword">new</span> <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>( game_window );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>* food = <span class="keyword">new</span> <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>( game_window );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            uint64_t score = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            sf::Text score_update;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html">snake::entity::Food</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> food.hpp:37</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Snake_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Snake.html">snake::entity::Snake</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> snake.hpp:40</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html">snake::state::GameState</a></div><div class="ttdoc">Class used to create the game state.</div><div class="ttdef"><b>Definition:</b> game_state.hpp:44</div></div>
-<div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a33cb44d88d4a1c5b704a3dc9d37cbedd"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:76</div></div>
+<div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a33cb44d88d4a1c5b704a3dc9d37cbedd"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:74</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a703b87c15f93ee2cd1f0fbed29d6cd98"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a703b87c15f93ee2cd1f0fbed29d6cd98">snake::state::GameState::GameState</a></div><div class="ttdeci">GameState(window::GameWindow *game_window)</div><div class="ttdoc">Main constructor of the Game class.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:51</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1State_html"><div class="ttname"><a href="classsnake_1_1state_1_1State.html">snake::state::State</a></div><div class="ttdoc">Class used to define base state for the other states.</div><div class="ttdef"><b>Definition:</b> state.hpp:44</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:39</div></div>
