@@ -55,8 +55,7 @@ namespace snake::entity{
             void relHeadPos( float x, float y );
 
             // Variables
-            float speedV = 0.1f;
-            sf::Texture head_texture;
+            float speedV{ 0.1f };
             sf::Sprite head;
             sf::RectangleShape body;
 

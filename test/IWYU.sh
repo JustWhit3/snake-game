@@ -2,12 +2,15 @@
 
 # Variables
 declare -a source_files=(
-  "entities/snake_body.cpp"
+  "entities/entity.cpp"
+  "entities/food.cpp"
+  "entities/snake.cpp"
   "states/state.cpp"
   "states/menu_state.cpp"
   "states/game_state.cpp"
+  "utility/gui.cpp"
   "widgets/button.cpp"
-  "windows/confirm_window.cpp"
+  "windows/pause_window.cpp"
   "windows/game_window.cpp"
   "snake-game.cpp"
 )

@@ -20,6 +20,9 @@
 #include <states/menu_state.hpp>
 #include <states/state.hpp>
 
+// Utility
+#include <utility/gui.hpp>
+
 // SFML
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -48,7 +51,7 @@ namespace snake::window{
     
         // Initialize window parameters
         this -> create(
-            sf::VideoMode( this -> desktop.height, this -> desktop.height, this -> desktop.bitsPerPixel ), 
+            utility::getDesktopMode(), 
             "Snake Game", sf::Style::Titlebar | sf::Style::Close
         );
 

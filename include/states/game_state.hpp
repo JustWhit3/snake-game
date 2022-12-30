@@ -31,6 +31,7 @@
 
 // STD
 #include <cstdint>
+#include <memory>
 
 namespace snake::state{
 
@@ -68,9 +69,9 @@ namespace snake::state{
 
             // Variables
             window::GameWindow* game_window;
-            entity::Snake* snake = new entity::Snake( game_window );
-            entity::Food* food = new entity::Food( game_window );
-            uint64_t score = 0;
+            std::unique_ptr<entity::Snake> snake{ std::make_unique<entity::Snake>( entity::Snake( game_window ) ) };
+            std::unique_ptr<entity::Food> food{ std::make_unique<entity::Food>( entity::Food( game_window ) ) };
+            uint64_t score{ 0 };
             sf::Text score_update;
     };
 }

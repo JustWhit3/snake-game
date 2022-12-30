@@ -26,6 +26,7 @@
 #include <windows/game_window.hpp>
 
 // Entities
+#include <entities/entity.hpp>
 #include <entities/food.hpp>
 
 // Utility
@@ -36,6 +37,10 @@
     #include <ptc/print.hpp>
 #endif
 
+// SFML
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Color.hpp>
+
 namespace snake::entity{
 
     //====================================================
@@ -45,7 +50,7 @@ namespace snake::entity{
      * @brief Constructor of the food class.
      * 
      */
-    Food::Food( window::GameWindow* game_window  ): Entity( game_window ){
+    Food::Food( window::GameWindow* game_window ): Entity( game_window ){
 
         // Shape settings
         this -> food.setRadius( 12.5f );

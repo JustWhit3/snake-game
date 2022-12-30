@@ -15,11 +15,15 @@
 // Windows
 #include <windows/pause_window.hpp>
 
+// Utility
+#include <utility/gui.hpp>
+
 // SFML
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
+#include <SFML/Window/Keyboard.hpp>
 
 namespace snake::window{
 
@@ -34,8 +38,11 @@ namespace snake::window{
     
         // Initialize window parameters
         this -> create(
-            sf::VideoMode( this -> desktop.height - 500.f, this -> desktop.height - 500.f, this -> desktop.bitsPerPixel ), 
-            "Quit the game", sf::Style::Titlebar | sf::Style::Close
+            sf::VideoMode( 
+                utility::getDesktopMode().height - 500.f, 
+                utility::getDesktopMode().height - 500.f, 
+                utility::getDesktopMode().bitsPerPixel ), 
+                "Quit the game", sf::Style::Titlebar | sf::Style::Close
         );
     
         // Center thw window in the screen

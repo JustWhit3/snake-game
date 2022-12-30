@@ -22,7 +22,9 @@
 // Windows
 #include <windows/base_window.hpp>
 
-// Required by IWYU
+//====================================================
+//     Extra
+//====================================================
 namespace sf { 
     class Event;
 }

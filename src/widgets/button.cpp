@@ -35,6 +35,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp> 
+#include <SFML/Window/Keyboard.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME

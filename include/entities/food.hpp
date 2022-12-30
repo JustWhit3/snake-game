@@ -18,6 +18,9 @@
 // Entities
 #include <entities/entity.hpp>
 
+// Utility
+#include <utility/gui.hpp>
+
 //====================================================
 //     Preprocessor directives
 //====================================================
@@ -42,7 +45,7 @@ namespace snake::entity{
         public:
 
             // Constructors
-            Food( window::GameWindow* game_window  );
+            Food( window::GameWindow* game_window );
 
             // Methods
             void draw() const override;
@@ -57,11 +60,7 @@ namespace snake::entity{
         private:
 
             // Constants
-            const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
-            const sf::VideoMode mode{ sf::VideoMode( 
-                    this -> desktop.height, this -> desktop.height, this -> desktop.bitsPerPixel )
-                };
-            int bound{ static_cast<int>( mode.height - mode.height / 10 ) };
+            const int bound{ static_cast<int>( utility::getDesktopMode().height - utility::getDesktopMode().height / 10 ) };
     };
 }
 

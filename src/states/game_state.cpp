@@ -27,7 +27,6 @@
 
 // States
 #include <states/game_state.hpp>
-#include <states/state.hpp>
 
 // Entities
 #include <entities/snake.hpp>
@@ -37,6 +36,20 @@
 #ifdef DEBUG_SNAKE_GAME
     #include <ptc/print.hpp>
 #endif
+
+// SFML
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp> 
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp> 
+
+// STD
+#include <memory>
+#include <string>
 
 namespace snake::state{
 
@@ -52,9 +65,9 @@ namespace snake::state{
         game_window( game_window ){
 
         // Set snake head and texture properties
-        this -> snake -> head_texture.loadFromFile( "img/snake_head.png" );
-        this -> snake -> head.setTexture( this -> snake -> head_texture );
-        this -> snake -> head.setOrigin( ( sf::Vector2f )this -> snake -> head_texture.getSize() / 2.f );
+        this -> state_texture.loadFromFile( "img/snake_head.png" );;
+        this -> snake -> head.setTexture( this -> state_texture );
+        this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture.getSize() / 2.f );
         this -> snake->relHeadPos( 0, - this -> snake -> body.getSize().y );
 
         // Default move up

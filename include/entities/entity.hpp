@@ -16,11 +16,13 @@
 #define SNAKE_GAME_BASE_ENTITY
 
 //====================================================
-//     Headers
+//     Extra
 //====================================================
-
-// Windows
-#include <windows/game_window.hpp>
+namespace snake{
+    namespace window{
+        class GameWindow;
+    } 
+}
 
 namespace snake::entity{
 

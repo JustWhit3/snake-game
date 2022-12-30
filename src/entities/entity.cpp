@@ -12,9 +12,6 @@
 //     Headers
 //====================================================
 
-// Windows
-#include <windows/game_window.hpp>
-
 // Entities
 #include <entities/entity.hpp>
 

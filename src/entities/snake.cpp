@@ -16,12 +16,15 @@
 #include <windows/game_window.hpp>
 
 // Entities
+#include <entities/entity.hpp>
 #include <entities/snake.hpp>
 
 // SFML
 #include <SFML/Graphics/Color.hpp> 
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp> 
+#include <SFML/Graphics/RectangleShape.hpp> 
+#include <SFML/Graphics/Sprite.hpp>
 
 namespace snake::entity{
 
