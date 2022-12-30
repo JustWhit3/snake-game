@@ -51,6 +51,7 @@ namespace snake::state{
             // Constructors
             State();
 
+            // Destructor
             virtual ~State();
 
             // Methods
@@ -61,13 +62,10 @@ namespace snake::state{
         //====================================================
         protected:
 
-
-
-
             // Methods
             virtual void drawWidgets();
             virtual void setWidgetsKeys() const;
-            virtual void packWidgets() const;
+            virtual void packWidgets();
 
             // Variables
             sf::Font font;

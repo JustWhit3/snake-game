@@ -64,6 +64,7 @@ namespace snake::state{
             constexpr void updateEntities() const;
             void gameRules();
             void drawWidgets() override;
+            void packWidgets() override;
 
             // Variables
             window::GameWindow* game_window;

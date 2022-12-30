@@ -82,7 +82,7 @@ namespace snake::state{
      * @brief Method used to pack widgets in the current state.
      * 
      */
-    void State::packWidgets() const {
+    void State::packWidgets(){
 
     }
 }

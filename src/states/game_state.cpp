@@ -54,16 +54,14 @@ namespace snake::state{
         // Set snake head and texture properties
         this -> snake -> head_texture.loadFromFile( "img/snake_head.png" );
         this -> snake -> head.setTexture( this -> snake -> head_texture );
-        this -> snake -> head.rotate( 180 );
-        this -> snake -> head.setPosition( 567.5f, 907.f );
+        this -> snake -> head.setOrigin( ( sf::Vector2f )this -> snake -> head_texture.getSize() / 2.f );
+        this -> snake->relHeadPos( 0, - this -> snake -> body.getSize().y );
 
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
 
-        // Set text properties
-        //this -> score_update.setFont( this -> font );
-        this -> score_update.setString( std::to_string( this -> score ) );
-        this -> score_update.setCharacterSize( 20 );
+        // Draw widgets
+        this -> drawWidgets();
     }
 
     //====================================================
@@ -78,10 +76,10 @@ namespace snake::state{
         // Clear the window
         this -> game_window -> clear( this -> background_color );
 
-        // Drawing entities
-        this -> drawWidgets();
+        // Drawing and updating entities
         this -> drawEntities();
         this -> updateEntities();
+        this -> packWidgets();
         this -> gameRules();
         
         // Display the state
@@ -128,6 +126,8 @@ namespace snake::state{
             this -> snake -> bodyGrow();
             this -> score += 1;
         }
+
+
     }
 
     //====================================================
@@ -138,6 +138,23 @@ namespace snake::state{
      * 
      */
     void GameState::drawWidgets(){
+
+        // Score text
+        this -> score_update.setFillColor( sf::Color::Black );
+        this -> score_update.setPosition( 567.5f, 907.f );
+        this -> score_update.setCharacterSize( 20 );
+    }
+
+    //====================================================
+    //     packWidgets
+    //====================================================
+    /**
+     * @brief Method used to update widgets on the current state.
+     * 
+     */
+    void GameState::packWidgets(){
+        this -> score_update.setFont( this -> font );
+        this -> score_update.setString( std::to_string( this -> score ) );
         this -> game_window -> draw( this -> score_update );
     }
 }

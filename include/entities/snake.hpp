@@ -52,6 +52,7 @@ namespace snake::entity{
             void moveSmoothly( const float dir_x, const float dir_y );
             void draw() const override;
             void bodyGrow();
+            void relHeadPos( float x, float y );
 
             // Variables
             float speedV = 0.1f;
@@ -60,9 +61,12 @@ namespace snake::entity{
             sf::RectangleShape body;
 
         //====================================================
-        //     private
+        //     Private
         //====================================================
         private:
+
+            // Methods
+            void rotate( float angle );
 
             // Variables
             float direction_x;

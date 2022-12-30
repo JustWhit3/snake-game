@@ -232,7 +232,7 @@ namespace snake::state{
      * @brief Method used to pack widgets in the current state.
      * 
      */
-    void MenuState::packWidgets() const {
+    void MenuState::packWidgets(){
         this -> game_button -> pack( this -> game_window );
         this -> scores_button -> pack( this -> game_window );
         this -> settings_button -> pack( this -> game_window );

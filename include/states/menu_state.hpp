@@ -62,7 +62,7 @@ namespace snake::state{
             void drawLogo() const;
             void drawWidgets() override;
             void setWidgetsKeys() const override;
-            void packWidgets() const override;
+            void packWidgets() override;
 
             // Variables
             window::GameWindow* game_window;
