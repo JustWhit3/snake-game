@@ -36,7 +36,7 @@ namespace snake::utility{
      * @return T The type of the return number.
      */
     template<typename T>
-    inline constexpr T random( T range_from, T range_to ){
+    inline T random( T range_from, T range_to ){
 
         // Initialize random number generator
         std::random_device rand_dev;

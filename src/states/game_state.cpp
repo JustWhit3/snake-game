@@ -93,7 +93,7 @@ namespace snake::state{
      * @brief Method used to draw the state entities.
      * 
      */
-    constexpr void GameState::drawEntities() const {
+    void GameState::drawEntities() const {
         this -> snake -> draw();
         this -> food -> draw();
     }
@@ -105,7 +105,7 @@ namespace snake::state{
      * @brief Method used to update the state entities.
      * 
      */
-    constexpr void GameState::updateEntities() const {
+    void GameState::updateEntities() const {
         this -> snake -> update(); 
     }
 
