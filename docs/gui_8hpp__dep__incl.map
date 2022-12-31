@@ -1,11 +1,11 @@
 <map id="include/utility/gui.hpp" name="include/utility/gui.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="296,5,439,32"/>
-<area shape="rect" id="node2" href="$gui_8cpp.html" title=" " alt="" coords="5,80,124,107"/>
-<area shape="rect" id="node3" href="$game__window_8cpp.html" title=" " alt="" coords="148,80,355,107"/>
-<area shape="rect" id="node4" href="$pause__window_8cpp.html" title=" " alt="" coords="379,80,588,107"/>
-<area shape="rect" id="node5" href="$food_8hpp.html" title=" " alt="" coords="613,80,775,107"/>
-<area shape="rect" id="node6" href="$food_8cpp.html" title=" " alt="" coords="518,162,657,189"/>
-<area shape="rect" id="node7" href="$game__state_8cpp.html" title=" " alt="" coords="606,244,782,271"/>
-<area shape="rect" id="node8" href="$game__state_8hpp.html" title=" " alt="" coords="731,155,870,196"/>
-<area shape="rect" id="node9" href="$menu__state_8cpp.html" title=" " alt="" coords="806,244,982,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="204,5,346,32"/>
+<area shape="rect" id="node2" href="$game__state_8cpp.html" title=" " alt="" coords="442,244,618,271"/>
+<area shape="rect" id="node3" href="$gui_8cpp.html" title=" " alt="" coords="29,80,148,107"/>
+<area shape="rect" id="node4" href="$game__window_8cpp.html" title=" " alt="" coords="172,80,378,107"/>
+<area shape="rect" id="node5" href="$pause__window_8cpp.html" title=" " alt="" coords="402,80,612,107"/>
+<area shape="rect" id="node6" href="$food_8hpp.html" title=" " alt="" coords="636,80,799,107"/>
+<area shape="rect" id="node7" href="$food_8cpp.html" title=" " alt="" coords="567,162,706,189"/>
+<area shape="rect" id="node8" href="$game__state_8hpp.html" title=" " alt="" coords="730,155,868,196"/>
+<area shape="rect" id="node9" href="$menu__state_8cpp.html" title=" " alt="" coords="711,244,887,271"/>
 </map>

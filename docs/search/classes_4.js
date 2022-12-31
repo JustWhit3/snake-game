@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['menustate_99',['MenuState',['../classsnake_1_1state_1_1MenuState.html',1,'snake::state']]]
+  ['loosestate_103',['LooseState',['../classsnake_1_1state_1_1LooseState.html',1,'snake::state']]]
 ];
