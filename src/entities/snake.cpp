@@ -171,4 +171,15 @@ namespace snake::entity{
             this -> body.getPosition().y + y
         );
     }
+
+    //====================================================
+    //     death
+    //====================================================
+    /**
+     * @brief Method used to deal with snake death.
+     * 
+     */
+    void Snake::death(){
+        this -> speedV = 0;
+    }
 }

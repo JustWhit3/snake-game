@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file snake.hpp
+ * @file loose_state.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-27
+ * @date 2022-12-31
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,8 +12,8 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_SNAKE_ENTITY
-#define SNAKE_GAME_SNAKE_ENTITY
+#ifndef SNAKE_GAME_GAME_OVER_STATE
+#define SNAKE_GAME_GAME_OVER_STATE
 
 //====================================================
 //     Headers
@@ -22,22 +22,12 @@
 // Windows
 #include <windows/game_window.hpp>
 
-// Entities
-#include <entities/entity.hpp>
+// States
+#include <states/state.hpp>
 
-// SFML
-#include <SFML/Graphics/RectangleShape.hpp>
+namespace snake::state{
 
-namespace snake::entity{
-
-    //====================================================
-    //     Body
-    //====================================================
-    /**
-     * @brief Class used to construct the snake entity.
-     * 
-     */
-    class Snake: public Entity{
+    class LooseState: public State{
 
         //====================================================
         //     Public
@@ -45,20 +35,10 @@ namespace snake::entity{
         public:
 
             // Constructors
-            Snake( window::GameWindow* game_window );
+            LooseState( window::GameWindow* game_window );
 
             // Methods
-            void update() override;
-            void moveSmoothly( const float dir_x, const float dir_y );
-            void draw() const override;
-            void bodyGrow();
-            void relHeadPos( float x, float y );
-            void death();
-
-            // Variables
-            float speedV{ 0.1f };
-            sf::Sprite head;
-            sf::RectangleShape body;
+            void drawState() override;
 
         //====================================================
         //     Private
@@ -66,11 +46,15 @@ namespace snake::entity{
         private:
 
             // Methods
-            void rotate( float angle );
+            void drawWidgets() override;
+            void setWidgetsKeys() const override;
+            void packWidgets() override;
 
             // Variables
-            float direction_x;
-            float direction_y;
+            window::GameWindow* game_window;
+            sf::RectangleShape state_dimension;
+
+            // Widgets here...
     };
 }
 

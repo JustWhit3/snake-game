@@ -27,6 +27,7 @@
 
 // States
 #include <states/game_state.hpp>
+#include <states/loose_state.hpp>
 
 // Entities
 #include <entities/snake.hpp>
@@ -36,6 +37,9 @@
 #ifdef DEBUG_SNAKE_GAME
     #include <ptc/print.hpp>
 #endif
+
+// Utility
+#include <utility/gui.hpp>
 
 // SFML
 #include <SFML/Graphics/CircleShape.hpp>
@@ -132,15 +136,26 @@ namespace snake::state{
     void GameState::gameRules(){
 
         // Check for collisions among snake head and food
-        sf::FloatRect head_bounding = this -> snake -> head.getGlobalBounds();
-        sf::FloatRect body_bounding = this -> food -> food.getGlobalBounds();
+        const sf::FloatRect head_bounding{ this -> snake -> head.getGlobalBounds() };
+        const sf::FloatRect body_bounding{ this -> food -> food.getGlobalBounds() };
         if( head_bounding.intersects( body_bounding ) ){
             this -> food -> respawn();
             this -> snake -> bodyGrow();
             this -> score += 1;
         }
 
-
+        // Check for collisions among snake and the window border
+        const auto window_x_max = this -> game_window -> getSize().x;
+        const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
+        const auto window_y_max = this -> game_window -> getSize().y;
+        const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
+        if( snake_x_pos == window_x_max || snake_x_pos == 0 || snake_y_pos == window_y_max - 75 || snake_y_pos == 0 ){
+            this -> snake -> death();
+            this -> game_window -> states.insert( 
+                { "Loose", std::make_shared<state::LooseState>( state::LooseState( game_window ) ) }
+            );
+            this -> game_window -> states.at( "Loose" ) -> drawState();
+        }
     }
 
     //====================================================
