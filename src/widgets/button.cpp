@@ -124,12 +124,20 @@ namespace snake::widget{
         // Idle
         this -> buttonState = BTN_IDLE;
 
-        // Hover
-        if( this -> shape.getGlobalBounds().contains( mousePos ) || this -> focus == true ){
+        // Mouse clicked
+        if( this -> shape.getGlobalBounds().contains( mousePos ) ){
             this -> buttonState = BTN_HOVER;
 
-            // Pressed
-            if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) || sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
+            if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
+                this -> buttonState = BTN_ACTIVE;
+            }
+        }
+
+        // Enter clicked
+        else if( this -> focus == true ){
+            this -> buttonState = BTN_HOVER;
+
+            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
                 this -> buttonState = BTN_ACTIVE;
             }
         }
