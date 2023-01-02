@@ -51,9 +51,6 @@ namespace snake::state{
             // Constructors
             State();
 
-            // Destructor
-            virtual ~State();
-
             // Methods
             virtual void drawState() = 0;
         
@@ -61,6 +58,9 @@ namespace snake::state{
         //     Protected
         //====================================================
         protected:
+
+            // Destructor
+            virtual ~State();
 
             // Methods
             virtual void drawWidgets();

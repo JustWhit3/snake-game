@@ -50,7 +50,10 @@ namespace snake::entity{
         protected:
 
             // Constructors
-            Entity( window::GameWindow* game_window );        
+            Entity( window::GameWindow* game_window );
+
+            // Destructor
+            virtual ~Entity();   
             
             // Variables
             window::GameWindow* game_window;

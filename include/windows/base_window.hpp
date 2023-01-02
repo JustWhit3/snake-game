@@ -51,6 +51,14 @@ namespace snake::window{
 
             // Variables
             std::map<std::string_view, std::shared_ptr<state::State>> states;
+
+        //====================================================
+        //     Protected
+        //====================================================
+        protected:
+
+            // Destructor
+            virtual ~BaseWindow();
         
         //====================================================
         //     Private
