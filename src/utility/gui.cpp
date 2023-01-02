@@ -27,7 +27,7 @@ namespace snake::utility{
      */
     sf::VideoMode getDesktopMode(){
         return sf::VideoMode( 
-            sf::VideoMode::getDesktopMode().height, 
+            sf::VideoMode::getDesktopMode().width, 
             sf::VideoMode::getDesktopMode().height, 
             sf::VideoMode::getDesktopMode().bitsPerPixel
         );

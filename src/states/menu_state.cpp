@@ -110,9 +110,11 @@ namespace snake::state{
         }
 
         // Creating the sprite
-        sf::Sprite logo_sprite;
-        logo_sprite.setTexture( state_texture, true );
-        logo_sprite.setPosition( sf::Vector2f( 290.f, 120.f ) );
+        sf::Sprite logo_sprite( state_texture );
+        logo_sprite.setPosition( 
+           ( this -> game_window_size_x - logo_sprite.getGlobalBounds().width ) * 0.5f, 
+           120.f 
+        );
 
         // Drawing the image
         this -> game_window -> draw( logo_sprite );
@@ -128,9 +130,9 @@ namespace snake::state{
     void MenuState::drawWidgets() {
         
         // Constants
-        constexpr float x_pos{ 440.f };
         constexpr float width{ 200.f };
         constexpr float height{ 70.f };
+        const float x_pos = this -> game_window_size_x * 0.5f - width * 0.5f;
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::Green };

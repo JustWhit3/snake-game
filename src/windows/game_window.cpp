@@ -50,10 +50,7 @@ namespace snake::window{
     GameWindow::GameWindow(){
     
         // Initialize window parameters
-        this -> create(
-            utility::getDesktopMode(), 
-            "Snake Game", sf::Style::Titlebar | sf::Style::Close
-        );
+        this -> create( utility::getDesktopMode(), "Snake Game" );
 
         // Setting the icon
         auto icon = sf::Image{};
@@ -66,7 +63,6 @@ namespace snake::window{
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
-        //this -> setFramerateLimit( 120 );
         this -> setVerticalSyncEnabled( false );
 
         // Push the Menu state

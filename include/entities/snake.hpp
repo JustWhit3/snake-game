@@ -56,7 +56,7 @@ namespace snake::entity{
             void death();
 
             // Variables
-            float speedV{ 0.1f };
+            float speedV{ 0.2f };
             sf::Sprite head;
             sf::RectangleShape body;
 
