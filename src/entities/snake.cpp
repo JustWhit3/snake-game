@@ -9,6 +9,16 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+
+// ptc-print
+#ifdef DEBUG_SNAKE_GAME
+    #define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
+    #define PTC_DISABLE_STD_TYPES_PRINTING
+#endif
+
+//====================================================
 //     Headers
 //====================================================
 
@@ -26,6 +36,11 @@
 #include <SFML/Graphics/RectangleShape.hpp> 
 #include <SFML/Graphics/Sprite.hpp>
 
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
+
 namespace snake::entity{
 
     //====================================================
@@ -42,7 +57,7 @@ namespace snake::entity{
         this -> body.setFillColor( sf::Color( 76, 153, 0 ) );
         this -> body.setOutlineColor( sf::Color::Black );
         this -> body.setOutlineThickness( 2 );
-        this -> body.setPosition( 530.f, 900.f );
+        this -> body.setPosition( this -> game_window_size_x / 2.0f - head.getGlobalBounds().width * 2.0f, 900.f );
         this -> body.setOrigin( ( sf::Vector2f )this -> body.getSize() / 2.f );
     }
 
@@ -143,7 +158,18 @@ namespace snake::entity{
      * 
      */
     void Snake::bodyGrow(){
-        this -> body.setSize( sf::Vector2f( 25.0f, this -> body.getSize().y + 25.f ) );
+        //this -> body.setSize( sf::Vector2f( 25.0f, this -> body.getSize().y + 25.f ) );
+
+        sf::RectangleShape grow;
+        grow.setSize( sf::Vector2f( 25.0f, 25.0f ) );
+        grow.setFillColor( sf::Color( 76, 153, 0 ) );
+        grow.setOutlineColor( sf::Color::Black );
+        grow.setOutlineThickness( 2 );
+        this -> head.setPosition(
+            this -> body.getPosition().x + 25.0f,
+            this -> body.getPosition().y
+        );
+        //grow.setOrigin( ( sf::Vector2f )this -> body.getSize() / 2.f );
     }
 
     //====================================================

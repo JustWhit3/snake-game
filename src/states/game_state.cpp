@@ -72,7 +72,7 @@ namespace snake::state{
         this -> state_texture.loadFromFile( "img/snake_head.png" );;
         this -> snake -> head.setTexture( this -> state_texture );
         this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture.getSize() / 2.f );
-        this -> snake->relHeadPos( 0, - this -> snake -> body.getSize().y );
+        this -> snake -> relHeadPos( 0, - this -> snake -> body.getSize().y );
 
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );

@@ -28,6 +28,7 @@
 // SFML
 #include <SFML/Graphics/RectangleShape.hpp>
 
+
 namespace snake::entity{
 
     //====================================================
@@ -71,6 +72,9 @@ namespace snake::entity{
             // Variables
             float direction_x;
             float direction_y;
+
+            // Constants
+            const uint64_t game_window_size_x = this -> game_window -> getSize().x;
     };
 }
 
