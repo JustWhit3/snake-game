@@ -53,12 +53,15 @@ namespace snake::entity{
     Snake::Snake( window::GameWindow* game_window ): Entity( game_window ){
 
         // Snake body shape settings
-        this -> body.setSize( sf::Vector2f( 25.0f, 25.0f ) );
-        this -> body.setFillColor( sf::Color( 76, 153, 0 ) );
-        this -> body.setOutlineColor( sf::Color::Black );
-        this -> body.setOutlineThickness( 2 );
-        this -> body.setPosition( this -> game_window_size_x / 2.0f - head.getGlobalBounds().width * 2.0f, 900.f );
-        this -> body.setOrigin( ( sf::Vector2f )this -> body.getSize() / 2.f );
+        this -> body_shape.setSize( sf::Vector2f( 25.0f, 25.0f ) );
+        this -> body_shape.setFillColor( sf::Color( 76, 153, 0 ) );
+        this -> body_shape.setOutlineColor( sf::Color::Black );
+        this -> body_shape.setOutlineThickness( 2 );
+        this -> body_shape.setPosition( this -> game_window_size_x / 2.0f - head.getGlobalBounds().width * 2.0f, 900.f );
+        this -> body_shape.setOrigin( ( sf::Vector2f )this -> body_shape.getSize() / 2.f );
+
+        // Adding first body piece to snake
+        this -> body.push_back( body_shape );
     }
 
     //====================================================
@@ -77,9 +80,12 @@ namespace snake::entity{
         this -> direction_x = dir_x;
         this -> direction_y = dir_y;
 
-        // Move
-        this -> body.move( dir_x, dir_y );
+        // Move snake
         this -> head.move( dir_x, dir_y );
+        std::for_each(
+            body.begin(), 
+            body.end(), 
+            [ &dir_x, &dir_y ]( auto& el ){ el.move( dir_x, dir_y ); } );
     }
 
     //====================================================
@@ -95,32 +101,36 @@ namespace snake::entity{
         if( this -> direction_y < 0 ){ // UP
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> head.getRotation() != 0 ){
                 this -> rotate( 90 ); 
-                this -> relHeadPos( 0, - this -> body.getSize().x );
+                this -> relHeadPos( 0, - this -> body[0].getSize().x );
             }
             this -> moveSmoothly( 0.f, - this -> speedV );
+            this -> setGrowPosition( 0, 25.f );
         }
         else if( this -> direction_y > 0 ){ // DOWN
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> head.getRotation() != 180 ){
                 this -> rotate( -90 ); 
-                this -> relHeadPos( 0, this -> body.getSize().x );
+                this -> relHeadPos( 0, this -> body[0].getSize().x );
             }
             this -> moveSmoothly( 0.f, this -> speedV );
+            this -> setGrowPosition( 0, -25.f );
         }
         else if( this -> direction_x < 0 ){ // LEFT
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) && this -> head.getRotation() != 270 ){
                 this -> rotate( 90 );   
-                this -> relHeadPos( - this -> body.getSize().x, 0 );
+                this -> relHeadPos( - this -> body[0].getSize().x, 0 );
             }
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( - this -> speedV, 0.f );
+            this -> setGrowPosition( 25.f, 0 );
         }
         else if( this -> direction_x > 0 ){ // RIGHT
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) && this -> head.getRotation() != 90 ){
                 this -> rotate( -90 );  
-                this -> relHeadPos( this -> body.getSize().x, 0 );
+                this -> relHeadPos( this -> body[0].getSize().x, 0 );
             }
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( this -> speedV, 0.f );
+            this -> setGrowPosition( -25.f, 0 );
         }
 
         // Key pressed changing direction
@@ -139,14 +149,38 @@ namespace snake::entity{
     }
 
     //====================================================
+    //     setGrowPosition
+    //====================================================
+    /**
+     * @brief Method used to set the grow position.
+     * 
+     * @param x Increment of x position.
+     * @param y Increment of y position.
+     */
+    void Snake::setGrowPosition( float x, float y ){
+        if( body.size() > 1 ){
+            for( auto i = body.size() - 1; i > 0; i-- ){
+                this -> body[i].setPosition( 
+                    this -> body[i-1].getPosition().x + x, 
+                    this -> body[i-1].getPosition().y + y 
+                );
+            }
+        }   
+    }
+
+    //====================================================
     //     draw
     //====================================================
     /**
-     * @brief Method used to draw the entity.
+     * @brief Method used to draw the snake entity.
      * 
      */
     void Snake::draw() const {
-        this -> game_window -> draw( this -> body );
+        std::for_each(
+            this -> body.cbegin(),
+            this -> body.cend(),
+            [ this ]( const auto& el ){ this -> game_window -> draw( el ); }
+        );
         this -> game_window -> draw( this -> head );
     }
 
@@ -158,18 +192,28 @@ namespace snake::entity{
      * 
      */
     void Snake::bodyGrow(){
-        //this -> body.setSize( sf::Vector2f( 25.0f, this -> body.getSize().y + 25.f ) );
-
-        sf::RectangleShape grow;
-        grow.setSize( sf::Vector2f( 25.0f, 25.0f ) );
-        grow.setFillColor( sf::Color( 76, 153, 0 ) );
-        grow.setOutlineColor( sf::Color::Black );
-        grow.setOutlineThickness( 2 );
-        this -> head.setPosition(
-            this -> body.getPosition().x + 25.0f,
-            this -> body.getPosition().y
-        );
-        //grow.setOrigin( ( sf::Vector2f )this -> body.getSize() / 2.f );
+        auto body_piece = this -> body_shape;
+            if( this -> direction_y < 0 )
+                body_piece.setPosition( 
+                    this -> body[ body.size() - 1 ].getPosition().x, 
+                    this -> body[ body.size() - 1 ].getPosition().y + 25.f
+                );
+            else if( this -> direction_y > 0 )
+                body_piece.setPosition( 
+                    this -> body[ body.size() - 1 ].getPosition().x, 
+                    this -> body[ body.size() - 1 ].getPosition().y - 25.f
+                );
+            else if( this -> direction_x < 0 )
+                body_piece.setPosition( 
+                    this -> body[ body.size() - 1 ].getPosition().x + 25.f, 
+                    this -> body[ body.size() - 1 ].getPosition().y
+                );
+            else if( this -> direction_x > 0 )
+                body_piece.setPosition( 
+                    this -> body[ body.size() - 1 ].getPosition().x - 25.f, 
+                    this -> body[ body.size() - 1 ].getPosition().y
+                );
+        this -> body.push_back( body_piece );
     }
 
     //====================================================
@@ -181,7 +225,6 @@ namespace snake::entity{
      */
     void Snake::rotate( float angle ){
         this -> head.rotate( angle );     
-        this -> body.rotate( angle ); 
     }
 
     //====================================================
@@ -190,11 +233,13 @@ namespace snake::entity{
     /**
      * @brief Method used to correct the head position with respect to the body one.
      * 
+     * @param x The increment for the x position.
+     * @param y The increment for the y position.
      */
     void Snake::relHeadPos( float x, float y ){
         this -> head.setPosition(
-            this -> body.getPosition().x + x,
-            this -> body.getPosition().y + y
+            this -> body[0].getPosition().x + x,
+            this -> body[0].getPosition().y + y
         );
     }
 

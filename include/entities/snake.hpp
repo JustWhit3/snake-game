@@ -28,6 +28,8 @@
 // SFML
 #include <SFML/Graphics/RectangleShape.hpp>
 
+// STD
+#include <vector>
 
 namespace snake::entity{
 
@@ -55,11 +57,13 @@ namespace snake::entity{
             void bodyGrow();
             void relHeadPos( float x, float y );
             void death();
+            void setGrowPosition( float x, float y );
 
             // Variables
             float speedV{ 0.2f };
             sf::Sprite head;
-            sf::RectangleShape body;
+            sf::RectangleShape body_shape;
+            std::vector<sf::RectangleShape> body;
 
         //====================================================
         //     Private

@@ -72,7 +72,7 @@ namespace snake::state{
         this -> state_texture.loadFromFile( "img/snake_head.png" );;
         this -> snake -> head.setTexture( this -> state_texture );
         this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture.getSize() / 2.f );
-        this -> snake -> relHeadPos( 0, - this -> snake -> body.getSize().y );
+        this -> snake -> relHeadPos( 0, - this -> snake -> body[0].getSize().y );
 
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
@@ -122,8 +122,8 @@ namespace snake::state{
      * @brief Method used to update the state entities.
      * 
      */
-    void GameState::updateEntities() const {
-        this -> snake -> update(); 
+    void GameState::updateEntities() {
+        this -> snake -> update();
     }
 
     //====================================================
@@ -137,8 +137,8 @@ namespace snake::state{
 
         // Check for collisions among snake head and food
         const sf::FloatRect head_bounding{ this -> snake -> head.getGlobalBounds() };
-        const sf::FloatRect body_bounding{ this -> food -> food.getGlobalBounds() };
-        if( head_bounding.intersects( body_bounding ) ){
+        const sf::FloatRect food_bounding{ this -> food -> food.getGlobalBounds() };
+        if( head_bounding.intersects( food_bounding ) ){
             this -> food -> respawn();
             this -> snake -> bodyGrow();
             this -> score += 1;
@@ -149,7 +149,7 @@ namespace snake::state{
         const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
         const auto window_y_max = this -> game_window -> getSize().y;
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos == window_x_max || snake_x_pos == 0 || snake_y_pos == window_y_max - 75 || snake_y_pos == 0 ){
+        if( snake_x_pos == window_x_max || snake_x_pos == 0 || snake_y_pos == window_y_max || snake_y_pos == 0 ){
             this -> snake -> death();
             this -> game_window -> states.insert( 
                 { "Loose", std::make_shared<state::LooseState>( state::LooseState( game_window ) ) }

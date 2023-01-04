@@ -62,7 +62,7 @@ namespace snake::state{
 
             // Methods
             void drawEntities() const;
-            void updateEntities() const;
+            void updateEntities();
             void gameRules();
             void drawWidgets() override;
             void packWidgets() override;
