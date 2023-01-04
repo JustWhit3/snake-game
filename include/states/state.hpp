@@ -63,9 +63,9 @@ namespace snake::state{
             virtual ~State();
 
             // Methods
-            virtual void drawWidgets();
+            virtual void drawWidgets() = 0;
             virtual void setWidgetsKeys() const;
-            virtual void packWidgets();
+            virtual void packWidgets() = 0;
 
             // Variables
             sf::Font font;

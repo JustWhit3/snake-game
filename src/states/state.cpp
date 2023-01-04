@@ -54,17 +54,6 @@ namespace snake::state{
     }
 
     //====================================================
-    //     drawWidgets
-    //====================================================
-    /**
-     * @brief Method used to draw widgets in the current state.
-     * 
-     */
-    void State::drawWidgets(){
-
-    }
-
-    //====================================================
     //     setWidgetsKeys
     //====================================================
     /**
@@ -72,17 +61,6 @@ namespace snake::state{
      * 
      */
     void State::setWidgetsKeys() const {
-
-    }
-
-    //====================================================
-    //     packWidgets
-    //====================================================
-    /**
-     * @brief Method used to pack widgets in the current state.
-     * 
-     */
-    void State::packWidgets(){
 
     }
 }
