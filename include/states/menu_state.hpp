@@ -76,6 +76,7 @@ namespace snake::state{
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
+            const uint64_t game_window_size_y = this -> game_window -> getSize().y;
     };
 }
 

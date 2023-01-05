@@ -113,7 +113,7 @@ namespace snake::state{
         sf::Sprite logo_sprite( state_texture );
         logo_sprite.setPosition( 
            ( this -> game_window_size_x - logo_sprite.getGlobalBounds().width ) * 0.5f, 
-           120.f 
+           ( this -> game_window_size_y - logo_sprite.getGlobalBounds().height ) * 0.25f
         );
 
         // Drawing the image
@@ -130,8 +130,8 @@ namespace snake::state{
     void MenuState::drawWidgets() {
         
         // Constants
-        constexpr float width{ 200.f };
-        constexpr float height{ 70.f };
+        const float width{ this -> game_window_size_y * 0.2f };
+        const float height{ width * 0.35f };
         const float x_pos = this -> game_window_size_x * 0.5f - width * 0.5f;
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
@@ -142,7 +142,7 @@ namespace snake::state{
         // Game button
         this -> game_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, 540.f, width, height, font, "Start Game", 
+                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 80.f, width, height, font, "Start Game", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
@@ -158,7 +158,7 @@ namespace snake::state{
         // Scores button
         this -> scores_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, 620.f, width, height, font, "Scores", 
+                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 160.f, width, height, font, "Scores", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
@@ -167,7 +167,7 @@ namespace snake::state{
         // Settings button
         this -> settings_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, 700.f, width, height, font, "Settings", 
+                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 240.f, width, height, font, "Settings", 
                 idleColor, hoverColor, activeColor ) 
             )
         };
@@ -176,7 +176,7 @@ namespace snake::state{
         // Quit button
         this -> quit_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, 780.f, width, height, font, "Quit", 
+                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 320.f, width, height, font, "Quit", 
                 idleColor, hoverColor, activeColor ) 
             )
         };

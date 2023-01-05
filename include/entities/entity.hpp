@@ -41,7 +41,6 @@ namespace snake::entity{
         public:
 
             // Methods
-            virtual void update();
             virtual void draw() const = 0;
         
         //====================================================

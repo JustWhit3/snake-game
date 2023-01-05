@@ -51,7 +51,7 @@ namespace snake::entity{
             Snake( window::GameWindow* game_window );
 
             // Methods
-            void update() override;
+            void update();
             void moveSmoothly( const float dir_x, const float dir_y );
             void draw() const override;
             void bodyGrow();

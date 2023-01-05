@@ -39,15 +39,4 @@ namespace snake::entity{
     Entity::~Entity(){
 
     }
-
-    //====================================================
-    //     update
-    //====================================================
-    /**
-     * @brief Method used to update an entity in each loop iteration.
-     * 
-     */
-    void Entity::update(){
-
-    }
 }
