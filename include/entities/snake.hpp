@@ -30,6 +30,7 @@
 
 // STD
 #include <vector>
+#include <limits>
 
 namespace snake::entity{
 
@@ -60,7 +61,7 @@ namespace snake::entity{
             void setGrowPosition( float x, float y );
 
             // Variables
-            float speedV{ 0.2f };
+            float speedV{ 25.f };
             sf::Sprite head;
             sf::RectangleShape body_shape;
             std::vector<sf::RectangleShape> body;
@@ -79,6 +80,7 @@ namespace snake::entity{
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
+            const float infinitesimal_speedV = std::numeric_limits<float>::epsilon();
     };
 }
 

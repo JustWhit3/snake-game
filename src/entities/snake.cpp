@@ -62,6 +62,11 @@ namespace snake::entity{
 
         // Adding first body piece to snake
         this -> body.push_back( body_shape );
+
+
+        for( int i=0; i < 15; i++ ){
+            this -> bodyGrow();
+        }
     }
 
     //====================================================
@@ -135,16 +140,16 @@ namespace snake::entity{
 
         // Key pressed changing direction
         if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) ){
-            this -> moveSmoothly( 0.f, - this -> speedV );
+            this -> moveSmoothly( 0.f, - this -> infinitesimal_speedV );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) ){
-            this -> moveSmoothly( 0.f, this -> speedV );
+            this -> moveSmoothly( 0.f, this -> infinitesimal_speedV );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) ){
-            this -> moveSmoothly( this -> speedV, 0.f );
+            this -> moveSmoothly( this -> infinitesimal_speedV, 0.f );
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) ){
-            this -> moveSmoothly( - this -> speedV, 0.f );
+            this -> moveSmoothly( - this -> infinitesimal_speedV, 0.f );
         }
     }
 
@@ -213,6 +218,7 @@ namespace snake::entity{
                     this -> body[ body.size() - 1 ].getPosition().x - 25.f, 
                     this -> body[ body.size() - 1 ].getPosition().y
                 );
+        body_piece.setOrigin( this -> body[ body.size() - 1 ].getOrigin() );
         this -> body.push_back( body_piece );
     }
 
@@ -225,6 +231,10 @@ namespace snake::entity{
      */
     void Snake::rotate( float angle ){
         this -> head.rotate( angle );     
+        std::for_each(
+            body.begin(), 
+            body.end(), 
+            [ &angle ]( auto& el ){ el.rotate( angle ); } );
     }
 
     //====================================================
