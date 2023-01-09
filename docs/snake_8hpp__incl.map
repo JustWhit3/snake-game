@@ -1,9 +1,10 @@
 <map id="include/entities/snake.hpp" name="include/entities/snake.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="757,5,929,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="860,5,1032,32"/>
 <area shape="rect" id="node2" href="$game__window_8hpp.html" title=" " alt="" coords="473,80,657,107"/>
 <area shape="rect" id="node12" href="$entity_8hpp.html" title=" " alt="" coords="681,80,803,107"/>
 <area shape="rect" id="node13" title=" " alt="" coords="827,80,1065,107"/>
 <area shape="rect" id="node14" title=" " alt="" coords="1089,80,1147,107"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1171,80,1225,107"/>
 <area shape="rect" id="node3" href="$base__window_8hpp.html" title=" " alt="" coords="475,155,655,181"/>
 <area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="229,229,343,256"/>
 <area shape="rect" id="node8" title=" " alt="" coords="367,229,506,256"/>
