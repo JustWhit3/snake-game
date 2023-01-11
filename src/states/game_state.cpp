@@ -127,6 +127,21 @@ namespace snake::state{
     }
 
     //====================================================
+    //     gameOver
+    //====================================================
+    /**
+     * @brief Method used to set the game over condition.
+     * 
+     */
+    void GameState::gameOver(){
+        this -> snake -> death();
+        this -> game_window -> states.insert( 
+            { "Loose", std::make_shared<state::LooseState>( state::LooseState( game_window ) ) }
+        );
+        this -> game_window -> states.at( "Loose" ) -> drawState();
+    }
+
+    //====================================================
     //     gameRules
     //====================================================
     /**
@@ -150,11 +165,7 @@ namespace snake::state{
         const auto window_y_max = this -> game_window -> getSize().y;
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
         if( snake_x_pos == window_x_max || snake_x_pos == 0 || snake_y_pos == window_y_max || snake_y_pos == 0 ){
-            this -> snake -> death();
-            this -> game_window -> states.insert( 
-                { "Loose", std::make_shared<state::LooseState>( state::LooseState( game_window ) ) }
-            );
-            this -> game_window -> states.at( "Loose" ) -> drawState();
+            this -> gameOver();
         }
     }
 

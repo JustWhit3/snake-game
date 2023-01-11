@@ -78,6 +78,7 @@ namespace snake::entity{
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
             const float infinitesimal_speedV = std::numeric_limits<float>::epsilon();
+            const float body_dimension = 25.0f;
     };
 }
 

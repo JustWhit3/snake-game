@@ -66,6 +66,7 @@ namespace snake::state{
             void gameRules();
             void drawWidgets() override;
             void packWidgets() override;
+            void gameOver();
 
             // Variables
             window::GameWindow* game_window;

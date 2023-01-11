@@ -53,7 +53,7 @@ namespace snake::entity{
     Snake::Snake( window::GameWindow* game_window ): Entity( game_window ){
 
         // Snake body shape settings
-        this -> body_shape.setSize( sf::Vector2f( 25.0f, 25.0f ) );
+        this -> body_shape.setSize( sf::Vector2f( this -> body_dimension, this -> body_dimension ) );
         this -> body_shape.setFillColor( sf::Color( 76, 153, 0 ) );
         this -> body_shape.setOutlineColor( sf::Color::Black );
         this -> body_shape.setOutlineThickness( 2 );
@@ -112,7 +112,7 @@ namespace snake::entity{
             }
             this -> relHeadPos( 0, - this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, - this -> speedV );
-            this -> setGrowPosition( 0, 25.f );
+            this -> setGrowPosition( 0, this -> body_dimension );
         }
         else if( this -> direction_y > 0 ){ // DOWN
             if( this -> head.getRotation() == 270 ){
@@ -123,7 +123,7 @@ namespace snake::entity{
             }
             this -> relHeadPos( 0, this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, this -> speedV );
-            this -> setGrowPosition( 0, -25.f );
+            this -> setGrowPosition( 0, -this -> body_dimension );
         }
         else if( this -> direction_x < 0 ){ // LEFT
             if( this -> head.getRotation() == 0 ){
@@ -135,7 +135,7 @@ namespace snake::entity{
             this -> relHeadPos( - this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( - this -> speedV, 0.f );
-            this -> setGrowPosition( 25.f, 0 );
+            this -> setGrowPosition( this -> body_dimension, 0 );
         }
         else if( this -> direction_x > 0 ){ // RIGHT
             if( this -> head.getRotation() == 0 ){
@@ -147,7 +147,7 @@ namespace snake::entity{
             this -> relHeadPos( this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( this -> speedV, 0.f );
-            this -> setGrowPosition( -25.f, 0 );
+            this -> setGrowPosition( -this -> body_dimension, 0 );
         }
 
         // Key pressed changing direction
@@ -213,21 +213,21 @@ namespace snake::entity{
             if( this -> direction_y < 0 )
                 body_piece.setPosition( 
                     this -> body[ body.size() - 1 ].getPosition().x, 
-                    this -> body[ body.size() - 1 ].getPosition().y + 25.f
+                    this -> body[ body.size() - 1 ].getPosition().y + this -> body_dimension
                 );
             else if( this -> direction_y > 0 )
                 body_piece.setPosition( 
                     this -> body[ body.size() - 1 ].getPosition().x, 
-                    this -> body[ body.size() - 1 ].getPosition().y - 25.f
+                    this -> body[ body.size() - 1 ].getPosition().y - this -> body_dimension
                 );
             else if( this -> direction_x < 0 )
                 body_piece.setPosition( 
-                    this -> body[ body.size() - 1 ].getPosition().x + 25.f, 
+                    this -> body[ body.size() - 1 ].getPosition().x + this -> body_dimension, 
                     this -> body[ body.size() - 1 ].getPosition().y
                 );
             else if( this -> direction_x > 0 )
                 body_piece.setPosition( 
-                    this -> body[ body.size() - 1 ].getPosition().x - 25.f, 
+                    this -> body[ body.size() - 1 ].getPosition().x - this -> body_dimension, 
                     this -> body[ body.size() - 1 ].getPosition().y
                 );
         body_piece.setOrigin( this -> body[ body.size() - 1 ].getOrigin() );
