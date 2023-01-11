@@ -128,17 +128,18 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> gameRules();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">void</span> drawWidgets() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">void</span> packWidgets() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::unique_ptr&lt;entity::Snake&gt; <a class="code" href="namespacesnake.html">snake</a>{ std::make_unique&lt;entity::Snake&gt;( <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>( game_window ) ) };</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::unique_ptr&lt;entity::Food&gt; food{ std::make_unique&lt;entity::Food&gt;( <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>( game_window ) ) };</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            uint64_t score{ 0 };</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            sf::Text score_update;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordtype">void</span> gameOver();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::unique_ptr&lt;entity::Snake&gt; <a class="code" href="namespacesnake.html">snake</a>{ std::make_unique&lt;entity::Snake&gt;( <a class="code" href="classsnake_1_1entity_1_1Snake.html">entity::Snake</a>( game_window ) ) };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            std::unique_ptr&lt;entity::Food&gt; food{ std::make_unique&lt;entity::Food&gt;( <a class="code" href="classsnake_1_1entity_1_1Food.html">entity::Food</a>( game_window ) ) };</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            uint64_t score{ 0 };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            sf::Text score_update;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html">snake::entity::Food</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> food.hpp:40</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Snake_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Snake.html">snake::entity::Snake</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> snake.hpp:44</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html">snake::state::GameState</a></div><div class="ttdoc">Class used to create the game state.</div><div class="ttdef"><b>Definition:</b> game_state.hpp:45</div></div>
