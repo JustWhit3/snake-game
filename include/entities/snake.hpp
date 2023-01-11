@@ -71,9 +71,6 @@ namespace snake::entity{
         //====================================================
         private:
 
-            // Methods
-            void rotate( float angle );
-
             // Variables
             float direction_x;
             float direction_y;

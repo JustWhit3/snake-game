@@ -104,35 +104,47 @@ namespace snake::entity{
 
         // Default movement
         if( this -> direction_y < 0 ){ // UP
-            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> head.getRotation() != 0 ){
-                this -> rotate( 90 ); 
-                this -> relHeadPos( 0, - this -> body[0].getSize().x );
+            if( this -> head.getRotation() == 270 ){
+                this -> head.rotate( 90 ); 
             }
+            else if( this -> head.getRotation() == 90 ){
+                this -> head.rotate( -90 ); 
+            }
+            this -> relHeadPos( 0, - this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, - this -> speedV );
             this -> setGrowPosition( 0, 25.f );
         }
         else if( this -> direction_y > 0 ){ // DOWN
-            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> head.getRotation() != 180 ){
-                this -> rotate( -90 ); 
-                this -> relHeadPos( 0, this -> body[0].getSize().x );
+            if( this -> head.getRotation() == 270 ){
+                this -> head.rotate( -90 ); 
             }
+            else if( this -> head.getRotation() == 90 ){
+                this -> head.rotate( 90 ); 
+            }
+            this -> relHeadPos( 0, this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, this -> speedV );
             this -> setGrowPosition( 0, -25.f );
         }
         else if( this -> direction_x < 0 ){ // LEFT
-            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) && this -> head.getRotation() != 270 ){
-                this -> rotate( 90 );   
-                this -> relHeadPos( - this -> body[0].getSize().x, 0 );
+            if( this -> head.getRotation() == 0 ){
+                this -> head.rotate( -90 );   
             }
+            else if( this -> head.getRotation() == 180 ){
+                this -> head.rotate( 90 );   
+            }
+            this -> relHeadPos( - this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( - this -> speedV, 0.f );
             this -> setGrowPosition( 25.f, 0 );
         }
         else if( this -> direction_x > 0 ){ // RIGHT
-            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) && this -> head.getRotation() != 90 ){
-                this -> rotate( -90 );  
-                this -> relHeadPos( this -> body[0].getSize().x, 0 );
+            if( this -> head.getRotation() == 0 ){
+                this -> head.rotate( 90 );   
             }
+            else if( this -> head.getRotation() == 180 ){
+                this -> head.rotate( -90 );   
+            }
+            this -> relHeadPos( this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( this -> speedV, 0.f );
             this -> setGrowPosition( -25.f, 0 );
@@ -220,21 +232,6 @@ namespace snake::entity{
                 );
         body_piece.setOrigin( this -> body[ body.size() - 1 ].getOrigin() );
         this -> body.push_back( body_piece );
-    }
-
-    //====================================================
-    //     rotate
-    //====================================================
-    /**
-     * @brief Method used to rotate the snake body.
-     * 
-     */
-    void Snake::rotate( float angle ){
-        this -> head.rotate( angle );     
-        std::for_each(
-            body.begin(), 
-            body.end(), 
-            [ &angle ]( auto& el ){ el.rotate( angle ); } );
     }
 
     //====================================================
