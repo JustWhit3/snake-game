@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_98',['update',['../classsnake_1_1entity_1_1Snake.html#a53f6766ddd5ab6ade154412215f62164',1,'snake::entity::Snake']]]
+  ['tail_99',['tail',['../classsnake_1_1entity_1_1Snake.html#aa6a914bffcf26814aef0a607a00256eb',1,'snake::entity::Snake']]]
 ];
