@@ -63,10 +63,23 @@ namespace snake::entity{
         // Adding first body piece to snake
         this -> body.push_back( body_shape );
 
+        // Snake tail settings
+        this -> tail.setRadius( 15.f );
+        this -> tail.setPointCount( 3 );
+        this -> tail.setFillColor( sf::Color( 51, 51, 255 ) );
+        this -> tail.setOutlineColor( sf::Color::Black );
+        this -> tail.setOutlineThickness( 2 );
+        this -> tail.setPosition( 
+            this -> game_window_size_x / 2.0f - body.back().getGlobalBounds().width * 2.0f, 
+            900.f
+        );
+        this -> tail.setOrigin( this -> tail.getGlobalBounds().height / 2.f, this -> tail.getGlobalBounds().width / 2.f );
+        this -> tail.rotate( 180 );
 
-        for( int i=0; i < 15; i++ ){
-            this -> bodyGrow();
-        }
+        // TODO: remove
+        //for( int i=0; i < 15; i++ ){
+        //    this -> bodyGrow();
+        //}
     }
 
     //====================================================
@@ -91,6 +104,7 @@ namespace snake::entity{
             body.begin(), 
             body.end(), 
             [ &dir_x, &dir_y ]( auto& el ){ el.move( dir_x, dir_y ); } );
+        this -> tail.move( dir_x, dir_y );
     }
 
     //====================================================
@@ -110,6 +124,7 @@ namespace snake::entity{
             else if( this -> head.getRotation() == 90 ){
                 this -> head.rotate( -90 ); 
             }
+            this -> relTailPos( 0, this -> body.back().getSize().x );
             this -> relHeadPos( 0, - this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, - this -> speedV );
             this -> setGrowPosition( 0, this -> body_dimension );
@@ -122,6 +137,7 @@ namespace snake::entity{
                 this -> head.rotate( 90 ); 
             }
             this -> relHeadPos( 0, this -> body[0].getSize().x );
+            this -> relTailPos( 0, - this -> body.back().getSize().x );
             this -> moveSmoothly( 0.f, this -> speedV );
             this -> setGrowPosition( 0, -this -> body_dimension );
         }
@@ -133,6 +149,7 @@ namespace snake::entity{
                 this -> head.rotate( 90 );   
             }
             this -> relHeadPos( - this -> body[0].getSize().x, 0 );
+            this -> relTailPos( this -> body.back().getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( - this -> speedV, 0.f );
             this -> setGrowPosition( this -> body_dimension, 0 );
@@ -145,6 +162,7 @@ namespace snake::entity{
                 this -> head.rotate( -90 );   
             }
             this -> relHeadPos( this -> body[0].getSize().x, 0 );
+            this -> relTailPos( - this -> body.back().getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( this -> speedV, 0.f );
             this -> setGrowPosition( -this -> body_dimension, 0 );
@@ -199,6 +217,7 @@ namespace snake::entity{
             [ this ]( const auto& el ){ this -> game_window -> draw( el ); }
         );
         this -> game_window -> draw( this -> head );
+        this -> game_window -> draw( this -> tail );
     }
 
     //====================================================
@@ -247,6 +266,22 @@ namespace snake::entity{
         this -> head.setPosition(
             this -> body[0].getPosition().x + x,
             this -> body[0].getPosition().y + y
+        );
+    }
+
+    //====================================================
+    //     relTailPos
+    //====================================================
+    /**
+     * @brief Method used to correct the tail position with respect to the body one.
+     * 
+     * @param x The increment for the x position.
+     * @param y The increment for the y position.
+     */
+    void Snake::relTailPos( float x, float y ){
+        this -> tail.setPosition(
+            this -> body.back().getPosition().x + x,
+            this -> body.back().getPosition().y + y
         );
     }
 

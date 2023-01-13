@@ -57,6 +57,7 @@ namespace snake::entity{
             void draw() const override;
             void bodyGrow();
             void relHeadPos( float x, float y );
+            void relTailPos( float x, float y );
             void death();
             void setGrowPosition( float x, float y );
 
@@ -65,7 +66,8 @@ namespace snake::entity{
             sf::Sprite head;
             sf::RectangleShape body_shape;
             std::vector<sf::RectangleShape> body;
-
+            sf::CircleShape tail;
+            
         //====================================================
         //     Private
         //====================================================
