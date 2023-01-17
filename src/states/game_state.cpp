@@ -164,9 +164,21 @@ namespace snake::state{
         const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
         const auto window_y_max = this -> game_window -> getSize().y;
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos == window_x_max || snake_x_pos == 0 || snake_y_pos == window_y_max || snake_y_pos == 0 ){
+        if( snake_x_pos == window_x_max - 100 || snake_x_pos == 0 || snake_y_pos == window_y_max || snake_y_pos == 0 ){
             this -> gameOver();
         }
+
+        // Check for collision among snake and its body
+        std::for_each( 
+            this -> snake -> body.begin() + 1, 
+            this -> snake -> body.end(), 
+            [ &head_bounding, this ]( auto& elem ) {
+                const sf::FloatRect body_bounding{ elem.getGlobalBounds() };
+                if( head_bounding.intersects( body_bounding ) ){
+                    this -> gameOver();
+                }
+            }
+        );
     }
 
     //====================================================
