@@ -69,9 +69,9 @@ namespace snake::state{
         game_window( game_window ){
 
         // Set snake head and texture properties
-        this -> state_texture.loadFromFile( "img/snake_head.png" );;
-        this -> snake -> head.setTexture( this -> state_texture );
-        this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture.getSize() / 2.f );
+        this -> state_texture_1.loadFromFile( "img/snake_head.png" );;
+        this -> snake -> head.setTexture( this -> state_texture_1 );
+        this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture_1.getSize() / 2.f );
         this -> snake -> relHeadPos( 0, - this -> snake -> body[0].getSize().y );
 
         // Default move up

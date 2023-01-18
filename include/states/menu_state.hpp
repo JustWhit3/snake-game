@@ -62,7 +62,7 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawLogo() const;
+            void drawImg() const;
             void drawWidgets() override;
             void setWidgetsKeys() const override;
             void packWidgets() override;

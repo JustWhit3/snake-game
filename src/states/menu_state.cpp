@@ -85,7 +85,7 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Drawing images
-        this -> drawLogo();
+        this -> drawImg();
 
         // Drawing widgets
         this -> setWidgetsKeys();
@@ -102,21 +102,40 @@ namespace snake::state{
      * @brief Method used to draw the image logo.
      * 
      */
-    void MenuState::drawLogo() const {
+    void MenuState::drawImg() const {
 
-        // Creating the texture
-        if( ! state_texture.loadFromFile( "img/logo.png" ) ){
+        // Loading files from textures
+        if( ! state_texture_1.loadFromFile( "img/logo_small.png" ) ){
+            this -> game_window -> close();
+        }
+        if( ! state_texture_2.loadFromFile( "img/snake_branch.png" ) ){
+            this -> game_window -> close();
+        }
+        if( ! state_texture_3.loadFromFile( "img/menu_background.jpg" ) ){
             this -> game_window -> close();
         }
 
-        // Creating the sprite
-        sf::Sprite logo_sprite( state_texture );
+        // Logo
+        sf::Sprite logo_sprite( state_texture_1 );
         logo_sprite.setPosition( 
            ( this -> game_window_size_x - logo_sprite.getGlobalBounds().width ) * 0.5f, 
-           ( this -> game_window_size_y - logo_sprite.getGlobalBounds().height ) * 0.25f
+           ( this -> game_window_size_y - logo_sprite.getGlobalBounds().height ) * 0.2f
         );
 
-        // Drawing the image
+        // Snake on the branch
+        sf::Sprite snake_branch_sprite( state_texture_2 );
+        snake_branch_sprite.setPosition( 
+           0, 
+           ( this -> game_window_size_y - snake_branch_sprite.getGlobalBounds().height ) * 0.25f
+        );
+
+        // Background
+        sf::RectangleShape background( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
+        background.setTexture( &state_texture_3, true );
+
+        // Drawing the images
+        this -> game_window -> draw( background );
+        this -> game_window -> draw( snake_branch_sprite );
         this -> game_window -> draw( logo_sprite );
     }
 
@@ -132,7 +151,7 @@ namespace snake::state{
         // Constants
         const float width{ this -> game_window_size_y * 0.2f };
         const float height{ width * 0.35f };
-        const float x_pos = this -> game_window_size_x * 0.5f - width * 0.5f;
+        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::Green };

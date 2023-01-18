@@ -106,6 +106,9 @@ namespace snake::entity{
             else if( this -> head.getRotation() == 90 ){
                 this -> rotate( -90 ); 
             }
+            else if( this -> head.getRotation() == 180 ){
+                this -> rotate( 180 ); 
+            }
             this -> relHeadPos( 0, - this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, - this -> speedV );
             this -> setGrowPosition( 0, this -> body_dimension );
@@ -116,6 +119,9 @@ namespace snake::entity{
             }
             else if( this -> head.getRotation() == 90 ){
                 this -> rotate( 90 ); 
+            }
+            else if( this -> head.getRotation() == 0 ){
+                this -> rotate( 180 ); 
             }
             this -> relHeadPos( 0, this -> body[0].getSize().x );
             this -> moveSmoothly( 0.f, this -> speedV );
@@ -128,6 +134,9 @@ namespace snake::entity{
             else if( this -> head.getRotation() == 180 ){
                 this -> rotate( 90 );
             }
+            else if( this -> head.getRotation() == 90 ){
+                this -> rotate( 180 ); 
+            }
             this -> relHeadPos( - this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
             this -> moveSmoothly( - this -> speedV, 0.f );
@@ -139,6 +148,9 @@ namespace snake::entity{
             }
             else if( this -> head.getRotation() == 180 ){
                 this -> rotate( -90 );   
+            }
+            else if( this -> head.getRotation() == 270 ){
+                this -> rotate( 180 ); 
             }
             this -> relHeadPos( this -> body[0].getSize().x, 0 );
             this -> moveSmoothly( 0.f, 0.f );
