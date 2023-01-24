@@ -154,9 +154,10 @@ namespace snake::state{
         const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
-        const sf::Color idleColor{ sf::Color::Green };
-        const sf::Color hoverColor{ sf::Color::Red };
+        const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
+        const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
         const sf::Color activeColor{ sf::Color::Blue };
+        const sf::Color textColor{ sf::Color::Black };
 
         // Game button
         this -> game_button = { 
@@ -173,6 +174,7 @@ namespace snake::state{
         this -> game_button -> setAction( game_action );
         this -> game_button -> setTextSize( text_size );
         this -> game_button -> setFocus( true );
+        this -> game_button -> setTextColor( textColor );
 
         // Scores button
         this -> scores_button = { 
@@ -182,6 +184,7 @@ namespace snake::state{
             )
         };
         this -> scores_button -> setTextSize( text_size ); 
+        this -> scores_button -> setTextColor( textColor );
         
         // Settings button
         this -> settings_button = { 
@@ -191,6 +194,7 @@ namespace snake::state{
             )
         };
         this -> settings_button -> setTextSize( text_size );
+        this -> settings_button -> setTextColor( textColor );
 
         // Quit button
         this -> quit_button = { 
@@ -201,6 +205,7 @@ namespace snake::state{
         };
         this -> quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
         this -> quit_button -> setTextSize( text_size );
+        this -> quit_button -> setTextColor( textColor );
     }
 
     //====================================================

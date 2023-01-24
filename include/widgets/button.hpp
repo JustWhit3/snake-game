@@ -72,6 +72,7 @@ namespace snake::widget{
             void setOutlineColor( const sf::Color& color );
             void setOutlineThickness( float thickness );
             void setFocus( const bool focus );
+            void setTextColor( const sf::Color& color );
 
             // Variables
             bool focus;

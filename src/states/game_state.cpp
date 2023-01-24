@@ -164,7 +164,7 @@ namespace snake::state{
         const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
         const auto window_y_max = this -> game_window -> getSize().y;
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos == window_x_max - 100 || snake_x_pos == 0 || snake_y_pos == window_y_max || snake_y_pos == 0 ){
+        if( snake_x_pos >= window_x_max - 100 || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= 0 ){
             this -> gameOver();
         }
 

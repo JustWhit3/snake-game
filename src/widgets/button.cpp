@@ -85,13 +85,12 @@ namespace snake::widget{
         // Setting button shape
         this -> shape.setPosition( sf::Vector2f( x, y ) );
         this -> shape.setSize( sf::Vector2f( width, height ) );
-        this -> shape.setOutlineThickness( -5.f );
+        this -> shape.setOutlineThickness( -4.f );
         this -> shape.setOutlineColor( sf::Color::Black );
 
         // Setting button text properties
         this -> text.setFont( this -> font );
         this -> text.setString( text );
-        this -> text.setFillColor( sf::Color::Black );
         this -> text.setCharacterSize( 12 );
 
         // Coloring button
@@ -265,5 +264,17 @@ namespace snake::widget{
      */
     void Button::setFocus( const bool focus ){
         this -> focus = focus;
+    }
+
+    //====================================================
+    //     setTextColor
+    //====================================================
+    /**
+     * @brief Method used to set the color of the button text.
+     * 
+     * @param color The new color to be set.
+     */
+    void Button::setTextColor( const sf::Color& color ){
+        this -> text.setFillColor( color );
     }
 }

@@ -77,7 +77,7 @@ namespace snake::state{
 
             // Constants
             sf::Color background_color{ sf::Color::White };
-            static constexpr uint16_t waiting_time{ 180 };
+            static constexpr uint16_t waiting_time{ 100 };
     };
 }
 
