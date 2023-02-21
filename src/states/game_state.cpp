@@ -74,6 +74,10 @@ namespace snake::state{
         this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture_1.getSize() / 2.f );
         this -> snake -> relHeadPos( 0, - this -> snake -> body[0].getSize().y );
 
+        // Set food texture properties
+        this -> state_texture_2.loadFromFile( "img/food.png" );
+        this -> food -> food.setTexture( this -> state_texture_2 );
+
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
 
@@ -164,7 +168,7 @@ namespace snake::state{
         const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
         const auto window_y_max = this -> game_window -> getSize().y;
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos >= window_x_max - 100 || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= 0 ){
+        if( snake_x_pos >= window_x_max - 100 || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= 75 ){
             this -> gameOver();
         }
 
@@ -190,10 +194,27 @@ namespace snake::state{
      */
     void GameState::drawWidgets(){
 
+        // Score icon
+        this -> state_texture_3.loadFromFile( "img/food.png" );
+        this -> score_icon.setTexture( this -> state_texture_3 );
+        this -> score_icon.setPosition( 
+            this -> game_window -> getSize().x * 0.02f, 
+            this -> game_window -> getSize().y * 0.015f 
+        );
+
         // Score text
         this -> score_update.setFillColor( sf::Color::Black );
-        this -> score_update.setPosition( 567.5f, 907.f );
-        this -> score_update.setCharacterSize( 20 );
+        this -> score_update.setPosition( 
+            this -> game_window -> getSize().x * 0.02f + this -> score_icon.getGlobalBounds().width, 
+            this -> game_window -> getSize().y * 0.02f
+        );
+        this -> score_update.setCharacterSize( 30 );
+
+        // Horizontal line
+        this -> horizontal_line[0].position = sf::Vector2f( 0, 75 );
+        this -> horizontal_line[0].color = sf::Color::Black;
+        this -> horizontal_line[1].position = sf::Vector2f( this -> game_window -> getSize().x, 75 );
+        this -> horizontal_line[1].color = sf::Color::Black;
     }
 
     //====================================================
@@ -207,5 +228,7 @@ namespace snake::state{
         this -> score_update.setFont( this -> font );
         this -> score_update.setString( std::to_string( this -> score ) );
         this -> game_window -> draw( this -> score_update );
+        this -> game_window -> draw( this -> score_icon );
+        this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );
     }
 }

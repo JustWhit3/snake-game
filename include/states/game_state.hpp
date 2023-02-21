@@ -32,6 +32,7 @@
 // STD
 #include <cstdint>
 #include <memory>
+#include <sstream>
 
 namespace snake::state{
 
@@ -74,6 +75,8 @@ namespace snake::state{
             std::unique_ptr<entity::Food> food{ std::make_unique<entity::Food>( entity::Food( game_window ) ) };
             uint64_t score{ 0 };
             sf::Text score_update;
+            sf::Vertex horizontal_line[2];
+            sf::Sprite score_icon;
     };
 }
 

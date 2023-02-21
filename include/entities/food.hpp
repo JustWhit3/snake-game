@@ -52,7 +52,7 @@ namespace snake::entity{
             void respawn();
 
             // Variables
-            sf::CircleShape food;
+            sf::Sprite food;
 
         //====================================================
         //     private
@@ -60,7 +60,8 @@ namespace snake::entity{
         private:
 
             // Constants
-            const int bound{ static_cast<int>( utility::getDesktopMode().height - utility::getDesktopMode().height / 10 ) };
+            const int y_bound{ static_cast<int>( utility::getDesktopMode().height - utility::getDesktopMode().height / 10 ) };
+            const int x_bound{ static_cast<int>( utility::getDesktopMode().width - utility::getDesktopMode().width / 10 ) };
     };
 }
 

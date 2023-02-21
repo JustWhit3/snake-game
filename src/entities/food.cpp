@@ -51,16 +51,12 @@ namespace snake::entity{
      * 
      */
     Food::Food( window::GameWindow* game_window ): Entity( game_window ){
-
-        // Shape settings
-        this -> food.setRadius( 12.5f );
-        this -> food.setFillColor( sf::Color::Red );
-        this -> food.setOutlineColor( sf::Color::Black );
-        this -> food.setOutlineThickness( 2 );
         
         // Setting random first position
-        float x_random = utility::random( 0, this -> bound );
-        float y_random = utility::random( 0, this -> bound );
+        float x_random = utility::random( 0, this -> x_bound );
+        float y_random = utility::random( 0, this -> y_bound );
+
+        // Food settings
         this -> food.setPosition( x_random, y_random );
     }
 
@@ -83,8 +79,8 @@ namespace snake::entity{
      * 
      */
     void Food::respawn(){
-        float x_random = utility::random( 0, this -> bound );
-        float y_random = utility::random( 0, this -> bound );
+        float x_random = utility::random( 0, this -> x_bound );
+        float y_random = utility::random( 0, this -> y_bound );
         this -> food.setPosition( x_random, y_random );
     }
 }
