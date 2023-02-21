@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loosestate_165',['LooseState',['../classsnake_1_1state_1_1LooseState.html#ae7db96a8bc8c2bf08c7149ea7e0138c7',1,'snake::state::LooseState']]]
+  ['loosestate_166',['LooseState',['../classsnake_1_1state_1_1LooseState.html#a442fe976369f3b876532c8de6a332430',1,'snake::state::LooseState']]]
 ];
