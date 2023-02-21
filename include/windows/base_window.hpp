@@ -49,9 +49,6 @@ namespace snake::window{
             // Constants
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
 
-            // Variables
-            std::map<std::string_view, std::shared_ptr<state::State>> states;
-
         //====================================================
         //     Protected
         //====================================================

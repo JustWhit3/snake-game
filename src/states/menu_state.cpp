@@ -166,7 +166,7 @@ namespace snake::state{
             )
         };
         auto game_action = [ this ]{
-            this -> game_window -> states.insert( 
+            this -> game_window -> game_window_states.insert( 
                 { "Game", std::make_shared<state::GameState>( state::GameState( game_window ) ) } 
             );
         };

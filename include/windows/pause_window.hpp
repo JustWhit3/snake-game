@@ -22,6 +22,9 @@
 // Windows
 #include <windows/base_window.hpp>
 
+// STD
+#include <memory>
+
 //====================================================
 //     Extra
 //====================================================
@@ -47,6 +50,9 @@ namespace snake::window{
 
             // Constructors
             PauseWindow();
+
+            // Variables
+            std::map<std::string_view, std::shared_ptr<state::State>> pause_window_states;
 
         //====================================================
         //     Private

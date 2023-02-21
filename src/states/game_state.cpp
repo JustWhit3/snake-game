@@ -24,6 +24,7 @@
 
 // Windows
 #include <windows/game_window.hpp>
+#include <windows/pause_window.hpp>
 
 // States
 #include <states/game_state.hpp>
@@ -139,10 +140,7 @@ namespace snake::state{
      */
     void GameState::gameOver(){
         this -> snake -> death();
-        this -> game_window -> states.insert( 
-            { "Loose", std::make_shared<state::LooseState>( state::LooseState( game_window ) ) }
-        );
-        this -> game_window -> states.at( "Loose" ) -> drawState();
+        auto pause_window{ snake::window::PauseWindow() };
     }
 
     //====================================================
@@ -166,7 +164,7 @@ namespace snake::state{
         // Check for collisions among snake and the window border
         const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
         const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos >= window_x_max - 150 || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= horizontal_line_y_coord ){
+        if( snake_x_pos >= window_x_max || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= horizontal_line_y_coord ){
             this -> gameOver();
         }
 

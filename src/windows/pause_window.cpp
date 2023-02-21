@@ -15,6 +15,9 @@
 // Windows
 #include <windows/pause_window.hpp>
 
+// States
+//#include <states/loose_state.hpp>
+
 // Utility
 #include <utility/gui.hpp>
 
@@ -42,16 +45,19 @@ namespace snake::window{
                 utility::getDesktopMode().width / 4, 
                 utility::getDesktopMode().height / 4, 
                 utility::getDesktopMode().bitsPerPixel ), 
-                "Quit the game", sf::Style::Titlebar | sf::Style::Close
+                "", sf::Style::Titlebar | sf::Style::Close
         );
     
-        // Center thw window in the screen
+        // Center the window in the screen
         this -> setPosition(
             sf::Vector2i(
                 this -> desktop.width * 0.5 - this -> getSize().x * 0.5, 
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5
             ) 
         );
+
+        // Push the Pause state
+        //this -> pause_window_states.insert( { "Loose", std::make_shared<state::LooseState>( state::LooseState( this ) ) } );
     
         // Running the window
         while( this -> isOpen() ){
@@ -59,7 +65,8 @@ namespace snake::window{
             // Run the window
             runWindow();
 
-            // Do something...
+            // Draw the first element of the states map
+            //this -> pause_window_states.begin() -> second -> drawState();
         }
     }
     

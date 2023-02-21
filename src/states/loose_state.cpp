@@ -25,8 +25,8 @@ namespace snake::state{
      * 
      * @param game_window The window to which the state stuff is constructed.
      */
-    LooseState::LooseState( window::GameWindow* game_window ): 
-        game_window( game_window ){
+    LooseState::LooseState( window::PauseWindow* game_window ): 
+        pause_window( game_window ){
 
         // Define state properties
         this -> state_dimension.setSize( sf::Vector2f( 100.0f, 100.0f ) );
@@ -50,14 +50,14 @@ namespace snake::state{
     void LooseState::drawState() {
 
         // Draw state
-        this -> game_window -> draw( state_dimension );
+        this -> pause_window -> draw( state_dimension );
 
         // Drawing widgets
         this -> setWidgetsKeys();
         this -> packWidgets();
 
         // Display the state
-        this -> game_window -> display();
+        this -> pause_window -> display();
     }
 
     //====================================================

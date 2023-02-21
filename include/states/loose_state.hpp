@@ -20,7 +20,7 @@
 //====================================================
 
 // Windows
-#include <windows/game_window.hpp>
+#include <windows/pause_window.hpp>
 
 // States
 #include <states/state.hpp>
@@ -35,7 +35,7 @@ namespace snake::state{
         public:
 
             // Constructors
-            LooseState( window::GameWindow* game_window );
+            LooseState( window::PauseWindow* game_window );
 
             // Methods
             void drawState() override;
@@ -51,7 +51,7 @@ namespace snake::state{
             void packWidgets() override;
 
             // Variables
-            window::GameWindow* game_window;
+            window::PauseWindow* pause_window;
             sf::RectangleShape state_dimension;
 
             // Widgets here...

@@ -66,7 +66,7 @@ namespace snake::window{
         this -> setFramerateLimit( 15 );
 
         // Push the Menu state
-        this -> states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
+        this -> game_window_states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
 
         // Display the window
         while( this -> isOpen() ){
@@ -75,7 +75,7 @@ namespace snake::window{
             runWindow();
 
             // Draw the first element of the states map
-            this -> states.begin() -> second -> drawState();
+            this -> game_window_states.begin() -> second -> drawState();
         }
     }
     
@@ -134,12 +134,12 @@ namespace snake::window{
     void GameWindow::eventClosed(){
 
         // Menu state
-        if( states.begin() -> first == "Menu" ){
+        if( game_window_states.begin() -> first == "Menu" ){
             this -> close();
         }
 
         // Game state
-        else if( states.begin() -> first == "Game" ){
+        else if( game_window_states.begin() -> first == "Game" ){
             auto pause_window{ PauseWindow() };
         }
     }
@@ -154,7 +154,7 @@ namespace snake::window{
     void GameWindow::eventKeyPressed( const sf::Event& event ){
 
         // Menu state
-        if( states.begin() -> first == "Menu" ){
+        if( game_window_states.begin() -> first == "Menu" ){
             switch( event.key.code ){
                 case sf::Keyboard::Escape: // Esc
                     this -> close();
@@ -165,7 +165,7 @@ namespace snake::window{
         }
 
         // Menu state
-        else if( states.begin() -> first == "Game" ){
+        else if( game_window_states.begin() -> first == "Game" ){
             switch( event.key.code ){
                 case sf::Keyboard::Escape:{ // Esc
                     auto pause_window{ PauseWindow() };
