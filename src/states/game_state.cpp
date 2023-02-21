@@ -98,9 +98,9 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Drawing and updating entities
+        this -> packWidgets();
         this -> drawEntities();
         this -> updateEntities();
-        this -> packWidgets();
         this -> gameRules();
         
         // Display the state
@@ -198,7 +198,7 @@ namespace snake::state{
         this -> score_icon.setTexture( this -> state_texture_2 );
         this -> score_icon.setPosition( 
             this -> game_window -> getSize().x * 0.02f, 
-            this -> game_window -> getSize().y * 0.015f 
+            this -> game_window -> getSize().y * 0.013f 
         );
 
         // Score text
@@ -210,10 +210,34 @@ namespace snake::state{
         this -> score_update.setCharacterSize( 30 );
 
         // Horizontal line
-        this -> horizontal_line[0].position = sf::Vector2f( 0, 75 );
+        this -> horizontal_line[0].position = sf::Vector2f( 0, this -> horizontal_line_y_coord );
         this -> horizontal_line[0].color = sf::Color::Black;
-        this -> horizontal_line[1].position = sf::Vector2f( this -> game_window -> getSize().x, 75 );
+        this -> horizontal_line[1].position = sf::Vector2f( this -> game_window -> getSize().x, this -> horizontal_line_y_coord );
         this -> horizontal_line[1].color = sf::Color::Black;
+
+        // Background
+        if( ! this -> state_texture_3.loadFromFile( "img/game_background.jpg" ) ){
+            this -> game_window -> close();
+        }
+        this -> background.setSize( 
+            sf::Vector2f( 
+                this -> game_window -> getSize().x, 
+                this -> game_window -> getSize().y
+            )
+        );
+        this -> background.setTexture( &state_texture_3, true );
+
+        // Title background
+        if( ! this -> state_texture_4.loadFromFile( "img/title_game_background.jpg" ) ){
+            this -> game_window -> close();
+        }
+        this -> title_background.setSize( 
+            sf::Vector2f( 
+                this -> game_window -> getSize().x, 
+                this -> horizontal_line_y_coord
+            )
+        );
+        this -> title_background.setTexture( &state_texture_4, true );
     }
 
     //====================================================
@@ -224,8 +248,14 @@ namespace snake::state{
      * 
      */
     void GameState::packWidgets(){
+
+        // Score settings
         this -> score_update.setFont( this -> font );
         this -> score_update.setString( std::to_string( this -> score ) );
+
+        // Draw stuff
+        this -> game_window -> draw( this -> background );
+        this -> game_window -> draw( this -> title_background );
         this -> game_window -> draw( this -> score_update );
         this -> game_window -> draw( this -> score_icon );
         this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );

@@ -69,7 +69,6 @@ namespace snake::state{
 
         // Draw widgets
         this -> drawWidgets();
-
     }
 
     //====================================================
@@ -96,7 +95,7 @@ namespace snake::state{
     }
 
     //====================================================
-    //     drawLogo
+    //     drawImg
     //====================================================
     /**
      * @brief Method used to draw the image logo.

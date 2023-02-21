@@ -54,7 +54,7 @@ namespace snake::entity{
         
         // Setting random first position
         float x_random = utility::random( 0, this -> x_bound );
-        float y_random = utility::random( 0, this -> y_bound );
+        float y_random = utility::random( 80, this -> y_bound );
 
         // Food settings
         this -> food.setPosition( x_random, y_random );
@@ -80,7 +80,7 @@ namespace snake::entity{
      */
     void Food::respawn(){
         float x_random = utility::random( 0, this -> x_bound );
-        float y_random = utility::random( 0, this -> y_bound );
+        float y_random = utility::random( 80, this -> y_bound );
         this -> food.setPosition( x_random, y_random );
     }
 }

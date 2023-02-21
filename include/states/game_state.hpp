@@ -77,6 +77,11 @@ namespace snake::state{
             sf::Text score_update;
             sf::Vertex horizontal_line[2];
             sf::Sprite score_icon;
+            sf::RectangleShape background;
+            sf::RectangleShape title_background;
+
+            // Constants
+            const int32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;
     };
 }
 

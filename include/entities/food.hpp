@@ -60,8 +60,9 @@ namespace snake::entity{
         private:
 
             // Constants
-            const int y_bound{ static_cast<int>( utility::getDesktopMode().height - utility::getDesktopMode().height / 10 ) };
-            const int x_bound{ static_cast<int>( utility::getDesktopMode().width - utility::getDesktopMode().width / 10 ) };
+            const int32_t horizontal_line_y_coord = this -> game_window -> getSize().y / 20;
+            const int y_bound{ static_cast<int>( this -> game_window -> getSize().y - this -> game_window -> getSize().y / 10 ) };
+            const int x_bound{ static_cast<int>( this -> game_window -> getSize().x - this -> game_window -> getSize().x / 10 ) };
     };
 }
 
