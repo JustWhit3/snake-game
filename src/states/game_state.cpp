@@ -195,8 +195,7 @@ namespace snake::state{
     void GameState::drawWidgets(){
 
         // Score icon
-        this -> state_texture_3.loadFromFile( "img/food.png" );
-        this -> score_icon.setTexture( this -> state_texture_3 );
+        this -> score_icon.setTexture( this -> state_texture_2 );
         this -> score_icon.setPosition( 
             this -> game_window -> getSize().x * 0.02f, 
             this -> game_window -> getSize().y * 0.015f 
