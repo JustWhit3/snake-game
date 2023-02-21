@@ -105,6 +105,10 @@ Collaboration diagram for snake::window::BaseWindow:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a710da72c23ba9ec45d42a2cf6defa21a"><td class="memItemLeft" align="right" valign="top">const sf::VideoMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">desktop</a> { sf::VideoMode::getDesktopMode() }</td></tr>
 <tr class="separator:a710da72c23ba9ec45d42a2cf6defa21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318f1e4f75b40f17b61b466f9b6be861"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string_view, std::shared_ptr&lt; <a class="el" href="classsnake_1_1state_1_1State.html">state::State</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#a318f1e4f75b40f17b61b466f9b6be861">game_window_states</a></td></tr>
+<tr class="separator:a318f1e4f75b40f17b61b466f9b6be861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c31fb0919d6564160d397add819166"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string_view, std::shared_ptr&lt; <a class="el" href="classsnake_1_1state_1_1State.html">state::State</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1window_1_1BaseWindow.html#ae1c31fb0919d6564160d397add819166">pause_window_states</a></td></tr>
+<tr class="separator:ae1c31fb0919d6564160d397add819166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -151,6 +155,34 @@ Protected Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const sf::VideoMode snake::window::BaseWindow::desktop { sf::VideoMode::getDesktopMode() }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a318f1e4f75b40f17b61b466f9b6be861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318f1e4f75b40f17b61b466f9b6be861">&#9670;&nbsp;</a></span>game_window_states</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string_view, std::shared_ptr&lt;<a class="el" href="classsnake_1_1state_1_1State.html">state::State</a>&gt; &gt; snake::window::BaseWindow::game_window_states</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1c31fb0919d6564160d397add819166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c31fb0919d6564160d397add819166">&#9670;&nbsp;</a></span>pause_window_states</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string_view, std::shared_ptr&lt;<a class="el" href="classsnake_1_1state_1_1State.html">state::State</a>&gt; &gt; snake::window::BaseWindow::pause_window_states</td>
         </tr>
       </table>
 </div><div class="memdoc">

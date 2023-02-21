@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pause_5fwindow_5fstates_201',['pause_window_states',['../classsnake_1_1window_1_1PauseWindow.html#a80d03642904db0e1efe2b57d7b70e664',1,'snake::window::PauseWindow']]]
+  ['pause_5fwindow_5fstates_209',['pause_window_states',['../classsnake_1_1window_1_1BaseWindow.html#ae1c31fb0919d6564160d397add819166',1,'snake::window::BaseWindow']]]
 ];

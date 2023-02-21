@@ -1,0 +1,4 @@
+<map id="snake::state::PauseState" name="snake::state::PauseState">
+<area shape="rect" id="node1" title="Class used to create the pause state." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node2" href="$classsnake_1_1state_1_1State.html" title="Class used to define base state for the other states." alt="" coords="24,5,153,32"/>
+</map>

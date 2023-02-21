@@ -1,6 +1,7 @@
 <map id="snake::state::State" name="snake::state::State">
-<area shape="rect" id="node1" title="Class used to define base state for the other states." alt="" coords="212,5,341,32"/>
-<area shape="rect" id="node2" href="$classsnake_1_1state_1_1GameState.html" title="Class used to create the game state." alt="" coords="5,80,169,107"/>
-<area shape="rect" id="node3" href="$classsnake_1_1state_1_1LooseState.html" title=" " alt="" coords="194,80,359,107"/>
-<area shape="rect" id="node4" href="$classsnake_1_1state_1_1MenuState.html" title="Class used to create the main menu." alt="" coords="384,80,545,107"/>
+<area shape="rect" id="node1" title="Class used to define base state for the other states." alt="" coords="5,81,135,108"/>
+<area shape="rect" id="node2" href="$classsnake_1_1state_1_1GameState.html" title="Class used to create the game state." alt="" coords="184,5,348,32"/>
+<area shape="rect" id="node3" href="$classsnake_1_1state_1_1LooseState.html" title=" " alt="" coords="183,56,349,83"/>
+<area shape="rect" id="node4" href="$classsnake_1_1state_1_1MenuState.html" title="Class used to create the main menu." alt="" coords="185,107,347,133"/>
+<area shape="rect" id="node5" href="$classsnake_1_1state_1_1PauseState.html" title="Class used to create the pause state." alt="" coords="183,157,349,184"/>
 </map>
