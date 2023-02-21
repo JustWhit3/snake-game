@@ -140,7 +140,7 @@ namespace snake::state{
      */
     void GameState::gameOver(){
         this -> snake -> death();
-        auto pause_window{ snake::window::PauseWindow() };
+        auto pause_window{ snake::window::PauseWindow( "GameOver" ) };
     }
 
     //====================================================

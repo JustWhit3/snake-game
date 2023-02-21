@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file pause_window.hpp
+ * @file pause_state.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-16
+ * @date 2023-03-21
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,37 +12,29 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_PAUSE_WINDOW
-#define SNAKE_GAME_PAUSE_WINDOW
+#ifndef SNAKE_GAME_PAUSE_STATE
+#define SNAKE_GAME_PAUSE_STATE
 
 //====================================================
 //     Headers
 //====================================================
 
 // Windows
-#include <windows/base_window.hpp>
+#include <windows/pause_window.hpp>
 
-// STD
-#include <memory>
-#include <string_view>
+// States
+#include <states/state.hpp>
 
-//====================================================
-//     Extra
-//====================================================
-namespace sf { 
-    class Event;
-}
-
-namespace snake::window{
+namespace snake::state{
 
     //====================================================
-    //     ConfirmWindow
+    //     Pause
     //====================================================
     /**
-     * @brief Class used to create the confirm window.
+     * @brief Class used to create the pause state.
      * 
      */
-    class PauseWindow: public BaseWindow{
+    class PauseState: public State{
 
         //====================================================
         //     Public
@@ -50,7 +42,10 @@ namespace snake::window{
         public:
 
             // Constructors
-            PauseWindow( std::string_view status );
+            PauseState( window::PauseWindow* pause_window );
+
+            // Methods
+            void drawState() override;
 
         //====================================================
         //     Private
@@ -58,9 +53,12 @@ namespace snake::window{
         private:
 
             // Methods
-            void runWindow();
-            void eventClosed();
-            void eventKeyPressed( const sf::Event& event ) override;
+            void drawWidgets() override;
+            void setWidgetsKeys() const override;
+            void packWidgets() override;
+
+            // Variables
+            window::PauseWindow* pause_window;
     };
 }
 

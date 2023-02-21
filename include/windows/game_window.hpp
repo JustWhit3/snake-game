@@ -46,8 +46,6 @@ namespace snake::window{
             // Constructors
             GameWindow();
 
-            std::map<std::string_view, std::shared_ptr<state::State>> game_window_states;
-
         //====================================================
         //     Private
         //====================================================

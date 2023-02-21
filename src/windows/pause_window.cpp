@@ -16,7 +16,8 @@
 #include <windows/pause_window.hpp>
 
 // States
-//#include <states/loose_state.hpp>
+#include <states/pause_state.hpp>
+#include <states/loose_state.hpp>
 
 // Utility
 #include <utility/gui.hpp>
@@ -37,7 +38,7 @@ namespace snake::window{
      * @brief Default constructor of the class. It creates the confirm window.
      * 
      */
-    PauseWindow::PauseWindow(){
+    PauseWindow::PauseWindow( std::string_view status ){
     
         // Initialize window parameters
         this -> create(
@@ -57,7 +58,13 @@ namespace snake::window{
         );
 
         // Push the Pause state
-        //this -> pause_window_states.insert( { "Loose", std::make_shared<state::LooseState>( state::LooseState( this ) ) } );
+        if( status == "Pause" ){
+            this -> pause_window_states.insert( { status, std::make_shared<state::PauseState>( state::PauseState( this ) ) } );
+        }
+        else if( status == "GameOver" ){
+            this -> pause_window_states.insert( { status, std::make_shared<state::LooseState>( state::LooseState( this ) ) } );
+        }
+        
     
         // Running the window
         while( this -> isOpen() ){
@@ -66,7 +73,7 @@ namespace snake::window{
             runWindow();
 
             // Draw the first element of the states map
-            //this -> pause_window_states.begin() -> second -> drawState();
+            this -> pause_window_states.begin() -> second -> drawState();
         }
     }
     
@@ -88,7 +95,7 @@ namespace snake::window{
             
                 // Window closing
                 case sf::Event::Closed:
-                    this -> close();
+                    eventClosed();
                     break;
 
                 // Key pressed in window
@@ -104,6 +111,21 @@ namespace snake::window{
     }
 
     //====================================================
+    //     eventClosed
+    //====================================================
+    /**
+     * @brief Method used to deal with the the event closed case.
+     * 
+     */
+    void PauseWindow::eventClosed(){
+
+        // Pause state
+        if( pause_window_states.begin() -> first == "Pause" ){
+            this -> close();
+        }
+    }
+
+    //====================================================
     //     eventKeyPressed
     //====================================================
     /**
@@ -113,7 +135,9 @@ namespace snake::window{
     void PauseWindow::eventKeyPressed( const sf::Event& event ){
         switch( event.key.code ){
             case sf::Keyboard::Escape: // Esc
-                this -> close();
+                if( this -> pause_window_states.begin() -> first == "Pause" ){
+                    this -> close();
+                }
                 break;
             default:
                 break;

@@ -26,7 +26,7 @@
 #include <windows/game_window.hpp>
 
 // States
-#include "states/state.hpp"
+#include <states/state.hpp>
 #include <states/menu_state.hpp>
 #include <states/game_state.hpp>
 
@@ -208,7 +208,7 @@ namespace snake::state{
     }
 
     //====================================================
-    //     setWidgets
+    //     setWidgetsKeys
     //====================================================
     /**
      * @brief Method used to set widgets in the current state.
