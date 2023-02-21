@@ -139,10 +139,15 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            sf::Text score_update;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            sf::Vertex horizontal_line[2];</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            sf::Sprite score_icon;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            sf::RectangleShape background;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            sf::RectangleShape title_background;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">const</span> int32_t horizontal_line_y_coord = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x / 24;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html">snake::entity::Food</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> food.hpp:40</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Snake_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Snake.html">snake::entity::Snake</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> snake.hpp:44</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html">snake::state::GameState</a></div><div class="ttdoc">Class used to create the game state.</div><div class="ttdef"><b>Definition:</b> game_state.hpp:46</div></div>

@@ -37,8 +37,9 @@ var searchData=
   ['state_5ftexture_5f1_94',['state_texture_1',['../classsnake_1_1state_1_1State.html#a9495719797898f5f8fae4c644c105b06',1,'snake::state::State']]],
   ['state_5ftexture_5f2_95',['state_texture_2',['../classsnake_1_1state_1_1State.html#a4d664ca02522cacb3fa5e8ef4c06a669',1,'snake::state::State']]],
   ['state_5ftexture_5f3_96',['state_texture_3',['../classsnake_1_1state_1_1State.html#a07c794a11faaffb2f345a7a4a4745efd',1,'snake::state::State']]],
-  ['states_97',['states',['../classsnake_1_1window_1_1BaseWindow.html#a169e4286ff9895a41d3a1d8fc1ee15a4',1,'snake::window::BaseWindow']]],
-  ['utility_98',['utility',['../namespacesnake_1_1utility.html',1,'snake']]],
-  ['widget_99',['widget',['../namespacesnake_1_1widget.html',1,'snake']]],
-  ['window_100',['window',['../namespacesnake_1_1window.html',1,'snake']]]
+  ['state_5ftexture_5f4_97',['state_texture_4',['../classsnake_1_1state_1_1State.html#a761e449d99a09f00bfc998cebbbcc065',1,'snake::state::State']]],
+  ['states_98',['states',['../classsnake_1_1window_1_1BaseWindow.html#a169e4286ff9895a41d3a1d8fc1ee15a4',1,'snake::window::BaseWindow']]],
+  ['utility_99',['utility',['../namespacesnake_1_1utility.html',1,'snake']]],
+  ['widget_100',['widget',['../namespacesnake_1_1widget.html',1,'snake']]],
+  ['window_101',['window',['../namespacesnake_1_1window.html',1,'snake']]]
 ];
