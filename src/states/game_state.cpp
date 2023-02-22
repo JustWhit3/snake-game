@@ -170,9 +170,9 @@ namespace snake::state{
         }
 
         // Check for collisions among snake and the window border
-        const auto snake_x_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().x );
-        const auto snake_y_pos = static_cast <unsigned int>( this -> snake -> head.getPosition().y );
-        if( snake_x_pos >= window_x_max || snake_x_pos <= 0 || snake_y_pos >= window_y_max || snake_y_pos <= horizontal_line_y_coord ){
+        const auto snake_x_pos = this -> snake -> head.getPosition().x;
+        const auto snake_y_pos = this -> snake -> head.getPosition().y;
+        if( snake_x_pos >= window_x_max + window_x_max * 0.01 || snake_x_pos <= 0 - window_x_max * 0.01 || snake_y_pos >= window_y_max + window_y_max * 0.01 || snake_y_pos <= horizontal_line_y_coord - window_y_max * 0.01 ){
             this -> gameOver();
         }
 
