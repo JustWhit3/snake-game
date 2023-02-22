@@ -20,4 +20,6 @@
 
 ## Introduction
 
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/example.gif">
+
 Work in progress..
