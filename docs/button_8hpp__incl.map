@@ -1,15 +1,16 @@
 <map id="include/widgets/button.hpp" name="include/widgets/button.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="322,5,498,32"/>
-<area shape="rect" id="node2" href="$game__window_8hpp.html" title=" " alt="" coords="246,80,430,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="66,229,205,256"/>
-<area shape="rect" id="node12" title=" " alt="" coords="455,80,509,107"/>
-<area shape="rect" id="node13" title=" " alt="" coords="533,80,612,107"/>
-<area shape="rect" id="node3" href="$base__window_8hpp.html" title=" " alt="" coords="253,155,433,181"/>
-<area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="229,229,343,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="368,229,436,256"/>
-<area shape="rect" id="node10" title=" " alt="" coords="460,229,507,256"/>
-<area shape="rect" id="node11" title=" " alt="" coords="531,229,619,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,304,177,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="202,304,370,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="394,304,455,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="333,5,509,32"/>
+<area shape="rect" id="node2" href="$game__window_8hpp.html" title=" " alt="" coords="120,80,304,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,229,144,256"/>
+<area shape="rect" id="node12" href="$pause__window_8hpp.html" title=" " alt="" coords="328,80,515,107"/>
+<area shape="rect" id="node13" title=" " alt="" coords="539,80,594,107"/>
+<area shape="rect" id="node14" title=" " alt="" coords="618,80,697,107"/>
+<area shape="rect" id="node3" href="$base__window_8hpp.html" title=" " alt="" coords="203,155,383,181"/>
+<area shape="rect" id="node4" href="$state_8hpp.html" title=" " alt="" coords="240,229,355,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="379,229,447,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="169,229,215,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="472,229,560,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="17,304,189,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="213,304,381,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="405,304,467,331"/>
 </map>

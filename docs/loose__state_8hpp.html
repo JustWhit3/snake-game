@@ -76,23 +76,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="pause__window_8hpp_source.html">windows/pause_window.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="game__window_8hpp_source.html">windows/game_window.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="state_8hpp_source.html">states/state.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="button_8hpp_source.html">widgets/button.hpp</a>&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for loose_state.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="loose__state_8hpp__incl.png" border="0" usemap="#ainclude_2states_2loose__state_8hpp" alt=""/></div>
 <map name="ainclude_2states_2loose__state_8hpp" id="ainclude_2states_2loose__state_8hpp">
-<area shape="rect" title=" " alt="" coords="322,5,461,47"/>
-<area shape="rect" href="pause__window_8hpp.html" title=" " alt="" coords="387,95,574,121"/>
-<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="229,244,343,271"/>
-<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="456,169,636,196"/>
-<area shape="rect" title=" " alt="" coords="713,244,781,271"/>
-<area shape="rect" title=" " alt="" coords="367,244,455,271"/>
-<area shape="rect" title=" " alt="" coords="479,244,618,271"/>
-<area shape="rect" title=" " alt="" coords="643,244,689,271"/>
-<area shape="rect" title=" " alt="" coords="5,319,177,345"/>
-<area shape="rect" title=" " alt="" coords="202,319,370,345"/>
-<area shape="rect" title=" " alt="" coords="394,319,455,345"/>
+<area shape="rect" title=" " alt="" coords="529,5,667,47"/>
+<area shape="rect" href="pause__window_8hpp.html" title=" " alt="" coords="505,169,691,196"/>
+<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="229,319,343,345"/>
+<area shape="rect" title=" " alt="" coords="767,319,835,345"/>
+<area shape="rect" href="game__window_8hpp.html" title=" " alt="" coords="297,169,481,196"/>
+<area shape="rect" href="button_8hpp.html" title=" " alt="" coords="649,95,779,121"/>
+<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="380,244,560,271"/>
+<area shape="rect" title=" " alt="" coords="491,319,579,345"/>
+<area shape="rect" title=" " alt="" coords="603,319,742,345"/>
+<area shape="rect" title=" " alt="" coords="420,319,467,345"/>
+<area shape="rect" title=" " alt="" coords="5,393,177,420"/>
+<area shape="rect" title=" " alt="" coords="202,393,370,420"/>
+<area shape="rect" title=" " alt="" coords="394,393,455,420"/>
+<area shape="rect" title=" " alt="" coords="767,169,821,196"/>
+<area shape="rect" title=" " alt="" coords="845,169,924,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -112,6 +119,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1LooseState.html">snake::state::LooseState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to create the game over state.  <a href="classsnake_1_1state_1_1LooseState.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -123,22 +131,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9283afcd6505ad8a9b9e1ecd1fcbb820"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loose__state_8hpp.html#a9283afcd6505ad8a9b9e1ecd1fcbb820">SNAKE_GAME_GAME_OVER_STATE</a></td></tr>
-<tr class="separator:a9283afcd6505ad8a9b9e1ecd1fcbb820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207cfc1d377362670a7bc33d1fffbb27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loose__state_8hpp.html#a207cfc1d377362670a7bc33d1fffbb27">SNAKE_GAME_LOOSE_STATE</a></td></tr>
+<tr class="separator:a207cfc1d377362670a7bc33d1fffbb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Gianluca Bianco (<a href="#" onclick="location.href='mai'+'lto:'+'bia'+'nc'+'ogi'+'an'+'luc'+'a9'+'@gm'+'ai'+'l.c'+'om'; return false;">bianc<span style="display: none;">.nosp@m.</span>ogia<span style="display: none;">.nosp@m.</span>nluca<span style="display: none;">.nosp@m.</span>9@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2022-12-31 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-03-22 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 Gianluca Bianco under the MIT license. </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a9283afcd6505ad8a9b9e1ecd1fcbb820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9283afcd6505ad8a9b9e1ecd1fcbb820">&#9670;&nbsp;</a></span>SNAKE_GAME_GAME_OVER_STATE</h2>
+<a id="a207cfc1d377362670a7bc33d1fffbb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207cfc1d377362670a7bc33d1fffbb27">&#9670;&nbsp;</a></span>SNAKE_GAME_LOOSE_STATE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SNAKE_GAME_GAME_OVER_STATE</td>
+          <td class="memname">#define SNAKE_GAME_LOOSE_STATE</td>
         </tr>
       </table>
 </div><div class="memdoc">

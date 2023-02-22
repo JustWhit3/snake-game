@@ -114,22 +114,28 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// Constructors</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classsnake_1_1window_1_1PauseWindow.html#a90fcf1f304c9e6d4f888c5c8ae647513">PauseWindow</a>( std::string_view status );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//     Private</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">void</span> runWindow();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">void</span> eventClosed();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">void</span> eventKeyPressed( <span class="keyword">const</span> sf::Event&amp; event ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1PauseWindow.html#a164657ddb0c73958e6aa0f3dd00ce603">   56</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classsnake_1_1window_1_1PauseWindow.html#a164657ddb0c73958e6aa0f3dd00ce603">back_to_menu</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1PauseWindow.html#a776b7bdc8500b4e6f6433142d36697bd">   57</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classsnake_1_1window_1_1PauseWindow.html#a776b7bdc8500b4e6f6433142d36697bd">quit_game</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">//     Private</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> runWindow();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> eventClosed();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">void</span> eventKeyPressed( <span class="keyword">const</span> sf::Event&amp; event ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="abase__window_8hpp_html"><div class="ttname"><a href="base__window_8hpp.html">base_window.hpp</a></div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html">snake::window::BaseWindow</a></div><div class="ttdoc">Base window class, with all the things in common with the others.</div><div class="ttdef"><b>Definition:</b> base_window.hpp:42</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1PauseWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1PauseWindow.html">snake::window::PauseWindow</a></div><div class="ttdoc">Class used to create the confirm window.</div><div class="ttdef"><b>Definition:</b> pause_window.hpp:45</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1PauseWindow_html_a164657ddb0c73958e6aa0f3dd00ce603"><div class="ttname"><a href="classsnake_1_1window_1_1PauseWindow.html#a164657ddb0c73958e6aa0f3dd00ce603">snake::window::PauseWindow::back_to_menu</a></div><div class="ttdeci">bool back_to_menu</div><div class="ttdef"><b>Definition:</b> pause_window.hpp:56</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1PauseWindow_html_a776b7bdc8500b4e6f6433142d36697bd"><div class="ttname"><a href="classsnake_1_1window_1_1PauseWindow.html#a776b7bdc8500b4e6f6433142d36697bd">snake::window::PauseWindow::quit_game</a></div><div class="ttdeci">bool quit_game</div><div class="ttdef"><b>Definition:</b> pause_window.hpp:57</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1PauseWindow_html_a90fcf1f304c9e6d4f888c5c8ae647513"><div class="ttname"><a href="classsnake_1_1window_1_1PauseWindow.html#a90fcf1f304c9e6d4f888c5c8ae647513">snake::window::PauseWindow::PauseWindow</a></div><div class="ttdeci">PauseWindow(std::string_view status)</div><div class="ttdoc">Default constructor of the class. It creates the confirm window.</div><div class="ttdef"><b>Definition:</b> pause_window.cpp:41</div></div>
 <div class="ttc" id="anamespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdef"><b>Definition:</b> button.cpp:51</div></div>
 <div class="ttc" id="anamespacesnake_1_1window_html"><div class="ttname"><a href="namespacesnake_1_1window.html">snake::window</a></div><div class="ttdef"><b>Definition:</b> base_window.cpp:18</div></div>

@@ -86,12 +86,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a776da0a626a7da9eb56e109e8d3ece4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a776da0a626a7da9eb56e109e8d3ece4a">Button</a> (float x, float y, float width, float height, const sf::Font &amp;font, const std::string &amp;text, const sf::Color &amp;idleColor, const sf::Color &amp;hoverColor, const sf::Color &amp;activeColor)</td></tr>
 <tr class="memdesc:a776da0a626a7da9eb56e109e8d3ece4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main constructor of the button class.  <a href="classsnake_1_1widget_1_1Button.html#a776da0a626a7da9eb56e109e8d3ece4a">More...</a><br /></td></tr>
 <tr class="separator:a776da0a626a7da9eb56e109e8d3ece4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90fe66a25c03769f8d741b47772b9a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a90fe66a25c03769f8d741b47772b9a6c">pack</a> (<a class="el" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a> *target)</td></tr>
-<tr class="memdesc:a90fe66a25c03769f8d741b47772b9a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to draw the button in the target.  <a href="classsnake_1_1widget_1_1Button.html#a90fe66a25c03769f8d741b47772b9a6c">More...</a><br /></td></tr>
-<tr class="separator:a90fe66a25c03769f8d741b47772b9a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a637406797aef6ef93bc50897a7d53d65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a637406797aef6ef93bc50897a7d53d65">setAction</a> (const std::function&lt; void()&gt; &amp;action)</td></tr>
 <tr class="memdesc:a637406797aef6ef93bc50897a7d53d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to set an action which is performed by the button when pressed.  <a href="classsnake_1_1widget_1_1Button.html#a637406797aef6ef93bc50897a7d53d65">More...</a><br /></td></tr>
 <tr class="separator:a637406797aef6ef93bc50897a7d53d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f7b6dc4a3ffd99d4f6c96803caf435"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af7f7b6dc4a3ffd99d4f6c96803caf435"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#af7f7b6dc4a3ffd99d4f6c96803caf435">pack</a> (T *target)</td></tr>
+<tr class="memdesc:af7f7b6dc4a3ffd99d4f6c96803caf435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to draw the button in the GameWindow target.  <a href="classsnake_1_1widget_1_1Button.html#af7f7b6dc4a3ffd99d4f6c96803caf435">More...</a><br /></td></tr>
+<tr class="separator:af7f7b6dc4a3ffd99d4f6c96803caf435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Button.html#a1d7d000a18dcba3d16642e2fbb75f47c">setTextSize</a> (int32_t size)</td></tr>
 <tr class="memdesc:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to set the button text size.  <a href="classsnake_1_1widget_1_1Button.html#a1d7d000a18dcba3d16642e2fbb75f47c">More...</a><br /></td></tr>
 <tr class="separator:a1d7d000a18dcba3d16642e2fbb75f47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,23 +204,33 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a90fe66a25c03769f8d741b47772b9a6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90fe66a25c03769f8d741b47772b9a6c">&#9670;&nbsp;</a></span>pack()</h2>
+<a id="af7f7b6dc4a3ffd99d4f6c96803caf435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f7b6dc4a3ffd99d4f6c96803caf435">&#9670;&nbsp;</a></span>pack()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void snake::widget::Button::pack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a> *&#160;</td>
+          <td class="paramtype">T *&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Method used to draw the button in the target. </p>
+<p>Method used to draw the button in the GameWindow target. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target</td><td>The target to which the button is drawn in. </td></tr>
