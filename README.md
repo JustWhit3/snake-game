@@ -39,7 +39,7 @@
 
 In this repository a C++20 implementation of the popular snake game, using the [SFML](https://www.sfml-dev.org/) graphics library is provided.
 
-> :warning: if you are connecting more than one screens in your pc there may be small graphics glitches due to the fact that SFML doesn't support multiple screens at the moment.
+> :warning: if you are connecting more than one screens in your pc there may be small graphics glitches due to SFML doesn't supporting multiple screens yet.
 
 ## Architectures support
 
@@ -90,10 +90,12 @@ sudo cmake --build build --target install
 
 Mandatory prerequisites (automatically installed with the script):
 
-- C++20 standard.
-- g++ compiler.
-- [CMake](https://cmake.org/) (at least version 3.15).
-- [SFML](https://www.sfml-dev.org/) library.
+- C++20 standard
+- g++ compiler
+- [CMake](https://cmake.org/) (at least version 3.15)
+- [SFML](https://www.sfml-dev.org/) library
+
+> :warning: on Linux other prerequisites for SFML are: `libx11-dev`, `xorg-dev`, `freeglut3-dev`, `libudev-dev`.
 
 To run the game:
 
@@ -120,8 +122,8 @@ sudo cmake --build build
 
 Optional prerequisites for debug mode:
 
-- [ptc::print](https://github.com/JustWhit3/ptc-print).
-- [cppcheck](https://cppcheck.sourceforge.io/).
+- [ptc::print](https://github.com/JustWhit3/ptc-print)
+- [cppcheck](https://cppcheck.sourceforge.io/)
 
 ## States
 
