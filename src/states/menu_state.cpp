@@ -98,7 +98,7 @@ namespace snake::state{
     //     drawImg
     //====================================================
     /**
-     * @brief Method used to draw the image logo.
+     * @brief Method used to draw the images.
      * 
      */
     void MenuState::drawImg() const {
@@ -217,38 +217,38 @@ namespace snake::state{
     void MenuState::setWidgetsKeys() const {
 
         // Map game button to scores button
-        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && game_button -> focus ){
-            game_button -> setFocus( false );
-            scores_button -> setFocus( true );
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> game_button -> focus ){
+            this -> game_button -> setFocus( false );
+            this -> scores_button -> setFocus( true );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
-        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && scores_button -> focus ){
-            game_button -> setFocus( true );
-            scores_button -> setFocus( false );
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> scores_button -> focus ){
+            this -> game_button -> setFocus( true );
+            this -> scores_button -> setFocus( false );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
 
         // Map scores button to settings button
-        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && scores_button -> focus ){
-            scores_button -> setFocus( false );
-            settings_button -> setFocus( true );
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> scores_button -> focus ){
+            this -> scores_button -> setFocus( false );
+            this -> settings_button -> setFocus( true );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
-        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && settings_button -> focus ){
-            scores_button -> setFocus( true );
-            settings_button -> setFocus( false );
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> settings_button -> focus ){
+            this -> scores_button -> setFocus( true );
+            this -> settings_button -> setFocus( false );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
 
         // Map settings button to quit button
-        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && settings_button -> focus ){
-            settings_button -> setFocus( false );
-            quit_button -> setFocus( true );
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> settings_button -> focus ){
+            this -> settings_button -> setFocus( false );
+            this -> quit_button -> setFocus( true );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
-        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && quit_button -> focus ){
-            settings_button -> setFocus( true );
-            quit_button -> setFocus( false );
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> quit_button -> focus ){
+            this -> settings_button -> setFocus( true );
+            this -> quit_button -> setFocus( false );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
     }

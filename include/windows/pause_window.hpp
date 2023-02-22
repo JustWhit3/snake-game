@@ -52,6 +52,10 @@ namespace snake::window{
             // Constructors
             PauseWindow( std::string_view status );
 
+            // Variables
+            bool back_to_menu = false;
+            bool quit_game = false;
+
         //====================================================
         //     Private
         //====================================================

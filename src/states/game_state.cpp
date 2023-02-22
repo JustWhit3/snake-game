@@ -29,6 +29,7 @@
 // States
 #include <states/game_state.hpp>
 #include <states/loose_state.hpp>
+#include <states/menu_state.hpp>
 
 // Entities
 #include <entities/snake.hpp>
@@ -141,6 +142,13 @@ namespace snake::state{
     void GameState::gameOver(){
         this -> snake -> death();
         auto pause_window{ snake::window::PauseWindow( "GameOver" ) };
+        if( pause_window.quit_game == true ) {
+            this -> game_window -> close();
+        }
+        if( pause_window.back_to_menu == true ) {
+            this -> game_window -> close();
+            auto game_window{ snake::window::GameWindow() };
+        }
     }
 
     //====================================================

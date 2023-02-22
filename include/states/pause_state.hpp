@@ -21,9 +21,16 @@
 
 // Windows
 #include <windows/pause_window.hpp>
+#include <windows/game_window.hpp>
 
 // States
 #include <states/state.hpp>
+
+// Widgets
+#include <widgets/button.hpp>
+
+// STD
+#include <memory>
 
 namespace snake::state{
 
@@ -53,12 +60,20 @@ namespace snake::state{
         private:
 
             // Methods
+            void drawImg() const;
             void drawWidgets() override;
             void setWidgetsKeys() const override;
             void packWidgets() override;
 
             // Variables
             window::PauseWindow* pause_window;
+            std::shared_ptr<widget::Button> yes_button;
+            std::shared_ptr<widget::Button> no_button;
+            sf::Text text;
+
+            // Constants
+            const uint64_t pause_window_size_x = this -> pause_window -> getSize().x;
+            const uint64_t pause_window_size_y = this -> pause_window -> getSize().y;
     };
 }
 

@@ -21,6 +21,7 @@
 
 // Windows
 #include <windows/game_window.hpp>
+#include <windows/pause_window.hpp>
 
 // SFML
 #include <SFML/Graphics.hpp>
@@ -64,8 +65,20 @@ namespace snake::widget{
                     const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor );
 
             // Methods
-            void pack( window::GameWindow* target );
             void setAction( const std::function<void()>& action );
+
+            // pack (template)
+            /**
+             * @brief Method used to draw the button in the GameWindow target.
+             * 
+             * @param target The target to which the button is drawn in.
+             */
+            template <typename T>
+            void pack( T* target ){
+                this -> centering();
+                this -> update( target -> mapPixelToCoords( sf::Mouse::getPosition( *target ) ) );
+                this -> render( target );
+            }
             
             // Setters
             void setTextSize( int32_t size );
@@ -83,10 +96,21 @@ namespace snake::widget{
         private:
 
             // Methods
-            void render( window::GameWindow* target ) const;
             void update( const sf::Vector2f mousePos );
             constexpr bool isPressed() const;
             void centering();
+
+            // render (template)
+            /**
+             * @brief Method used for button rendering.
+             * 
+             * @param target The target to draw button.
+             */
+            template <typename T>
+            void render( T* target ) const{
+                target -> draw( this -> shape );
+                target -> draw( this -> text );
+            }
 
             // Variables
             sf::RectangleShape shape;

@@ -164,11 +164,14 @@ namespace snake::window{
             }
         }
 
-        // Menu state
+        // Game state
         else if( game_window_states.begin() -> first == "Game" ){
             switch( event.key.code ){
                 case sf::Keyboard::Escape:{ // Esc
                     auto pause_window{ PauseWindow( "Pause" ) };
+                    if( pause_window.back_to_menu == true ) {
+                        this -> game_window_states.erase( "Game" );
+                    }
                     break;
                 }
                 default:

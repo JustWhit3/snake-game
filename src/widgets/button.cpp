@@ -96,20 +96,7 @@ namespace snake::widget{
         // Coloring button
         this -> shape.setFillColor( this -> idleColor );
     }
-
-    //====================================================
-    //     render
-    //====================================================
-    /**
-     * @brief Method used for button rendering.
-     * 
-     * @param target The target to draw button.
-     */
-    void Button::render( window::GameWindow* target ) const {
-        target -> draw( this -> shape );
-        target -> draw( this -> text );
-    }
-
+    
     //====================================================
     //     update
     //====================================================
@@ -176,20 +163,6 @@ namespace snake::widget{
             return true;
         }
         return false;
-    }
-
-    //====================================================
-    //     pack
-    //====================================================
-    /**
-     * @brief Method used to draw the button in the target.
-     * 
-     * @param target The target to which the button is drawn in.
-     */
-    void Button::pack( window::GameWindow* target ){
-        this -> centering();
-        this -> update( target -> mapPixelToCoords( sf::Mouse::getPosition( *target ) ) );
-        this -> render( target );
     }
 
     //====================================================
