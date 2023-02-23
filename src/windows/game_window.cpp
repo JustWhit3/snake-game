@@ -63,7 +63,7 @@ namespace snake::window{
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
-        this -> setFramerateLimit( 15 );
+        this -> setFramerateLimit( 60 );
 
         // Push the Menu state
         this -> game_window_states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );

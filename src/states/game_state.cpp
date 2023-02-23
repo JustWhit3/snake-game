@@ -106,6 +106,7 @@ namespace snake::state{
         this -> gameRules();
         
         // Display the state
+        this -> game_window -> setFramerateLimit( 15 );
         this -> game_window -> display();
     }
 
