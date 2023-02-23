@@ -22,9 +22,6 @@
 //     Headers
 //====================================================
 
-// Windows
-#include <windows/game_window.hpp>
-
 // Widgets
 #include <widgets/button.hpp>
 
@@ -46,11 +43,6 @@
 #include <functional>
 #include <string>
 #include <cstdint>
-
-// Required by IWYU
-namespace sf { 
-    class Font;
-}
 
 namespace snake::widget{
 

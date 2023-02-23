@@ -18,6 +18,7 @@
 // States
 #include <states/pause_state.hpp>
 #include <states/loose_state.hpp>
+#include <states/state.hpp>
 
 // Utility
 #include <utility/gui.hpp>
@@ -28,6 +29,12 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 #include <SFML/Window/Keyboard.hpp>
+
+// STD
+#include <map>
+#include <memory>
+#include <string>
+#include <utility>
 
 namespace snake::window{
 

@@ -38,8 +38,7 @@
 #endif
 
 // SFML
-#include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 namespace snake::entity{
 

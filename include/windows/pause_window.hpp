@@ -23,7 +23,6 @@
 #include <windows/base_window.hpp>
 
 // STD
-#include <memory>
 #include <string_view>
 
 //====================================================

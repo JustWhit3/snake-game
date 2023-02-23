@@ -29,17 +29,23 @@
 #include <entities/entity.hpp>
 #include <entities/snake.hpp>
 
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
+
 // SFML
 #include <SFML/Graphics/Color.hpp> 
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp> 
 #include <SFML/Graphics/RectangleShape.hpp> 
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Rect.hpp>
 
-// Debug
-#ifdef DEBUG_SNAKE_GAME
-    #include <ptc/print.hpp>
-#endif
+// STD
+#include <algorithm>
+#include <memory>
+#include <vector>
 
 namespace snake::entity{
 

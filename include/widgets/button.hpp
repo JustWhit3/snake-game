@@ -19,16 +19,18 @@
 //     Headers
 //====================================================
 
-// Windows
-#include <windows/game_window.hpp>
-#include <windows/pause_window.hpp>
-
 // SFML
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Mouse.hpp>
 
 // STL
 #include <string>
 #include <functional>
+#include <stdint.h>
 
 namespace snake::widget{
 

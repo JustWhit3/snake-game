@@ -28,8 +28,7 @@
 
 // States
 #include <states/game_state.hpp>
-#include <states/loose_state.hpp>
-#include <states/menu_state.hpp>
+#include <states/state.hpp>
 
 // Entities
 #include <entities/snake.hpp>
@@ -40,22 +39,23 @@
     #include <ptc/print.hpp>
 #endif
 
-// Utility
-#include <utility/gui.hpp>
-
 // SFML
-#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp> 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/PrimitiveType.hpp>
+#include <SFML/Graphics/Vertex.hpp>
 #include <SFML/System/Vector2.hpp> 
 
 // STD
 #include <memory>
 #include <string>
+#include <algorithm>
+#include <string_view> 
+#include <vector> 
 
 namespace snake::state{
 
