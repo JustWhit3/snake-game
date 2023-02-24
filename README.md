@@ -58,7 +58,7 @@ In this repository a C++20 implementation of the popular snake game, using the [
 ### Compilers
 
 - **gcc**:
-  - *C++20*: 8/10/11/12
+  - *C++20*: 9/10/11/12
 - **clang**:
   - *C++20*: 9/10/11/12/13
 - **MSVC**:
