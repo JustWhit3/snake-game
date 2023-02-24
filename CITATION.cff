@@ -4,7 +4,7 @@ authors:
 - family-names: "Gianluca"
   given-names: "Bianco"
 title: "snake-game"
-version: 0.0.0
+version: 0.1.0
 doi: https://zenodo.org/badge/latestdoi/579097983
 date-released: 2021-12-25
 url: "https://github.com/JustWhit3/snake-game"

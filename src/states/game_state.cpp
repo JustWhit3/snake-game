@@ -56,6 +56,8 @@
 #include <algorithm>
 #include <string_view> 
 #include <vector> 
+#include <fstream>
+#include <sstream>
 
 namespace snake::state{
 
@@ -82,6 +84,14 @@ namespace snake::state{
 
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
+
+        // Create the score file path
+        #ifdef _WIN32
+            this -> score_file_oss << "C:\\Users\\" << this -> username << "\\snake-game_score.txt";
+        #else
+            this -> score_file_oss << "/home/" << this -> username << "/snake-game_score.txt";
+        #endif
+        this -> score_file_path = score_file_oss.str();
 
         // Draw widgets
         this -> drawWidgets();
@@ -141,7 +151,21 @@ namespace snake::state{
      * 
      */
     void GameState::gameOver(){
+
+        // Kill snake
         this -> snake -> death();
+
+        // Append score to the score file
+        std::ofstream score_file( this -> score_file_path, std::ios::out | std::ios::app );
+        #ifdef DEBUG_SNAKE_GAME
+            if( ! score_file ){
+                ptc::print( "Unable to open the score file!" );
+            }
+        #endif
+        score_file << this -> score << "\n";
+        score_file.close();
+
+        // Return to menu or quit game
         auto pause_window{ snake::window::PauseWindow( "GameOver" ) };
         if( pause_window.quit_game == true ) {
             this -> game_window -> close();

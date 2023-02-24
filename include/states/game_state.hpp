@@ -33,6 +33,8 @@
 #include <cstdint>
 #include <memory>
 #include <sstream>
+#include <cstdio>
+#include <filesystem>
 
 namespace snake::state{
 
@@ -79,11 +81,14 @@ namespace snake::state{
             sf::Sprite score_icon;
             sf::RectangleShape background;
             sf::RectangleShape title_background;
+            std::ostringstream score_file_oss;
+            std::filesystem::path score_file_path;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;
             const uint32_t window_x_max = this -> game_window -> getSize().x;
             const uint32_t window_y_max = this -> game_window -> getSize().y;
+            const std::string username = getenv( "USERNAME" );
     };
 }
 
