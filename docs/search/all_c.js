@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['random_64',['random',['../namespacesnake_1_1utility.html#a0cebeeeb5a58c2ac53a68851d3baff80',1,'snake::utility']]],
-  ['relheadpos_65',['relHeadPos',['../classsnake_1_1entity_1_1Snake.html#afba27271af462e9e505e0b7e7456eb56',1,'snake::entity::Snake']]],
-  ['respawn_66',['respawn',['../classsnake_1_1entity_1_1Food.html#a095133afdb459230565653df57db0327',1,'snake::entity::Food']]]
+  ['quit_5fgame_65',['quit_game',['../classsnake_1_1window_1_1PauseWindow.html#a776b7bdc8500b4e6f6433142d36697bd',1,'snake::window::PauseWindow']]]
 ];

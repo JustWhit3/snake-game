@@ -77,6 +77,8 @@ $(function() {
 <code>#include &lt;<a class="el" href="state_8hpp_source.html">states/state.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="menu__state_8hpp_source.html">states/menu_state.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="game__state_8hpp_source.html">states/game_state.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="options__state_8hpp_source.html">states/options_state.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="scores__state_8hpp_source.html">states/scores_state.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="button_8hpp_source.html">widgets/button.hpp</a>&gt;</code><br />
 <code>#include &lt;SFML/Graphics/Color.hpp&gt;</code><br />
 <code>#include &lt;SFML/Graphics/Font.hpp&gt;</code><br />
@@ -97,43 +99,46 @@ Include dependency graph for menu_state.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="menu__state_8cpp__incl.png" border="0" usemap="#asrc_2states_2menu__state_8cpp" alt=""/></div>
 <map name="asrc_2states_2menu__state_8cpp" id="asrc_2states_2menu__state_8cpp">
-<area shape="rect" title=" " alt="" coords="2091,5,2267,32"/>
-<area shape="rect" href="game__window_8hpp.html" title=" " alt="" coords="1499,229,1683,256"/>
-<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="1059,379,1173,405"/>
-<area shape="rect" title=" " alt="" coords="223,453,395,480"/>
-<area shape="rect" title=" " alt="" coords="937,453,1105,480"/>
-<area shape="rect" title=" " alt="" coords="1623,453,1684,480"/>
-<area shape="rect" title=" " alt="" coords="1990,379,2058,405"/>
-<area shape="rect" title=" " alt="" coords="2134,379,2181,405"/>
-<area shape="rect" title=" " alt="" coords="2205,379,2293,405"/>
-<area shape="rect" href="menu__state_8hpp.html" title=" " alt="" coords="1096,155,1251,181"/>
-<area shape="rect" href="button_8hpp.html" title=" " alt="" coords="752,229,883,256"/>
-<area shape="rect" title=" " alt="" coords="1261,304,1499,331"/>
-<area shape="rect" title=" " alt="" coords="93,304,272,331"/>
-<area shape="rect" href="game__state_8hpp.html" title=" " alt="" coords="1663,80,1817,107"/>
-<area shape="rect" title=" " alt="" coords="2368,80,2544,107"/>
-<area shape="rect" title=" " alt="" coords="2569,80,2754,107"/>
-<area shape="rect" title=" " alt="" coords="2778,80,2947,107"/>
-<area shape="rect" title=" " alt="" coords="2971,80,3138,107"/>
-<area shape="rect" title=" " alt="" coords="3163,80,3325,107"/>
-<area shape="rect" title=" " alt="" coords="3350,80,3541,107"/>
-<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="1833,304,2013,331"/>
-<area shape="rect" title=" " alt="" coords="1537,379,1676,405"/>
-<area shape="rect" title=" " alt="" coords="539,304,706,331"/>
-<area shape="rect" title=" " alt="" coords="730,304,905,331"/>
-<area shape="rect" title=" " alt="" coords="929,304,983,331"/>
-<area shape="rect" title=" " alt="" coords="347,304,426,331"/>
-<area shape="rect" title=" " alt="" coords="451,304,515,331"/>
-<area shape="rect" href="snake_8hpp.html" title=" " alt="" coords="1899,155,2026,181"/>
-<area shape="rect" href="food_8hpp.html" title=" " alt="" coords="1376,155,1493,181"/>
-<area shape="rect" title=" " alt="" coords="1517,155,1587,181"/>
-<area shape="rect" title=" " alt="" coords="1611,155,1669,181"/>
-<area shape="rect" title=" " alt="" coords="1693,155,1773,181"/>
-<area shape="rect" href="entity_8hpp.html" title=" " alt="" coords="1707,229,1829,256"/>
-<area shape="rect" title=" " alt="" coords="1904,229,1963,256"/>
-<area shape="rect" title=" " alt="" coords="1987,229,2040,256"/>
-<area shape="rect" href="gui_8hpp.html" title=" " alt="" coords="1377,229,1474,256"/>
-<area shape="rect" title=" " alt="" coords="1574,304,1775,331"/>
+<area shape="rect" title=" " alt="" coords="1551,5,1727,32"/>
+<area shape="rect" href="game__window_8hpp.html" title=" " alt="" coords="1403,229,1587,256"/>
+<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="1161,379,1276,405"/>
+<area shape="rect" title=" " alt="" coords="1393,453,1565,480"/>
+<area shape="rect" title=" " alt="" coords="124,453,292,480"/>
+<area shape="rect" title=" " alt="" coords="752,453,813,480"/>
+<area shape="rect" title=" " alt="" coords="2431,379,2499,405"/>
+<area shape="rect" title=" " alt="" coords="441,379,529,405"/>
+<area shape="rect" href="menu__state_8hpp.html" title=" " alt="" coords="969,155,1124,181"/>
+<area shape="rect" href="button_8hpp.html" title=" " alt="" coords="876,229,1007,256"/>
+<area shape="rect" title=" " alt="" coords="1516,304,1753,331"/>
+<area shape="rect" title=" " alt="" coords="1007,304,1185,331"/>
+<area shape="rect" href="game__state_8hpp.html" title=" " alt="" coords="1745,80,1900,107"/>
+<area shape="rect" href="options__state_8hpp.html" title=" " alt="" coords="1149,155,1313,181"/>
+<area shape="rect" href="scores__state_8hpp.html" title=" " alt="" coords="1389,155,1550,181"/>
+<area shape="rect" title=" " alt="" coords="1975,80,2151,107"/>
+<area shape="rect" title=" " alt="" coords="2175,80,2361,107"/>
+<area shape="rect" title=" " alt="" coords="2385,80,2554,107"/>
+<area shape="rect" title=" " alt="" coords="2578,80,2745,107"/>
+<area shape="rect" title=" " alt="" coords="2769,80,2932,107"/>
+<area shape="rect" title=" " alt="" coords="2957,80,3147,107"/>
+<area shape="rect" title=" " alt="" coords="3171,80,3218,107"/>
+<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="1261,304,1441,331"/>
+<area shape="rect" title=" " alt="" coords="851,379,989,405"/>
+<area shape="rect" title=" " alt="" coords="1301,379,1411,405"/>
+<area shape="rect" title=" " alt="" coords="347,304,514,331"/>
+<area shape="rect" title=" " alt="" coords="538,304,713,331"/>
+<area shape="rect" title=" " alt="" coords="737,304,791,331"/>
+<area shape="rect" title=" " alt="" coords="815,304,894,331"/>
+<area shape="rect" title=" " alt="" coords="919,304,983,331"/>
+<area shape="rect" href="snake_8hpp.html" title=" " alt="" coords="2125,155,2251,181"/>
+<area shape="rect" href="food_8hpp.html" title=" " alt="" coords="1983,155,2100,181"/>
+<area shape="rect" title=" " alt="" coords="2276,155,2345,181"/>
+<area shape="rect" title=" " alt="" coords="2370,155,2427,181"/>
+<area shape="rect" title=" " alt="" coords="1879,155,1959,181"/>
+<area shape="rect" href="entity_8hpp.html" title=" " alt="" coords="2021,229,2144,256"/>
+<area shape="rect" title=" " alt="" coords="2296,229,2355,256"/>
+<area shape="rect" title=" " alt="" coords="2219,229,2272,256"/>
+<area shape="rect" href="gui_8hpp.html" title=" " alt="" coords="1899,229,1997,256"/>
+<area shape="rect" title=" " alt="" coords="1930,304,2131,331"/>
 </map>
 </div>
 </div><table class="memberdecls">

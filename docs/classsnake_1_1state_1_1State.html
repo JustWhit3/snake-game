@@ -87,11 +87,13 @@ Inheritance diagram for snake::state::State:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsnake_1_1state_1_1State__inherit__graph.png" border="0" usemap="#asnake_1_1state_1_1State_inherit__map" alt="Inheritance graph"/></div>
 <map name="asnake_1_1state_1_1State_inherit__map" id="asnake_1_1state_1_1State_inherit__map">
-<area shape="rect" title="Class used to define base state for the other states." alt="" coords="5,81,135,108"/>
-<area shape="rect" href="classsnake_1_1state_1_1GameState.html" title="Class used to create the game state." alt="" coords="184,5,348,32"/>
-<area shape="rect" href="classsnake_1_1state_1_1LooseState.html" title="Class used to create the game over state." alt="" coords="183,56,349,83"/>
-<area shape="rect" href="classsnake_1_1state_1_1MenuState.html" title="Class used to create the main menu." alt="" coords="185,107,347,133"/>
-<area shape="rect" href="classsnake_1_1state_1_1PauseState.html" title="Class used to create the pause state." alt="" coords="183,157,349,184"/>
+<area shape="rect" title="Class used to define base state for the other states." alt="" coords="5,132,135,159"/>
+<area shape="rect" href="classsnake_1_1state_1_1GameState.html" title="Class used to create the game state." alt="" coords="188,5,352,32"/>
+<area shape="rect" href="classsnake_1_1state_1_1LooseState.html" title="Class used to create the game over state." alt="" coords="187,56,353,83"/>
+<area shape="rect" href="classsnake_1_1state_1_1MenuState.html" title="Class used to create the main menu." alt="" coords="189,107,351,133"/>
+<area shape="rect" href="classsnake_1_1state_1_1OptionsState.html" title="Class used to create the options menu." alt="" coords="183,157,357,184"/>
+<area shape="rect" href="classsnake_1_1state_1_1PauseState.html" title="Class used to create the pause state." alt="" coords="187,208,353,235"/>
+<area shape="rect" href="classsnake_1_1state_1_1ScoresState.html" title="Class used to create the scores menu." alt="" coords="185,259,355,285"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -135,7 +137,7 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:a761e449d99a09f00bfc998cebbbcc065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34885a055c3e70168bd228c690489b6f"><td class="memItemLeft" align="right" valign="top">static sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a34885a055c3e70168bd228c690489b6f">state_texture_5</a></td></tr>
 <tr class="separator:a34885a055c3e70168bd228c690489b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d61890e1075c0a0e0709f9cf141aec"><td class="memItemLeft" align="right" valign="top">static constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a95d61890e1075c0a0e0709f9cf141aec">waiting_time</a> { 60 }</td></tr>
+<tr class="memitem:a95d61890e1075c0a0e0709f9cf141aec"><td class="memItemLeft" align="right" valign="top">static constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1state_1_1State.html#a95d61890e1075c0a0e0709f9cf141aec">waiting_time</a> { 100 }</td></tr>
 <tr class="separator:a95d61890e1075c0a0e0709f9cf141aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -217,7 +219,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classsnake_1_1state_1_1PauseState.html#a068a19f7b3f37fdeccfac94732f6cb8e">snake::state::PauseState</a>, <a class="el" href="classsnake_1_1state_1_1MenuState.html#af02520596d1ae78a96bb67fa75bfcce8">snake::state::MenuState</a>, <a class="el" href="classsnake_1_1state_1_1LooseState.html#a820b6c524226313f49edf4a67bfbee72">snake::state::LooseState</a>, and <a class="el" href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState</a>.</p>
+<p>Implemented in <a class="el" href="classsnake_1_1state_1_1ScoresState.html#a06364af438238b8dfb681b1bf95ef826">snake::state::ScoresState</a>, <a class="el" href="classsnake_1_1state_1_1PauseState.html#a068a19f7b3f37fdeccfac94732f6cb8e">snake::state::PauseState</a>, <a class="el" href="classsnake_1_1state_1_1OptionsState.html#a9f8f42b2cba2848c83f29daaba006fb8">snake::state::OptionsState</a>, <a class="el" href="classsnake_1_1state_1_1MenuState.html#af02520596d1ae78a96bb67fa75bfcce8">snake::state::MenuState</a>, <a class="el" href="classsnake_1_1state_1_1LooseState.html#a820b6c524226313f49edf4a67bfbee72">snake::state::LooseState</a>, and <a class="el" href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState</a>.</p>
 
 </div>
 </div>
@@ -463,7 +465,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint16_t snake::state::State::waiting_time { 60 }</td>
+          <td class="memname">constexpr uint16_t snake::state::State::waiting_time { 100 }</td>
         </tr>
       </table>
   </td>
