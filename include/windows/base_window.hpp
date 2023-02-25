@@ -27,7 +27,7 @@
 
 // STD
 #include <memory>
-#include <map>
+#include <unordered_map>
 #include <string_view>
 
 namespace snake::window{
@@ -50,8 +50,8 @@ namespace snake::window{
             const sf::VideoMode desktop{ sf::VideoMode::getDesktopMode() };
 
             // Variables
-            std::map<std::string_view, std::shared_ptr<state::State>> game_window_states;
-            std::map<std::string_view, std::shared_ptr<state::State>> pause_window_states;
+            std::unordered_map<std::string_view, std::shared_ptr<state::State>> game_window_states;
+            std::unordered_map<std::string_view, std::shared_ptr<state::State>> pause_window_states;
 
         //====================================================
         //     Protected

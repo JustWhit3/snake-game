@@ -278,7 +278,7 @@ namespace snake::state{
      */
     void GameState::packWidgets(){
 
-        // Score settings
+        // Score text settings
         this -> score_update.setFont( this -> font );
         this -> score_update.setString( std::to_string( this -> score ) );
 

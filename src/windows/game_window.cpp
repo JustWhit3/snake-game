@@ -132,8 +132,8 @@ namespace snake::window{
      */
     void GameWindow::eventClosed(){
 
-        // Menu state
-        if( game_window_states.begin() -> first == "Menu" ){
+        // Menu  / Options / Scores state
+        if( game_window_states.begin() -> first == "Menu" || game_window_states.begin() -> first == "Options" || game_window_states.begin() -> first == "Scores" ){
             this -> close();
         }
 
@@ -152,12 +152,13 @@ namespace snake::window{
      */
     void GameWindow::eventKeyPressed( const sf::Event& event ){
 
-        // Menu state
+        // Menu  / Options / Scores state
         if( game_window_states.begin() -> first == "Menu" ){
             switch( event.key.code ){
-                case sf::Keyboard::Escape: // Esc
+                case sf::Keyboard::Escape:{ // ESC
                     this -> close();
                     break;
+                }
                 default:
                     break;
             }
@@ -171,6 +172,40 @@ namespace snake::window{
                     if( pause_window.back_to_menu == true ) {
                         this -> game_window_states.erase( "Game" );
                     }
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+
+        // Options state
+        else if( game_window_states.begin() -> first == "Options" ){
+            switch( event.key.code ){
+                case sf::Keyboard::Escape:{ // ESC
+                    this -> close();
+                    break;
+                }
+                case sf::Keyboard::Tab:{ // Tab
+                    this -> close();
+                    auto game_window{ GameWindow() };
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+
+        // Scores state
+        else if( game_window_states.begin() -> first == "Scores" ){
+            switch( event.key.code ){
+                case sf::Keyboard::Escape:{ // ESC
+                    this -> close();
+                    break;
+                }
+                case sf::Keyboard::Tab:{ // Tab
+                    this -> close();
+                    auto game_window{ GameWindow() };
                     break;
                 }
                 default:

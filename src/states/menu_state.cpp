@@ -29,6 +29,8 @@
 #include <states/state.hpp>
 #include <states/menu_state.hpp>
 #include <states/game_state.hpp>
+#include <states/options_state.hpp>
+#include <states/scores_state.hpp>
 
 // Widgets
 #include <widgets/button.hpp>
@@ -184,6 +186,12 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
             )
         };
+        auto scores_action = [ this ]{
+            this -> game_window -> game_window_states.insert( 
+                { "Scores", std::make_shared<state::ScoresState>( state::ScoresState( game_window ) ) } 
+            );
+        };
+        this -> scores_button -> setAction( scores_action );
         this -> scores_button -> setTextSize( text_size ); 
         this -> scores_button -> setTextColor( textColor );
         
@@ -194,6 +202,12 @@ namespace snake::state{
                 idleColor, hoverColor, activeColor ) 
             )
         };
+        auto settings_action = [ this ]{
+            this -> game_window -> game_window_states.insert( 
+                { "Options", std::make_shared<state::OptionsState>( state::OptionsState( game_window ) ) } 
+            );
+        };
+        this -> settings_button -> setAction( settings_action );
         this -> settings_button -> setTextSize( text_size );
         this -> settings_button -> setTextColor( textColor );
 
@@ -250,6 +264,18 @@ namespace snake::state{
         }
         else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> quit_button -> focus ){
             this -> settings_button -> setFocus( true );
+            this -> quit_button -> setFocus( false );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+
+        // Map game button to quit button
+        if( sf::Keyboard::isKeyPressed( sf::Keyboard::Up ) && this -> game_button -> focus ){
+            this -> game_button -> setFocus( false );
+            this -> quit_button -> setFocus( true );
+            sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
+        }
+        else if( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) && this -> quit_button -> focus ){
+            this -> game_button -> setFocus( true );
             this -> quit_button -> setFocus( false );
             sf::sleep( ( sf::milliseconds( this -> waiting_time ) ) );
         }
