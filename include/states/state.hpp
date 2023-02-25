@@ -76,6 +76,7 @@ namespace snake::state{
             static sf::Texture state_texture_3;
             static sf::Texture state_texture_4;
             static sf::Texture state_texture_5;
+            static sf::Texture state_texture_6;
 
             // Constants
             sf::Color background_color{ sf::Color::White };

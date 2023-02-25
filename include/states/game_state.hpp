@@ -70,6 +70,7 @@ namespace snake::state{
             void drawWidgets() override;
             void packWidgets() override;
             void gameOver();
+            int64_t computeBestScore();
 
             // Variables
             window::GameWindow* game_window;
@@ -77,8 +78,10 @@ namespace snake::state{
             std::unique_ptr<entity::Food> food{ std::make_unique<entity::Food>( entity::Food( game_window ) ) };
             uint64_t score{ 0 };
             sf::Text score_update;
+            sf::Text best_score_text;
             sf::Vertex horizontal_line[2];
             sf::Sprite score_icon;
+            sf::Sprite best_score_icon;
             sf::RectangleShape background;
             sf::RectangleShape title_background;
             std::ostringstream score_file_oss;

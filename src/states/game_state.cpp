@@ -233,10 +233,26 @@ namespace snake::state{
         // Score text
         this -> score_update.setFillColor( sf::Color::Black );
         this -> score_update.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> score_icon.getGlobalBounds().width, 
+            this -> game_window -> getSize().x * 0.02f + this -> score_icon.getPosition().x * 1.4f, 
             this -> game_window -> getSize().y * 0.02f
         );
         this -> score_update.setCharacterSize( 30 );
+
+        // Best score icon
+        this -> state_texture_6.loadFromFile( "img/best_score.png" );
+        this -> best_score_icon.setTexture( this -> state_texture_6 );
+        this -> best_score_icon.setPosition( 
+            this -> game_window -> getSize().x * 0.02f + this -> score_update.getPosition().x * 2.0f, 
+            this -> game_window -> getSize().y * 0.013f
+        );
+
+        // Best score text
+        this -> best_score_text.setFillColor( sf::Color::Black );
+        this -> best_score_text.setPosition( 
+            this -> game_window -> getSize().x * 0.02f + this -> best_score_icon.getPosition().x * 1.06f, 
+            this -> game_window -> getSize().y * 0.02f
+        );
+        this -> best_score_text.setCharacterSize( 30 );
 
         // Horizontal line
         this -> horizontal_line[0].position = sf::Vector2f( 0, this -> horizontal_line_y_coord );
@@ -270,6 +286,42 @@ namespace snake::state{
     }
 
     //====================================================
+    //     computeBestScore
+    //====================================================
+    /**
+     * @brief Method used to compute the current best score.
+     * 
+     */
+    int64_t GameState::computeBestScore(){
+
+        // Open stream
+        std::ifstream score_file( this -> score_file_path );
+        #ifdef DEBUG_SNAKE_GAME
+            if( ! score_file ){
+                ptc::print( "Unable to open the score file!" );
+            }
+        #endif
+        
+        // Compute best score
+        int64_t number;
+        std::vector <int64_t> scores_container;
+        while( score_file >> number ){
+            scores_container.push_back( number );
+        }
+
+        // Close stream
+        score_file.close();
+
+        // Return statement
+        if( scores_container.size() == 0 ){
+            return 0;
+        }
+        else{
+            return *max_element( scores_container.begin(), scores_container.end() );
+        }
+    }
+
+    //====================================================
     //     packWidgets
     //====================================================
     /**
@@ -282,11 +334,17 @@ namespace snake::state{
         this -> score_update.setFont( this -> font );
         this -> score_update.setString( std::to_string( this -> score ) );
 
+        // Best score text settings
+        this -> best_score_text.setFont( this -> font );
+        this -> best_score_text.setString( std::to_string( this -> computeBestScore() ) );
+
         // Draw stuff
         this -> game_window -> draw( this -> background );
         this -> game_window -> draw( this -> title_background );
         this -> game_window -> draw( this -> score_update );
+        this -> game_window -> draw( this -> best_score_text );
         this -> game_window -> draw( this -> score_icon );
+        this -> game_window -> draw( this -> best_score_icon );
         this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );
     }
 }
