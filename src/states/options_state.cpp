@@ -63,6 +63,9 @@ namespace snake::state{
         // Clear the window
         this -> game_window -> clear( this -> background_color );
 
+        // Update player entry
+        this -> updateEnteredText();
+
         // Drawing images
         this -> drawImg();
 
@@ -123,6 +126,26 @@ namespace snake::state{
             this -> game_window -> getSize().y * 0.91f 
         );
         this -> back_to_menu.setCharacterSize( 30 );
+
+        // Textbox constants
+        const float width{ this -> game_window_size_y * 0.2f };
+        const float height{ width * 0.35f };
+        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
+        constexpr int32_t text_size{ 24 };
+        const sf::Font font{ this -> font };
+        const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
+        const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
+        const sf::Color textColor{ sf::Color::Black };
+
+        // Player name textbox
+        this -> player_name_textbox = { 
+            std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
+                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 80.f, width, height, font, "",
+                idleColor, hoverColor ) 
+            )
+        };
+        this -> player_name_textbox -> setTextSize( text_size );
+        this -> player_name_textbox -> setTextColor( textColor );
     }
 
     //====================================================
@@ -134,6 +157,39 @@ namespace snake::state{
      */
     void OptionsState::setWidgetsKeys() const {
 
+    }
+
+    //====================================================
+    //     updatePlayerEntry
+    //====================================================
+    /**
+     * @brief Method used to update the entered text.
+     * 
+     */
+    void OptionsState::updateEnteredText() {
+        if( this -> game_window -> game_event.type == sf::Event::TextEntered ){
+            switch( this -> game_window -> game_event.text.unicode ){
+
+                // Delete case
+                case '\b':{ 
+                    this -> player_name_current = this -> player_name_textbox -> text.getString();
+                    if( this -> player_name_current.size() > 0 ){
+                        this -> player_name_textbox -> text.setString( 
+                            player_name_current.erase( player_name_current.size() - 1, 1 ) 
+                        );
+                    }
+                    break;
+                }
+
+                // Other cases
+                default:{
+                    this -> player_name_input += this -> game_window -> game_event.text.unicode;
+                    this -> player_name_text.setString( this -> player_name_input );
+                    this -> player_name_textbox -> text.setString( this -> player_name_text.getString() );
+                    break;
+                }
+            }
+        }
     }
 
     //====================================================
@@ -151,5 +207,6 @@ namespace snake::state{
 
         // Draw stuff
         this -> game_window -> draw( this -> back_to_menu );
+        this -> player_name_textbox -> pack( this -> game_window );
     }
 }

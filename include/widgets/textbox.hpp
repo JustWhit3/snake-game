@@ -2,9 +2,9 @@
 //     File data
 //====================================================
 /**
- * @file button.hpp
+ * @file textbox.hpp
  * @author Gianluca Bianco (biancogianluca9@gmail.com)
- * @date 2022-12-23
+ * @date 2022-12-26
  * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
  */
 
@@ -12,8 +12,8 @@
 //     Preprocessor directives
 //====================================================
 #pragma once
-#ifndef SNAKE_GAME_BUTTON_WIDGET
-#define SNAKE_GAME_BUTTON_WIDGET
+#ifndef SNAKE_GAME_textbox_WIDGET
+#define SNAKE_GAME_textbox_WIDGET
 
 //====================================================
 //     Headers
@@ -24,37 +24,31 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp>
-
-// STL
-#include <string>
-#include <functional>
-#include <stdint.h>
 
 namespace snake::widget{
 
     //====================================================
-    //     button_states
+    //     textbox_states
     //====================================================
     /**
-     * @brief Enum used to define all the button states.
+     * @brief Enum used to define all the textbox states.
      * 
      */
-    enum button_states{
-        BTN_IDLE = 0,
-        BTN_HOVER,
-        BTN_ACTIVE
+    enum textbox_states{
+        TXBX_IDLE = 0,
+        TXBX_HOVER,
+        TXBX_ACTIVE
     };
 
     //====================================================
-    //     Button
+    //     Textbox
     //====================================================
     /**
-     * @brief Class used to create the button widget.
+     * @brief Class used to create the textbox widget.
      * 
      */
-    class Button{
+    class Textbox{
 
         //====================================================
         //     Public
@@ -62,18 +56,16 @@ namespace snake::widget{
         public:
 
             // Constructors
-            Button( float x, float y, float width, float height, 
-                    const sf::Font& font, const std::string& text, 
-                    const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor );
+            Textbox( float x, float y, float width, float height, 
+                    const sf::Font& font, const std::string& text,
+                    const sf::Color& idleColor, const sf::Color& hoverColor );
 
-            // Methods
-            void setAction( const std::function<void()>& action );
 
             // pack (template)
             /**
-             * @brief Method used to draw the button in the window target.
+             * @brief Method used to draw the textbox in the window target.
              * 
-             * @param target The target to which the button is drawn in.
+             * @param target The target to which the textbox is drawn in.
              */
             template <typename T>
             void pack( T* target ){
@@ -81,16 +73,20 @@ namespace snake::widget{
                 this -> update( target -> mapPixelToCoords( sf::Mouse::getPosition( *target ) ) );
                 this -> render( target );
             }
-            
+
             // Setters
             void setTextSize( int32_t size );
             void setOutlineColor( const sf::Color& color );
             void setOutlineThickness( float thickness );
-            void setFocus( const bool focus );
             void setTextColor( const sf::Color& color );
+            void setText( std::string text );
+
+            // Getters
+            void getText() const;
 
             // Variables
             bool focus;
+            sf::Text text;
 
         //====================================================
         //     Private
@@ -104,9 +100,9 @@ namespace snake::widget{
 
             // render (template)
             /**
-             * @brief Method used for button rendering.
+             * @brief Method used for textbox rendering.
              * 
-             * @param target The target to draw button.
+             * @param target The target to draw textbox.
              */
             template <typename T>
             void render( T* target ) const{
@@ -117,14 +113,10 @@ namespace snake::widget{
             // Variables
             sf::RectangleShape shape;
             sf::Font font;
-            sf::Text text;
             sf::Color idleColor;
             sf::Color hoverColor;
-            sf::Color activeColor;
-            std::function<void()> action;
-            std::function<void()> command_action;
-            uint16_t buttonState;
-    };       
+            uint16_t textboxState;
+    };
 }
 
 #endif

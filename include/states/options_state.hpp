@@ -23,7 +23,7 @@
 #include <windows/game_window.hpp>
 
 // Widgets
-#include <widgets/button.hpp>
+#include <widgets/textbox.hpp>
 
 namespace snake::state{
 
@@ -57,10 +57,15 @@ namespace snake::state{
             void drawWidgets() override;
             void setWidgetsKeys() const override;
             void packWidgets() override;
+            void updateEnteredText();
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
+            sf::Text player_name_text;
+            sf::String player_name_input;
+            std::string player_name_current;
+            std::shared_ptr<widget::Textbox> player_name_textbox;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

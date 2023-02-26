@@ -88,7 +88,6 @@ namespace snake::window{
     void GameWindow::runWindow(){
         
         // Check events of the main window
-        sf::Event game_event;
         while( this -> pollEvent( game_event ) ){
         
             // Handling different events
@@ -102,18 +101,6 @@ namespace snake::window{
                 // Key pressed in window
                 case sf::Event::KeyPressed:
                     eventKeyPressed( game_event );
-                    break;
-                    
-                // Window resizing
-                case sf::Event::Resized:
-                    break;
-    
-                // Pause the game if lost focus
-                case sf::Event::LostFocus:
-                    break;
-                    
-                // Resume the game if gained focus
-                case sf::Event::GainedFocus:
                     break;
     
                 // Default cases

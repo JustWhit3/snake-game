@@ -46,6 +46,9 @@ namespace snake::window{
             // Constructors
             GameWindow();
 
+            // Variables
+            sf::Event game_event;
+
         //====================================================
         //     Private
         //====================================================
