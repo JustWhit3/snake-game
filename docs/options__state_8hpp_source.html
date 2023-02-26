@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="game__window_8hpp.html">windows/game_window.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Widgets</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="button_8hpp.html">widgets/button.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="textbox_8hpp.html">widgets/textbox.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1state.html">snake::state</a>{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -119,19 +119,23 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">void</span> drawWidgets() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">void</span> setWidgetsKeys() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">void</span> packWidgets() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            sf::Text back_to_menu;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_x = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_y = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="abutton_8hpp_html"><div class="ttname"><a href="button_8hpp.html">button.hpp</a></div></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">void</span> updateEnteredText();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            sf::Text back_to_menu;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            sf::Text player_name_text;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            sf::String player_name_input;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            std::string player_name_current;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; player_name_textbox;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_x = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_y = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html">snake::state::OptionsState</a></div><div class="ttdoc">Class used to create the options menu.</div><div class="ttdef"><b>Definition:</b> options_state.hpp:37</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html_a04cafda9ebf15f50deed68d5e078b299"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html#a04cafda9ebf15f50deed68d5e078b299">snake::state::OptionsState::OptionsState</a></div><div class="ttdeci">OptionsState(window::GameWindow *game_window)</div><div class="ttdoc">Constructor of the OptionsState class.</div><div class="ttdef"><b>Definition:</b> options_state.cpp:47</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html_a9f8f42b2cba2848c83f29daaba006fb8"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html#a9f8f42b2cba2848c83f29daaba006fb8">snake::state::OptionsState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> options_state.cpp:61</div></div>
@@ -139,6 +143,7 @@ $(function() {
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:39</div></div>
 <div class="ttc" id="agame__window_8hpp_html"><div class="ttname"><a href="game__window_8hpp.html">game_window.hpp</a></div></div>
 <div class="ttc" id="anamespacesnake_1_1state_html"><div class="ttname"><a href="namespacesnake_1_1state.html">snake::state</a></div><div class="ttdef"><b>Definition:</b> game_state.cpp:62</div></div>
+<div class="ttc" id="atextbox_8hpp_html"><div class="ttname"><a href="textbox_8hpp.html">textbox.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
