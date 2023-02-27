@@ -108,7 +108,7 @@ namespace snake::state{
     void MenuState::drawImg() const {
 
         // Loading files from textures
-        if( ! state_texture_1.loadFromFile( "img/logo_small.png" ) ){
+        if( ! state_texture_1.loadFromFile( "img/logo.png" ) ){
             this -> game_window -> close();
         }
         if( ! state_texture_2.loadFromFile( "img/snake_branch.png" ) ){
@@ -221,6 +221,14 @@ namespace snake::state{
         this -> quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
         this -> quit_button -> setTextSize( text_size );
         this -> quit_button -> setTextColor( textColor );
+
+        // Version number text
+        this -> version_number.setFillColor( sf::Color::Black );
+        this -> version_number.setPosition( 
+            this -> game_window -> getSize().x * 0.03f, 
+            this -> game_window -> getSize().y * 0.90f 
+        );
+        this -> version_number.setCharacterSize( 30 );
     }
 
     //====================================================
@@ -289,9 +297,16 @@ namespace snake::state{
      * 
      */
     void MenuState::packWidgets(){
+
+        // Version number text
+        this -> version_number.setFont( this -> font );
+        this -> version_number.setString( "Author: Gianluca Bianco\nCurrent version: 0.1.0" );
+
+        // Draw stuff
         this -> game_button -> pack( this -> game_window );
         this -> scores_button -> pack( this -> game_window );
         this -> settings_button -> pack( this -> game_window );
         this -> quit_button -> pack( this -> game_window );
+        this -> game_window -> draw( this -> version_number );
     }
 }

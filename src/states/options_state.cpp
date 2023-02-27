@@ -101,12 +101,22 @@ namespace snake::state{
         if( ! state_texture_2.loadFromFile( "img/menu_background.jpg" ) ){
             this -> game_window -> close();
         }
+        if( ! state_texture_3.loadFromFile( "img/settings_logo.png" ) ){
+            this -> game_window -> close();
+        }
 
         // Snake on the branch
         sf::Sprite snake_branch_sprite( state_texture_1 );
         snake_branch_sprite.setPosition( 
            0, 
            ( this -> game_window_size_y - snake_branch_sprite.getGlobalBounds().height ) * 0.25f
+        );
+
+        // Settings logo
+        sf::Sprite settings_logo( state_texture_3 );
+        settings_logo.setPosition( 
+           ( this -> game_window_size_x - settings_logo.getGlobalBounds().width ) * 0.5f,
+           ( this -> game_window_size_y - settings_logo.getGlobalBounds().height ) * 0.3f
         );
 
         // Background
@@ -116,6 +126,7 @@ namespace snake::state{
         // Drawing the images
         this -> game_window -> draw( background );
         this -> game_window -> draw( snake_branch_sprite );
+        this -> game_window -> draw( settings_logo );
     }
 
     //====================================================

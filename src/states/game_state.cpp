@@ -370,8 +370,6 @@ namespace snake::state{
         this -> current_player_text.setString( player_option_line );
         default_settings.close();
 
-        
-
         // Draw stuff
         this -> game_window -> draw( this -> background );
         this -> game_window -> draw( this -> title_background );
