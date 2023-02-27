@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['button_5fstates_273',['button_states',['../namespacesnake_1_1widget.html#a07aa3260ddbd0b8642762e3e8634ea12',1,'snake::widget']]]
+  ['widget_5fstates_288',['widget_states',['../namespacesnake_1_1widget.html#aaa5088e25c8066a3a25428e0e591ff00',1,'snake::widget']]]
 ];

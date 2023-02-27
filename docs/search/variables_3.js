@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['game_5fevent_253',['game_event',['../classsnake_1_1window_1_1GameWindow.html#a963b2ea4cfdead7d7c469babebf54b02',1,'snake::window::GameWindow']]],
-  ['game_5fwindow_254',['game_window',['../classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4',1,'snake::entity::Entity']]],
-  ['game_5fwindow_5fstates_255',['game_window_states',['../classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f',1,'snake::window::BaseWindow']]]
+  ['focus_262',['focus',['../classsnake_1_1widget_1_1Widget.html#a367c218f14d71f623b650e3ceadabe49',1,'snake::widget::Widget']]],
+  ['font_263',['font',['../classsnake_1_1state_1_1State.html#a34f9881f86ba3c48cca5c1bdcf633207',1,'snake::state::State::font()'],['../classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1',1,'snake::widget::Widget::font()']]],
+  ['food_264',['food',['../classsnake_1_1entity_1_1Food.html#a81dca28157972bf258d5623a38c313d3',1,'snake::entity::Food']]]
 ];

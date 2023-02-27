@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['btn_5factive_275',['BTN_ACTIVE',['../namespacesnake_1_1widget.html#a07aa3260ddbd0b8642762e3e8634ea12a43c6f691ccb2b4f7394ed25a44435b3a',1,'snake::widget']]],
-  ['btn_5fhover_276',['BTN_HOVER',['../namespacesnake_1_1widget.html#a07aa3260ddbd0b8642762e3e8634ea12a66e2c45f170965f1381829bba5b8b3b7',1,'snake::widget']]],
-  ['btn_5fidle_277',['BTN_IDLE',['../namespacesnake_1_1widget.html#a07aa3260ddbd0b8642762e3e8634ea12a5a2f409a5b0459ecfd6225681a35aeb3',1,'snake::widget']]]
+  ['wdgt_5factive_289',['WDGT_ACTIVE',['../namespacesnake_1_1widget.html#aaa5088e25c8066a3a25428e0e591ff00a5c82aee0a9574d8c4e2c0183d3e81914',1,'snake::widget']]],
+  ['wdgt_5fhover_290',['WDGT_HOVER',['../namespacesnake_1_1widget.html#aaa5088e25c8066a3a25428e0e591ff00a8ba0b29c5f3633ef0639e8df11844e89',1,'snake::widget']]],
+  ['wdgt_5fidle_291',['WDGT_IDLE',['../namespacesnake_1_1widget.html#aaa5088e25c8066a3a25428e0e591ff00a77d4cace5c83a7c61325b497cd117dba',1,'snake::widget']]]
 ];

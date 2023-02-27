@@ -1,0 +1,5 @@
+<map id="snake::widget::Widget" name="snake::widget::Widget">
+<area shape="rect" id="node1" title="Class used to define base widget for the other widgets." alt="" coords="91,5,238,32"/>
+<area shape="rect" id="node2" href="$classsnake_1_1widget_1_1Button.html" title="Class used to create the button widget." alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node3" href="$classsnake_1_1widget_1_1Textbox.html" title="Class used to create the textbox widget." alt="" coords="175,80,327,107"/>
+</map>

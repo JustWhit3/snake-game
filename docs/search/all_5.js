@@ -1,17 +1,9 @@
 var searchData=
 [
-  ['game_5fevent_32',['game_event',['../classsnake_1_1window_1_1GameWindow.html#a963b2ea4cfdead7d7c469babebf54b02',1,'snake::window::GameWindow']]],
-  ['game_5fstate_2ecpp_33',['game_state.cpp',['../game__state_8cpp.html',1,'']]],
-  ['game_5fstate_2ehpp_34',['game_state.hpp',['../game__state_8hpp.html',1,'']]],
-  ['game_5fwindow_35',['game_window',['../classsnake_1_1entity_1_1Entity.html#ae70cad19cd624c9548856808a2667bb4',1,'snake::entity::Entity']]],
-  ['game_5fwindow_2ecpp_36',['game_window.cpp',['../game__window_8cpp.html',1,'']]],
-  ['game_5fwindow_2ehpp_37',['game_window.hpp',['../game__window_8hpp.html',1,'']]],
-  ['game_5fwindow_5fstates_38',['game_window_states',['../classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f',1,'snake::window::BaseWindow']]],
-  ['gamestate_39',['GameState',['../classsnake_1_1state_1_1GameState.html#a703b87c15f93ee2cd1f0fbed29d6cd98',1,'snake::state::GameState::GameState()'],['../classsnake_1_1state_1_1GameState.html',1,'snake::state::GameState']]],
-  ['gamewindow_40',['GameWindow',['../classsnake_1_1window_1_1GameWindow.html#a6280d0b57d519bb0fef31faf10f7f758',1,'snake::window::GameWindow::GameWindow()'],['../classsnake_1_1window_1_1GameWindow.html',1,'snake::window::GameWindow']]],
-  ['generic_2ehpp_41',['generic.hpp',['../generic_8hpp.html',1,'']]],
-  ['getdesktopmode_42',['getDesktopMode',['../namespacesnake_1_1utility.html#ae74e65950d966832c2102053af2fbb55',1,'snake::utility']]],
-  ['gettext_43',['getText',['../classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b',1,'snake::widget::Textbox']]],
-  ['gui_2ecpp_44',['gui.cpp',['../gui_8cpp.html',1,'']]],
-  ['gui_2ehpp_45',['gui.hpp',['../gui_8hpp.html',1,'']]]
+  ['focus_23',['focus',['../classsnake_1_1widget_1_1Widget.html#a367c218f14d71f623b650e3ceadabe49',1,'snake::widget::Widget']]],
+  ['font_24',['font',['../classsnake_1_1state_1_1State.html#a34f9881f86ba3c48cca5c1bdcf633207',1,'snake::state::State::font()'],['../classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1',1,'snake::widget::Widget::font()']]],
+  ['food_25',['food',['../classsnake_1_1entity_1_1Food.html#a81dca28157972bf258d5623a38c313d3',1,'snake::entity::Food']]],
+  ['food_26',['Food',['../classsnake_1_1entity_1_1Food.html#a4ec897d8df22349be8ff080d9278d205',1,'snake::entity::Food::Food()'],['../classsnake_1_1entity_1_1Food.html',1,'snake::entity::Food']]],
+  ['food_2ecpp_27',['food.cpp',['../food_8cpp.html',1,'']]],
+  ['food_2ehpp_28',['food.hpp',['../food_8hpp.html',1,'']]]
 ];

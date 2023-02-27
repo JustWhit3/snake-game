@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['options_5ffile_5fpath_56',['options_file_path',['../classsnake_1_1window_1_1GameWindow.html#a9307617e3b1463d751d12cc85b8368a7',1,'snake::window::GameWindow']]],
-  ['options_5fstate_2ecpp_57',['options_state.cpp',['../options__state_8cpp.html',1,'']]],
-  ['options_5fstate_2ehpp_58',['options_state.hpp',['../options__state_8hpp.html',1,'']]],
-  ['optionsstate_59',['OptionsState',['../classsnake_1_1state_1_1OptionsState.html#a04cafda9ebf15f50deed68d5e078b299',1,'snake::state::OptionsState::OptionsState()'],['../classsnake_1_1state_1_1OptionsState.html',1,'snake::state::OptionsState']]]
+  ['main_50',['main',['../snake-game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'snake-game.cpp']]],
+  ['menu_5fstate_2ecpp_51',['menu_state.cpp',['../menu__state_8cpp.html',1,'']]],
+  ['menu_5fstate_2ehpp_52',['menu_state.hpp',['../menu__state_8hpp.html',1,'']]],
+  ['menustate_53',['MenuState',['../classsnake_1_1state_1_1MenuState.html#a8f8a50d538b5c66aff02e2e31ace7d59',1,'snake::state::MenuState::MenuState()'],['../classsnake_1_1state_1_1MenuState.html',1,'snake::state::MenuState']]],
+  ['movesmoothly_54',['moveSmoothly',['../classsnake_1_1entity_1_1Snake.html#af3471c815cd6fb9fbc3269ac0607c16b',1,'snake::entity::Snake']]]
 ];

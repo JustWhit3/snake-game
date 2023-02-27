@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['if_47',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'CMakeLists.txt']]]
+  ['head_43',['head',['../classsnake_1_1entity_1_1Snake.html#a17b8d1a912028d8a01f5b0ed7fcc298d',1,'snake::entity::Snake']]],
+  ['hovercolor_44',['hoverColor',['../classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7',1,'snake::widget::Widget']]]
 ];

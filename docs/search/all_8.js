@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['loose_5fstate_2ecpp_48',['loose_state.cpp',['../loose__state_8cpp.html',1,'']]],
-  ['loose_5fstate_2ehpp_49',['loose_state.hpp',['../loose__state_8hpp.html',1,'']]],
-  ['loosestate_50',['LooseState',['../classsnake_1_1state_1_1LooseState.html#a1034278a42720ab03a8f8263433ad8f3',1,'snake::state::LooseState::LooseState()'],['../classsnake_1_1state_1_1LooseState.html',1,'snake::state::LooseState']]]
+  ['idlecolor_45',['idleColor',['../classsnake_1_1widget_1_1Widget.html#a3c3f888dd661c57631165a6262e8efed',1,'snake::widget::Widget']]],
+  ['if_46',['if',['../CMakeLists_8txt.html#a2b055f5e6d50d5bc83056fcaf941651b',1,'CMakeLists.txt']]]
 ];

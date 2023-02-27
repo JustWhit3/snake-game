@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['waiting_5ftime_272',['waiting_time',['../classsnake_1_1state_1_1State.html#a95d61890e1075c0a0e0709f9cf141aec',1,'snake::state::State']]]
+  ['text_284',['text',['../classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652',1,'snake::widget::Widget']]]
 ];

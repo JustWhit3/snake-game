@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['update_136',['update',['../classsnake_1_1entity_1_1Snake.html#a53f6766ddd5ab6ade154412215f62164',1,'snake::entity::Snake']]],
-  ['updatetext_137',['updateText',['../classsnake_1_1widget_1_1Textbox.html#a21cb277df9e824c6a5a4e0b3cc4eaad6',1,'snake::widget::Textbox']]],
-  ['username_138',['username',['../classsnake_1_1window_1_1GameWindow.html#a93b4a42af3ffe9162ae60bc536f0beb9',1,'snake::window::GameWindow']]]
+  ['text_129',['text',['../classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652',1,'snake::widget::Widget']]],
+  ['textbox_130',['Textbox',['../classsnake_1_1widget_1_1Textbox.html',1,'snake::widget::Textbox'],['../classsnake_1_1widget_1_1Textbox.html#a46a8359bc7f17e997b9c54de8232de3a',1,'snake::widget::Textbox::Textbox()']]],
+  ['textbox_2ecpp_131',['textbox.cpp',['../textbox_8cpp.html',1,'']]],
+  ['textbox_2ehpp_132',['textbox.hpp',['../textbox_8hpp.html',1,'']]]
 ];
