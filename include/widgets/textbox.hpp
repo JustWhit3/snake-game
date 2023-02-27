@@ -29,6 +29,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
+#include <SFML/System/Clock.hpp>
 
 namespace snake::widget{
 
@@ -59,6 +60,7 @@ namespace snake::widget{
 
             // Variables
             std::string saved_text;
+            sf::Clock deltaClock;
 
         //====================================================
         //     Private

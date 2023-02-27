@@ -138,13 +138,13 @@ namespace snake::state{
         // Textbox constants
         const float width{ this -> game_window_size_y * 0.2f };
         const float height{ width * 0.35f };
-        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
+        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f ) * 1.2f;
         const float y_pos = ( this -> game_window_size_y * 0.5f - height * 0.5f + 80.f );
-        constexpr int32_t text_size{ 24 };
+        constexpr int32_t text_size{ 30 };
         const sf::Font font{ this -> font };
-        const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
-        const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
-        const sf::Color activeColor{ sf::Color::Blue };
+        const sf::Color idleColor{ sf::Color::White };
+        const sf::Color hoverColor{ sf::Color( 224, 224, 224 ) };
+        const sf::Color activeColor{ sf::Color( 192, 192, 192 ) };
         const sf::Color textColor{ sf::Color::Black };
 
         // Player name textbox
@@ -159,8 +159,13 @@ namespace snake::state{
 
         // Text has been saved text
         this -> text_has_been_saved.setFillColor( sf::Color::Black );
-        this -> text_has_been_saved.setPosition( x_pos * 1.3f, y_pos * 1.02f );
+        this -> text_has_been_saved.setPosition( x_pos * 1.25f, y_pos * 1.03f );
         this -> back_to_menu.setCharacterSize( 30 );
+
+        // Player option text
+        this -> player_option.setFillColor( sf::Color::Black );
+        this -> player_option.setPosition( x_pos * 0.7f, y_pos * 1.03f );
+        this -> player_option.setCharacterSize( 30 );
     }
 
     //====================================================
@@ -180,9 +185,14 @@ namespace snake::state{
         this -> text_has_been_saved.setFont( this -> font );
         this -> text_has_been_saved.setString( "Saved!" );
 
+        // Player option text settings
+        this -> player_option.setFont( this -> font );
+        this -> player_option.setString( "Change player name:" );
+
         // Draw stuff
         this -> game_window -> draw( this -> back_to_menu );
         this -> player_name_textbox -> pack( this -> game_window );
+        this -> game_window -> draw( this -> player_option );
 
         // Draw temporary stuff
         if( this -> player_name_textbox -> saved_text != "" ){
@@ -191,13 +201,16 @@ namespace snake::state{
             this -> game_window -> player_option = this -> player_name_textbox -> saved_text;
             if( this -> already_wrote == false ){
                 std::ofstream options_file( this -> options_file_path );
-                options_file << "Player: " << this -> player_name_textbox -> saved_text << "\n";
+                
+                options_file << "Player: " << this -> player_name_textbox -> saved_text.substr( 0, this -> player_name_textbox -> saved_text.size()-1) << "\n";
                 options_file.close();
             }
             this -> already_wrote = true;
     
             // Draw temporary stuff
-            this -> game_window -> draw( this -> text_has_been_saved );
+            if( this -> player_name_textbox -> deltaClock.getElapsedTime() < delta_time ){
+                this -> game_window -> draw( this -> text_has_been_saved );
+            }
         }
     }
 }

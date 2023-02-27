@@ -98,6 +98,13 @@ namespace snake::widget{
         // Switch cases for textbox states
         switch( this -> widgetState ){
             case WDGT_IDLE:
+                if( text.getString() == "|" ){
+                    this -> text.setString( "" );
+                }
+                else if( text.getString().getSize() > 1 && text.getString()[ text.getString().getSize() - 1 ] == '|' ){
+                    this -> text.setString( text.getString().substring( 0, text.getString().getSize() - 1 ) );
+                    
+                }
                 this -> shape.setFillColor( this -> idleColor );
                 break;
 
@@ -106,9 +113,16 @@ namespace snake::widget{
                 break;
 
             case WDGT_ACTIVE:
+                if( text.getString() == "" ){
+                    this -> text.setString( "|" );
+                }
+                else if( text.getString().getSize() > 1 && text.getString()[ text.getString().getSize() - 1 ] != '|' ){
+                    this -> text.setString( text.getString() + "|" );
+                }
                 this -> shape.setFillColor( this -> activeColor );
                 if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
                     this -> saved_text = this -> text.getString();
+                    this -> deltaClock.restart();
                 }
                 break;
 
@@ -134,9 +148,9 @@ namespace snake::widget{
                     // Delete case
                     case '\b':{ 
                         this -> current_text = this -> text.getString();
-                        if( this -> current_text.size() > 0 ){
+                        if( this -> current_text.size() > 1 ){
                             this -> text.setString( 
-                                current_text.erase( current_text.size() - 1, 1 ) 
+                                current_text.erase( current_text.size() - 2, 1 ) 
                             );
                         }
                         break;
@@ -146,7 +160,7 @@ namespace snake::widget{
                     default:{
                         this -> input += event.text.unicode;
                         this -> input_text.setString( this -> input );
-                        this -> text.setString( this -> input_text.getString() );
+                        this -> text.setString( this -> input_text.getString() + "|" );
                         break;
                     }
                 }

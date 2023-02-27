@@ -65,6 +65,7 @@ namespace snake::state{
             window::GameWindow* game_window;
             sf::Text back_to_menu;
             sf::Text text_has_been_saved;
+            sf::Text player_option;
             std::shared_ptr<widget::Textbox> player_name_textbox;
             std::filesystem::path options_file_path;
             bool already_wrote;
@@ -72,6 +73,7 @@ namespace snake::state{
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
             const uint64_t game_window_size_y = this -> game_window -> getSize().y;
+            const sf::Time delta_time{ sf::seconds( 1.f ) };
     };
 }
 
