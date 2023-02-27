@@ -129,7 +129,7 @@ Optional prerequisites for debug mode:
 
 ### Menu
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/examples/menu.png">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/menu.png">
 
 Commands:
 
@@ -139,7 +139,7 @@ Commands:
 
 ### Game
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/examples/examples/game.png">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/examples/game.png">
 
 Commands:
 
