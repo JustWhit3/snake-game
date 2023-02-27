@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/JustWhit3/snake-game/blob/main/img/logo.png" height=220></p>
+<p align="center"><img src="https://github.com/JustWhit3/snake-game/blob/main/img/images/logo.png" height=220></p>
 
 <h3 align="center">A snake game created using SFML. </h3>
 <p align="center">
@@ -14,7 +14,7 @@
 
 ***
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/img/example.gif">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/example.gif">
 
 ## Table of contents
 
@@ -129,7 +129,7 @@ Optional prerequisites for debug mode:
 
 ### Menu
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/img/screenshots/menu.png">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/screenshots/menu.png">
 
 Commands:
 
@@ -139,7 +139,7 @@ Commands:
 
 ### Game
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/img/screenshots/game.png">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/examples/screenshots/game.png">
 
 Commands:
 

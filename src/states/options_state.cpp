@@ -95,13 +95,13 @@ namespace snake::state{
     void OptionsState::drawImg() const {
 
         // Loading files from textures
-        if( ! state_texture_1.loadFromFile( "img/snake_branch.png" ) ){
+        if( ! state_texture_1.loadFromFile( "img/images/snake_branch.png" ) ){
             this -> game_window -> close();
         }
-        if( ! state_texture_2.loadFromFile( "img/menu_background.jpg" ) ){
+        if( ! state_texture_2.loadFromFile( "img/images/menu_background.jpg" ) ){
             this -> game_window -> close();
         }
-        if( ! state_texture_3.loadFromFile( "img/settings_logo.png" ) ){
+        if( ! state_texture_3.loadFromFile( "img/images/settings_logo.png" ) ){
             this -> game_window -> close();
         }
 

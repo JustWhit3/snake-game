@@ -73,13 +73,13 @@ namespace snake::state{
         game_window( game_window ){
 
         // Set snake head and texture properties
-        this -> state_texture_1.loadFromFile( "img/snake_head.png" );;
+        this -> state_texture_1.loadFromFile( "img/textures/snake_head.png" );;
         this -> snake -> head.setTexture( this -> state_texture_1 );
         this -> snake -> head.setOrigin( ( sf::Vector2f )this -> state_texture_1.getSize() / 2.f );
         this -> snake -> relHeadPos( 0, - this -> snake -> body[0].getSize().y );
 
         // Set food texture properties
-        this -> state_texture_2.loadFromFile( "img/food.png" );
+        this -> state_texture_2.loadFromFile( "img/textures/food.png" );
         this -> food -> food.setTexture( this -> state_texture_2 );
 
         // Default move up
@@ -255,7 +255,7 @@ namespace snake::state{
         this -> score_update.setCharacterSize( 30 );
 
         // Best score icon
-        this -> state_texture_6.loadFromFile( "img/best_score.png" );
+        this -> state_texture_6.loadFromFile( "img/textures/best_score.png" );
         this -> best_score_icon.setTexture( this -> state_texture_6 );
         this -> best_score_icon.setPosition( 
             this -> game_window -> getSize().x * 0.02f + this -> score_update.getPosition().x * 2.0f, 
@@ -285,7 +285,7 @@ namespace snake::state{
         this -> horizontal_line[1].color = sf::Color::Black;
 
         // Background
-        if( ! this -> state_texture_3.loadFromFile( "img/game_background.jpg" ) ){
+        if( ! this -> state_texture_3.loadFromFile( "img/images/game_background.jpg" ) ){
             this -> game_window -> close();
         }
         this -> background.setSize( 
@@ -297,7 +297,7 @@ namespace snake::state{
         this -> background.setTexture( &state_texture_3, true );
 
         // Title background
-        if( ! this -> state_texture_4.loadFromFile( "img/title_game_background.jpg" ) ){
+        if( ! this -> state_texture_4.loadFromFile( "img/images/title_game_background.jpg" ) ){
             this -> game_window -> close();
         }
         this -> title_background.setSize( 

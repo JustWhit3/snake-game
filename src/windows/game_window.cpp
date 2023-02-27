@@ -70,7 +70,7 @@ namespace snake::window{
 
         // Setting the icon
         auto icon = sf::Image{};
-        icon.loadFromFile( "img/logo_icon.png" );
+        icon.loadFromFile( "img/images/logo_icon.png" );
         this -> setIcon( icon.getSize().x, icon.getSize().y, icon.getPixelsPtr() );
     
         // Other settings

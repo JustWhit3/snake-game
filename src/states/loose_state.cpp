@@ -85,7 +85,7 @@ namespace snake::state{
     void LooseState::drawImg() const {
 
         // Loading files from textures
-        if( ! state_texture_5.loadFromFile( "img/title_game_background.jpg" ) ){
+        if( ! state_texture_5.loadFromFile( "img/images/title_game_background.jpg" ) ){
             this -> pause_window -> close();
         }
 
