@@ -139,7 +139,7 @@ Commands:
 
 ### Game
 
-<img src="https://github.com/JustWhit3/snake-game/blob/main/examples/game.png">
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/game.png">
 
 Commands:
 
