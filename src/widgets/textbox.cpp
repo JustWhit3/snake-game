@@ -103,7 +103,6 @@ namespace snake::widget{
                 }
                 else if( text.getString().getSize() > 1 && text.getString()[ text.getString().getSize() - 1 ] == '|' ){
                     this -> text.setString( text.getString().substring( 0, text.getString().getSize() - 1 ) );
-                    
                 }
                 this -> shape.setFillColor( this -> idleColor );
                 break;
@@ -149,9 +148,8 @@ namespace snake::widget{
                     case '\b':{ 
                         this -> current_text = this -> text.getString();
                         if( this -> current_text.size() > 1 ){
-                            this -> text.setString( 
-                                current_text.erase( current_text.size() - 2, 1 ) 
-                            );
+                            this -> text.setString( this -> current_text.erase( this ->current_text.size() - 2, 1 ) );
+                            this -> input = this -> current_text.erase( this ->current_text.size() - 1, 1 );
                         }
                         break;
                     }
