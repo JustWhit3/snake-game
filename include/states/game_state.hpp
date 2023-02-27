@@ -33,7 +33,6 @@
 #include <cstdint>
 #include <memory>
 #include <sstream>
-#include <cstdio>
 #include <filesystem>
 
 namespace snake::state{
@@ -79,6 +78,7 @@ namespace snake::state{
             uint64_t score{ 0 };
             sf::Text score_update;
             sf::Text best_score_text;
+            sf::Text current_player_text;
             sf::Vertex horizontal_line[2];
             sf::Sprite score_icon;
             sf::Sprite best_score_icon;
@@ -86,12 +86,13 @@ namespace snake::state{
             sf::RectangleShape title_background;
             std::ostringstream score_file_oss;
             std::filesystem::path score_file_path;
+            std::filesystem::path options_file_path;
+            std::ostringstream options_file_oss;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;
             const uint32_t window_x_max = this -> game_window -> getSize().x;
             const uint32_t window_y_max = this -> game_window -> getSize().y;
-            const std::string username = getenv( "USERNAME" );
     };
 }
 

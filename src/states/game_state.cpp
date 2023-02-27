@@ -85,13 +85,29 @@ namespace snake::state{
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
 
-        // Create the score file path
+        // Create the score file path name
         #ifdef _WIN32
-            this -> score_file_oss << "C:\\Users\\" << this -> username << "\\snake-game_score.txt";
+            this -> score_file_oss << "C:\\Users\\" 
+                                   << this -> game_window -> username 
+                                   << "\\snake-game_files\\snake-game_score.txt";
         #else
-            this -> score_file_oss << "/home/" << this -> username << "/snake-game_score.txt";
+            this -> score_file_oss << "/home/" 
+                                   << this -> game_window -> username 
+                                   << "/snake-game_files/snake-game_score.txt";
         #endif
         this -> score_file_path = score_file_oss.str();
+
+        // Create the option file path name
+        #ifdef _WIN32
+            this -> options_file_oss << "C:\\Users\\" 
+                                     << this -> game_window -> username 
+                                     << "\\snake-game_files\\snake-game_options.txt";
+        #else
+            this -> options_file_oss << "/home/" 
+                                     << this -> game_window -> username 
+                                     << "/snake-game_files/snake-game_options.txt";
+        #endif
+        this -> options_file_path = options_file_oss.str();
 
         // Draw widgets
         this -> drawWidgets();
@@ -159,7 +175,7 @@ namespace snake::state{
         std::ofstream score_file( this -> score_file_path, std::ios::out | std::ios::app );
         #ifdef DEBUG_SNAKE_GAME
             if( ! score_file ){
-                ptc::print( "Unable to open the score file!" );
+                ptc::print( std::cerr, "Unable to open the score file! It probably doesn't exist yet." );
             }
         #endif
         score_file << this -> score << "\n";
@@ -243,7 +259,7 @@ namespace snake::state{
         this -> best_score_icon.setTexture( this -> state_texture_6 );
         this -> best_score_icon.setPosition( 
             this -> game_window -> getSize().x * 0.02f + this -> score_update.getPosition().x * 2.0f, 
-            this -> game_window -> getSize().y * 0.013f
+            this -> game_window -> getSize().y * 0.015f
         );
 
         // Best score text
@@ -253,6 +269,14 @@ namespace snake::state{
             this -> game_window -> getSize().y * 0.02f
         );
         this -> best_score_text.setCharacterSize( 30 );
+
+        // Current player text
+        this -> current_player_text.setFillColor( sf::Color::Black );
+        this -> current_player_text.setPosition( 
+            this -> game_window -> getSize().x * 0.02f + this -> best_score_text.getPosition().x * 1.4f, 
+            this -> game_window -> getSize().y * 0.02f
+        );
+        this -> current_player_text.setCharacterSize( 30 );
 
         // Horizontal line
         this -> horizontal_line[0].position = sf::Vector2f( 0, this -> horizontal_line_y_coord );
@@ -338,6 +362,16 @@ namespace snake::state{
         this -> best_score_text.setFont( this -> font );
         this -> best_score_text.setString( std::to_string( this -> computeBestScore() ) );
 
+        // Current player text settings
+        this -> current_player_text.setFont( this -> font );
+        std::ifstream default_settings( options_file_path );
+        std::string player_option_line;
+        getline( default_settings, player_option_line );
+        this -> current_player_text.setString( player_option_line );
+        default_settings.close();
+
+        
+
         // Draw stuff
         this -> game_window -> draw( this -> background );
         this -> game_window -> draw( this -> title_background );
@@ -346,5 +380,6 @@ namespace snake::state{
         this -> game_window -> draw( this -> score_icon );
         this -> game_window -> draw( this -> best_score_icon );
         this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );
+        this -> game_window -> draw( this -> current_player_text );
     }
 }

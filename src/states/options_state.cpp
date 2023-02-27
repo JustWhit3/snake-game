@@ -31,8 +31,14 @@
 #include <states/menu_state.hpp>
 #include <states/game_state.hpp>
 
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
+
 // STD
 #include <utility>
+#include <fstream>
 
 namespace snake::state{
 
@@ -45,7 +51,9 @@ namespace snake::state{
      * @param game_window The window to which the state stuff is constructed.
      */
     OptionsState::OptionsState( window::GameWindow* game_window ): 
-        game_window( game_window ){
+        game_window( game_window ), 
+        already_wrote( false ),
+        options_file_path( this -> game_window -> options_file_path ){
 
         // Draw widgets
         this -> drawWidgets();
@@ -64,7 +72,7 @@ namespace snake::state{
         this -> game_window -> clear( this -> background_color );
 
         // Update player entry
-        this -> updateEnteredText();
+        this -> player_name_textbox -> updateText( this -> game_window -> game_event );
 
         // Drawing images
         this -> drawImg();
@@ -131,65 +139,28 @@ namespace snake::state{
         const float width{ this -> game_window_size_y * 0.2f };
         const float height{ width * 0.35f };
         const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
+        const float y_pos = ( this -> game_window_size_y * 0.5f - height * 0.5f + 80.f );
         constexpr int32_t text_size{ 24 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
         const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
+        const sf::Color activeColor{ sf::Color::Blue };
         const sf::Color textColor{ sf::Color::Black };
 
         // Player name textbox
         this -> player_name_textbox = { 
             std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
-                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 80.f, width, height, font, "",
-                idleColor, hoverColor ) 
+                x_pos, y_pos, width, height, font, "",
+                idleColor, hoverColor, activeColor ) 
             )
         };
         this -> player_name_textbox -> setTextSize( text_size );
         this -> player_name_textbox -> setTextColor( textColor );
-    }
 
-    //====================================================
-    //     setWidgetsKeys
-    //====================================================
-    /**
-     * @brief Method used to set widgets in the current state.
-     * 
-     */
-    void OptionsState::setWidgetsKeys() const {
-
-    }
-
-    //====================================================
-    //     updatePlayerEntry
-    //====================================================
-    /**
-     * @brief Method used to update the entered text.
-     * 
-     */
-    void OptionsState::updateEnteredText() {
-        if( this -> game_window -> game_event.type == sf::Event::TextEntered ){
-            switch( this -> game_window -> game_event.text.unicode ){
-
-                // Delete case
-                case '\b':{ 
-                    this -> player_name_current = this -> player_name_textbox -> text.getString();
-                    if( this -> player_name_current.size() > 0 ){
-                        this -> player_name_textbox -> text.setString( 
-                            player_name_current.erase( player_name_current.size() - 1, 1 ) 
-                        );
-                    }
-                    break;
-                }
-
-                // Other cases
-                default:{
-                    this -> player_name_input += this -> game_window -> game_event.text.unicode;
-                    this -> player_name_text.setString( this -> player_name_input );
-                    this -> player_name_textbox -> text.setString( this -> player_name_text.getString() );
-                    break;
-                }
-            }
-        }
+        // Text has been saved text
+        this -> text_has_been_saved.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved.setPosition( x_pos * 1.3f, y_pos * 1.02f );
+        this -> back_to_menu.setCharacterSize( 30 );
     }
 
     //====================================================
@@ -205,8 +176,28 @@ namespace snake::state{
         this -> back_to_menu.setFont( this -> font );
         this -> back_to_menu.setString( "Press <Tab> to back to menu" );
 
+        // Text has been saved text settings
+        this -> text_has_been_saved.setFont( this -> font );
+        this -> text_has_been_saved.setString( "Saved!" );
+
         // Draw stuff
         this -> game_window -> draw( this -> back_to_menu );
         this -> player_name_textbox -> pack( this -> game_window );
+
+        // Draw temporary stuff
+        if( this -> player_name_textbox -> saved_text != "" ){
+
+            // Write new options in file
+            this -> game_window -> player_option = this -> player_name_textbox -> saved_text;
+            if( this -> already_wrote == false ){
+                std::ofstream options_file( this -> options_file_path );
+                options_file << "Player: " << this -> player_name_textbox -> saved_text << "\n";
+                options_file.close();
+            }
+            this -> already_wrote = true;
+    
+            // Draw temporary stuff
+            this -> game_window -> draw( this -> text_has_been_saved );
+        }
     }
 }

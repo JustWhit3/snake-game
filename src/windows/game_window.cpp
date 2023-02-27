@@ -9,6 +9,16 @@
  */
 
 //====================================================
+//     Preprocessor directives
+//====================================================
+
+// ptc-print
+#ifdef DEBUG_SNAKE_GAME
+    #define PTC_ENABLE_PERFORMANCE_IMPROVEMENTS
+    #define PTC_DISABLE_STD_TYPES_PRINTING
+#endif
+
+//====================================================
 //     Headers
 //====================================================
 
@@ -30,12 +40,19 @@
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
 
+// Debug
+#ifdef DEBUG_SNAKE_GAME
+    #include <ptc/print.hpp>
+#endif
+
 // STD
 #include <memory>
 #include <map>
 #include <string>
 #include <string_view> 
 #include <utility>
+#include <filesystem>
+#include <fstream>
 
 namespace snake::window{
 
@@ -64,6 +81,35 @@ namespace snake::window{
         );
         this -> setFramerateLimit( 60 );
 
+        // Create the game directory name
+        #ifdef _WIN32
+            this -> game_directory_oss << "C:\\Users\\" 
+                                       << this -> username 
+                                       << "\\snake-game_files";
+        #else
+            this -> game_directory_oss << "/home/"
+                                       << this -> username 
+                                       << "/snake-game_files";
+        #endif
+        std::filesystem::create_directory( game_directory_oss.str() );
+
+        // Create default options file
+        #ifdef _WIN32
+            this -> options_file_oss << "C:\\Users\\" 
+                                     << this -> username 
+                                     << "\\snake-game_files\\snake-game_options.txt";
+        #else
+            this -> options_file_oss << "/home/" 
+                                     << this -> username 
+                                     << "/snake-game_files/snake-game_options.txt";
+        #endif
+        this -> options_file_path = options_file_oss.str();
+        if( ! std::ifstream( options_file_path ) ){
+            std::ofstream default_settings( options_file_path );
+            default_settings << "Player: Unknown\n";
+            default_settings.close();
+        }
+
         // Push the Menu state
         this -> game_window_states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
 
@@ -77,7 +123,7 @@ namespace snake::window{
             this -> game_window_states.begin() -> second -> drawState();
         }
     }
-    
+
     //====================================================
     //     runWindow
     //====================================================

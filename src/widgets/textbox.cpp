@@ -56,12 +56,15 @@ namespace snake::widget{
      */
     Textbox::Textbox( float x, float y, float width, float height, 
                     const sf::Font& font, const std::string& text,
-                    const sf::Color& idleColor, const sf::Color& hoverColor ):
+                    const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor ):
         font( font ),
         idleColor( idleColor ),
         hoverColor( hoverColor ),
+        activeColor( activeColor ),
         textboxState( TXBX_IDLE ),
-        focus( false ){
+        focus( false ),
+        has_been_pressed( false ),
+        saved_text( "" ){
 
         // Setting textbox shape
         this -> shape.setPosition( sf::Vector2f( x, y ) );
@@ -97,18 +100,18 @@ namespace snake::widget{
 
             if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
                 this -> textboxState = TXBX_ACTIVE;
-                // do something...
+                this -> has_been_pressed = true;
+            }
+        }
+        else{
+            if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
+                this -> textboxState = TXBX_IDLE;
+                this -> has_been_pressed = false;
             }
         }
 
-        // Enter clicked
-        else if( this -> focus == true ){
-            this -> textboxState = TXBX_HOVER;
-
-            if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
-                this -> textboxState = TXBX_ACTIVE;
-                // do something...
-            }
+        if( this -> has_been_pressed == true ){
+            this -> textboxState = TXBX_ACTIVE;
         }
 
         // Switch cases for textbox states
@@ -122,7 +125,10 @@ namespace snake::widget{
                 break;
 
             case TXBX_ACTIVE:
-            //  this -> action();
+                this -> shape.setFillColor( this -> activeColor );
+                if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
+                    this -> saved_text = this -> text.getString();
+                }
                 break;
 
             default:
@@ -132,19 +138,39 @@ namespace snake::widget{
     }
 
     //====================================================
-    //     isPressed
+    //     updateText
     //====================================================
     /**
-     * @brief Method used to define textbox pressed state.
+     * @brief Method used to update the text of the textbox.
      * 
-     * @return true If textbox is pressed.
-     * @return false Otherwise.
+     * @param event The event of the window in which the textbox is drawn.
      */
-    constexpr bool Textbox::isPressed() const{
-        if( this -> textboxState == TXBX_ACTIVE ){
-            return true;
+    void Textbox::updateText( const sf::Event& event ){
+        if( event.type == sf::Event::TextEntered ){
+            if( this -> textboxState == TXBX_ACTIVE ){
+                switch( event.text.unicode ){
+
+                    // Delete case
+                    case '\b':{ 
+                        this -> current_text = this -> text.getString();
+                        if( this -> current_text.size() > 0 ){
+                            this -> text.setString( 
+                                current_text.erase( current_text.size() - 1, 1 ) 
+                            );
+                        }
+                        break;
+                    }
+
+                    // Other cases
+                    default:{
+                        this -> input += event.text.unicode;
+                        this -> input_text.setString( this -> input );
+                        this -> text.setString( this -> input_text.getString() );
+                        break;
+                    }
+                }
+            }
         }
-        return false;
     }
 
     //====================================================

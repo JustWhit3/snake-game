@@ -24,6 +24,7 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 
 namespace snake::widget{
@@ -38,7 +39,7 @@ namespace snake::widget{
     enum textbox_states{
         TXBX_IDLE = 0,
         TXBX_HOVER,
-        TXBX_ACTIVE
+        TXBX_ACTIVE,
     };
 
     //====================================================
@@ -58,7 +59,7 @@ namespace snake::widget{
             // Constructors
             Textbox( float x, float y, float width, float height, 
                     const sf::Font& font, const std::string& text,
-                    const sf::Color& idleColor, const sf::Color& hoverColor );
+                    const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor );
 
 
             // pack (template)
@@ -74,6 +75,9 @@ namespace snake::widget{
                 this -> render( target );
             }
 
+            // Methods
+            void updateText( const sf::Event& event );
+
             // Setters
             void setTextSize( int32_t size );
             void setOutlineColor( const sf::Color& color );
@@ -85,8 +89,10 @@ namespace snake::widget{
             void getText() const;
 
             // Variables
+            sf::RectangleShape shape;
             bool focus;
             sf::Text text;
+            std::string saved_text;
 
         //====================================================
         //     Private
@@ -95,7 +101,6 @@ namespace snake::widget{
 
             // Methods
             void update( const sf::Vector2f mousePos );
-            constexpr bool isPressed() const;
             void centering();
 
             // render (template)
@@ -111,11 +116,15 @@ namespace snake::widget{
             }
 
             // Variables
-            sf::RectangleShape shape;
             sf::Font font;
             sf::Color idleColor;
             sf::Color hoverColor;
+            sf::Color activeColor;
             uint16_t textboxState;
+            sf::Text input_text;
+            sf::String input;
+            std::string current_text;
+            bool has_been_pressed;
     };
 }
 

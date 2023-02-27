@@ -22,6 +22,11 @@
 // Windows
 #include <windows/base_window.hpp>
 
+// STD
+#include <cstdio>
+#include <sstream>
+#include <filesystem>
+
 // Required by IWYU
 namespace sf { 
     class Event;
@@ -48,6 +53,11 @@ namespace snake::window{
 
             // Variables
             sf::Event game_event;
+            std::string player_option;
+            std::filesystem::path options_file_path;
+
+            // Constants
+            const std::string username = getenv( "USERNAME" );
 
         //====================================================
         //     Private
@@ -57,7 +67,11 @@ namespace snake::window{
             // Methods
             void runWindow();
             void eventClosed();
-            void eventKeyPressed( const sf::Event& event ) override;
+            void eventKeyPressed( const sf::Event& event ) override; 
+
+            // Variables
+            std::ostringstream game_directory_oss;
+            std::ostringstream options_file_oss;
     };
 }
 

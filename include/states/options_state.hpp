@@ -25,6 +25,10 @@
 // Widgets
 #include <widgets/textbox.hpp>
 
+// STD
+#include <filesystem>
+#include <fstream>
+
 namespace snake::state{
 
     //====================================================
@@ -55,17 +59,15 @@ namespace snake::state{
             // Methods
             void drawImg() const;
             void drawWidgets() override;
-            void setWidgetsKeys() const override;
             void packWidgets() override;
-            void updateEnteredText();
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
-            sf::Text player_name_text;
-            sf::String player_name_input;
-            std::string player_name_current;
+            sf::Text text_has_been_saved;
             std::shared_ptr<widget::Textbox> player_name_textbox;
+            std::filesystem::path options_file_path;
+            bool already_wrote;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
