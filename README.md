@@ -39,6 +39,8 @@
 
 In this repository a C++20 implementation of the popular snake game, using the [SFML](https://www.sfml-dev.org/) graphics library is provided.
 
+During the gameplay some game files will be created in your home directory under the **snake-game_files** folder. These are files which will save game scores and options.
+
 > :warning: if you are connecting more than one screens in your pc there may be small graphics glitches due to SFML doesn't supporting multiple screens yet.
 
 ## Architectures support
