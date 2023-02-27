@@ -57,28 +57,9 @@ namespace snake::widget{
     Textbox::Textbox( float x, float y, float width, float height, 
                     const sf::Font& font, const std::string& text,
                     const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor ):
-        font( font ),
-        idleColor( idleColor ),
-        hoverColor( hoverColor ),
-        activeColor( activeColor ),
-        textboxState( TXBX_IDLE ),
-        focus( false ),
+        Widget( x, y, width, height, font, text, idleColor, hoverColor, activeColor ),
         has_been_pressed( false ),
         saved_text( "" ){
-
-        // Setting textbox shape
-        this -> shape.setPosition( sf::Vector2f( x, y ) );
-        this -> shape.setSize( sf::Vector2f( width, height ) );
-        this -> shape.setOutlineThickness( -4.f );
-        this -> shape.setOutlineColor( sf::Color::Black );
-
-        // Setting textbox text properties
-        this -> text.setFont( this -> font );
-        this -> text.setString( text );
-        this -> text.setCharacterSize( 12 );
-
-        // Coloring textbox
-        this -> shape.setFillColor( this -> idleColor );
     }
 
     //====================================================
@@ -92,39 +73,39 @@ namespace snake::widget{
     void Textbox::update( const sf::Vector2f mousePos ){
 
         // Idle
-        this -> textboxState = TXBX_IDLE;
+        this -> widgetState = WDGT_IDLE;
 
         // Mouse clicked
         if( this -> shape.getGlobalBounds().contains( mousePos ) ){
-            this -> textboxState = TXBX_HOVER;
+            this -> widgetState = WDGT_HOVER;
 
             if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
-                this -> textboxState = TXBX_ACTIVE;
+                this -> widgetState = WDGT_ACTIVE;
                 this -> has_been_pressed = true;
             }
         }
         else{
             if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
-                this -> textboxState = TXBX_IDLE;
+                this -> widgetState = WDGT_IDLE;
                 this -> has_been_pressed = false;
             }
         }
 
         if( this -> has_been_pressed == true ){
-            this -> textboxState = TXBX_ACTIVE;
+            this -> widgetState = WDGT_ACTIVE;
         }
 
         // Switch cases for textbox states
-        switch( this -> textboxState ){
-            case TXBX_IDLE:
+        switch( this -> widgetState ){
+            case WDGT_IDLE:
                 this -> shape.setFillColor( this -> idleColor );
                 break;
 
-            case TXBX_HOVER:
+            case WDGT_HOVER:
                 this -> shape.setFillColor( this -> hoverColor );
                 break;
 
-            case TXBX_ACTIVE:
+            case WDGT_ACTIVE:
                 this -> shape.setFillColor( this -> activeColor );
                 if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
                     this -> saved_text = this -> text.getString();
@@ -147,7 +128,7 @@ namespace snake::widget{
      */
     void Textbox::updateText( const sf::Event& event ){
         if( event.type == sf::Event::TextEntered ){
-            if( this -> textboxState == TXBX_ACTIVE ){
+            if( this -> widgetState == WDGT_ACTIVE ){
                 switch( event.text.unicode ){
 
                     // Delete case
@@ -171,67 +152,5 @@ namespace snake::widget{
                 }
             }
         }
-    }
-
-    //====================================================
-    //     centering
-    //====================================================
-    /**
-     * @brief Method used to center the text position into the textbox shape.
-     * 
-     */
-    void Textbox::centering(){
-        this -> text.setPosition(
-            this -> shape.getPosition().x + ( this -> shape.getGlobalBounds().width / 2.f ) - ( this -> text.getGlobalBounds().width / 2.f ),
-            this -> shape.getPosition().y + ( this -> shape.getGlobalBounds().height / 2.f ) - ( this -> text.getGlobalBounds().height / 2.f ) - this -> text.getCharacterSize() / 4
-        );
-    }
-
-    //====================================================
-    //     setTextSize
-    //====================================================
-    /**
-     * @brief Method used to set the textbox text size.
-     * 
-     * @param size The new size to be set.
-     */
-    void Textbox::setTextSize( int32_t size ){
-        this -> text.setCharacterSize( size );
-    }
-
-    //====================================================
-    //     setOutlineColor
-    //====================================================
-    /**
-     * @brief Method used to set the outline color of the textbox.
-     * 
-     * @param color The color to be set.
-     */
-    void Textbox::setOutlineColor( const sf::Color& color ){
-        this -> shape.setOutlineColor( color );
-    }
-
-    //====================================================
-    //     setOutlineThickness
-    //====================================================
-    /**
-     * @brief Method used to set the outline thickness of the textbox.
-     * 
-     * @param thickness The outline thickness to be set.
-     */
-    void Textbox::setOutlineThickness( float thickness ){
-        this -> shape.setOutlineThickness( - thickness );
-    }
-
-    //====================================================
-    //     setTextColor
-    //====================================================
-    /**
-     * @brief Method used to set the color of the textbox text.
-     * 
-     * @param color The new color to be set.
-     */
-    void Textbox::setTextColor( const sf::Color& color ){
-        this -> text.setFillColor( color );
     }
 }

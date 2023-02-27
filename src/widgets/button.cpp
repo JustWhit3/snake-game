@@ -65,28 +65,10 @@ namespace snake::widget{
     Button::Button( float x, float y, float width, float height, 
                     const sf::Font& font, const std::string& text, 
                     const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor ):
-        buttonState( BTN_IDLE ),
-        font( font ),
-        idleColor( idleColor ),
-        hoverColor( hoverColor ),
-        activeColor( activeColor ),
+        Widget( x, y, width, height, font, text, idleColor, hoverColor, activeColor ),
         action( []{} ),
-        command_action( []{} ),
-        focus( false ){
+        command_action( []{} ){
 
-        // Setting button shape
-        this -> shape.setPosition( sf::Vector2f( x, y ) );
-        this -> shape.setSize( sf::Vector2f( width, height ) );
-        this -> shape.setOutlineThickness( -4.f );
-        this -> shape.setOutlineColor( sf::Color::Black );
-
-        // Setting button text properties
-        this -> text.setFont( this -> font );
-        this -> text.setString( text );
-        this -> text.setCharacterSize( 12 );
-
-        // Coloring button
-        this -> shape.setFillColor( this -> idleColor );
     }
     
     //====================================================
@@ -100,37 +82,37 @@ namespace snake::widget{
     void Button::update( const sf::Vector2f mousePos ){
 
         // Idle
-        this -> buttonState = BTN_IDLE;
+        this -> widgetState = WDGT_IDLE;
 
         // Mouse clicked
         if( this -> shape.getGlobalBounds().contains( mousePos ) ){
-            this -> buttonState = BTN_HOVER;
+            this -> widgetState = WDGT_HOVER;
 
             if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) ){
-                this -> buttonState = BTN_ACTIVE;
+                this -> widgetState = WDGT_ACTIVE;
             }
         }
 
         // Enter clicked
         else if( this -> focus == true ){
-            this -> buttonState = BTN_HOVER;
+            this -> widgetState = WDGT_HOVER;
 
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
-                this -> buttonState = BTN_ACTIVE;
+                this -> widgetState = WDGT_ACTIVE;
             }
         }
 
         // Switch cases for button states
-        switch( this -> buttonState ){
-            case BTN_IDLE:
+        switch( this -> widgetState ){
+            case WDGT_IDLE:
                 this -> shape.setFillColor( this -> idleColor );
                 break;
 
-            case BTN_HOVER:
+            case WDGT_HOVER:
                 this -> shape.setFillColor( this -> hoverColor );
                 break;
 
-            case BTN_ACTIVE:
+            case WDGT_ACTIVE:
                 this -> shape.setFillColor( this -> activeColor );
                 this -> action();
                 break;
@@ -139,48 +121,6 @@ namespace snake::widget{
                 this -> shape.setFillColor( sf::Color::Red );
                 break;
         }
-    }
-
-    //====================================================
-    //     isPressed
-    //====================================================
-    /**
-     * @brief Method used to define button pressed state.
-     * 
-     * @return true If button is pressed.
-     * @return false Otherwise.
-     */
-    constexpr bool Button::isPressed() const{
-        if( this -> buttonState == BTN_ACTIVE ){
-            return true;
-        }
-        return false;
-    }
-
-    //====================================================
-    //     centering
-    //====================================================
-    /**
-     * @brief Method used to center the text position into the button shape.
-     * 
-     */
-    void Button::centering(){
-        this -> text.setPosition(
-            this -> shape.getPosition().x + ( this -> shape.getGlobalBounds().width / 2.f ) - ( this -> text.getGlobalBounds().width / 2.f ),
-            this -> shape.getPosition().y + ( this -> shape.getGlobalBounds().height / 2.f ) - ( this -> text.getGlobalBounds().height / 2.f ) - this -> text.getCharacterSize() / 4
-        );
-    }
-
-    //====================================================
-    //     setTextSize
-    //====================================================
-    /**
-     * @brief Method used to set the button text size.
-     * 
-     * @param size The new size to be set.
-     */
-    void Button::setTextSize( int32_t size ){
-        this -> text.setCharacterSize( size );
     }
 
     //====================================================
@@ -196,30 +136,6 @@ namespace snake::widget{
     }
 
     //====================================================
-    //     setOutlineColor
-    //====================================================
-    /**
-     * @brief Method used to set the outline color of the button.
-     * 
-     * @param color The color to be set.
-     */
-    void Button::setOutlineColor( const sf::Color& color ){
-        this -> shape.setOutlineColor( color );
-    }
-
-    //====================================================
-    //     setOutlineThickness
-    //====================================================
-    /**
-     * @brief Method used to set the outline thickness of the button.
-     * 
-     * @param thickness The outline thickness to be set.
-     */
-    void Button::setOutlineThickness( float thickness ){
-        this -> shape.setOutlineThickness( - thickness );
-    }
-
-    //====================================================
     //     setFocus
     //====================================================
     /**
@@ -229,17 +145,5 @@ namespace snake::widget{
      */
     void Button::setFocus( const bool focus ){
         this -> focus = focus;
-    }
-
-    //====================================================
-    //     setTextColor
-    //====================================================
-    /**
-     * @brief Method used to set the color of the button text.
-     * 
-     * @param color The new color to be set.
-     */
-    void Button::setTextColor( const sf::Color& color ){
-        this -> text.setFillColor( color );
     }
 }

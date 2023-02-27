@@ -39,7 +39,6 @@ namespace snake::state{
     /**
      * @brief Class used to define base state for the other states.
      * 
-     * @tparam T Type of the target to which the state is drawn into.
      */
     class State{
 
