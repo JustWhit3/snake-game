@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quit_5fgame_250',['quit_game',['../classsnake_1_1window_1_1PauseWindow.html#a776b7bdc8500b4e6f6433142d36697bd',1,'snake::window::PauseWindow']]]
+  ['pause_5fwindow_5fstates_258',['pause_window_states',['../classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69',1,'snake::window::BaseWindow']]],
+  ['player_5foption_259',['player_option',['../classsnake_1_1window_1_1GameWindow.html#afec7399a774e5a3f86f2656394f1f5d6',1,'snake::window::GameWindow']]]
 ];

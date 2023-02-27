@@ -1,8 +1,9 @@
 <map id="include/widgets/textbox.hpp" name="include/widgets/textbox.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="422,5,603,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="534,5,715,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,177,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="202,80,370,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="394,80,631,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="655,80,821,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="845,80,1020,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="845,80,1015,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1039,80,1213,107"/>
 </map>

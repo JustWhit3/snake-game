@@ -1,12 +1,13 @@
 <map id="src/widgets/textbox.cpp" name="src/widgets/textbox.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="599,5,757,32"/>
-<area shape="rect" id="node2" href="$textbox_8hpp.html" title=" " alt="" coords="479,80,615,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="695,5,853,32"/>
+<area shape="rect" id="node2" href="$textbox_8hpp.html" title=" " alt="" coords="575,80,711,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,177,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="202,155,439,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="656,155,823,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="847,155,1021,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="741,80,911,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="935,80,1114,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="1139,80,1329,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="849,155,1016,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1040,155,1215,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="837,80,1007,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1031,80,1210,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1235,80,1425,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="463,155,631,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="656,155,825,181"/>
 </map>
