@@ -39,6 +39,7 @@
 // STD
 #include <utility>
 #include <fstream>
+#include <type_traits>
 
 namespace snake::state{
 
@@ -185,7 +186,7 @@ namespace snake::state{
 
         // Speed option text
         this -> speed_option.setFillColor( sf::Color::Black );
-        this -> speed_option.setPosition( this -> player_option.getPosition().x, this -> player_option.getPosition().y * 1.2f );
+        this -> speed_option.setPosition( this -> player_option.getPosition().x * 0.78, this -> player_option.getPosition().y * 1.2f );
         this -> speed_option.setCharacterSize( 30 );
 
         // Snake speed textbox
@@ -236,9 +237,11 @@ namespace snake::state{
 
         // Write updates in the output file
         std::ofstream output_file( this -> options_file_path );
-        for( const auto& line: lines ){
-            output_file << line << "\n";
-        }
+        std::for_each(
+            lines.begin(), 
+            lines.end(), 
+            [ &output_file ]( auto& line ){ output_file << line << "\n"; } 
+        );
         
         // Close the output file
         output_file.close();
@@ -267,7 +270,7 @@ namespace snake::state{
 
         // Speed option text settings
         this -> speed_option.setFont( this -> font );
-        this -> speed_option.setString( "Change snake speed:" );
+        this -> speed_option.setString( "Change snake speed (default 25):" );
 
         // Text has been saved (speed)) settings
         this -> text_has_been_saved_speed.setFont( this -> font );
