@@ -52,7 +52,8 @@ namespace snake::state{
      */
     OptionsState::OptionsState( window::GameWindow* game_window ): 
         game_window( game_window ), 
-        already_wrote( false ),
+        already_wrote_player( false ),
+        already_wrote_speed( false ),
         options_file_path( this -> game_window -> options_file_path ){
 
         // Draw widgets
@@ -73,6 +74,7 @@ namespace snake::state{
 
         // Update player entry
         this -> player_name_textbox -> updateText( this -> game_window -> game_event );
+        this -> snake_speed_textbox -> updateText( this -> game_window -> game_event );
 
         // Drawing images
         this -> drawImg();
@@ -168,15 +170,78 @@ namespace snake::state{
         this -> player_name_textbox -> setTextSize( text_size );
         this -> player_name_textbox -> setTextColor( textColor );
 
-        // Text has been saved text
-        this -> text_has_been_saved.setFillColor( sf::Color::Black );
-        this -> text_has_been_saved.setPosition( x_pos * 1.25f, y_pos * 1.03f );
-        this -> back_to_menu.setCharacterSize( 30 );
-
         // Player option text
         this -> player_option.setFillColor( sf::Color::Black );
         this -> player_option.setPosition( x_pos * 0.7f, y_pos * 1.03f );
         this -> player_option.setCharacterSize( 30 );
+
+        // Text has been saved text (player)
+        this -> text_has_been_saved_player.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_player.setPosition( 
+            x_pos * 1.25f, 
+            this -> player_option.getPosition().y
+        );
+        this -> text_has_been_saved_player.setCharacterSize( 30 );
+
+        // Speed option text
+        this -> speed_option.setFillColor( sf::Color::Black );
+        this -> speed_option.setPosition( this -> player_option.getPosition().x, this -> player_option.getPosition().y * 1.2f );
+        this -> speed_option.setCharacterSize( 30 );
+
+        // Snake speed textbox
+        this -> snake_speed_textbox = { 
+            std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
+                x_pos, y_pos * 1.21f, width, height, font, "",
+                idleColor, hoverColor, activeColor ) 
+            )
+        };
+        this -> snake_speed_textbox -> setTextSize( text_size );
+        this -> snake_speed_textbox -> setTextColor( textColor );
+
+        // Text has been saved text (speed)
+        this -> text_has_been_saved_speed.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_speed.setPosition( 
+            this -> text_has_been_saved_player.getPosition().x,
+            this -> speed_option.getPosition().y
+        );
+        this -> text_has_been_saved_speed.setCharacterSize( 30 );
+    }
+
+    //====================================================
+    //     fileUpdate
+    //====================================================
+    /**
+     * @brief Method used to update the options file.
+     * 
+     * @param option The option to be modified.
+     * @param option_idx File index of the option to be modified.
+     */
+    void OptionsState::fileUpdate( std::string_view option, int16_t option_idx ) const {
+
+        // Variables
+        std::ifstream input_file( this -> options_file_path );
+        std::vector<std::string> lines;
+        std::string input;
+
+        // Reading file lines
+        while( std::getline( input_file, input ) ){
+            lines.push_back( input );
+        }
+        
+        // Modifying the interested line
+        lines.at( option_idx ) = option;
+        
+        // Close the input stream
+        input_file.close();
+
+        // Write updates in the output file
+        std::ofstream output_file( this -> options_file_path );
+        for( const auto& line: lines ){
+            output_file << line << "\n";
+        }
+        
+        // Close the output file
+        output_file.close();
     }
 
     //====================================================
@@ -192,35 +257,58 @@ namespace snake::state{
         this -> back_to_menu.setFont( this -> font );
         this -> back_to_menu.setString( "Press <Tab> to back to menu" );
 
-        // Text has been saved text settings
-        this -> text_has_been_saved.setFont( this -> font );
-        this -> text_has_been_saved.setString( "Saved!" );
+        // Text has been saved (player) settings
+        this -> text_has_been_saved_player.setFont( this -> font );
+        this -> text_has_been_saved_player.setString( "Saved!" );
 
         // Player option text settings
         this -> player_option.setFont( this -> font );
         this -> player_option.setString( "Change player name:" );
 
+        // Speed option text settings
+        this -> speed_option.setFont( this -> font );
+        this -> speed_option.setString( "Change snake speed:" );
+
+        // Text has been saved (speed)) settings
+        this -> text_has_been_saved_speed.setFont( this -> font );
+        this -> text_has_been_saved_speed.setString( "Saved!" );
+
         // Draw stuff
         this -> game_window -> draw( this -> back_to_menu );
-        this -> player_name_textbox -> pack( this -> game_window );
         this -> game_window -> draw( this -> player_option );
+        this -> game_window -> draw( this -> speed_option );
+        this -> player_name_textbox -> pack( this -> game_window );
+        this -> snake_speed_textbox -> pack( this -> game_window );
 
-        // Draw temporary stuff
+        // Player option
         if( this -> player_name_textbox -> saved_text != "" ){
 
             // Write new options in file
             this -> game_window -> player_option = this -> player_name_textbox -> saved_text;
-            if( this -> already_wrote == false ){
-                std::ofstream options_file( this -> options_file_path );
-                
-                options_file << "Player: " << this -> player_name_textbox -> saved_text.substr( 0, this -> player_name_textbox -> saved_text.size()-1) << "\n";
-                options_file.close();
+            if( this -> already_wrote_player == false ){
+                this -> fileUpdate( "Player: " + this -> player_name_textbox -> saved_text.substr( 0, this -> player_name_textbox -> saved_text.size() - 1 ), 0 );
             }
-            this -> already_wrote = true;
+            this -> already_wrote_player = true;
     
             // Draw temporary stuff
             if( this -> player_name_textbox -> deltaClock.getElapsedTime() < delta_time ){
-                this -> game_window -> draw( this -> text_has_been_saved );
+                this -> game_window -> draw( this -> text_has_been_saved_player );
+            }
+        }
+
+        // Speed option
+        if( this -> snake_speed_textbox -> saved_text != "" ){
+
+            // Write new options in file
+            this -> game_window -> speed_option = this -> snake_speed_textbox -> saved_text;
+            if( this -> already_wrote_speed == false ){
+                this -> fileUpdate( "SpeedPlus: " + this -> snake_speed_textbox -> saved_text.substr( 0, this -> snake_speed_textbox -> saved_text.size() - 1 ), 1 );
+            }
+            this -> already_wrote_speed = true;
+    
+            // Draw temporary stuff
+            if( this -> snake_speed_textbox -> deltaClock.getElapsedTime() < delta_time ){
+                this -> game_window -> draw( this -> text_has_been_saved_speed );
             }
         }
     }

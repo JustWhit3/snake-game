@@ -60,15 +60,24 @@ namespace snake::state{
             void drawImg() const;
             void drawWidgets() override;
             void packWidgets() override;
+            void fileUpdate( std::string_view option, int16_t option_idx ) const;
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
-            sf::Text text_has_been_saved;
+            std::filesystem::path options_file_path;
+            
+            // Player option variables
+            sf::Text text_has_been_saved_player;
             sf::Text player_option;
             std::shared_ptr<widget::Textbox> player_name_textbox;
-            std::filesystem::path options_file_path;
-            bool already_wrote;
+            bool already_wrote_player;
+
+            // Speed option variables
+            sf::Text text_has_been_saved_speed;
+            sf::Text speed_option;
+            std::shared_ptr<widget::Textbox> snake_speed_textbox;
+            bool already_wrote_speed;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

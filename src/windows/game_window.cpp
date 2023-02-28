@@ -106,7 +106,8 @@ namespace snake::window{
         this -> options_file_path = options_file_oss.str();
         if( ! std::ifstream( options_file_path ) ){
             std::ofstream default_settings( options_file_path );
-            default_settings << "Player: Unknown\n";
+            default_settings << "Player: Unknown\n"
+                             << "SpeedPlus: 0\n";
             default_settings.close();
         }
 
