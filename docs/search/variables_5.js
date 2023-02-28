@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['head_271',['head',['../classsnake_1_1entity_1_1Snake.html#a17b8d1a912028d8a01f5b0ed7fcc298d',1,'snake::entity::Snake']]],
-  ['hovercolor_272',['hoverColor',['../classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7',1,'snake::widget::Widget']]]
+  ['head_272',['head',['../classsnake_1_1entity_1_1Snake.html#a17b8d1a912028d8a01f5b0ed7fcc298d',1,'snake::entity::Snake']]],
+  ['hovercolor_273',['hoverColor',['../classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7',1,'snake::widget::Widget']]]
 ];
