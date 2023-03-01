@@ -301,7 +301,7 @@ namespace snake::state{
 
         // Version number text
         this -> version_number.setFont( this -> font );
-        this -> version_number.setString( "Current version: 0.1.0\nCopyright (c) 2022 Gianluca Bianco under the MIT license" );
+        this -> version_number.setString( "Current version: 0.2.0\nCopyright (c) 2022 Gianluca Bianco under the MIT license" );
 
         // Draw stuff
         this -> game_button -> pack( this -> game_window );
