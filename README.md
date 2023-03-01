@@ -28,8 +28,8 @@
 - [States](#states)
   - [Menu](#menu)
   - [Game](#game)
-  - [Scores](#scores)
   - [Options](#options)
+  - [Scores](#scores)
 - [Todo](#todo)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
@@ -148,10 +148,6 @@ Commands:
 - **Key arrows** (Up / Down / Left / Right): move snake.
 - **Esc**: pause game.
 
-### Scores
-
-Work in progress...
-
 ### Options
 
 <img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/options.png">
@@ -160,11 +156,13 @@ Commands:
 
 - **Tab**: go back to menu.
 
+### Scores
+
+Work in progress...
+
 ## Todo
 
-- Add animations.
 - Add Score state.
-- Add Options state.
 - Add sounds and music.
 
 ## Credits
