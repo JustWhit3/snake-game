@@ -121,7 +121,7 @@ namespace snake::state{
         sf::Sprite settings_logo( state_texture_3 );
         settings_logo.setPosition( 
            ( this -> game_window_size_x - settings_logo.getGlobalBounds().width ) * 0.5f,
-           ( this -> game_window_size_y - settings_logo.getGlobalBounds().height ) * 0.3f
+           ( this -> game_window_size_y - settings_logo.getGlobalBounds().height ) * 0.2f
         );
 
         // Background
@@ -155,7 +155,7 @@ namespace snake::state{
         const float width{ this -> game_window_size_y * 0.2f };
         const float height{ width * 0.35f };
         const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f ) * 1.2f;
-        const float y_pos = ( this -> game_window_size_y * 0.5f - height * 0.5f + 80.f );
+        const float y_pos = ( this -> game_window_size_y * 0.5f - height * 0.5f + 80.f ) * 0.8f;
         constexpr int32_t text_size{ 30 };
         const sf::Font font{ this -> font };
         const sf::Color idleColor{ sf::Color::White };

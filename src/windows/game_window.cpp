@@ -79,7 +79,6 @@ namespace snake::window{
                 this -> desktop.height * 0.5 - this -> getSize().y * 0.5 
             ) 
         );
-        this -> setFramerateLimit( 60 );
 
         // Create the game directory name
         #ifdef _WIN32
