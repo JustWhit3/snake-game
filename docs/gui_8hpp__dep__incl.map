@@ -5,8 +5,7 @@
 <area shape="rect" id="node4" href="$pause__window_8cpp.html" title=" " alt="" coords="379,80,588,107"/>
 <area shape="rect" id="node5" href="$food_8hpp.html" title=" " alt="" coords="613,80,775,107"/>
 <area shape="rect" id="node6" href="$food_8cpp.html" title=" " alt="" coords="518,162,657,189"/>
-<area shape="rect" id="node7" href="$game__state_8cpp.html" title=" " alt="" coords="583,251,759,278"/>
-<area shape="rect" id="node8" href="$game__state_8hpp.html" title=" " alt="" coords="778,155,917,196"/>
-<area shape="rect" id="node9" href="$menu__state_8cpp.html" title=" " alt="" coords="783,251,959,278"/>
-<area shape="rect" id="node10" href="$options__state_8cpp.html" title=" " alt="" coords="984,244,1111,285"/>
+<area shape="rect" id="node7" href="$game__state_8cpp.html" title=" " alt="" coords="606,244,782,271"/>
+<area shape="rect" id="node8" href="$game__state_8hpp.html" title=" " alt="" coords="731,155,870,196"/>
+<area shape="rect" id="node9" href="$menu__state_8cpp.html" title=" " alt="" coords="806,244,982,271"/>
 </map>

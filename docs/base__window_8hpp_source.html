@@ -85,63 +85,75 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     Headers</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// States</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="state_8hpp.html">states/state.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// SFML</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// STD</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1window.html">snake::window</a>{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//     BaseWindow</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html">   42</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1window_1_1BaseWindow.html">BaseWindow</a>: <span class="keyword">public</span> sf::RenderWindow{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// SFML</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics/RenderWindow.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;SFML/Window/VideoMode.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// STD</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     Required by IWYU</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesf.html">sf</a> { </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">class </span>Event;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake.html">snake</a> { </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">namespace </span>state { </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">class </span>State; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    } </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">//     Public</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">   50</a></span>&#160;            <span class="keyword">const</span> sf::VideoMode <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">desktop</a>{ <a class="code" href="namespacesnake_1_1utility.html#ae74e65950d966832c2102053af2fbb55">sf::VideoMode::getDesktopMode</a>() };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">   53</a></span>&#160;            std::unordered_map&lt;std::string_view, std::shared_ptr&lt;state::State&gt;&gt; <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">game_window_states</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">   54</a></span>&#160;            std::unordered_map&lt;std::string_view, std::shared_ptr&lt;state::State&gt;&gt; <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">pause_window_states</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//     Protected</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Destructor</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#ad5c64fe3af4072b27e5070ce552a4124">~BaseWindow</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">//     Private</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> eventKeyPressed( <span class="keyword">const</span> sf::Event&amp; event ) = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html">snake::window::BaseWindow</a></div><div class="ttdoc">Base window class, with all the things in common with the others.</div><div class="ttdef"><b>Definition:</b> base_window.hpp:42</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a19a18dfc6ef9c4b6c59b030385fb570f"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">snake::window::BaseWindow::game_window_states</a></div><div class="ttdeci">std::unordered_map&lt; std::string_view, std::shared_ptr&lt; state::State &gt; &gt; game_window_states</div><div class="ttdef"><b>Definition:</b> base_window.hpp:53</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a710da72c23ba9ec45d42a2cf6defa21a"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">snake::window::BaseWindow::desktop</a></div><div class="ttdeci">const sf::VideoMode desktop</div><div class="ttdef"><b>Definition:</b> base_window.hpp:50</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a805d242d73753699bd155888a0760b69"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">snake::window::BaseWindow::pause_window_states</a></div><div class="ttdeci">std::unordered_map&lt; std::string_view, std::shared_ptr&lt; state::State &gt; &gt; pause_window_states</div><div class="ttdef"><b>Definition:</b> base_window.hpp:54</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1window.html">snake::window</a>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//     BaseWindow</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html">   53</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1window_1_1BaseWindow.html">BaseWindow</a>: <span class="keyword">public</span> sf::RenderWindow{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//     Public</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">   61</a></span>&#160;            <span class="keyword">const</span> sf::VideoMode <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">desktop</a>{ <a class="code" href="namespacesnake_1_1utility.html#ae74e65950d966832c2102053af2fbb55">sf::VideoMode::getDesktopMode</a>() };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">   64</a></span>&#160;            std::unordered_map&lt;std::string_view, std::shared_ptr&lt;state::State&gt;&gt; <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">game_window_states</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">   65</a></span>&#160;            std::unordered_map&lt;std::string_view, std::shared_ptr&lt;state::State&gt;&gt; <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">pause_window_states</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//     Protected</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">// Destructor</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classsnake_1_1window_1_1BaseWindow.html#ad5c64fe3af4072b27e5070ce552a4124">~BaseWindow</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//     Private</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> eventKeyPressed( <span class="keyword">const</span> sf::Event&amp; event ) = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html">snake::window::BaseWindow</a></div><div class="ttdoc">Base window class, with all the things in common with the others.</div><div class="ttdef"><b>Definition:</b> base_window.hpp:53</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a19a18dfc6ef9c4b6c59b030385fb570f"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a19a18dfc6ef9c4b6c59b030385fb570f">snake::window::BaseWindow::game_window_states</a></div><div class="ttdeci">std::unordered_map&lt; std::string_view, std::shared_ptr&lt; state::State &gt; &gt; game_window_states</div><div class="ttdef"><b>Definition:</b> base_window.hpp:64</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a710da72c23ba9ec45d42a2cf6defa21a"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a710da72c23ba9ec45d42a2cf6defa21a">snake::window::BaseWindow::desktop</a></div><div class="ttdeci">const sf::VideoMode desktop</div><div class="ttdef"><b>Definition:</b> base_window.hpp:61</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_a805d242d73753699bd155888a0760b69"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#a805d242d73753699bd155888a0760b69">snake::window::BaseWindow::pause_window_states</a></div><div class="ttdeci">std::unordered_map&lt; std::string_view, std::shared_ptr&lt; state::State &gt; &gt; pause_window_states</div><div class="ttdef"><b>Definition:</b> base_window.hpp:65</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1BaseWindow_html_ad5c64fe3af4072b27e5070ce552a4124"><div class="ttname"><a href="classsnake_1_1window_1_1BaseWindow.html#ad5c64fe3af4072b27e5070ce552a4124">snake::window::BaseWindow::~BaseWindow</a></div><div class="ttdeci">virtual ~BaseWindow()</div><div class="ttdoc">Destructor of the BaseWindow class.</div><div class="ttdef"><b>Definition:</b> base_window.cpp:27</div></div>
+<div class="ttc" id="anamespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdef"><b>Definition:</b> button.cpp:49</div></div>
 <div class="ttc" id="anamespacesnake_1_1utility_html_ae74e65950d966832c2102053af2fbb55"><div class="ttname"><a href="namespacesnake_1_1utility.html#ae74e65950d966832c2102053af2fbb55">snake::utility::getDesktopMode</a></div><div class="ttdeci">sf::VideoMode getDesktopMode()</div><div class="ttdoc">Function used to get the current desktop mode.</div><div class="ttdef"><b>Definition:</b> gui.cpp:28</div></div>
 <div class="ttc" id="anamespacesnake_1_1window_html"><div class="ttname"><a href="namespacesnake_1_1window.html">snake::window</a></div><div class="ttdef"><b>Definition:</b> base_window.cpp:18</div></div>
-<div class="ttc" id="astate_8hpp_html"><div class="ttname"><a href="state_8hpp.html">state.hpp</a></div></div>
+<div class="ttc" id="anamespacesnake_html"><div class="ttname"><a href="namespacesnake.html">snake</a></div><div class="ttdef"><b>Definition:</b> entity.cpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

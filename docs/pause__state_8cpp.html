@@ -76,38 +76,55 @@ $(function() {
 <div class="textblock"><code>#include &lt;<a class="el" href="pause__window_8hpp_source.html">windows/pause_window.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="state_8hpp_source.html">states/state.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="pause__state_8hpp_source.html">states/pause_state.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="menu__state_8hpp_source.html">states/menu_state.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="button_8hpp_source.html">widgets/button.hpp</a>&gt;</code><br />
+<code>#include &lt;SFML/Graphics/Color.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/Font.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/Rect.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/RectangleShape.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/Text.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics/Texture.hpp&gt;</code><br />
+<code>#include &lt;SFML/System/Sleep.hpp&gt;</code><br />
+<code>#include &lt;SFML/System/Time.hpp&gt;</code><br />
+<code>#include &lt;SFML/System/Vector2.hpp&gt;</code><br />
+<code>#include &lt;SFML/Window/Keyboard.hpp&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for pause_state.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="pause__state_8cpp__incl.png" border="0" usemap="#asrc_2states_2pause__state_8cpp" alt=""/></div>
 <map name="asrc_2states_2pause__state_8cpp" id="asrc_2states_2pause__state_8cpp">
-<area shape="rect" title=" " alt="" coords="575,5,753,32"/>
-<area shape="rect" href="pause__window_8hpp.html" title=" " alt="" coords="5,155,192,181"/>
-<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="824,304,939,331"/>
-<area shape="rect" href="pause__state_8hpp.html" title=" " alt="" coords="420,80,577,107"/>
-<area shape="rect" href="menu__state_8hpp.html" title=" " alt="" coords="696,80,851,107"/>
-<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="206,229,386,256"/>
-<area shape="rect" title=" " alt="" coords="55,304,143,331"/>
-<area shape="rect" title=" " alt="" coords="661,304,800,331"/>
-<area shape="rect" title=" " alt="" coords="167,304,235,331"/>
-<area shape="rect" title=" " alt="" coords="259,304,370,331"/>
-<area shape="rect" title=" " alt="" coords="822,379,994,405"/>
-<area shape="rect" title=" " alt="" coords="1019,379,1187,405"/>
-<area shape="rect" title=" " alt="" coords="679,379,740,405"/>
-<area shape="rect" href="game__window_8hpp.html" title=" " alt="" coords="483,155,667,181"/>
-<area shape="rect" href="button_8hpp.html" title=" " alt="" coords="1197,229,1328,256"/>
-<area shape="rect" title=" " alt="" coords="659,229,717,256"/>
-<area shape="rect" title=" " alt="" coords="461,229,531,256"/>
-<area shape="rect" title=" " alt="" coords="555,229,635,256"/>
-<area shape="rect" href="widget_8hpp.html" title=" " alt="" coords="1385,304,1519,331"/>
-<area shape="rect" title=" " alt="" coords="1411,379,1648,405"/>
-<area shape="rect" title=" " alt="" coords="1671,379,1838,405"/>
-<area shape="rect" title=" " alt="" coords="1863,379,2041,405"/>
-<area shape="rect" title=" " alt="" coords="1211,379,1386,405"/>
-<area shape="rect" title=" " alt="" coords="1014,304,1069,331"/>
-<area shape="rect" title=" " alt="" coords="1093,304,1171,331"/>
-<area shape="rect" title=" " alt="" coords="1196,304,1260,331"/>
+<area shape="rect" title=" " alt="" coords="1791,5,1969,32"/>
+<area shape="rect" href="pause__window_8hpp.html" title=" " alt="" coords="399,155,585,181"/>
+<area shape="rect" title=" " alt="" coords="733,304,801,331"/>
+<area shape="rect" href="state_8hpp.html" title=" " alt="" coords="1340,229,1455,256"/>
+<area shape="rect" title=" " alt="" coords="1169,304,1341,331"/>
+<area shape="rect" title=" " alt="" coords="1451,304,1619,331"/>
+<area shape="rect" title=" " alt="" coords="1365,304,1427,331"/>
+<area shape="rect" href="pause__state_8hpp.html" title=" " alt="" coords="1009,80,1167,107"/>
+<area shape="rect" href="button_8hpp.html" title=" " alt="" coords="1581,155,1712,181"/>
+<area shape="rect" title=" " alt="" coords="2045,304,2283,331"/>
+<area shape="rect" title=" " alt="" coords="2306,304,2473,331"/>
+<area shape="rect" title=" " alt="" coords="1843,304,2021,331"/>
+<area shape="rect" title=" " alt="" coords="2045,80,2214,107"/>
+<area shape="rect" title=" " alt="" coords="2238,80,2423,107"/>
+<area shape="rect" title=" " alt="" coords="2447,80,2614,107"/>
+<area shape="rect" title=" " alt="" coords="2639,80,2801,107"/>
+<area shape="rect" title=" " alt="" coords="2826,80,3017,107"/>
+<area shape="rect" href="base__window_8hpp.html" title=" " alt="" coords="402,229,582,256"/>
+<area shape="rect" title=" " alt="" coords="5,304,93,331"/>
+<area shape="rect" title=" " alt="" coords="479,304,708,331"/>
+<area shape="rect" title=" " alt="" coords="118,304,319,331"/>
+<area shape="rect" title=" " alt="" coords="343,304,454,331"/>
+<area shape="rect" href="game__window_8hpp.html" title=" " alt="" coords="947,155,1131,181"/>
+<area shape="rect" title=" " alt="" coords="711,229,881,256"/>
+<area shape="rect" title=" " alt="" coords="905,229,975,256"/>
+<area shape="rect" title=" " alt="" coords="999,229,1079,256"/>
+<area shape="rect" title=" " alt="" coords="1103,229,1163,256"/>
+<area shape="rect" title=" " alt="" coords="1090,304,1145,331"/>
+<area shape="rect" href="widget_8hpp.html" title=" " alt="" coords="1633,229,1767,256"/>
+<area shape="rect" title=" " alt="" coords="1530,229,1609,256"/>
+<area shape="rect" title=" " alt="" coords="1643,304,1818,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
