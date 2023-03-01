@@ -85,13 +85,14 @@ namespace snake::state{
             sf::Vertex horizontal_line[2];
             sf::Sprite score_icon;
             sf::Sprite best_score_icon;
+            sf::Sprite player_icon;
             sf::RectangleShape background;
             sf::RectangleShape title_background;
             std::ostringstream score_file_oss;
             std::filesystem::path score_file_path;
             std::filesystem::path options_file_path;
             std::ostringstream options_file_oss;
-            std::filesystem::path background_file;
+            std::string background_file;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;

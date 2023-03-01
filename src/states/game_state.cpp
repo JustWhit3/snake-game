@@ -287,10 +287,18 @@ namespace snake::state{
         );
         this -> best_score_text.setCharacterSize( 30 );
 
+        // Current player icon
+        this -> state_texture_7.loadFromFile( "img/textures/player_icon.png" );
+        this -> player_icon.setTexture( this -> state_texture_7 );
+        this -> player_icon.setPosition( 
+            this -> game_window -> getSize().x * 0.02f + this -> best_score_text.getPosition().x * 1.5f, 
+            this -> game_window -> getSize().y * 0.02f
+        );
+
         // Current player text
         this -> current_player_text.setFillColor( sf::Color::Black );
         this -> current_player_text.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> best_score_text.getPosition().x * 1.4f, 
+            this -> game_window -> getSize().x * 0.02f + this -> player_icon.getPosition().x * 1.04f, 
             this -> game_window -> getSize().y * 0.02f
         );
         this -> current_player_text.setCharacterSize( 30 );
@@ -381,10 +389,16 @@ namespace snake::state{
 
         // Current player text settings
         this -> current_player_text.setFont( this -> font );
-        std::ifstream default_settings( options_file_path );
+        std::ifstream default_settings( this -> game_window -> options_file_path );
         std::string player_option_line;
-        getline( default_settings, player_option_line );
-        this -> current_player_text.setString( player_option_line );
+        std::vector<std::string> lines;
+        while( std::getline( default_settings, player_option_line ) ){
+            lines.push_back( player_option_line );
+        }
+        std::string str1, str2;
+        std::stringstream words( lines[0] );
+        words >> str1 >> str2;
+        this -> current_player_text.setString( str2 );
         default_settings.close();
 
         // Draw stuff
@@ -396,5 +410,6 @@ namespace snake::state{
         this -> game_window -> draw( this -> best_score_icon );
         this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );
         this -> game_window -> draw( this -> current_player_text );
+        this -> game_window -> draw( this -> player_icon );
     }
 }
