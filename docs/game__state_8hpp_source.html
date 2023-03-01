@@ -150,19 +150,20 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            std::filesystem::path score_file_path;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            std::filesystem::path options_file_path;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            std::ostringstream options_file_oss;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">const</span> uint32_t horizontal_line_y_coord = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x / 24;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keyword">const</span> uint32_t window_x_max = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">const</span> uint32_t window_y_max = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    };</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            std::filesystem::path background_file;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keyword">const</span> uint32_t horizontal_line_y_coord = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x / 24;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">const</span> uint32_t window_x_max = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">const</span> uint32_t window_y_max = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Food_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Food.html">snake::entity::Food</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> food.hpp:40</div></div>
 <div class="ttc" id="aclasssnake_1_1entity_1_1Snake_html"><div class="ttname"><a href="classsnake_1_1entity_1_1Snake.html">snake::entity::Snake</a></div><div class="ttdoc">Class used to construct the snake entity.</div><div class="ttdef"><b>Definition:</b> snake.hpp:44</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html">snake::state::GameState</a></div><div class="ttdoc">Class used to create the game state.</div><div class="ttdef"><b>Definition:</b> game_state.hpp:47</div></div>
-<div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a33cb44d88d4a1c5b704a3dc9d37cbedd"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:123</div></div>
+<div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a33cb44d88d4a1c5b704a3dc9d37cbedd"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a33cb44d88d4a1c5b704a3dc9d37cbedd">snake::state::GameState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:139</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1GameState_html_a703b87c15f93ee2cd1f0fbed29d6cd98"><div class="ttname"><a href="classsnake_1_1state_1_1GameState.html#a703b87c15f93ee2cd1f0fbed29d6cd98">snake::state::GameState::GameState</a></div><div class="ttdeci">GameState(window::GameWindow *game_window)</div><div class="ttdoc">Main constructor of the Game class.</div><div class="ttdef"><b>Definition:</b> game_state.cpp:72</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1State_html"><div class="ttname"><a href="classsnake_1_1state_1_1State.html">snake::state::State</a></div><div class="ttdoc">Class used to define base state for the other states.</div><div class="ttdef"><b>Definition:</b> state.hpp:43</div></div>
 <div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:44</div></div>
