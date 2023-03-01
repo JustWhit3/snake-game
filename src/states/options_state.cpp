@@ -55,6 +55,7 @@ namespace snake::state{
         game_window( game_window ), 
         already_wrote_player( false ),
         already_wrote_speed( false ),
+        already_wrote_background( false ),
         options_file_path( this -> game_window -> options_file_path ){
 
         // Draw widgets
@@ -76,6 +77,7 @@ namespace snake::state{
         // Update player entry
         this -> player_name_textbox -> updateText( this -> game_window -> game_event );
         this -> snake_speed_textbox -> updateText( this -> game_window -> game_event );
+        this -> background_textbox -> updateText( this -> game_window -> game_event );
 
         // Drawing images
         this -> drawImg();
@@ -206,6 +208,29 @@ namespace snake::state{
             this -> speed_option.getPosition().y
         );
         this -> text_has_been_saved_speed.setCharacterSize( 30 );
+
+        // Background option text
+        this -> background_option.setFillColor( sf::Color::Black );
+        this -> background_option.setPosition( this -> speed_option.getPosition().x * 0.76, this -> speed_option.getPosition().y * 1.18f );
+        this -> background_option.setCharacterSize( 30 );
+
+        // Background option textbox
+        this -> background_textbox = { 
+            std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
+                x_pos, y_pos * 1.43f, width, height, font, "",
+                idleColor, hoverColor, activeColor ) 
+            )
+        };
+        this -> background_textbox -> setTextSize( text_size );
+        this -> background_textbox -> setTextColor( textColor );
+
+        // Text has been saved text (background)
+        this -> text_has_been_saved_background.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_background.setPosition( 
+            this -> text_has_been_saved_speed.getPosition().x,
+            this -> background_option.getPosition().y
+        );
+        this -> text_has_been_saved_background.setCharacterSize( 30 );
     }
 
     //====================================================
@@ -272,16 +297,26 @@ namespace snake::state{
         this -> speed_option.setFont( this -> font );
         this -> speed_option.setString( "Change snake speed (default 25):" );
 
-        // Text has been saved (speed)) settings
+        // Text has been saved (speed) settings
         this -> text_has_been_saved_speed.setFont( this -> font );
         this -> text_has_been_saved_speed.setString( "Saved!" );
+
+        // Background option text settings
+        this -> background_option.setFont( this -> font );
+        this -> background_option.setString( "Change game background (insert file path):" );
+
+        // Text has been saved (background) settings
+        this -> text_has_been_saved_background.setFont( this -> font );
+        this -> text_has_been_saved_background.setString( "Saved!" );
 
         // Draw stuff
         this -> game_window -> draw( this -> back_to_menu );
         this -> game_window -> draw( this -> player_option );
         this -> game_window -> draw( this -> speed_option );
+        this -> game_window -> draw( this -> background_option );
         this -> player_name_textbox -> pack( this -> game_window );
         this -> snake_speed_textbox -> pack( this -> game_window );
+        this -> background_textbox -> pack( this -> game_window );
 
         // Player option
         if( this -> player_name_textbox -> saved_text != "" ){
@@ -312,6 +347,22 @@ namespace snake::state{
             // Draw temporary stuff
             if( this -> snake_speed_textbox -> deltaClock.getElapsedTime() < delta_time ){
                 this -> game_window -> draw( this -> text_has_been_saved_speed );
+            }
+        }
+
+        // Background option
+        if( this -> background_textbox -> saved_text != "" ){
+
+            // Write new options in file
+            this -> game_window -> background_option = this -> background_textbox -> saved_text;
+            if( this -> already_wrote_background == false ){
+                this -> fileUpdate( "Background: " + this -> background_textbox -> saved_text.substr( 0, this -> background_textbox -> saved_text.size() - 1 ), 2 );
+            }
+            this -> already_wrote_background = true;
+    
+            // Draw temporary stuff
+            if( this -> background_textbox -> deltaClock.getElapsedTime() < delta_time ){
+                this -> game_window -> draw( this -> text_has_been_saved_background );
             }
         }
     }

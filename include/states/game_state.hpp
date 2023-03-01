@@ -88,6 +88,7 @@ namespace snake::state{
             std::filesystem::path score_file_path;
             std::filesystem::path options_file_path;
             std::ostringstream options_file_oss;
+            std::filesystem::path background_file;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;

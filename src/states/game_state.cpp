@@ -70,7 +70,8 @@ namespace snake::state{
      * @param game_window The window to which the state is drawn.
      */
     GameState::GameState( window::GameWindow* game_window ): 
-        game_window( game_window ){
+        game_window( game_window ),
+        background_file( "img/images/game_background.jpg" ){
 
         // Set snake head and texture properties
         this -> state_texture_1.loadFromFile( "img/textures/snake_head.png" );;
@@ -108,6 +109,21 @@ namespace snake::state{
                                      << "/snake-game_files/snake-game_options.txt";
         #endif
         this -> options_file_path = options_file_oss.str();
+
+        // Change background
+        std::ifstream options_file( this -> game_window -> options_file_path );
+        std::string input;
+        std::vector<std::string> lines;
+        while( std::getline( options_file, input ) ){
+            lines.push_back( input );
+        }
+        std::string str1, str2;
+        std::stringstream words( lines[2] );
+        words >> str1 >> str2;
+        if( str2 != "default" ){
+            this -> background_file = str2;
+        }
+        options_file.close();
 
         // Draw widgets
         this -> drawWidgets();
@@ -285,7 +301,7 @@ namespace snake::state{
         this -> horizontal_line[1].color = sf::Color::Black;
 
         // Background
-        if( ! this -> state_texture_3.loadFromFile( "img/images/game_background.jpg" ) ){
+        if( ! this -> state_texture_3.loadFromFile( this -> background_file ) ){
             this -> game_window -> close();
         }
         this -> background.setSize( 

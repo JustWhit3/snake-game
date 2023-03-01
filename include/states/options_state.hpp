@@ -79,6 +79,12 @@ namespace snake::state{
             std::shared_ptr<widget::Textbox> snake_speed_textbox;
             bool already_wrote_speed;
 
+            // Background option variables
+            sf::Text text_has_been_saved_background;
+            sf::Text background_option;
+            std::shared_ptr<widget::Textbox> background_textbox;
+            bool already_wrote_background;
+
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;
             const uint64_t game_window_size_y = this -> game_window -> getSize().y;

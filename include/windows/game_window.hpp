@@ -55,6 +55,7 @@ namespace snake::window{
             sf::Event game_event;
             std::string player_option;
             std::string speed_option;
+            std::string background_option;
             std::filesystem::path options_file_path;
 
             // Constants

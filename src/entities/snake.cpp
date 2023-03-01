@@ -81,8 +81,6 @@ namespace snake::entity{
         std::stringstream words( lines[1] );
         words >> str1 >> str2;
         this -> speedV = std::stoi( str2 );
-        
-
         options_file.close();
     }
 
