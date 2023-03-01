@@ -22,15 +22,14 @@
 // Windows
 #include <windows/base_window.hpp>
 
+// SFML
+#include <SFML/Window/Event.hpp>
+
 // STD
-#include <cstdio>
 #include <sstream>
 #include <filesystem>
-
-// Required by IWYU
-namespace sf { 
-    class Event;
-}
+#include <cstdlib>
+#include <string>
 
 namespace snake::window{
 

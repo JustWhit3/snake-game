@@ -47,6 +47,8 @@
 #include <memory>
 #include <vector>
 #include <fstream>
+#include <filesystem>
+#include <string>
 
 namespace snake::entity{
 

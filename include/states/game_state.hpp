@@ -29,6 +29,9 @@
 #include <entities/snake.hpp>
 #include <entities/food.hpp>
 
+// SFML
+#include <SFML/Graphics/Text.hpp>
+
 // STD
 #include <cstdint>
 #include <memory>

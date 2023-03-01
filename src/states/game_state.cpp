@@ -57,7 +57,8 @@
 #include <string_view> 
 #include <vector> 
 #include <fstream>
-#include <sstream>
+#include <cstdint>
+#include <filesystem>
 
 namespace snake::state{
 

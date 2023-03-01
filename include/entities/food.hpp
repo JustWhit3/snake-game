@@ -21,6 +21,9 @@
 // Utility
 #include <utility/gui.hpp>
 
+// SFML
+#include <SFML/Graphics/Sprite.hpp>
+
 //====================================================
 //     Preprocessor directives
 //====================================================

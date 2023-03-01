@@ -19,16 +19,27 @@
 //     Headers
 //====================================================
 
-// States
-#include <states/state.hpp>
-
 // SFML
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/VideoMode.hpp>
 
 // STD
 #include <memory>
 #include <unordered_map>
 #include <string_view>
+
+//====================================================
+//     Required by IWYU
+//====================================================
+namespace sf { 
+    class Event;
+}
+
+namespace snake { 
+    namespace state { 
+        class State; 
+    } 
+}
 
 namespace snake::window{
 

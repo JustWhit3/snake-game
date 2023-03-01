@@ -22,6 +22,9 @@
 // Windows
 #include <windows/game_window.hpp>
 
+// SFML
+#include <SFML/Graphics/Text.hpp>
+
 namespace snake::state{
 
     //====================================================

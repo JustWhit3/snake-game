@@ -27,6 +27,7 @@
 
 // SFML
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 // STD
 #include <vector>

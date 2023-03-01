@@ -23,6 +23,7 @@
 //====================================================
 
 // Widgets
+#include <widgets/widget.hpp>
 #include <widgets/textbox.hpp>
 
 // Debug
@@ -36,8 +37,21 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/String.hpp>
 #include <SFML/Window/Mouse.hpp> 
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Event.hpp>
+
+// STD
+#include <string>
+
+//====================================================
+//     Required by IWYU
+//====================================================
+namespace sf{
+    class Font;
+}
 
 namespace snake::widget{
 

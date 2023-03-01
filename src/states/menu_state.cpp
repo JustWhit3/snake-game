@@ -42,6 +42,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/System/Sleep.hpp>
 #include <SFML/System/Time.hpp>
@@ -55,8 +56,8 @@
 // STD
 #include <memory>
 #include <cstdint>
-#include <map>
 #include <string_view>
+#include <unordered_map>
 
 namespace snake::state{
 

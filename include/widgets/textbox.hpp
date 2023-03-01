@@ -23,13 +23,22 @@
 #include <widgets/widget.hpp>
 
 // SFML
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/Font.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/Mouse.hpp>
 #include <SFML/System/Clock.hpp>
+#include <SFML/System/String.hpp>
+#include <SFML/System/Vector2.hpp>
+
+// STD
+#include <string>
+
+//====================================================
+//     Required by IWYU
+//====================================================
+namespace sf{
+    class Color;
+    class Event;
+    class Font;
+}
 
 namespace snake::widget{
 

@@ -31,10 +31,10 @@
 #include <SFML/Window/Keyboard.hpp>
 
 // STD
-#include <map>
 #include <memory>
 #include <string>
 #include <utility>
+#include <unordered_map>
 
 namespace snake::window{
 

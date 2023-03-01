@@ -28,18 +28,36 @@
 // States
 #include <states/state.hpp>
 #include <states/options_state.hpp>
-#include <states/menu_state.hpp>
-#include <states/game_state.hpp>
+
+// Widgets
+#include <widgets/textbox.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME
     #include <ptc/print.hpp>
 #endif
 
+// SFML
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
 // STD
-#include <utility>
 #include <fstream>
-#include <type_traits>
+#include <cstdint>
+#include <algorithm>
+#include <filesystem>
+#include <memory>
+#include <string>
+#include <string_view>
+#include <vector>
 
 namespace snake::state{
 

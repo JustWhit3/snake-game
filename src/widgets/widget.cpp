@@ -15,6 +15,9 @@
 // Widgets
 #include <widgets/widget.hpp>
 
+// SFML
+#include <SFML/Graphics/Rect.hpp>
+
 namespace snake::widget{
 
     //====================================================
