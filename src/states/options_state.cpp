@@ -115,7 +115,7 @@ namespace snake::state{
      * @brief Method used to draw the images.
      * 
      */
-    void OptionsState::drawImg() const {
+    void OptionsState::drawImg() {
 
         // Loading files from textures
         if( ! state_texture_1.loadFromFile( "img/images/snake_branch.png" ) ){
@@ -129,27 +129,27 @@ namespace snake::state{
         }
 
         // Snake on the branch
-        sf::Sprite snake_branch_sprite( state_texture_1 );
-        snake_branch_sprite.setPosition( 
+        this -> snake_branch_sprite.setTexture( this -> state_texture_1 );
+        this -> snake_branch_sprite.setPosition( 
            0, 
-           ( this -> game_window_size_y - snake_branch_sprite.getGlobalBounds().height ) * 0.25f
+           ( this -> game_window_size_y - this -> snake_branch_sprite.getGlobalBounds().height ) * 0.25f
         );
 
         // Settings logo
-        sf::Sprite settings_logo( state_texture_3 );
-        settings_logo.setPosition( 
-           ( this -> game_window_size_x - settings_logo.getGlobalBounds().width ) * 0.5f,
-           ( this -> game_window_size_y - settings_logo.getGlobalBounds().height ) * 0.2f
+        this -> settings_logo.setTexture( state_texture_3 );
+        this -> settings_logo.setPosition( 
+           ( this -> game_window_size_x - this -> settings_logo.getGlobalBounds().width ) * 0.5f,
+           ( this -> game_window_size_y - this -> settings_logo.getGlobalBounds().height ) * 0.2f
         );
 
         // Background
-        sf::RectangleShape background( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
-        background.setTexture( &state_texture_2, true );
+        this -> background.setSize( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
+        this -> background.setTexture( &state_texture_2, true );
 
         // Drawing the images
-        this -> game_window -> draw( background );
-        this -> game_window -> draw( snake_branch_sprite );
-        this -> game_window -> draw( settings_logo );
+        this -> game_window -> draw( this -> background );
+        this -> game_window -> draw( this -> snake_branch_sprite );
+        this -> game_window -> draw( this -> settings_logo );
     }
 
     //====================================================
@@ -162,93 +162,117 @@ namespace snake::state{
     void OptionsState::drawWidgets() {
 
         // Back-to-menu text
-        this -> back_to_menu.setFillColor( sf::Color::Black );
+        this -> back_to_menu.setFillColor( this -> textColor );
         this -> back_to_menu.setPosition( 
-            this -> game_window -> getSize().x * 0.03f, 
-            this -> game_window -> getSize().y * 0.91f 
+            game_window_size_x * 0.03f, 
+            game_window_size_y * 0.91f 
         );
-        this -> back_to_menu.setCharacterSize( 30 );
+        this -> back_to_menu.setCharacterSize( this -> text_size + 6 );
 
         // Textbox constants
-        const float width{ this -> game_window_size_y * 0.2f };
-        const float height{ width * 0.35f };
-        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f ) * 1.2f;
-        const float y_pos = ( this -> game_window_size_y * 0.5f - height * 0.5f + 80.f ) * 0.8f;
-        constexpr int32_t text_size{ 30 };
-        const sf::Font font{ this -> font };
-        const sf::Color idleColor{ sf::Color::White };
-        const sf::Color hoverColor{ sf::Color( 224, 224, 224 ) };
-        const sf::Color activeColor{ sf::Color( 192, 192, 192 ) };
-        const sf::Color textColor{ sf::Color::Black };
+        this -> width = this -> game_window_size_y * 0.2f;
+        this -> height = width * 0.35f;
+        this -> x_pos = ( this -> game_window_size_x * 0.5f - this -> width * 0.5f ) * 1.2f;
+        this -> y_pos = ( this -> game_window_size_y * 0.5f - this -> height * 0.5f + 80.f ) * 0.8f;
+        this -> idleColor = sf::Color::White;
+        this -> hoverColor = sf::Color( 224, 224, 224 );
+        this -> activeColor = sf::Color( 192, 192, 192 );
 
         // Player name textbox
         this -> player_name_textbox = { 
             std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
-                x_pos, y_pos, width, height, font, "",
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> y_pos, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "",
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor
+                ) 
             )
         };
-        this -> player_name_textbox -> setTextSize( text_size );
-        this -> player_name_textbox -> setTextColor( textColor );
+        this -> player_name_textbox -> setTextSize( this -> text_size );
+        this -> player_name_textbox -> setTextColor( this -> textColor );
 
         // Player option text
-        this -> player_option.setFillColor( sf::Color::Black );
-        this -> player_option.setPosition( x_pos * 0.7f, y_pos * 1.03f );
-        this -> player_option.setCharacterSize( 30 );
+        this -> player_option.setFillColor( this -> textColor );
+        this -> player_option.setPosition( this -> x_pos * 0.7f, this -> y_pos * 1.03f );
+        this -> player_option.setCharacterSize( this -> text_size + 6 );
 
         // Text has been saved text (player)
-        this -> text_has_been_saved_player.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_player.setFillColor( this -> textColor );
         this -> text_has_been_saved_player.setPosition( 
-            x_pos * 1.25f, 
+            this -> x_pos * 1.25f, 
             this -> player_option.getPosition().y
         );
-        this -> text_has_been_saved_player.setCharacterSize( 30 );
+        this -> text_has_been_saved_player.setCharacterSize( this -> text_size + 6 );
 
         // Speed option text
         this -> speed_option.setFillColor( sf::Color::Black );
         this -> speed_option.setPosition( this -> player_option.getPosition().x * 0.78, this -> player_option.getPosition().y * 1.2f );
-        this -> speed_option.setCharacterSize( 30 );
+        this -> speed_option.setCharacterSize( this -> text_size + 6 );
 
         // Snake speed textbox
         this -> snake_speed_textbox = { 
             std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
-                x_pos, y_pos * 1.21f, width, height, font, "",
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> y_pos * 1.21f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "",
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
-        this -> snake_speed_textbox -> setTextSize( text_size );
-        this -> snake_speed_textbox -> setTextColor( textColor );
+        this -> snake_speed_textbox -> setTextSize( this -> text_size );
+        this -> snake_speed_textbox -> setTextColor( this -> textColor );
 
         // Text has been saved text (speed)
-        this -> text_has_been_saved_speed.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_speed.setFillColor( this -> textColor );
         this -> text_has_been_saved_speed.setPosition( 
             this -> text_has_been_saved_player.getPosition().x,
             this -> speed_option.getPosition().y
         );
-        this -> text_has_been_saved_speed.setCharacterSize( 30 );
+        this -> text_has_been_saved_speed.setCharacterSize( this -> text_size + 6 );
 
         // Background option text
-        this -> background_option.setFillColor( sf::Color::Black );
-        this -> background_option.setPosition( this -> speed_option.getPosition().x * 0.76, this -> speed_option.getPosition().y * 1.18f );
-        this -> background_option.setCharacterSize( 30 );
+        this -> background_option.setFillColor( this -> textColor );
+        this -> background_option.setPosition( 
+            this -> speed_option.getPosition().x * 0.76, 
+            this -> speed_option.getPosition().y * 1.18f 
+        );
+        this -> background_option.setCharacterSize( this -> text_size + 6 );
 
         // Background option textbox
         this -> background_textbox = { 
             std::shared_ptr<widget::Textbox> ( new widget::Textbox( 
-                x_pos, y_pos * 1.43f, width, height, font, "",
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> y_pos * 1.43f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "",
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
-        this -> background_textbox -> setTextSize( text_size );
-        this -> background_textbox -> setTextColor( textColor );
+        this -> background_textbox -> setTextSize( this -> text_size );
+        this -> background_textbox -> setTextColor( this -> textColor );
 
         // Text has been saved text (background)
-        this -> text_has_been_saved_background.setFillColor( sf::Color::Black );
+        this -> text_has_been_saved_background.setFillColor( this -> textColor );
         this -> text_has_been_saved_background.setPosition( 
             this -> text_has_been_saved_speed.getPosition().x,
             this -> background_option.getPosition().y
         );
-        this -> text_has_been_saved_background.setCharacterSize( 30 );
+        this -> text_has_been_saved_background.setCharacterSize( this -> text_size + 6 );
     }
 
     //====================================================
@@ -260,7 +284,7 @@ namespace snake::state{
      * @param option The option to be modified.
      * @param option_idx File index of the option to be modified.
      */
-    void OptionsState::fileUpdate( std::string_view option, int16_t option_idx ) const {
+    void OptionsState::fileUpdate( std::string_view option, uint16_t option_idx ) const {
 
         // Variables
         std::ifstream input_file( this -> options_file_path );

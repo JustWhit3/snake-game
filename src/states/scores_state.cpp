@@ -40,7 +40,8 @@
 
 // STD
 #include <memory>
-
+#include <fstream>
+#include <algorithm>
 
 namespace snake::state{
 
@@ -54,6 +55,10 @@ namespace snake::state{
      */
     ScoresState::ScoresState( window::GameWindow* game_window ): 
         game_window( game_window ){
+
+        // Compute best scores
+        this -> scores = this -> game_window -> scores_container;
+        std::sort( scores.begin(), scores.end(), std::greater<uint64_t>() );
 
         // Draw widgets
         this -> drawWidgets();
@@ -89,7 +94,7 @@ namespace snake::state{
      * @brief Method used to draw the images.
      * 
      */
-    void ScoresState::drawImg() const {
+    void ScoresState::drawImg(){
 
         // Loading files from textures
         if( ! state_texture_1.loadFromFile( "img/images/snake_branch.png" ) ){
@@ -100,15 +105,15 @@ namespace snake::state{
         }
 
         // Snake on the branch
-        sf::Sprite snake_branch_sprite( state_texture_1 );
-        snake_branch_sprite.setPosition( 
+        this -> snake_branch_sprite.setTexture( this -> state_texture_1 );
+        this -> snake_branch_sprite.setPosition( 
            0, 
            ( this -> game_window_size_y - snake_branch_sprite.getGlobalBounds().height ) * 0.25f
         );
 
         // Background
-        sf::RectangleShape background( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
-        background.setTexture( &state_texture_2, true );
+        this -> background.setSize( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
+        this -> background.setTexture( &this -> state_texture_2, true );
 
         // Drawing the images
         this -> game_window -> draw( background );
@@ -125,12 +130,12 @@ namespace snake::state{
     void ScoresState::drawWidgets() {
 
         // Back-to-menu text
-        this -> back_to_menu.setFillColor( sf::Color::Black );
+        this -> back_to_menu.setFillColor( this -> textColor );
         this -> back_to_menu.setPosition( 
-            this -> game_window -> getSize().x * 0.03f, 
-            this -> game_window -> getSize().y * 0.91f 
+            game_window_size_x * 0.03f, 
+            game_window_size_y * 0.91f 
         );
-        this -> back_to_menu.setCharacterSize( 30 );
+        this -> back_to_menu.setCharacterSize( this -> text_size + 6 );
     }
 
     //====================================================

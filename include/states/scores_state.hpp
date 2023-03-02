@@ -25,6 +25,9 @@
 // SFML
 #include <SFML/Graphics/Text.hpp>
 
+// STD
+#include <vector>
+
 namespace snake::state{
 
     //====================================================
@@ -53,7 +56,7 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawImg() const;
+            void drawImg();
             void drawWidgets() override;
             void setWidgetsKeys() const override;
             void packWidgets() override;
@@ -61,6 +64,7 @@ namespace snake::state{
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
+            std::vector<uint64_t> scores;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

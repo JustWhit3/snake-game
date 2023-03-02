@@ -59,6 +59,7 @@
 #include <fstream>
 #include <cstdint>
 #include <filesystem>
+#include <sstream>
 
 namespace snake::state{
 
@@ -87,30 +88,6 @@ namespace snake::state{
         // Default move up
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
 
-        // Create the score file path name
-        #ifdef _WIN32
-            this -> score_file_oss << "C:\\Users\\" 
-                                   << this -> game_window -> username 
-                                   << "\\snake-game_files\\snake-game_score.txt";
-        #else
-            this -> score_file_oss << "/home/" 
-                                   << this -> game_window -> username 
-                                   << "/snake-game_files/snake-game_score.txt";
-        #endif
-        this -> score_file_path = score_file_oss.str();
-
-        // Create the option file path name
-        #ifdef _WIN32
-            this -> options_file_oss << "C:\\Users\\" 
-                                     << this -> game_window -> username 
-                                     << "\\snake-game_files\\snake-game_options.txt";
-        #else
-            this -> options_file_oss << "/home/" 
-                                     << this -> game_window -> username 
-                                     << "/snake-game_files/snake-game_options.txt";
-        #endif
-        this -> options_file_path = options_file_oss.str();
-
         // Change background
         std::ifstream options_file( this -> game_window -> options_file_path );
         std::string input;
@@ -125,6 +102,20 @@ namespace snake::state{
             this -> background_file = str2;
         }
         options_file.close();
+
+        // Save player name
+        this -> player_name = this -> getPlayerName();
+
+        // Get best score
+        if( this -> game_window -> scores_container.size() == 0 ){
+            this -> best_score = 0;
+        }
+        else{
+            this -> best_score = *max_element( 
+                this -> game_window -> scores_container.begin(), 
+                this -> game_window -> scores_container.end() 
+            );
+        }
 
         // Draw widgets
         this -> drawWidgets();
@@ -189,13 +180,12 @@ namespace snake::state{
         this -> snake -> death();
 
         // Append score to the score file
-        std::ofstream score_file( this -> score_file_path, std::ios::out | std::ios::app );
-        #ifdef DEBUG_SNAKE_GAME
-            if( ! score_file ){
-                ptc::print( std::cerr, "Unable to open the score file! It probably doesn't exist yet." );
-            }
-        #endif
-        score_file << this -> score << "\n";
+        std::ofstream score_file( this -> game_window -> score_file_path, std::ios::app );
+        if( ! score_file ){
+            std::ofstream default_settings( this -> game_window -> score_file_path );
+            default_settings.close();
+        }
+        score_file << this -> score << " " << this -> player_name << "\n";
         score_file.close();
 
         // Return to menu or quit game
@@ -259,54 +249,54 @@ namespace snake::state{
         // Score icon
         this -> score_icon.setTexture( this -> state_texture_2 );
         this -> score_icon.setPosition( 
-            this -> game_window -> getSize().x * 0.02f, 
-            this -> game_window -> getSize().y * 0.013f 
+            window_x_max * 0.02f, 
+            window_y_max * 0.013f 
         );
 
         // Score text
         this -> score_update.setFillColor( sf::Color::Black );
         this -> score_update.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> score_icon.getPosition().x * 1.4f, 
-            this -> game_window -> getSize().y * 0.02f
+            window_x_max * 0.02f + this -> score_icon.getPosition().x * 1.4f, 
+            window_y_max * 0.02f
         );
-        this -> score_update.setCharacterSize( 30 );
+        this -> score_update.setCharacterSize( this -> text_size + 6 );
 
         // Best score icon
         this -> state_texture_6.loadFromFile( "img/textures/best_score.png" );
         this -> best_score_icon.setTexture( this -> state_texture_6 );
         this -> best_score_icon.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> score_update.getPosition().x * 2.0f, 
-            this -> game_window -> getSize().y * 0.015f
+            window_x_max * 0.02f + this -> score_update.getPosition().x * 2.0f, 
+            window_y_max * 0.015f
         );
 
         // Best score text
         this -> best_score_text.setFillColor( sf::Color::Black );
         this -> best_score_text.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> best_score_icon.getPosition().x * 1.06f, 
-            this -> game_window -> getSize().y * 0.02f
+            window_x_max * 0.02f + this -> best_score_icon.getPosition().x * 1.06f, 
+            window_y_max * 0.02f
         );
-        this -> best_score_text.setCharacterSize( 30 );
+        this -> best_score_text.setCharacterSize( this -> text_size + 6 );
 
         // Current player icon
         this -> state_texture_7.loadFromFile( "img/textures/player_icon.png" );
         this -> player_icon.setTexture( this -> state_texture_7 );
         this -> player_icon.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> best_score_text.getPosition().x * 1.5f, 
-            this -> game_window -> getSize().y * 0.02f
+            window_x_max * 0.02f + this -> best_score_text.getPosition().x * 1.5f, 
+            window_y_max * 0.02f
         );
 
         // Current player text
         this -> current_player_text.setFillColor( sf::Color::Black );
         this -> current_player_text.setPosition( 
-            this -> game_window -> getSize().x * 0.02f + this -> player_icon.getPosition().x * 1.04f, 
-            this -> game_window -> getSize().y * 0.02f
+            window_x_max * 0.02f + this -> player_icon.getPosition().x * 1.04f, 
+            window_y_max * 0.02f
         );
-        this -> current_player_text.setCharacterSize( 30 );
+        this -> current_player_text.setCharacterSize( this -> text_size + 6 );
 
         // Horizontal line
         this -> horizontal_line[0].position = sf::Vector2f( 0, this -> horizontal_line_y_coord );
         this -> horizontal_line[0].color = sf::Color::Black;
-        this -> horizontal_line[1].position = sf::Vector2f( this -> game_window -> getSize().x, this -> horizontal_line_y_coord );
+        this -> horizontal_line[1].position = sf::Vector2f( window_x_max, this -> horizontal_line_y_coord );
         this -> horizontal_line[1].color = sf::Color::Black;
 
         // Background
@@ -315,8 +305,8 @@ namespace snake::state{
         }
         this -> background.setSize( 
             sf::Vector2f( 
-                this -> game_window -> getSize().x, 
-                this -> game_window -> getSize().y
+                window_x_max, 
+                window_y_max
             )
         );
         this -> background.setTexture( &state_texture_3, true );
@@ -327,7 +317,7 @@ namespace snake::state{
         }
         this -> title_background.setSize( 
             sf::Vector2f( 
-                this -> game_window -> getSize().x, 
+                window_x_max, 
                 this -> horizontal_line_y_coord
             )
         );
@@ -335,39 +325,31 @@ namespace snake::state{
     }
 
     //====================================================
-    //     computeBestScore
+    //     getPlayerName
     //====================================================
     /**
-     * @brief Method used to compute the current best score.
+     * @brief Method used to get current player name.
      * 
      */
-    int64_t GameState::computeBestScore(){
-
-        // Open stream
-        std::ifstream score_file( this -> score_file_path );
-        #ifdef DEBUG_SNAKE_GAME
-            if( ! score_file ){
-                ptc::print( "Unable to open the score file!" );
-            }
-        #endif
+    std::string GameState::getPlayerName(){
         
-        // Compute best score
-        int64_t number;
-        std::vector <int64_t> scores_container;
-        while( score_file >> number ){
-            scores_container.push_back( number );
+        // Read player option from options file
+        std::ifstream default_settings( this -> game_window -> options_file_path );
+        std::string player_option_line;
+        std::vector<std::string> lines;
+        while( std::getline( default_settings, player_option_line ) ){
+            lines.push_back( player_option_line );
         }
+
+        // Get player name from options file
+        std::string player_option, player_name;
+        std::stringstream words( lines[0] );
+        words >> player_option >> player_name;
 
         // Close stream
-        score_file.close();
+        default_settings.close();
 
-        // Return statement
-        if( scores_container.size() == 0 ){
-            return 0;
-        }
-        else{
-            return *max_element( scores_container.begin(), scores_container.end() );
-        }
+        return player_name;
     }
 
     //====================================================
@@ -385,21 +367,11 @@ namespace snake::state{
 
         // Best score text settings
         this -> best_score_text.setFont( this -> font );
-        this -> best_score_text.setString( std::to_string( this -> computeBestScore() ) );
+        this -> best_score_text.setString( std::to_string( this -> best_score ) );
 
         // Current player text settings
         this -> current_player_text.setFont( this -> font );
-        std::ifstream default_settings( this -> game_window -> options_file_path );
-        std::string player_option_line;
-        std::vector<std::string> lines;
-        while( std::getline( default_settings, player_option_line ) ){
-            lines.push_back( player_option_line );
-        }
-        std::string str1, str2;
-        std::stringstream words( lines[0] );
-        words >> str1 >> str2;
-        this -> current_player_text.setString( str2 );
-        default_settings.close();
+        this -> current_player_text.setString( this -> player_name );
 
         // Draw stuff
         this -> game_window -> draw( this -> background );

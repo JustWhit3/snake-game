@@ -56,6 +56,8 @@ namespace snake::window{
             std::string speed_option;
             std::string background_option;
             std::filesystem::path options_file_path;
+            std::filesystem::path score_file_path;
+            std::vector<uint64_t> scores_container;
 
             // Constants
             const std::string username = getenv( "USERNAME" );
@@ -68,11 +70,14 @@ namespace snake::window{
             // Methods
             void runWindow();
             void eventClosed();
-            void eventKeyPressed( const sf::Event& event ) override; 
+            void eventKeyPressed( const sf::Event& event ) override;
+            std::vector<uint64_t> getScoresContainer() const;
+            void createGameFiles();
 
             // Variables
             std::ostringstream game_directory_oss;
             std::ostringstream options_file_oss;
+            std::ostringstream score_file_oss;
     };
 }
 

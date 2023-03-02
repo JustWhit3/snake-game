@@ -25,6 +25,9 @@
 // Widgets
 #include <widgets/textbox.hpp>
 
+// SFML
+#include <SFML/Graphics/Sprite.hpp>
+
 // STD
 #include <filesystem>
 #include <fstream>
@@ -57,15 +60,16 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawImg() const;
+            void drawImg();
             void drawWidgets() override;
             void packWidgets() override;
-            void fileUpdate( std::string_view option, int16_t option_idx ) const;
+            void fileUpdate( std::string_view option, uint16_t option_idx ) const;
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
             std::filesystem::path options_file_path;
+            sf::Sprite settings_logo;
             
             // Player option variables
             sf::Text text_has_been_saved_player;

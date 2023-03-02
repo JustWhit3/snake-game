@@ -22,6 +22,8 @@
 // SFML
 #include <SFML/Graphics/Color.hpp> 
 #include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
 
 // STD
 #include <cstdint>
@@ -67,7 +69,15 @@ namespace snake::state{
             virtual void packWidgets() = 0;
 
             // Variables
-            sf::Font font;
+            float width;
+            float height;
+            float x_pos;
+            float y_pos;
+            sf::Color idleColor;
+            sf::Color hoverColor;
+            sf::Color activeColor;
+            sf::Sprite snake_branch_sprite;
+            sf::RectangleShape background;
 
             // Static variables
             static sf::Texture state_texture_1;
@@ -77,10 +87,13 @@ namespace snake::state{
             static sf::Texture state_texture_5;
             static sf::Texture state_texture_6;
             static sf::Texture state_texture_7;
+            static sf::Font font;
 
             // Constants
             sf::Color background_color{ sf::Color::White };
             static constexpr uint16_t waiting_time{ 100 };
+            static constexpr uint32_t text_size = 24;
+            const sf::Color textColor = sf::Color::Black;
     };
 }
 

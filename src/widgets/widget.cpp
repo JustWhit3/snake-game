@@ -83,7 +83,7 @@ namespace snake::widget{
      * 
      * @param size The new size to be set.
      */
-    void Widget::setTextSize( int32_t size ){
+    void Widget::setTextSize( uint32_t size ){
         this -> text.setCharacterSize( size );
     }
 

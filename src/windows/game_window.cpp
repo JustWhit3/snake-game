@@ -80,39 +80,14 @@ namespace snake::window{
             ) 
         );
 
-        // Create the game directory name
-        #ifdef _WIN32
-            this -> game_directory_oss << "C:\\Users\\" 
-                                       << this -> username 
-                                       << "\\snake-game_files";
-        #else
-            this -> game_directory_oss << "/home/"
-                                       << this -> username 
-                                       << "/snake-game_files";
-        #endif
-        std::filesystem::create_directory( game_directory_oss.str() );
-
-        // Create default options file
-        #ifdef _WIN32
-            this -> options_file_oss << "C:\\Users\\" 
-                                     << this -> username 
-                                     << "\\snake-game_files\\snake-game_options.txt";
-        #else
-            this -> options_file_oss << "/home/" 
-                                     << this -> username 
-                                     << "/snake-game_files/snake-game_options.txt";
-        #endif
-        this -> options_file_path = options_file_oss.str();
-        if( ! std::ifstream( options_file_path ) ){
-            std::ofstream default_settings( options_file_path );
-            default_settings << "Player: Unknown\n"
-                             << "SpeedPlus: 25\n"
-                             << "Background: default\n";
-            default_settings.close();
-        }
+        // Create game files
+        this -> createGameFiles();
 
         // Push the Menu state
         this -> game_window_states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
+
+        // Init variables
+        this -> scores_container = this -> getScoresContainer();
 
         // Display the window
         while( this -> isOpen() ){
@@ -247,4 +222,78 @@ namespace snake::window{
             }
         }
     }
+
+    //====================================================
+    //     getScoresContainer
+    //====================================================
+    /**
+     * @brief Method used to get scores container.
+     * 
+     */
+    std::vector<uint64_t> GameWindow::getScoresContainer() const {
+
+        // Read scores from file
+        std::ifstream score_file( this -> score_file_path );
+        if( ! score_file ){
+            std::ofstream default_settings( this -> score_file_path );
+            default_settings.close();
+        }
+        std::string score_line;
+        std::vector<std::string> lines;
+        while( std::getline( score_file, score_line ) ){
+            lines.push_back( score_line );
+        }
+
+        // Compute best score
+        std::vector <uint64_t> scores_container;
+        std::string player_name;
+        uint64_t player_score;
+        for( const auto& line: lines ){
+            std::stringstream words( line );
+            words >> player_score >> player_name;
+            scores_container.push_back( static_cast<uint64_t>( player_score ) );
+        }
+
+        // Close stream
+        score_file.close();
+
+        return scores_container;
+    }
+
+    //====================================================
+    //     createGameFiles
+    //====================================================
+    /**
+     * @brief Method used to create game directories and files.
+     * 
+     */
+    void GameWindow::createGameFiles(){
+
+        // Create the game directory name
+        #ifdef _WIN32
+            this -> game_directory_oss << "C:\\Users\\" << this -> username << "\\snake-game_files";
+            this -> options_file_oss << "C:\\Users\\" << this -> username << "\\snake-game_files\\snake-game_options.txt";
+            this -> score_file_oss << "C:\\Users\\" << this -> username << "\\snake-game_files\\snake-game_score.txt";
+        #else
+            this -> game_directory_oss << "/home/" << this -> username << "/snake-game_files";
+            this -> options_file_oss << "/home/" << this -> username << "/snake-game_files/snake-game_options.txt";
+            this -> score_file_oss << "/home/" << this -> username << "/snake-game_files/snake-game_score.txt";
+        #endif
+        
+        // Create dirs
+        std::filesystem::create_directory( game_directory_oss.str() );
+
+        // Create file names
+        this -> options_file_path = options_file_oss.str();
+        this -> score_file_path = score_file_oss.str();
+
+        // Fill options file with default values
+        if( ! std::ifstream( options_file_path ) ){
+            std::ofstream default_settings( options_file_path );
+            default_settings << "Player: Unknown\n"
+                             << "SpeedPlus: 25\n"
+                             << "Background: default\n";
+            default_settings.close();
+        }
+    }    
 }

@@ -34,6 +34,7 @@ namespace snake::state{
     sf::Texture State::state_texture_5;
     sf::Texture State::state_texture_6;
     sf::Texture State::state_texture_7;
+    sf::Font State::font;
 
     //====================================================
     //     State (constructor)

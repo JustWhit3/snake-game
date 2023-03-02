@@ -72,13 +72,14 @@ namespace snake::state{
             void drawWidgets() override;
             void packWidgets() override;
             void gameOver();
-            int64_t computeBestScore();
+            std::string getPlayerName();
 
             // Variables
             window::GameWindow* game_window;
             std::unique_ptr<entity::Snake> snake{ std::make_unique<entity::Snake>( entity::Snake( game_window ) ) };
             std::unique_ptr<entity::Food> food{ std::make_unique<entity::Food>( entity::Food( game_window ) ) };
             uint64_t score{ 0 };
+            uint64_t best_score;
             sf::Text score_update;
             sf::Text best_score_text;
             sf::Text current_player_text;
@@ -86,13 +87,9 @@ namespace snake::state{
             sf::Sprite score_icon;
             sf::Sprite best_score_icon;
             sf::Sprite player_icon;
-            sf::RectangleShape background;
             sf::RectangleShape title_background;
-            std::ostringstream score_file_oss;
-            std::filesystem::path score_file_path;
-            std::filesystem::path options_file_path;
-            std::ostringstream options_file_oss;
             std::string background_file;
+            std::string player_name;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;

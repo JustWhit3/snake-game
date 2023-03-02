@@ -73,7 +73,7 @@ namespace snake::state{
             std::shared_ptr<widget::Button> game_button;
             std::shared_ptr<widget::Button> scores_button;
             std::shared_ptr<widget::Button> settings_button;
-            sf::Text version_number;
+            sf::Text metadata;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

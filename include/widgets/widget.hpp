@@ -61,7 +61,7 @@ namespace snake::widget{
         public:
 
             // Setters
-            void setTextSize( int32_t size );
+            void setTextSize( uint32_t size );
             void setOutlineColor( const sf::Color& color );
             void setOutlineThickness( float thickness );
             void setTextColor( const sf::Color& color );

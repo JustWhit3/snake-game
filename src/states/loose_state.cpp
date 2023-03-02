@@ -125,22 +125,27 @@ namespace snake::state{
     void LooseState::drawWidgets() {
 
         // Constants
-        const float width{ this -> pause_window_size_y * 0.5f };
-        const float height{ width * 0.45f };
-        const float x_pos = this -> pause_window_size_x * 0.5f - width * 1.25f;
-        const float y_pos = this -> pause_window_size_y * 0.5f;
-        constexpr int32_t text_size{ 24 };
-        const sf::Font font{ this -> font };
-        const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
-        const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
-        const sf::Color activeColor{ sf::Color::Blue };
-        const sf::Color textColor{ sf::Color::Black };
+        this -> width = this -> pause_window_size_y * 0.5f;
+        this -> height = this -> width * 0.45f;
+        this -> x_pos = this -> pause_window_size_x * 0.5f - this -> width * 1.25f;
+        this -> y_pos = this -> pause_window_size_y * 0.5f;
+        this -> idleColor = sf::Color( 102, 204, 0 );
+        this -> hoverColor = sf::Color( 255, 102, 102 );
+        this -> activeColor = sf::Color::Blue;
 
         // Yes button
         this -> menu_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, y_pos, width, height, font, "Menu", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> y_pos, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Menu", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
         auto yes_action = [ this ]{
@@ -148,15 +153,23 @@ namespace snake::state{
             this -> pause_window -> back_to_menu = true;
         };
         this -> menu_button -> setAction( yes_action );
-        this -> menu_button -> setTextSize( text_size );
+        this -> menu_button -> setTextSize( this -> text_size );
         this -> menu_button -> setFocus( true );
-        this -> menu_button -> setTextColor( textColor );
+        this -> menu_button -> setTextColor( this -> textColor );
 
         // No button
         this -> quit_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos + width * 1.5f, y_pos, width, height, font, "Quit", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos + this -> width * 1.5f, 
+                    this -> y_pos, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Quit", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor
+                ) 
             )
         };
         auto no_action = [ this ]{
@@ -164,14 +177,14 @@ namespace snake::state{
             this -> pause_window -> quit_game = true;
         };
         this -> quit_button -> setAction( no_action );
-        this -> quit_button -> setTextSize( text_size ); 
-        this -> quit_button -> setTextColor( textColor );
+        this -> quit_button -> setTextSize( this -> text_size ); 
+        this -> quit_button -> setTextColor( this -> textColor );
 
         // Main text
-        this -> text.setFillColor( sf::Color::Black );
+        this -> text.setFillColor( this -> textColor );
         this -> text.setPosition(
-           ( this -> pause_window_size_x / 2 - text.getGlobalBounds().width ) * 0.7f, 
-           ( this -> pause_window_size_y / 2 - text.getGlobalBounds().height ) * 0.4f
+           ( this -> pause_window_size_x / 2 - this -> text.getGlobalBounds().width ) * 0.7f, 
+           ( this -> pause_window_size_y / 2 - this -> text.getGlobalBounds().height ) * 0.4f
         );
     }
 
@@ -211,6 +224,6 @@ namespace snake::state{
         // Draw stuff
         this -> menu_button -> pack( this -> pause_window );
         this -> quit_button -> pack( this -> pause_window );
-        this -> pause_window -> draw( text );
+        this -> pause_window -> draw( this -> text );
     }
 }

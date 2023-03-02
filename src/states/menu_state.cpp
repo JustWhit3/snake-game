@@ -135,7 +135,7 @@ namespace snake::state{
 
         // Background
         sf::RectangleShape background( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
-        background.setTexture( &state_texture_3, true );
+        background.setTexture( &this -> state_texture_3, true );
 
         // Drawing the images
         this -> game_window -> draw( background );
@@ -153,83 +153,112 @@ namespace snake::state{
     void MenuState::drawWidgets() {
         
         // Constants
-        const float width{ this -> game_window_size_y * 0.2f };
-        const float height{ width * 0.35f };
-        const float x_pos = ( this -> game_window_size_x * 0.5f - width * 0.5f );
-        constexpr int32_t text_size{ 24 };
-        const sf::Font font{ this -> font };
-        const sf::Color idleColor{ sf::Color( 102, 204, 0 ) };
-        const sf::Color hoverColor{ sf::Color( 255, 102, 102 ) };
-        const sf::Color activeColor{ sf::Color::Blue };
-        const sf::Color textColor{ sf::Color::Black };
+        this -> width = this -> game_window_size_y * 0.2f;
+        this -> height = this -> width * 0.35f;
+        this -> x_pos = ( this -> game_window_size_x * 0.5f - this -> width * 0.5f );
+        this -> idleColor = sf::Color( 102, 204, 0 );
+        this -> hoverColor = sf::Color( 255, 102, 102 );
+        this -> activeColor = sf::Color::Blue;
 
         // Game button
         this -> game_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 80.f, width, height, font, "Start Game", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> game_window_size_y * 0.5f - this -> height * 0.5f + 80.f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Start Game", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor
+                ) 
             )
         };
         auto game_action = [ this ]{
             this -> game_window -> game_window_states.insert( 
-                { "Game", std::make_shared<state::GameState>( state::GameState( game_window ) ) } 
+                { "Game", std::make_shared<state::GameState>( state::GameState( this -> game_window ) ) } 
             );
         };
         this -> game_button -> setAction( game_action );
-        this -> game_button -> setTextSize( text_size );
+        this -> game_button -> setTextSize( this -> text_size );
         this -> game_button -> setFocus( true );
-        this -> game_button -> setTextColor( textColor );
+        this -> game_button -> setTextColor( this -> textColor );
 
         // Scores button
         this -> scores_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 160.f, width, height, font, "Scores", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> game_window_size_y * 0.5f - this -> height * 0.5f + 160.f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Scores", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
         auto scores_action = [ this ]{
             this -> game_window -> game_window_states.insert( 
-                { "Scores", std::make_shared<state::ScoresState>( state::ScoresState( game_window ) ) } 
+                { "Scores", std::make_shared<state::ScoresState>( state::ScoresState( this -> game_window ) ) } 
             );
         };
         this -> scores_button -> setAction( scores_action );
-        this -> scores_button -> setTextSize( text_size ); 
-        this -> scores_button -> setTextColor( textColor );
+        this -> scores_button -> setTextSize( this -> text_size ); 
+        this -> scores_button -> setTextColor( this -> textColor );
         
         // Settings button
         this -> settings_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 240.f, width, height, font, "Settings", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> game_window_size_y * 0.5f - this -> height * 0.5f + 240.f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Settings", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
         auto settings_action = [ this ]{
             this -> game_window -> game_window_states.insert( 
-                { "Options", std::make_shared<state::OptionsState>( state::OptionsState( game_window ) ) } 
+                { "Options", std::make_shared<state::OptionsState>( state::OptionsState( this -> game_window ) ) } 
             );
         };
         this -> settings_button -> setAction( settings_action );
-        this -> settings_button -> setTextSize( text_size );
-        this -> settings_button -> setTextColor( textColor );
+        this -> settings_button -> setTextSize( this -> text_size );
+        this -> settings_button -> setTextColor( this -> textColor );
 
         // Quit button
         this -> quit_button = { 
             std::shared_ptr<widget::Button> ( new widget::Button( 
-                x_pos, this -> game_window_size_y * 0.5f - height * 0.5f + 320.f, width, height, font, "Quit", 
-                idleColor, hoverColor, activeColor ) 
+                    this -> x_pos, 
+                    this -> game_window_size_y * 0.5f - this -> height * 0.5f + 320.f, 
+                    this -> width, 
+                    this -> height, 
+                    this -> font, 
+                    "Quit", 
+                    this -> idleColor, 
+                    this -> hoverColor, 
+                    this -> activeColor 
+                ) 
             )
         };
         this -> quit_button -> setAction( [ this ]{ this -> game_window -> close(); } );
-        this -> quit_button -> setTextSize( text_size );
-        this -> quit_button -> setTextColor( textColor );
+        this -> quit_button -> setTextSize( this -> text_size );
+        this -> quit_button -> setTextColor( this -> textColor );
 
         // Version number text
-        this -> version_number.setFillColor( sf::Color::Black );
-        this -> version_number.setPosition( 
-            this -> game_window -> getSize().x * 0.03f, 
-            this -> game_window -> getSize().y * 0.90f 
+        this -> metadata.setFillColor( this -> textColor );
+        this -> metadata.setPosition( 
+            game_window_size_x * 0.03f, 
+            game_window_size_y * 0.90f 
         );
-        this -> version_number.setCharacterSize( 30 );
+        this -> metadata.setCharacterSize( this -> text_size + 6 );
     }
 
     //====================================================
@@ -300,14 +329,14 @@ namespace snake::state{
     void MenuState::packWidgets(){
 
         // Version number text
-        this -> version_number.setFont( this -> font );
-        this -> version_number.setString( "Current version: 0.2.0\nCopyright (c) 2022 Gianluca Bianco under the MIT license" );
+        this -> metadata.setFont( this -> font );
+        this -> metadata.setString( "Current version: 0.2.0\nCopyright (c) 2022 Gianluca Bianco under the MIT license" );
 
         // Draw stuff
         this -> game_button -> pack( this -> game_window );
         this -> scores_button -> pack( this -> game_window );
         this -> settings_button -> pack( this -> game_window );
         this -> quit_button -> pack( this -> game_window );
-        this -> game_window -> draw( this -> version_number );
+        this -> game_window -> draw( this -> metadata );
     }
 }
