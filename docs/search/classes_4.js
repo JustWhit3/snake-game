@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loosestate_159',['LooseState',['../classsnake_1_1state_1_1LooseState.html',1,'snake::state']]]
+  ['loosestate_169',['LooseState',['../classsnake_1_1state_1_1LooseState.html',1,'snake::state']]]
 ];
