@@ -125,45 +125,47 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">void</span> drawImg();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">void</span> drawWidgets() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> packWidgets() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> fileUpdate( std::string_view option, uint16_t option_idx ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> fileUpdate( std::string_view option, uint16_t option_idx );</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Variables</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classsnake_1_1window_1_1GameWindow.html">window::GameWindow</a>* game_window;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            sf::Text back_to_menu;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            std::filesystem::path options_file_path;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            sf::Sprite settings_logo;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">// Player option variables</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            sf::Text text_has_been_saved_player;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            sf::Text player_option;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; player_name_textbox;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">bool</span> already_wrote_player;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// Speed option variables</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            sf::Text text_has_been_saved_speed;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            sf::Text speed_option;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; snake_speed_textbox;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">bool</span> already_wrote_speed;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// Background option variables</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            sf::Text text_has_been_saved_background;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            sf::Text background_option;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; background_textbox;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">bool</span> already_wrote_background;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_x = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_y = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">const</span> sf::Time delta_time{ sf::seconds( 1.f ) };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    };</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::vector&lt;std::string&gt; lines;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            std::string input;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// Player option variables</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            sf::Text text_has_been_saved_player;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            sf::Text player_option;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; player_name_textbox;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">bool</span> already_wrote_player;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// Speed option variables</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            sf::Text text_has_been_saved_speed;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            sf::Text speed_option;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; snake_speed_textbox;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">bool</span> already_wrote_speed;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// Background option variables</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            sf::Text text_has_been_saved_background;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            sf::Text background_option;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            std::shared_ptr&lt;widget::Textbox&gt; background_textbox;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">bool</span> already_wrote_background;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_x = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().x;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">const</span> uint64_t game_window_size_y = <span class="keyword">this</span> -&gt; game_window -&gt; getSize().y;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">const</span> sf::Time delta_time{ sf::seconds( 1.f ) };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    };</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html">snake::state::OptionsState</a></div><div class="ttdoc">Class used to create the options menu.</div><div class="ttdef"><b>Definition:</b> options_state.hpp:44</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html_a04cafda9ebf15f50deed68d5e078b299"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html#a04cafda9ebf15f50deed68d5e078b299">snake::state::OptionsState::OptionsState</a></div><div class="ttdeci">OptionsState(window::GameWindow *game_window)</div><div class="ttdoc">Constructor of the OptionsState class.</div><div class="ttdef"><b>Definition:</b> options_state.cpp:72</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1OptionsState_html_a9f8f42b2cba2848c83f29daaba006fb8"><div class="ttname"><a href="classsnake_1_1state_1_1OptionsState.html#a9f8f42b2cba2848c83f29daaba006fb8">snake::state::OptionsState::drawState</a></div><div class="ttdeci">void drawState() override</div><div class="ttdoc">Method used to draw the current state.</div><div class="ttdef"><b>Definition:</b> options_state.cpp:90</div></div>
 <div class="ttc" id="aclasssnake_1_1state_1_1State_html"><div class="ttname"><a href="classsnake_1_1state_1_1State.html">snake::state::State</a></div><div class="ttdoc">Class used to define base state for the other states.</div><div class="ttdef"><b>Definition:</b> state.hpp:45</div></div>
-<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:43</div></div>
+<div class="ttc" id="aclasssnake_1_1window_1_1GameWindow_html"><div class="ttname"><a href="classsnake_1_1window_1_1GameWindow.html">snake::window::GameWindow</a></div><div class="ttdoc">Class used to create the game window.</div><div class="ttdef"><b>Definition:</b> game_window.hpp:45</div></div>
 <div class="ttc" id="agame__window_8hpp_html"><div class="ttname"><a href="game__window_8hpp.html">game_window.hpp</a></div></div>
 <div class="ttc" id="anamespacesnake_1_1state_html"><div class="ttname"><a href="namespacesnake_1_1state.html">snake::state</a></div><div class="ttdef"><b>Definition:</b> game_state.cpp:64</div></div>
 <div class="ttc" id="atextbox_8hpp_html"><div class="ttname"><a href="textbox_8hpp.html">textbox.hpp</a></div></div>
