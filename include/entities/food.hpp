@@ -62,6 +62,10 @@ namespace snake::entity{
         //====================================================
         private:
 
+            // Variables
+            float x_random;
+            float y_random;
+
             // Constants
             const int32_t horizontal_line_y_coord = this -> game_window -> getSize().y / 20;
             const int y_bound{ static_cast<int>( this -> game_window -> getSize().y - this -> game_window -> getSize().y / 10 ) };

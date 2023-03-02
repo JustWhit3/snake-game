@@ -284,20 +284,21 @@ namespace snake::state{
      * @param option The option to be modified.
      * @param option_idx File index of the option to be modified.
      */
-    void OptionsState::fileUpdate( std::string_view option, uint16_t option_idx ) const {
+    void OptionsState::fileUpdate( std::string_view option, uint16_t option_idx ){
+
+        // Clear stuff from previous iterations
+        this -> lines.clear();
 
         // Variables
         std::ifstream input_file( this -> options_file_path );
-        std::vector<std::string> lines;
-        std::string input;
 
         // Reading file lines
-        while( std::getline( input_file, input ) ){
-            lines.push_back( input );
+        while( std::getline( input_file, this -> input ) ){
+            lines.push_back( this -> input );
         }
         
         // Modifying the interested line
-        lines.at( option_idx ) = option;
+        this -> lines.at( option_idx ) = option;
         
         // Close the input stream
         input_file.close();
@@ -305,8 +306,8 @@ namespace snake::state{
         // Write updates in the output file
         std::ofstream output_file( this -> options_file_path );
         std::for_each(
-            lines.begin(), 
-            lines.end(), 
+            this -> lines.begin(), 
+            this -> lines.end(), 
             [ &output_file ]( auto& line ){ output_file << line << "\n"; } 
         );
         

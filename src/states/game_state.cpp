@@ -89,22 +89,17 @@ namespace snake::state{
         this -> snake -> moveSmoothly( 0.f, - this -> snake -> speedV );
 
         // Change background
-        std::ifstream options_file( this -> game_window -> options_file_path );
-        std::string input;
-        std::vector<std::string> lines;
-        while( std::getline( options_file, input ) ){
-            lines.push_back( input );
+        this -> process_background = this -> game_window -> processInputFile( 
+            std::ifstream( this -> game_window -> options_file_path ), 2, 1 
+        );
+        if( this -> process_background != "default" ){
+            this -> background_file = this -> process_background;
         }
-        std::string str1, str2;
-        std::stringstream words( lines[2] );
-        words >> str1 >> str2;
-        if( str2 != "default" ){
-            this -> background_file = str2;
-        }
-        options_file.close();
 
         // Save player name
-        this -> player_name = this -> getPlayerName();
+        this -> player_name = this -> game_window -> processInputFile(
+            std::ifstream( this -> game_window -> options_file_path ), 0, 1
+        );
 
         // Get best score
         if( this -> game_window -> scores_container.size() == 0 ){
@@ -322,34 +317,6 @@ namespace snake::state{
             )
         );
         this -> title_background.setTexture( &state_texture_4, true );
-    }
-
-    //====================================================
-    //     getPlayerName
-    //====================================================
-    /**
-     * @brief Method used to get current player name.
-     * 
-     */
-    std::string GameState::getPlayerName(){
-        
-        // Read player option from options file
-        std::ifstream default_settings( this -> game_window -> options_file_path );
-        std::string player_option_line;
-        std::vector<std::string> lines;
-        while( std::getline( default_settings, player_option_line ) ){
-            lines.push_back( player_option_line );
-        }
-
-        // Get player name from options file
-        std::string player_option, player_name;
-        std::stringstream words( lines[0] );
-        words >> player_option >> player_name;
-
-        // Close stream
-        default_settings.close();
-
-        return player_name;
     }
 
     //====================================================

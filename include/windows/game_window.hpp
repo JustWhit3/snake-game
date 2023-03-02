@@ -30,6 +30,8 @@
 #include <filesystem>
 #include <cstdlib>
 #include <string>
+#include <fstream>
+#include <array>
 
 namespace snake::window{
 
@@ -49,6 +51,9 @@ namespace snake::window{
 
             // Constructors
             GameWindow();
+
+            // Methods
+            std::string processInputFile( std::ifstream input_stream, int16_t row_n, int16_t pos );
 
             // Variables
             sf::Event game_event;
@@ -78,6 +83,11 @@ namespace snake::window{
             std::ostringstream game_directory_oss;
             std::ostringstream options_file_oss;
             std::ostringstream score_file_oss;
+
+            std::string input;
+            std::array<std::string, 2> strings;
+            std::vector<std::string> lines;
+            std::stringstream words;
     };
 }
 

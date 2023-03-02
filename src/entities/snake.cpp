@@ -73,17 +73,9 @@ namespace snake::entity{
         this -> body.push_back( body_shape );
 
         // Change speed if option is set
-        std::ifstream options_file( this -> game_window -> options_file_path );
-        std::string input;
-        std::vector<std::string> lines;
-        while( std::getline( options_file, input ) ){
-            lines.push_back( input );
-        }
-        std::string str1, str2;
-        std::stringstream words( lines[1] );
-        words >> str1 >> str2;
-        this -> speedV = std::stoi( str2 );
-        options_file.close();
+        this -> speedV = std::stoi( 
+            game_window -> processInputFile( std::ifstream( this -> game_window -> options_file_path ), 1, 1 )
+         );
     }
 
     //====================================================

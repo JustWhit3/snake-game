@@ -24,6 +24,7 @@
 
 // SFML
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 // STD
 #include <vector>
@@ -58,13 +59,15 @@ namespace snake::state{
             // Methods
             void drawImg();
             void drawWidgets() override;
-            void setWidgetsKeys() const override;
             void packWidgets() override;
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
             std::vector<uint64_t> scores;
+            sf::Sprite gold_trophy;
+            sf::Sprite silver_trophy;
+            sf::Sprite bronze_trophy;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

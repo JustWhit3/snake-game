@@ -72,7 +72,6 @@ namespace snake::state{
             void drawWidgets() override;
             void packWidgets() override;
             void gameOver();
-            std::string getPlayerName();
 
             // Variables
             window::GameWindow* game_window;
@@ -90,6 +89,7 @@ namespace snake::state{
             sf::RectangleShape title_background;
             std::string background_file;
             std::string player_name;
+            std::string process_background;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;

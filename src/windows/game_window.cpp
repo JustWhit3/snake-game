@@ -224,6 +224,36 @@ namespace snake::window{
     }
 
     //====================================================
+    //     processInputFile
+    //====================================================
+    /**
+     * @brief Method used to process and input file containing rows with two elements. Finally gets one of the two elements of a row.
+     * 
+     * @param input_stream The considered input stream.
+     * @param row_n The number of the file row.
+     * @param pos The number of the word of the file row.
+     */
+    std::string GameWindow::processInputFile( std::ifstream input_stream, int16_t row_n, int16_t pos ){
+
+        // Clear stuff from previous iterations
+        this -> lines.clear();
+        this -> words.str( "" );
+        this -> words.clear();
+
+        // Read input file
+        while( std::getline( input_stream, this -> input ) ){
+            this -> lines.push_back( this -> input );
+        }
+        input_stream.close();
+
+        // Get strings from the input file
+        this -> words.str( this -> lines[ row_n ] );
+        this -> words >> this -> strings[0] >> this -> strings[1];
+
+        return strings[ pos ];
+    }
+
+    //====================================================
     //     getScoresContainer
     //====================================================
     /**

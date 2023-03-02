@@ -63,13 +63,15 @@ namespace snake::state{
             void drawImg();
             void drawWidgets() override;
             void packWidgets() override;
-            void fileUpdate( std::string_view option, uint16_t option_idx ) const;
+            void fileUpdate( std::string_view option, uint16_t option_idx );
 
             // Variables
             window::GameWindow* game_window;
             sf::Text back_to_menu;
             std::filesystem::path options_file_path;
             sf::Sprite settings_logo;
+            std::vector<std::string> lines;
+            std::string input;
             
             // Player option variables
             sf::Text text_has_been_saved_player;
