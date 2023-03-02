@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/JustWhit3/snake-game/blob/main/img/images/logo.png" height=220></p>
 
-<h3 align="center">A snake game created using SFML. </h3>
+<h3 align="center">A snake game with scores options and more created using SFML. </h3>
 <p align="center">
   <img title="v0.2" alt="v0.2" src="https://img.shields.io/badge/version-v0.2-informational?style=flat-square">
   <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
