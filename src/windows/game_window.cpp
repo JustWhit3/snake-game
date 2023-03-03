@@ -57,6 +57,11 @@
 namespace snake::window{
 
     //====================================================
+    //     Static variables
+    //====================================================
+    sf::SoundBuffer GameWindow::window_sound_1;
+
+    //====================================================
     //     GameWindow
     //====================================================
     /**
@@ -82,6 +87,9 @@ namespace snake::window{
 
         // Create game files
         this -> createGameFiles();
+
+        // Load sounds
+        this -> loadSounds();
 
         // Push the Menu state
         this -> game_window_states.insert( { "Menu", std::make_shared<state::MenuState>( state::MenuState( this ) ) } );
@@ -177,6 +185,7 @@ namespace snake::window{
         else if( game_window_states.begin() -> first == "Game" ){
             switch( event.key.code ){
                 case sf::Keyboard::Escape:{ // Esc
+                    this -> open_pause_window_sound.play();
                     auto pause_window{ PauseWindow( "Pause" ) };
                     if( pause_window.back_to_menu == true ) {
                         this -> game_window_states.erase( "Game" );
@@ -325,5 +334,19 @@ namespace snake::window{
                              << "Background: default\n";
             default_settings.close();
         }
-    }    
+    }
+
+    //====================================================
+    //     loadSounds
+    //====================================================
+    /**
+     * @brief Method used to load sounds.
+     * 
+     */
+    void GameWindow::loadSounds(){
+
+        // Open pause window
+        this -> window_sound_1.loadFromFile( "sounds/effects/pause_window.wav" );
+        this -> open_pause_window_sound.setBuffer( this -> window_sound_1 );
+    }
 }

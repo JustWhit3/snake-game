@@ -47,8 +47,8 @@ if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 endif()
 
 # Link to SFML
-find_package( SFML 2.5.1 COMPONENTS system window graphics )
-target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system )
+find_package( SFML 2.5.1 COMPONENTS system window graphics audio )
+target_link_libraries( ${APP} PUBLIC sfml-graphics sfml-window sfml-system sfml-audio )
 
 # Link to ptc-print
 if( CMAKE_BUILD_TYPE STREQUAL "Debug" )

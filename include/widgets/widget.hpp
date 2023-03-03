@@ -26,6 +26,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdint>
@@ -97,6 +98,7 @@ namespace snake::widget{
 
             // Methods
             virtual void update( const sf::Vector2f mousePos ) = 0;
+            virtual void loadSounds() = 0;
             void centering();
 
             // render (template)
@@ -117,6 +119,11 @@ namespace snake::widget{
             sf::Color hoverColor;
             sf::Color activeColor;
             uint16_t widgetState;
+
+            // Static variables
+            static sf::SoundBuffer widget_sound_1;
+            static sf::SoundBuffer widget_sound_2;
+            static sf::SoundBuffer widget_sound_3;
     };
 }
 

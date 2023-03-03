@@ -62,8 +62,9 @@ namespace snake::state{
         private:
 
             // Methods
-            void drawImg() const;
+            void drawImg();
             void drawWidgets() override;
+            void loadSounds();
             void setWidgetsKeys() const override;
             void packWidgets() override;
 
@@ -74,6 +75,9 @@ namespace snake::state{
             std::shared_ptr<widget::Button> scores_button;
             std::shared_ptr<widget::Button> settings_button;
             sf::Text metadata;
+            sf::Sprite logo_sprite;
+            sf::Sprite snake_branch_sprite;
+            sf::RectangleShape background;
 
             // Constants
             const uint64_t game_window_size_x = this -> game_window -> getSize().x;

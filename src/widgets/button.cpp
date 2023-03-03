@@ -73,8 +73,11 @@ namespace snake::widget{
                     const sf::Color& idleColor, const sf::Color& hoverColor, const sf::Color& activeColor ):
         Widget( x, y, width, height, font, text, idleColor, hoverColor, activeColor ),
         action( []{} ),
-        command_action( []{} ){
+        command_action( []{} ),
+        switch_sound_already_played( false ){
 
+        // Load sounds
+        this -> loadSounds();
     }
     
     //====================================================
@@ -89,6 +92,11 @@ namespace snake::widget{
 
         // Idle
         this -> widgetState = WDGT_IDLE;
+
+        // Extra settings for sound
+        if( this -> focus == false ){
+            this -> switch_sound_already_played = false;
+        }
 
         // Mouse clicked
         if( this -> shape.getGlobalBounds().contains( mousePos ) ){
@@ -116,10 +124,16 @@ namespace snake::widget{
 
             case WDGT_HOVER:
                 this -> shape.setFillColor( this -> hoverColor );
+
+                if( this -> switch_sound_already_played == false ){
+                    this -> button_switch_sound.play();
+                    this -> switch_sound_already_played = true;
+                }
                 break;
 
             case WDGT_ACTIVE:
                 this -> shape.setFillColor( this -> activeColor );
+                this -> button_click_sound.play();
                 this -> action();
                 break;
 
@@ -151,5 +165,23 @@ namespace snake::widget{
      */
     void Button::setFocus( const bool focus ){
         this -> focus = focus;
+    }
+
+    //====================================================
+    //     loadSounds
+    //====================================================
+    /**
+     * @brief Method used to load widget sounds.
+     * 
+     */
+    void Button::loadSounds(){
+
+        // Button click
+        this -> widget_sound_1.loadFromFile( "sounds/effects/button_click.wav" );
+        this -> button_click_sound.setBuffer( this -> widget_sound_1 );
+
+        // Button switch
+        this -> widget_sound_2.loadFromFile( "sounds/effects/button_switch.wav" );
+        this -> button_switch_sound.setBuffer( this -> widget_sound_2 );
     }
 }

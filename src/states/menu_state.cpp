@@ -47,6 +47,7 @@
 #include <SFML/System/Sleep.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/Audio.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME
@@ -106,41 +107,41 @@ namespace snake::state{
      * @brief Method used to draw the images.
      * 
      */
-    void MenuState::drawImg() const {
+    void MenuState::drawImg(){
 
         // Loading files from textures
-        if( ! state_texture_1.loadFromFile( "img/images/logo.png" ) ){
+        if( ! this -> state_texture_1.loadFromFile( "img/images/logo.png" ) ){
             this -> game_window -> close();
         }
-        if( ! state_texture_2.loadFromFile( "img/images/snake_branch.png" ) ){
+        if( ! this -> state_texture_2.loadFromFile( "img/images/snake_branch.png" ) ){
             this -> game_window -> close();
         }
-        if( ! state_texture_3.loadFromFile( "img/images/menu_background.jpg" ) ){
+        if( ! this -> state_texture_3.loadFromFile( "img/images/menu_background.jpg" ) ){
             this -> game_window -> close();
         }
 
         // Logo
-        sf::Sprite logo_sprite( state_texture_1 );
-        logo_sprite.setPosition( 
-           ( this -> game_window_size_x - logo_sprite.getGlobalBounds().width ) * 0.5f, 
-           ( this -> game_window_size_y - logo_sprite.getGlobalBounds().height ) * 0.2f
+        this ->logo_sprite.setTexture( this -> state_texture_1 );
+        this -> logo_sprite.setPosition( 
+           ( this -> game_window_size_x - this -> logo_sprite.getGlobalBounds().width ) * 0.5f, 
+           ( this -> game_window_size_y - this -> logo_sprite.getGlobalBounds().height ) * 0.2f
         );
 
         // Snake on the branch
-        sf::Sprite snake_branch_sprite( state_texture_2 );
-        snake_branch_sprite.setPosition( 
+        this -> snake_branch_sprite.setTexture( this -> state_texture_2 );
+        this -> snake_branch_sprite.setPosition( 
            0, 
-           ( this -> game_window_size_y - snake_branch_sprite.getGlobalBounds().height ) * 0.25f
+           ( this -> game_window_size_y - this -> snake_branch_sprite.getGlobalBounds().height ) * 0.25f
         );
 
         // Background
-        sf::RectangleShape background( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
-        background.setTexture( &this -> state_texture_3, true );
+        this -> background.setSize( sf::Vector2f( this -> game_window_size_x, this -> game_window_size_y ) );
+        this -> background.setTexture( &this -> state_texture_3, true );
 
         // Drawing the images
-        this -> game_window -> draw( background );
-        this -> game_window -> draw( snake_branch_sprite );
-        this -> game_window -> draw( logo_sprite );
+        this -> game_window -> draw( this -> background );
+        this -> game_window -> draw( this -> snake_branch_sprite );
+        this -> game_window -> draw( this -> logo_sprite );
     }
 
     //====================================================

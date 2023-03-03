@@ -17,8 +17,16 @@
 
 // SFML
 #include <SFML/Graphics/Rect.hpp>
+#include <SFML/Audio.hpp>
 
 namespace snake::widget{
+
+    //====================================================
+    //     Static variables
+    //====================================================
+    sf::SoundBuffer Widget::widget_sound_1;
+    sf::SoundBuffer Widget::widget_sound_2;
+    sf::SoundBuffer Widget::widget_sound_3;
 
     //====================================================
     //     Widget (constructor)

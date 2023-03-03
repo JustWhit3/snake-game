@@ -69,10 +69,14 @@ namespace snake::widget{
 
             // Methods
             void update( const sf::Vector2f mousePos ) override;
+            void loadSounds() override;
 
             // Variables
             std::function<void()> action;
             std::function<void()> command_action;
+            sf::Sound button_click_sound;
+            sf::Sound button_switch_sound;
+            bool switch_sound_already_played;
     };       
 }
 

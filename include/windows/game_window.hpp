@@ -24,6 +24,7 @@
 
 // SFML
 #include <SFML/Window/Event.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <sstream>
@@ -78,16 +79,20 @@ namespace snake::window{
             void eventKeyPressed( const sf::Event& event ) override;
             std::vector<uint64_t> getScoresContainer() const;
             void createGameFiles();
+            void loadSounds();
 
             // Variables
             std::ostringstream game_directory_oss;
             std::ostringstream options_file_oss;
             std::ostringstream score_file_oss;
-
             std::string input;
             std::array<std::string, 2> strings;
             std::vector<std::string> lines;
             std::stringstream words;
+            sf::Sound open_pause_window_sound;
+
+            // Static variables
+            static sf::SoundBuffer window_sound_1;
     };
 }
 

@@ -101,7 +101,6 @@ namespace snake::state{
         this -> drawImg();
 
         // Drawing widgets
-        this -> setWidgetsKeys();
         this -> packWidgets();
 
         // Display the state

@@ -27,6 +27,7 @@
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/String.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <string>
@@ -78,12 +79,15 @@ namespace snake::widget{
 
             // Methods
             void update( const sf::Vector2f mousePos ) override;
+            void loadSounds() override;
 
             // Variables
             sf::Text input_text;
             sf::String input;
             std::string current_text;
             bool has_been_pressed;
+            sf::Sound write_text_sound;
+            sf::Sound delete_text_sound;
     };
 }
 

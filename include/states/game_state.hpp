@@ -31,6 +31,7 @@
 
 // SFML
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdint>
@@ -72,6 +73,7 @@ namespace snake::state{
             void drawWidgets() override;
             void packWidgets() override;
             void gameOver();
+            void loadSounds();
 
             // Variables
             window::GameWindow* game_window;
@@ -90,6 +92,12 @@ namespace snake::state{
             std::string background_file;
             std::string player_name;
             std::string process_background;
+            sf::Sound snake_eat;
+            sf::Sound snake_looses;
+
+            // Static variables
+            static sf::SoundBuffer state_sound_1;
+            static sf::SoundBuffer state_sound_2;
 
             // Constants
             const uint32_t horizontal_line_y_coord = this -> game_window -> getSize().x / 24;

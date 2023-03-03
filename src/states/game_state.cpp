@@ -49,6 +49,7 @@
 #include <SFML/Graphics/PrimitiveType.hpp>
 #include <SFML/Graphics/Vertex.hpp>
 #include <SFML/System/Vector2.hpp> 
+#include <SFML/Audio.hpp>
 
 // STD
 #include <memory>
@@ -62,6 +63,12 @@
 #include <sstream>
 
 namespace snake::state{
+
+    //====================================================
+    //     Static variables
+    //====================================================
+    sf::SoundBuffer GameState::state_sound_1;
+    sf::SoundBuffer GameState::state_sound_2;
 
     //====================================================
     //     GameState (constructor)
@@ -111,6 +118,9 @@ namespace snake::state{
                 this -> game_window -> scores_container.end() 
             );
         }
+
+        // Load sounds
+        this -> loadSounds();
 
         // Draw widgets
         this -> drawWidgets();
@@ -172,6 +182,7 @@ namespace snake::state{
     void GameState::gameOver(){
 
         // Kill snake
+        this -> snake_looses.play();
         this -> snake -> death();
 
         // Append score to the score file
@@ -207,6 +218,7 @@ namespace snake::state{
         const sf::FloatRect head_bounding{ this -> snake -> head.getGlobalBounds() };
         const sf::FloatRect food_bounding{ this -> food -> food.getGlobalBounds() };
         if( head_bounding.intersects( food_bounding ) ){
+            this -> snake_eat.play();
             this -> food -> respawn();
             this -> snake -> bodyGrow();
             this -> score += 1;
@@ -350,5 +362,23 @@ namespace snake::state{
         this -> game_window -> draw( this -> horizontal_line, 2, sf::Lines );
         this -> game_window -> draw( this -> current_player_text );
         this -> game_window -> draw( this -> player_icon );
+    }
+
+    //====================================================
+    //     loadSounds
+    //====================================================
+    /**
+     * @brief Method to load sounds in the current state.
+     * 
+     */
+    void GameState::loadSounds(){
+
+        // Snake eat
+        this -> state_sound_1.loadFromFile( "sounds/effects/snake_eat.wav" );
+        this -> snake_eat.setBuffer( this -> state_sound_1 );
+
+        // Snake looses
+        this -> state_sound_2.loadFromFile( "sounds/effects/snake_looses.wav" );
+        this -> snake_looses.setBuffer( this -> state_sound_2 );
     }
 }

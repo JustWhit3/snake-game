@@ -42,6 +42,7 @@
 #include <SFML/Window/Mouse.hpp> 
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Event.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <string>
@@ -74,6 +75,9 @@ namespace snake::widget{
         Widget( x, y, width, height, font, text, idleColor, hoverColor, activeColor ),
         has_been_pressed( false ),
         saved_text( "" ){
+
+        // Load sounds
+        this -> loadSounds();
     }
 
     //====================================================
@@ -160,6 +164,7 @@ namespace snake::widget{
 
                     // Delete case
                     case '\b':{ 
+                        this -> delete_text_sound.play();
                         this -> current_text = this -> text.getString();
                         if( this -> current_text.size() > 1 ){
                             this -> text.setString( this -> current_text.erase( this ->current_text.size() - 2, 1 ) );
@@ -170,6 +175,7 @@ namespace snake::widget{
 
                     // Other cases
                     default:{
+                        this -> write_text_sound.play();
                         this -> input += event.text.unicode;
                         this -> input_text.setString( this -> input );
                         this -> text.setString( this -> input_text.getString() + "|" );
@@ -178,5 +184,23 @@ namespace snake::widget{
                 }
             }
         }
+    }
+
+    //====================================================
+    //     loadSounds
+    //====================================================
+    /**
+     * @brief Method used to load widget sounds.
+     * 
+     */
+    void Textbox::loadSounds(){
+
+        // Write text
+        this -> widget_sound_2.loadFromFile( "sounds/effects/write_text.wav" );
+        this -> write_text_sound.setBuffer( this -> widget_sound_2 );
+
+        // Delete text
+        this -> widget_sound_3.loadFromFile( "sounds/effects/delete_text.wav" );
+        this -> delete_text_sound.setBuffer( this -> widget_sound_3 );
     }
 }

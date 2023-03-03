@@ -24,6 +24,7 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdint>

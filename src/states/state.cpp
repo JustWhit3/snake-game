@@ -17,6 +17,7 @@
 
 // SFML
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdlib>
