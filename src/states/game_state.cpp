@@ -49,7 +49,8 @@
 #include <SFML/Graphics/PrimitiveType.hpp>
 #include <SFML/Graphics/Vertex.hpp>
 #include <SFML/System/Vector2.hpp> 
-#include <SFML/Audio.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 
 // STD
 #include <memory>
@@ -58,9 +59,7 @@
 #include <string_view> 
 #include <vector> 
 #include <fstream>
-#include <cstdint>
 #include <filesystem>
-#include <sstream>
 
 namespace snake::state{
 

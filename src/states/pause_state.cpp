@@ -39,7 +39,6 @@
 
 // SFML
 #include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -50,7 +49,6 @@
 #include <SFML/Window/Keyboard.hpp>
 
 // STD
-#include <cstdint>
 #include <memory>
 
 namespace snake::state{

@@ -26,11 +26,17 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp>
-#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdint>
 #include <string>
+
+//====================================================
+//     Required by IWYU
+//====================================================
+namespace sf{
+    class SoundBuffer;
+}
 
 namespace snake::widget{
 

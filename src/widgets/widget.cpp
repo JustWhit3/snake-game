@@ -17,7 +17,7 @@
 
 // SFML
 #include <SFML/Graphics/Rect.hpp>
-#include <SFML/Audio.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 
 namespace snake::widget{
 

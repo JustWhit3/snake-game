@@ -24,6 +24,7 @@
 
 // SFML
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Audio/Sound.hpp>
 
 // STL
 #include <string>

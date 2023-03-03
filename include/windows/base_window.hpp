@@ -22,7 +22,6 @@
 // SFML
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/VideoMode.hpp>
-#include <SFML/Audio.hpp>
 
 // STD
 #include <memory>

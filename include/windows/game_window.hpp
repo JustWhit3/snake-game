@@ -24,15 +24,23 @@
 
 // SFML
 #include <SFML/Window/Event.hpp>
-#include <SFML/Audio.hpp>
+#include <SFML/Audio/Sound.hpp>
 
 // STD
-#include <sstream>
 #include <filesystem>
 #include <cstdlib>
 #include <string>
 #include <fstream>
 #include <array>
+#include <cstdint>
+#include <vector>
+
+//====================================================
+//     Required by IWYU
+//====================================================
+namespace sf{
+    class SoundBuffer;
+}
 
 namespace snake::window{
 

@@ -32,16 +32,22 @@
 // SFML
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Vector2.hpp>
 
 // STD
-#include <memory>
 #include <fstream>
 #include <algorithm>
+#include <cstdint>
+#include <filesystem>
+#include <functional>
+#include <map>
+#include <new>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace snake::state{
 

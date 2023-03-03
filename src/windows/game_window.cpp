@@ -39,6 +39,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME
@@ -53,6 +54,7 @@
 #include <utility>
 #include <filesystem>
 #include <fstream>
+#include <algorithm>
 
 namespace snake::window{
 

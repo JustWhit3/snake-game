@@ -21,10 +21,8 @@
 
 // SFML
 #include <SFML/Graphics/Color.hpp> 
-#include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Audio.hpp>
 
 // STD
 #include <cstdint>
@@ -32,6 +30,7 @@
 // Required by IWYU
 namespace sf { 
     class Texture; 
+    class Font;
 }
 
 namespace snake::state{

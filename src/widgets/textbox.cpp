@@ -42,7 +42,8 @@
 #include <SFML/Window/Mouse.hpp> 
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Event.hpp>
-#include <SFML/Audio.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 
 // STD
 #include <string>

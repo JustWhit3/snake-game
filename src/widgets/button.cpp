@@ -33,6 +33,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Mouse.hpp> 
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME

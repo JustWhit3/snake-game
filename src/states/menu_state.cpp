@@ -26,7 +26,6 @@
 #include <windows/game_window.hpp>
 
 // States
-#include <states/state.hpp>
 #include <states/menu_state.hpp>
 #include <states/game_state.hpp>
 #include <states/options_state.hpp>
@@ -37,7 +36,6 @@
 
 // SFML
 #include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Rect.hpp>
@@ -47,7 +45,6 @@
 #include <SFML/System/Sleep.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include <SFML/Audio.hpp>
 
 // Debug
 #ifdef DEBUG_SNAKE_GAME
@@ -56,7 +53,6 @@
 
 // STD
 #include <memory>
-#include <cstdint>
 #include <string_view>
 #include <unordered_map>
 
