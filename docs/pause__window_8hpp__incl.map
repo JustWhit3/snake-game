@@ -1,10 +1,9 @@
 <map id="include/windows/pause_window.hpp" name="include/windows/pause_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="647,5,804,47"/>
-<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="571,95,751,121"/>
-<area shape="rect" id="node8" title=" " alt="" coords="855,169,943,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="559,5,716,47"/>
+<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="483,95,663,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="712,169,800,196"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,235,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="259,169,461,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="485,169,603,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="627,169,695,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="719,169,830,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="485,169,553,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="577,169,687,196"/>
 </map>
