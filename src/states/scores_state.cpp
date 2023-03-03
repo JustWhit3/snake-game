@@ -226,7 +226,7 @@ namespace snake::state{
             ( this -> game_window_size_x * 0.5f - this -> title.getGlobalBounds().width * 0.5f ) * 0.95f,
             ( this -> game_window_size_y * 0.5f - this -> title.getGlobalBounds().height * 0.5f ) * 0.94f
         );
-        this -> first_player.setCharacterSize( this -> text_size + 14 );
+        this -> first_player.setCharacterSize( this -> text_size + 20 );
 
         // Second award player name
         this -> second_player.setFillColor( this -> textColor );
@@ -234,7 +234,7 @@ namespace snake::state{
             ( this -> game_window_size_x * 0.5f - this -> title.getGlobalBounds().width * 0.5f ) * 0.95f,
             ( this -> game_window_size_y * 0.5f - this -> title.getGlobalBounds().height * 0.5f ) * 1.22f
         );
-        this -> second_player.setCharacterSize( this -> text_size + 14 );
+        this -> second_player.setCharacterSize( this -> text_size + 20 );
 
         // Third award player name
         this -> third_player.setFillColor( this -> textColor );
@@ -242,7 +242,7 @@ namespace snake::state{
             ( this -> game_window_size_x * 0.5f - this -> title.getGlobalBounds().width * 0.5f ) * 0.95f,
             ( this -> game_window_size_y * 0.5f - this -> title.getGlobalBounds().height * 0.5f ) * 1.49f
         );
-        this -> third_player.setCharacterSize( this -> text_size + 14 );
+        this -> third_player.setCharacterSize( this -> text_size + 20 );
     }
 
     //====================================================

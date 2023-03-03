@@ -159,7 +159,7 @@ namespace snake::state{
         this -> x_pos = ( this -> game_window_size_x * 0.5f - this -> width * 0.5f );
         this -> idleColor = sf::Color( 102, 204, 0 );
         this -> hoverColor = sf::Color( 255, 102, 102 );
-        this -> activeColor = sf::Color::Blue;
+        this -> activeColor = sf::Color( 102, 102, 255 );
 
         // Game button
         this -> game_button = { 

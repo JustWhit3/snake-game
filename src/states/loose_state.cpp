@@ -131,7 +131,7 @@ namespace snake::state{
         this -> y_pos = this -> pause_window_size_y * 0.5f;
         this -> idleColor = sf::Color( 102, 204, 0 );
         this -> hoverColor = sf::Color( 255, 102, 102 );
-        this -> activeColor = sf::Color::Blue;
+        this -> activeColor = sf::Color( 102, 102, 255 );
 
         // Yes button
         this -> menu_button = { 

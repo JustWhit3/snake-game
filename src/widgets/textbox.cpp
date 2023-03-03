@@ -167,7 +167,7 @@ namespace snake::widget{
                         this -> delete_text_sound.play();
                         this -> current_text = this -> text.getString();
                         if( this -> current_text.size() > 1 ){
-                            this -> text.setString( this -> current_text.erase( this ->current_text.size() - 2, 1 ) );
+                            this -> text.setString( this -> current_text.erase( this -> current_text.size() - 2, 1 ) );
                             this -> input = this -> current_text.erase( this ->current_text.size() - 1, 1 );
                         }
                         break;
