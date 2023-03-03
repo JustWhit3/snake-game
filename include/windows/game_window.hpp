@@ -27,6 +27,7 @@
 #include <SFML/Audio/Sound.hpp>
 
 // STD
+#include <sstream> // Required for MacOS
 #include <filesystem>
 #include <cstdlib>
 #include <string>

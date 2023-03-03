@@ -2,7 +2,7 @@
 
 <h3 align="center">A snake game with scores, options, audio and more created using SFML. </h3>
 <p align="center">
-  <img title="v0.2" alt="v0.2" src="https://img.shields.io/badge/version-v0.2-informational?style=flat-square">
+  <img title="v1.0" alt="v1.0" src="https://img.shields.io/badge/version-v1.0-informational?style=flat-square">
   <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
 	<img title="C++20" alt="C++20" src="https://img.shields.io/badge/c++-20-informational?style=flat-square"><br/>
 	<img title="Code size" alt="code size" src="https://img.shields.io/github/languages/code-size/JustWhit3/snake-game?color=red">
@@ -30,14 +30,13 @@
   - [Game](#game)
   - [Options](#options)
   - [Scores](#scores)
-- [Todo](#todo)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
 - [Stargazers over time](#stargazers-over-time)
 
 ## Introduction
 
-In this repository a C++20 implementation of the popular snake game, using the [SFML](https://www.sfml-dev.org/) graphics library is provided.
+In this repository a C++20 implementation of the popular snake game, using the [SFML](https://www.sfml-dev.org/) graphics library is provided. Audio effects are enabled and a few customizable options and scores are available.
 
 During the gameplay some game files will be created in your home directory under the **snake-game_files** folder. These are files which will save game scores and options.
 
@@ -158,12 +157,9 @@ Commands:
 
 ### Scores
 
-Work in progress...
+<img src="https://github.com/JustWhit3/snake-game/blob/main/img/examples/scores.png">
 
-## Todo
-
-- Add Score state.
-- Add sounds and music.
+Only the three best scores, withing the respective player name, will be displayed here.
 
 ## Credits
 

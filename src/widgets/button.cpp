@@ -113,6 +113,11 @@ namespace snake::widget{
         else if( this -> focus == true ){
             this -> widgetState = WDGT_HOVER;
 
+            if( this -> switch_sound_already_played == false ){
+                this -> button_switch_sound.play();
+                this -> switch_sound_already_played = true;
+            }
+
             if( sf::Keyboard::isKeyPressed( sf::Keyboard::Return ) ){
                 this -> widgetState = WDGT_ACTIVE;
             }
@@ -126,11 +131,6 @@ namespace snake::widget{
 
             case WDGT_HOVER:
                 this -> shape.setFillColor( this -> hoverColor );
-
-                if( this -> switch_sound_already_played == false ){
-                    this -> button_switch_sound.play();
-                    this -> switch_sound_already_played = true;
-                }
                 break;
 
             case WDGT_ACTIVE:
