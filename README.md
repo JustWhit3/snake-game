@@ -97,7 +97,7 @@ Mandatory prerequisites (automatically installed with the script):
 - [CMake](https://cmake.org/) (at least version 3.15)
 - [SFML](https://www.sfml-dev.org/) library (version 2.5.1)
 
-> :warning: on Linux other prerequisites for SFML are: `libx11-dev`, `xorg-dev`, `freeglut3-dev`, `libudev-dev`.
+> :warning: on Linux other prerequisites for SFML are: `libx11-dev`, `xorg-dev`, `freeglut3-dev`, `libudev-dev`, `libalut-dev`, `libvorbis-dev`, `libflac-dev`.
 
 To run the game:
 

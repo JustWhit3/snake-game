@@ -13,7 +13,7 @@ if( NOT SFML_FOUND )
       GIT_TAG 2.5.1
     )
 
-    # No need to build audio and network modules
+    # No need to build network module
     set( SFML_BUILD_NETWORK FALSE )
 
     # Make it available

@@ -36,7 +36,7 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
        sudo apt update
-       sudo apt install --fix-missing libx11-dev xorg-dev freeglut3-dev libudev-dev
+       sudo apt install --fix-missing libx11-dev xorg-dev freeglut3-dev libudev-dev libalut-dev libvorbis-dev libflac-dev
        cmake -B build
        cmake --build build
 
