@@ -1,5 +1,5 @@
 # Finding the package
-find_package( SFML 2.5.1 COMPONENTS system window graphics )
+find_package( SFML 2.5.1 COMPONENTS system window graphics audio )
 
 # Fetching the package if not found
 if( NOT SFML_FOUND )
