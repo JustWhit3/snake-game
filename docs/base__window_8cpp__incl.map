@@ -1,9 +1,10 @@
 <map id="src/windows/base_window.cpp" name="src/windows/base_window.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="417,5,620,32"/>
-<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="429,80,609,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="501,5,704,32"/>
+<area shape="rect" id="node2" href="$base__window_8hpp.html" title=" " alt="" coords="513,80,693,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,235,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="259,155,461,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="485,155,553,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="577,155,687,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="712,155,800,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="485,155,603,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="627,155,695,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="719,155,830,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="855,155,943,181"/>
 </map>

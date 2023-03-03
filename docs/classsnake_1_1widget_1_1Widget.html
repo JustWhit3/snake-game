@@ -72,6 +72,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classsnake_1_1widget_1_1Widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">snake::widget::Widget Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -130,6 +131,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:abbd7f3a44b211cf421a984d5c4a632f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8da35d5f010936ec110576d68b63c7f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#a8da35d5f010936ec110576d68b63c7f7">update</a> (const sf::Vector2f mousePos)=0</td></tr>
 <tr class="separator:a8da35d5f010936ec110576d68b63c7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077cde9d042401eb1be7be1cfdda4b52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#a077cde9d042401eb1be7be1cfdda4b52">loadSounds</a> ()=0</td></tr>
+<tr class="separator:a077cde9d042401eb1be7be1cfdda4b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0539bdc296e97f94b93ad6fc80ad00df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#a0539bdc296e97f94b93ad6fc80ad00df">centering</a> ()</td></tr>
 <tr class="memdesc:a0539bdc296e97f94b93ad6fc80ad00df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to center the text position into the shape.  <a href="classsnake_1_1widget_1_1Widget.html#a0539bdc296e97f94b93ad6fc80ad00df">More...</a><br /></td></tr>
 <tr class="separator:a0539bdc296e97f94b93ad6fc80ad00df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +153,15 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0aa8a345c9b5b0dcc4f7ba6363438c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2cfd50998706fd3a7109bdd71307c85"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#ab2cfd50998706fd3a7109bdd71307c85">widgetState</a></td></tr>
 <tr class="separator:ab2cfd50998706fd3a7109bdd71307c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a9100397aea02406f5c1b0843f6a5828d"><td class="memItemLeft" align="right" valign="top">static sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#a9100397aea02406f5c1b0843f6a5828d">widget_sound_1</a></td></tr>
+<tr class="separator:a9100397aea02406f5c1b0843f6a5828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fd7b33d13a0506c31fdf20eaa1e19"><td class="memItemLeft" align="right" valign="top">static sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#a267fd7b33d13a0506c31fdf20eaa1e19">widget_sound_2</a></td></tr>
+<tr class="separator:a267fd7b33d13a0506c31fdf20eaa1e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac69cc18feb553866589f346fa8238a"><td class="memItemLeft" align="right" valign="top">static sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnake_1_1widget_1_1Widget.html#adac69cc18feb553866589f346fa8238a">widget_sound_3</a></td></tr>
+<tr class="separator:adac69cc18feb553866589f346fa8238a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to define base widget for the other widgets. </p>
@@ -273,6 +285,31 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Method used to center the text position into the shape. </p>
+
+</div>
+</div>
+<a id="a077cde9d042401eb1be7be1cfdda4b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077cde9d042401eb1be7be1cfdda4b52">&#9670;&nbsp;</a></span>loadSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void snake::widget::Widget::loadSounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -623,6 +660,72 @@ template&lt;typename T &gt; </div>
           <td class="memname">sf::Text snake::widget::Widget::text</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9100397aea02406f5c1b0843f6a5828d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9100397aea02406f5c1b0843f6a5828d">&#9670;&nbsp;</a></span>widget_sound_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::SoundBuffer snake::widget::Widget::widget_sound_1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a267fd7b33d13a0506c31fdf20eaa1e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267fd7b33d13a0506c31fdf20eaa1e19">&#9670;&nbsp;</a></span>widget_sound_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::SoundBuffer snake::widget::Widget::widget_sound_2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adac69cc18feb553866589f346fa8238a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac69cc18feb553866589f346fa8238a">&#9670;&nbsp;</a></span>widget_sound_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::SoundBuffer snake::widget::Widget::widget_sound_3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

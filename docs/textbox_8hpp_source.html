@@ -93,75 +93,79 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;SFML/System/Clock.hpp&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;SFML/System/String.hpp&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;SFML/System/Vector2.hpp&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// STD</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     Required by IWYU</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesf.html">sf</a>{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">class </span>Color;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">class </span>Event;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">class </span>Font;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1widget.html">snake::widget</a>{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//     Textbox</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html">   52</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1widget_1_1Textbox.html">Textbox</a>: <span class="keyword">public</span> <a class="code" href="classsnake_1_1widget_1_1Widget.html">Widget</a>{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//     Public</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Constructors</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a46a8359bc7f17e997b9c54de8232de3a">Textbox</a>( <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keyword">const</span> sf::Font&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1">font</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652">text</a>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a3c3f888dd661c57631165a6262e8efed">idleColor</a>, <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7">hoverColor</a>, <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a0aa8a345c9b5b0dcc4f7ba6363438c48">activeColor</a> );</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a21cb277df9e824c6a5a4e0b3cc4eaad6">updateText</a>( <span class="keyword">const</span> sf::Event&amp; event );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">// Getters</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b">   68</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b">getText</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">   71</a></span>&#160;            std::string <a class="code" href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">saved_text</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">   72</a></span>&#160;            sf::Clock <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">deltaClock</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//     Private</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">void</span> update( <span class="keyword">const</span> sf::Vector2f mousePos ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// Variables</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            sf::Text input_text;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            sf::String input;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::string current_text;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">bool</span> has_been_pressed;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html">snake::widget::Textbox</a></div><div class="ttdoc">Class used to create the textbox widget.</div><div class="ttdef"><b>Definition:</b> textbox.hpp:52</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a21cb277df9e824c6a5a4e0b3cc4eaad6"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a21cb277df9e824c6a5a4e0b3cc4eaad6">snake::widget::Textbox::updateText</a></div><div class="ttdeci">void updateText(const sf::Event &amp;event)</div><div class="ttdoc">Method used to update the text of the textbox.</div><div class="ttdef"><b>Definition:</b> textbox.cpp:156</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a22eacbc6e67c1f28236b715a32c96adb"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">snake::widget::Textbox::deltaClock</a></div><div class="ttdeci">sf::Clock deltaClock</div><div class="ttdef"><b>Definition:</b> textbox.hpp:72</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a46a8359bc7f17e997b9c54de8232de3a"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a46a8359bc7f17e997b9c54de8232de3a">snake::widget::Textbox::Textbox</a></div><div class="ttdeci">Textbox(float x, float y, float width, float height, const sf::Font &amp;font, const std::string &amp;text, const sf::Color &amp;idleColor, const sf::Color &amp;hoverColor, const sf::Color &amp;activeColor)</div><div class="ttdoc">Main constructor of the textbox class.</div><div class="ttdef"><b>Definition:</b> textbox.cpp:71</div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// STD</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//     Required by IWYU</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesf.html">sf</a>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">class </span>Color;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">class </span>Event;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">class </span>Font;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesnake_1_1widget.html">snake::widget</a>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//     Textbox</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html">   53</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classsnake_1_1widget_1_1Textbox.html">Textbox</a>: <span class="keyword">public</span> <a class="code" href="classsnake_1_1widget_1_1Widget.html">Widget</a>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//     Public</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Constructors</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a46a8359bc7f17e997b9c54de8232de3a">Textbox</a>( <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keyword">const</span> sf::Font&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1">font</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652">text</a>,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a3c3f888dd661c57631165a6262e8efed">idleColor</a>, <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7">hoverColor</a>, <span class="keyword">const</span> sf::Color&amp; <a class="code" href="classsnake_1_1widget_1_1Widget.html#a0aa8a345c9b5b0dcc4f7ba6363438c48">activeColor</a> );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a21cb277df9e824c6a5a4e0b3cc4eaad6">updateText</a>( <span class="keyword">const</span> sf::Event&amp; event );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Getters</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b">   69</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b">getText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">   72</a></span>&#160;            std::string <a class="code" href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">saved_text</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">   73</a></span>&#160;            sf::Clock <a class="code" href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">deltaClock</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//     Private</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">void</span> update( <span class="keyword">const</span> sf::Vector2f mousePos ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">void</span> loadSounds() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// Variables</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            sf::Text input_text;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            sf::String input;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            std::string current_text;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">bool</span> has_been_pressed;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            sf::Sound write_text_sound;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            sf::Sound delete_text_sound;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html">snake::widget::Textbox</a></div><div class="ttdoc">Class used to create the textbox widget.</div><div class="ttdef"><b>Definition:</b> textbox.hpp:53</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a21cb277df9e824c6a5a4e0b3cc4eaad6"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a21cb277df9e824c6a5a4e0b3cc4eaad6">snake::widget::Textbox::updateText</a></div><div class="ttdeci">void updateText(const sf::Event &amp;event)</div><div class="ttdoc">Method used to update the text of the textbox.</div><div class="ttdef"><b>Definition:</b> textbox.cpp:160</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a22eacbc6e67c1f28236b715a32c96adb"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a22eacbc6e67c1f28236b715a32c96adb">snake::widget::Textbox::deltaClock</a></div><div class="ttdeci">sf::Clock deltaClock</div><div class="ttdef"><b>Definition:</b> textbox.hpp:73</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a46a8359bc7f17e997b9c54de8232de3a"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a46a8359bc7f17e997b9c54de8232de3a">snake::widget::Textbox::Textbox</a></div><div class="ttdeci">Textbox(float x, float y, float width, float height, const sf::Font &amp;font, const std::string &amp;text, const sf::Color &amp;idleColor, const sf::Color &amp;hoverColor, const sf::Color &amp;activeColor)</div><div class="ttdoc">Main constructor of the textbox class.</div><div class="ttdef"><b>Definition:</b> textbox.cpp:72</div></div>
 <div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_a6f8539df196b376bdca1be4f8ee38a7b"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#a6f8539df196b376bdca1be4f8ee38a7b">snake::widget::Textbox::getText</a></div><div class="ttdeci">void getText() const</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_af7b7ef1af36ae190c5b8badb3bd3ce2e"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">snake::widget::Textbox::saved_text</a></div><div class="ttdeci">std::string saved_text</div><div class="ttdef"><b>Definition:</b> textbox.hpp:71</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html">snake::widget::Widget</a></div><div class="ttdoc">Class used to define base widget for the other widgets.</div><div class="ttdef"><b>Definition:</b> widget.hpp:56</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a09ae968e6e91f01be447657a0d12a652"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652">snake::widget::Widget::text</a></div><div class="ttdeci">sf::Text text</div><div class="ttdef"><b>Definition:</b> widget.hpp:86</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a0aa8a345c9b5b0dcc4f7ba6363438c48"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a0aa8a345c9b5b0dcc4f7ba6363438c48">snake::widget::Widget::activeColor</a></div><div class="ttdeci">sf::Color activeColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:118</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a2a886a63eb8487d8d77d401cfcace3b7"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7">snake::widget::Widget::hoverColor</a></div><div class="ttdeci">sf::Color hoverColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:117</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a3c3f888dd661c57631165a6262e8efed"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a3c3f888dd661c57631165a6262e8efed">snake::widget::Widget::idleColor</a></div><div class="ttdeci">sf::Color idleColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:116</div></div>
-<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_ab6a41784c6fa56ed73808582338152d1"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1">snake::widget::Widget::font</a></div><div class="ttdeci">sf::Font font</div><div class="ttdef"><b>Definition:</b> widget.hpp:115</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Textbox_html_af7b7ef1af36ae190c5b8badb3bd3ce2e"><div class="ttname"><a href="classsnake_1_1widget_1_1Textbox.html#af7b7ef1af36ae190c5b8badb3bd3ce2e">snake::widget::Textbox::saved_text</a></div><div class="ttdeci">std::string saved_text</div><div class="ttdef"><b>Definition:</b> textbox.hpp:72</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html">snake::widget::Widget</a></div><div class="ttdoc">Class used to define base widget for the other widgets.</div><div class="ttdef"><b>Definition:</b> widget.hpp:57</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a09ae968e6e91f01be447657a0d12a652"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a09ae968e6e91f01be447657a0d12a652">snake::widget::Widget::text</a></div><div class="ttdeci">sf::Text text</div><div class="ttdef"><b>Definition:</b> widget.hpp:87</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a0aa8a345c9b5b0dcc4f7ba6363438c48"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a0aa8a345c9b5b0dcc4f7ba6363438c48">snake::widget::Widget::activeColor</a></div><div class="ttdeci">sf::Color activeColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:120</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a2a886a63eb8487d8d77d401cfcace3b7"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a2a886a63eb8487d8d77d401cfcace3b7">snake::widget::Widget::hoverColor</a></div><div class="ttdeci">sf::Color hoverColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:119</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_a3c3f888dd661c57631165a6262e8efed"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#a3c3f888dd661c57631165a6262e8efed">snake::widget::Widget::idleColor</a></div><div class="ttdeci">sf::Color idleColor</div><div class="ttdef"><b>Definition:</b> widget.hpp:118</div></div>
+<div class="ttc" id="aclasssnake_1_1widget_1_1Widget_html_ab6a41784c6fa56ed73808582338152d1"><div class="ttname"><a href="classsnake_1_1widget_1_1Widget.html#ab6a41784c6fa56ed73808582338152d1">snake::widget::Widget::font</a></div><div class="ttdeci">sf::Font font</div><div class="ttdef"><b>Definition:</b> widget.hpp:117</div></div>
 <div class="ttc" id="anamespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdef"><b>Definition:</b> button.cpp:49</div></div>
 <div class="ttc" id="anamespacesnake_1_1widget_html"><div class="ttname"><a href="namespacesnake_1_1widget.html">snake::widget</a></div><div class="ttdef"><b>Definition:</b> button.cpp:53</div></div>
 <div class="ttc" id="awidget_8hpp_html"><div class="ttname"><a href="widget_8hpp.html">widget.hpp</a></div></div>
